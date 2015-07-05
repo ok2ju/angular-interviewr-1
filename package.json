@@ -2,7 +2,7 @@
   "name": "angular-interviewr-ui",
   "version": "0.0.1",
   "description": "AngularJS interviewr UI",
-  "repository": "",
+  "repository": "https://github.com/ok2ju/angular-interviewr-ui.git",
   "dependencies": {},
   "devDependencies": {
     "angular": "^1.4.1",
