@@ -1,0 +1,33 @@
+// imports
+@import '../utils/index';
+
+// variables
+$company-page-bg-color: #f9f9f9;
+$company-page-header-bg-color: #fff;
+$grid-controls-hover-color: #59728e;
+
+.c-content-header {
+  @include clearfix;
+  margin-bottom: 20px;
+}
+
+.c-content-header__name {
+  color: $primary-font-color;
+  float: left;
+  font-size: 24px;
+  font-weight: 400;
+  margin-right: 15px;
+}
+
+.grid-controls {
+  float: right;
+  margin-top: 5px;
+
+  i {
+    cursor: pointer;
+  }
+
+  i:hover {
+    color: $grid-controls-hover-color;
+  }
+}

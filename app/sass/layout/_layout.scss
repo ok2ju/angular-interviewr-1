@@ -1,0 +1,47 @@
+// imports
+@import '../utils/index';
+
+// variables
+$header-bg-color: #9bd8f1;
+$header-font-color: #fff;
+
+.container {
+  @include clearfix;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @include respond-to('small') {
+    width: 750px;
+  }
+
+  @include respond-to('medium') {
+    width: 970px;
+  }
+
+  @include respond-to('large') {
+    width: 1170px;
+  }
+}
+
+.row {
+  @include make-row;
+}
+
+.content {
+  padding-top: 90px;
+  position: relative;
+  transition: all .3s ease-in-out;
+  left: 0;
+
+  &.active {
+    left: 280px;
+    overflow: hidden;
+  }
+}
+
+.p-col {
+  padding-left: 15px;
+  padding-right: 15px;
+}
