@@ -4,23 +4,51 @@ var angular = require('angular');
 
 require('angular-ui-router');
 
-var app = angular.module('todoApp', ['ui.router']);
+var app = angular.module('interviewrApp', ['ui.router']);
 
 require('./service');
 require('./controller');
 
 app.config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/shows');
+  $urlRouterProvider.otherwise('/');
 
   $stateProvider
-      .state('shows', {
-        url:'/shows',
-        templateUrl: 'views/shows.html',
-        controller: 'ShowsController'
+      .state('landing', {
+          url:'/',
+          views: {
+              'content': {
+                  templateUrl: 'views/landing.html'
+              }
+          }
       })
-      .state('shows.detail', {
-        url: '/detail/:id',
-        templateUrl: 'views/shows-detail.html',
-        controller: 'ShowsDetailController'
+      .state('login', {
+          url: '/login',
+          views: {
+              'content': {
+                  templateUrl: 'views/login.html'
+              }
+          }
+      })
+      .state('register', {
+          url: '/register',
+          views: {
+              'content': {
+                  templateUrl: 'views/register.html'
+              }
+          }
+      })
+      .state('app', {
+          url: '/companies',
+          views: {
+              'header': {
+                  templateUrl: 'views/header.html'
+              },
+              'content': {
+                  templateUrl: 'views/companyPage.html'
+              },
+              'aside': {
+                  templateUrl: 'views/aside.html'
+              }
+          }
       });
 });

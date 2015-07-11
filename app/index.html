@@ -4,10 +4,14 @@
   <title>Angular Interviewr UI</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/fontello.css">
+  <link rel="stylesheet" href="css/font-awesome.css">
 </head>
-<body ng-app="todoApp">
+<body ng-app="interviewrApp">
 
-  <div ui-view></div>
+  <div ui-view="header"></div>
+  <div ui-view="content"></div>
+  <div ui-view="aside"></div>
 
 <script src="dist/app.js" type="text/javascript"></script>
 

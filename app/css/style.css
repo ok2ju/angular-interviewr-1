@@ -18,7 +18,7 @@ body {
   background-color: #f2f2f2;
   color: rgba(0, 0, 0, 0.87);
   font-family: "Roboto", sans-serif;
-  font-size: 2em;
+  font-size: 1em;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -41,6 +41,9 @@ iframe {
   position: absolute;
   top: 0;
   width: 100%; }
+
+h1 {
+  margin: 0; }
 
 h2 {
   font-size: 14px;
@@ -1312,11 +1315,11 @@ textarea {
 .wrapper {
   background-image: url("../images/bg.jpg");
   background-size: cover;
-  height: 100%; }
+  height: 100vh; }
 
 .overlay {
   background: rgba(0, 0, 0, 0.7);
-  height: 100%; }
+  height: 100vh; }
 
 .land-container {
   bottom: auto;
@@ -1691,8 +1694,7 @@ main.test-vid {
   color: rgba(0, 0, 0, 0.87);
   float: left;
   font-size: 24px;
-  font-weight: 400;
-  margin-right: 15px; }
+  font-weight: 400; }
 
 .grid-controls {
   float: right;

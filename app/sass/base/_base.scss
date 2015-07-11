@@ -31,7 +31,7 @@ body {
   background-color: #f2f2f2;
   color: $primary-font-color;
   font-family: $secondary-font;
-  font-size: 2em;
+  font-size: 1em;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -58,6 +58,10 @@ iframe {
   position: absolute;
   top: 0;
   width: 100%;
+}
+
+h1 {
+  margin: 0;
 }
 
 h2 {
