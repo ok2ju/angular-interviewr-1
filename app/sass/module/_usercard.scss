@@ -2,38 +2,35 @@
 @import '../utils/index';
 
 .user-cards {
-  text-align: justify;
-
-  .gap {
-    width: 23%;
-    opacity: 0;
-    height: 0;
-    display: inline-block;
-  }
+  @include make-row;
 }
 
 .ui-card {
-  background-color: #fff;
   border: none;
-  border-radius: 4px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .22);
   margin-bottom: 2em;
   position: relative;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
 
   @include respond-to('small') {
-    width: 48%;
-    display: inline-block;
+    width: 25%;
   }
 
   @include respond-to('medium') {
-    width: 24%;
-    display: inline-block;
+    width: 25%;
   }
 
   @include respond-to('large') {
-    width: 17%;
-    display: inline-block;
-  } 
+    width: 20%;
+  }
+}
+
+.ui-card-inner {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .22);
 }
 
 .card-image {

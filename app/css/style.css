@@ -238,32 +238,35 @@ textarea {
   float: right; }
 
 .user-cards {
-  text-align: justify; }
-  .user-cards .gap {
-    width: 23%;
-    opacity: 0;
-    height: 0;
-    display: inline-block; }
+  margin-left: -15px;
+  margin-right: -15px; }
+  .user-cards::after {
+    clear: both;
+    content: '';
+    display: table; }
 
 .ui-card {
-  background-color: #fff;
   border: none;
-  border-radius: 4px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
   margin-bottom: 2em;
-  position: relative; }
+  position: relative;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%; }
   @media (min-width: 768px) {
     .ui-card {
-      width: 48%;
-      display: inline-block; } }
+      width: 25%; } }
   @media (min-width: 992px) {
     .ui-card {
-      width: 24%;
-      display: inline-block; } }
+      width: 25%; } }
   @media (min-width: 1200px) {
     .ui-card {
-      width: 17%;
-      display: inline-block; } }
+      width: 20%; } }
+
+.ui-card-inner {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22); }
 
 .card-image {
   display: block;
