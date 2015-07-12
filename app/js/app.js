@@ -21,21 +21,22 @@ app.config(function($stateProvider, $urlRouterProvider) {
               }
           }
       })
-      .state('login', {
-          url: '/login',
+      .state('auth', {
+          abstract: true,
+          url: '/auth',
           views: {
               'content': {
-                  templateUrl: 'views/login.html'
+                  templateUrl: 'views/auth/auth-layout.html'
               }
           }
       })
-      .state('register', {
+      .state('auth.login', {
+          url: '/login',
+          templateUrl: 'views/auth/login.html'
+      })
+      .state('auth.register', {
           url: '/register',
-          views: {
-              'content': {
-                  templateUrl: 'views/register.html'
-              }
-          }
+          templateUrl: 'views/auth/register.html'
       })
       .state('app', {
           url: '/companies',
@@ -44,7 +45,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
                   templateUrl: 'views/header.html'
               },
               'content': {
-                  templateUrl: 'views/companyPage.html'
+                  templateUrl: 'views/companyPage.html',
+                  controller: 'CandidatesController'
               },
               'aside': {
                   templateUrl: 'views/aside.html'

@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "AngularJS interviewr UI",
   "repository": "https://github.com/ok2ju/angular-interviewr-ui.git",
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
     "angular": "^1.4.1",
     "angular-ui-router": "^0.2.15",

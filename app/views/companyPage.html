@@ -15,66 +15,18 @@
         <li class="vacancies__item"><span class="vacancies-label label-danger">QA Engineer</span></li>
       </ul>
     </div>
-    <ul class="user-cards">
-      <li class="ui-card">
-        <div class="card-image"><a href="#" class="check-profile-link"><img src="images/1.png"></a>
+    <ul class="user-cards" ng-controller="CandidatesController">
+      <li class="ui-card" ng-repeat="candidate in candidates">
+        <div class="card-image"><a href="#" class="check-profile-link"><img ng-src="{{candidate.avatar}}"></a>
           <div class="card-overlay">
             <div class="btns-wrap"><a href="#" class="card-overlay-link">Set Date</a><a href="#" class="card-overlay-link">More</a></div>
           </div>
         </div>
         <div class="card-content">
-          <h1>Scott Chisholm</h1>
-          <div class="meta"><span class="indicate label-warning"></span><a href="#" class="group">Front-End</a></div>
+          <h1>{{candidate.name}} {{candidate.surname}}</h1>
+          <div class="meta"><span class="indicate {{candidate.posColor}}"></span><a href="#" class="group">{{candidate.position}}</a></div>
         </div>
-        <div class="test-result"><span class="card-footer"><i class="fa i-card fa-file-text-o"></i><span class="test-score">82%</span></span><span class="card-footer"><i class="fa i-card fa-clock-o"></i><span class="test-score">13.06.2015</span></span></div>
-      </li>
-      <li class="ui-card">
-        <div class="card-image"><a href="#" class="check-profile-link"><img src="images/12.png"></a>
-          <div class="card-overlay">
-            <div class="btns-wrap"><a href="#" class="card-overlay-link">Set Date</a><a href="#" class="card-overlay-link">More</a></div>
-          </div>
-        </div>
-        <div class="card-content">
-          <h1>Scott Chisholm</h1>
-          <div class="meta"><span class="indicate label-info"></span><a href="#" class="group">iOS Developer</a></div>
-        </div>
-        <div class="test-result"><span class="card-footer"><i class="fa i-card fa-file-text-o"></i><span class="test-score">82%</span></span><span class="card-footer"><i class="fa i-card fa-clock-o"></i><span class="test-score">13.06.2015</span></span></div>
-      </li>
-      <li class="ui-card">
-        <div class="card-image"><a href="#" class="check-profile-link"><img src="images/1.png"></a>
-          <div class="card-overlay">
-            <div class="btns-wrap"><a href="#" class="card-overlay-link">Set Date</a><a href="#" class="card-overlay-link">More</a></div>
-          </div>
-        </div>
-        <div class="card-content">
-          <h1>Scott Chisholm</h1>
-          <div class="meta"><span class="indicate label-default"></span><a href="#" class="group">Designer</a></div>
-        </div>
-        <div class="test-result"><span class="card-footer"><i class="fa i-card fa-file-text-o"></i><span class="test-score">82%</span></span><span class="card-footer"><i class="fa i-card fa-clock-o"></i><span class="test-score">13.06.2015</span></span></div>
-      </li>
-      <li class="ui-card">
-        <div class="card-image"><a href="#" class="check-profile-link"><img src="images/12.png"></a>
-          <div class="card-overlay">
-            <div class="btns-wrap"><a href="#" class="card-overlay-link">Set Date</a><a href="#" class="card-overlay-link">More</a></div>
-          </div>
-        </div>
-        <div class="card-content">
-          <h1>Scott Chisholm</h1>
-          <div class="meta"><span class="indicate label-danger"></span><a href="#" class="group">QA Engineer</a></div>
-        </div>
-        <div class="test-result"><span class="card-footer"><i class="fa i-card fa-file-text-o"></i><span class="test-score">82%</span></span><span class="card-footer"><i class="fa i-card fa-clock-o"></i><span class="test-score">13.06.2015</span></span></div>
-      </li>
-      <li class="ui-card">
-        <div class="card-image"><a href="#" class="check-profile-link"><img src="images/1.png"></a>
-          <div class="card-overlay">
-            <div class="btns-wrap"><a href="#" class="card-overlay-link">Set Date</a><a href="#" class="card-overlay-link">More</a></div>
-          </div>
-        </div>
-        <div class="card-content">
-          <h1>Scott Chisholm</h1>
-          <div class="meta"><span class="indicate label-warning"></span><a href="#" class="group">Front-End</a></div>
-        </div>
-        <div class="test-result"><span class="card-footer"><i class="fa i-card fa-file-text-o"></i><span class="test-score">82%</span></span><span class="card-footer"><i class="fa i-card fa-clock-o"></i><span class="test-score">13.06.2015</span></span></div>
+        <div class="test-result"><span class="card-footer"><i class="fa i-card fa-file-text-o"></i><span class="test-score">{{candidate.testResult}}%</span></span><span class="card-footer"><i class="fa i-card fa-clock-o"></i><span class="test-score">{{candidate.applicationDate | date:'dd.MM.yyyy'}}</span></span></div>
       </li>
       <li class="gap"></li>
       <li class="gap"></li>
