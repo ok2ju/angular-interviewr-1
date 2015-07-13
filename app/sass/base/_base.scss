@@ -82,6 +82,11 @@ textarea {
   border-bottom: 1px solid rgba(255, 255, 255, .2);
   outline: none;
   padding-left: 0;
+  transition: border 0.3s;
+
+  &:focus {
+    border-bottom: solid 1px #969696
+  }
 }
 
 /* Let's get this party started */

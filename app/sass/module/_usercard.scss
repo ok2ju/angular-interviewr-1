@@ -14,8 +14,12 @@
   padding-right: 15px;
   width: 100%;
 
+  @media only screen and (min-width: 468px) {
+    width: 50%;
+  }
+
   @include respond-to('small') {
-    width: 25%;
+    width: percentage(250px / 750px);
   }
 
   @include respond-to('medium') {
@@ -69,6 +73,8 @@
     @include font-size(14px);
     color: $primary-font-color;
     font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   .meta {
