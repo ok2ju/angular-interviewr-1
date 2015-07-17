@@ -2,7 +2,7 @@
   <section class="container">
     <header class="c-content-header">
       <h1 class="c-content-header__name">Candidates</h1>
-      <div class="grid-controls"><i class="icon-th-list"></i><i class="icon-th-thumb"></i></div>
+      <div class="grid-controls"><i class="icon-th-list"></i><i class="icon-th-1"></i></div>
     </header>
     <div class="vacancies-container">
       <ul class="vacancies">
@@ -28,8 +28,8 @@
             <div class="meta"><span class="indicate {{candidate.posColor}}"></span><a href="#" class="group">{{candidate.position}}</a></div>
           </div>
           <div class="test-result">
-            <span class="card-footer"><i class="fa i-card fa-file-text-o"></i><span class="test-score">{{candidate.testResult}}%</span></span>
-            <span class="card-footer"><i class="fa i-card fa-clock-o"></i><span class="test-score">{{candidate.applicationDate | date:'dd.MM.yyyy'}}</span></span>
+            <span class="card-footer"><i class="i-card icon-doc-text"></i><span class="test-score">{{candidate.testResult}}%</span></span>
+            <span class="card-footer"><i class="i-card icon-clock"></i><span class="test-score">{{candidate.applicationDate | date:'dd.MM.yyyy'}}</span></span>
           </div>
         </div>
       </li>

@@ -323,7 +323,8 @@ $header-border-bottom-color: rgba(137,137,137,0.3);
 .header-nav__link {
   @include font-size(13px);
   color: $primary-font-color;
-  padding: 23px 12px 22px 12px;
+  padding: 0 12px;
+  line-height: 60px;
   display: block;
 
   //test

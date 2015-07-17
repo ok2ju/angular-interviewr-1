@@ -164,11 +164,11 @@ textarea {
 .btn-lg, .landing-register-link, .login-button, .register-button {
   padding: 1.2em 1.5em; }
 
-.btn-link, .login-button, .register-button {
+.btn-link {
   font-size: 14px;
   font-size: 0.875rem;
   color: #fff; }
-  .btn-link:hover, .login-button:hover, .register-button:hover {
+  .btn-link:hover {
     text-decoration: underline; }
 
 .btn-block, .login-button, .register-button, .user-button {
@@ -658,7 +658,8 @@ textarea {
   font-size: 13px;
   font-size: 0.8125rem;
   color: rgba(0, 0, 0, 0.87);
-  padding: 23px 12px 22px 12px;
+  padding: 0 12px;
+  line-height: 60px;
   display: block;
   font-weight: 500; }
   .header-nav__link:hover {
@@ -995,7 +996,7 @@ textarea {
 
 .vacancies__item {
   display: inline-block;
-  margin-bottom: 10px; }
+  margin-bottom: 5px; }
 
 .vacancies-tag {
   font-size: 13px;
@@ -1009,12 +1010,15 @@ textarea {
   border-radius: 2px;
   cursor: pointer;
   color: #fff;
-  display: inline;
-  line-height: 1;
+  /*display: inline;
+  line-height: 1;*/
   text-align: center;
   vertical-align: baseline;
   white-space: nowrap;
-  padding: 0.3em 0.6em; }
+  /*padding: .3em .6em;*/
+  padding: 0 10px;
+  display: block;
+  line-height: 20px; }
 
 .label-default {
   background-color: #777; }
@@ -1047,7 +1051,7 @@ textarea {
 .ico-controll {
   color: rgba(0, 0, 0, 0.87);
   font-size: 14px !important;
-  padding: 23px 0; }
+  line-height: 60px; }
   @media only screen and (max-width: 960px) {
     .ico-controll {
       display: none !important; } }
@@ -1058,7 +1062,7 @@ textarea {
 .i-card {
   font-size: 11px;
   font-size: 0.6875rem;
-  margin-right: 5px;
+  /*margin-right: 5px;*/
   color: #999; }
 
 .pull-left {
@@ -1382,6 +1386,9 @@ textarea {
 .form-container {
   position: relative;
   width: 300px; }
+  @media (min-width: 768px) {
+    .form-container {
+      width: 350px; } }
 
 .auth-form-body {
   padding: 35px 20px; }
@@ -1714,9 +1721,18 @@ main.test-vid {
   float: right;
   margin-top: 5px; }
   .grid-controls i {
-    cursor: pointer; }
+    font-size: 18px;
+    font-size: 1.125rem;
+    cursor: pointer;
+    border: 1px solid #D7D7D7;
+    margin-left: 5px;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #999; }
+    .grid-controls i:first-child {
+      margin-left: 0; }
   .grid-controls i:hover {
-    color: #59728e; }
+    color: #000; }
 
 .pull-left {
   float: left; }

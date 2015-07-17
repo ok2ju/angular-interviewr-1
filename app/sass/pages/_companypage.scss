@@ -23,10 +23,20 @@ $grid-controls-hover-color: #59728e;
   margin-top: 5px;
 
   i {
+    @include font-size(18px);
     cursor: pointer;
+    border: 1px solid #D7D7D7;
+    margin-left: 5px;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #999;
+
+    &:first-child {
+      margin-left: 0;
+    }
   }
 
   i:hover {
-    color: $grid-controls-hover-color;
+    color: #000;
   }
 }

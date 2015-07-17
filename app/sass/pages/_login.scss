@@ -7,6 +7,10 @@ $submit-btn-color: #fff;
 .form-container {
     position: relative;
     width: 300px;
+
+    @include respond-to('small') {
+        width: 350px;
+    }
 }
 
 .auth-form-body {
@@ -77,7 +81,6 @@ $submit-btn-color: #fff;
 }
 
 .login-button {
-    @extend .btn-link;
     @extend .btn-block;
     @extend .btn-lg;
     @extend .btn-info;
