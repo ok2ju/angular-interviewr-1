@@ -4,22 +4,22 @@
     <div class="auth-form-body">
       <p>
         <input ng-model="vm.user.username" name="username" type="text" placeholder="USERNAME" class="input-block login-field" required>
-        <span class="error-message">Blank or 3 to 12 symbols!</span>
+        <span ng-show="form.username.$dirty && form.username.$error.required" class="error-message">Blank or 3 to 12 symbols</span>
       </p>
       <p>
         <input ng-model="vm.user.email" name="email" type="email" placeholder="EMAIL" class="input-block email-field" required>
-        <span class="error-message">Incorrect email!</span>
+        <span ng-show="form.email.$dirty && form.email.$error.required" class="error-message">Incorrect email!</span>
       </p>
       <p>
         <input ng-model="vm.user.password" name="password" type="password" placeholder="PASSWORD" class="input-block password-field" required>
-        <span class="error-message">Oops, wrong password!</span>
+        <span ng-show="form.password.$dirty && form.password.$error.required" class="error-message">Oops, password is required</span>
       </p>
       <div class="help-btns-wrapper">
         <p class="register-with">Register with:</p>
         <div class="social-btns"><a href="#"><i class="facebook-ico"></i></a><a href="#"><i class="google-ico"></i></a></div>
       </div>
       <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="register-button">Sign up</button>
-      <p class="dha">Have an account? -<a ui-sref="intro.login">Sign in</a></p>
+      <p class="dha">Have an account? - <a ui-sref="intro.login">Sign in</a></p>
     </div>
   </form>
 </div>

@@ -1213,22 +1213,25 @@ textarea {
   background-image: url("../images/bg.jpg");
   background-size: cover;
   background-position: center;
-  height: 100vh; }
+  height: 100vh;
+  display: table;
+  width: 100%; }
 
 .overlay {
   background: rgba(0, 0, 0, 0.7);
-  height: 100vh; }
+  height: 100vh;
+  display: table-cell;
+  vertical-align: middle; }
 
 .land-container {
-  bottom: auto;
-  left: 50%;
-  right: auto;
-  top: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  max-width: 400px;
-  position: absolute; }
+  /*@include center(xy);
+  position: absolute;*/
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto; }
+  @media (min-width: 768px) {
+    .land-container {
+      width: 400px; } }
 
 .landing-about {
   font-size: 16px;
@@ -1265,16 +1268,14 @@ textarea {
   float: right; }
 
 .form-container {
-  position: relative;
-  width: 300px; }
-  @media (min-width: 768px) {
-    .form-container {
-      width: 350px; } }
+  position: relative; }
 
 .auth-form-body {
-  padding: 35px 20px; }
+  padding: 35px 20px 0 20px; }
   .auth-form-body .has-error {
     border: 1px solid #d76666; }
+  .auth-form-body p {
+    position: relative; }
 
 .input-block {
   font-size: 11px;
@@ -1288,33 +1289,41 @@ textarea {
   width: 100%; }
 
 .error-message {
-  font-size: 13px;
-  font-size: 0.8125rem;
+  font-size: 11px;
+  font-size: 0.6875rem;
   display: inline-block;
   position: absolute;
   background: rgba(215, 102, 102, 0.9);
-  padding: .8em;
+  padding: 4px;
   z-index: 2;
   color: #FFF;
   border-radius: .25em;
   pointer-events: none;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.2s 0, visibility 0 0.2s; }
-  .error-message.is-visible {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.2s 0, visibility 0 0; }
+  visibility: visible;
+  opacity: 1;
+  top: -15px; }
   .error-message:after {
     content: '';
     position: absolute;
     left: 22px;
-    bottom: 100%;
+    bottom: -5px;
     height: 0;
     width: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid rgba(215, 102, 102, 0.9); }
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid rgba(215, 102, 102, 0.9); }
+
+.alert-danger,
+.alert-success {
+  font-size: 11px;
+  font-size: 0.6875rem;
+  text-align: center; }
+
+.alert-danger {
+  color: rgba(215, 102, 102, 0.9); }
+
+.alert-success {
+  color: rgba(82, 215, 114, 0.9); }
 
 .forgot-pass {
   font-size: 11px;
@@ -1355,7 +1364,7 @@ textarea {
     display: table; }
 
 .facebook-ico {
-  background: url("../images/facebook.svg");
+  background: url("../images/icons/social/l-facebook.svg");
   background-size: cover;
   display: block;
   float: left;
@@ -1363,7 +1372,7 @@ textarea {
   width: 20px; }
 
 .google-ico {
-  background: url("../images/google.svg");
+  background: url("../images/icons/social/l-google.svg");
   background-size: cover;
   display: block;
   float: left;

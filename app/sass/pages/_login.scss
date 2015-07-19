@@ -6,17 +6,17 @@ $submit-btn-container-color: #118b7e;
 $submit-btn-color: #fff;
 .form-container {
     position: relative;
-    width: 300px;
-
-    @include respond-to('small') {
-        width: 350px;
-    }
 }
 
 .auth-form-body {
-    padding: 35px 20px;
+    padding: 35px 20px 0 20px;
+
     .has-error {
         border: 1px solid #d76666;
+    }
+
+    p {
+        position: relative;
     }
 }
 
@@ -32,38 +32,44 @@ $submit-btn-color: #fff;
 }
 
 .error-message {
-    @include font-size(13px);
+    @include font-size(11px);
     display: inline-block;
     position: absolute;
     background: rgba(215, 102, 102, 0.9);
-    padding: .8em;
+    padding: 4px;
     z-index: 2;
     color: #FFF;
     border-radius: .25em;
     pointer-events: none;
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transition: opacity 0.2s 0, visibility 0 0.2s;
-    -moz-transition: opacity 0.2s 0, visibility 0 0.2s;
-    transition: opacity 0.2s 0, visibility 0 0.2s;
-    &.is-visible {
-        opacity: 1;
-        visibility: visible;
-        -webkit-transition: opacity 0.2s 0, visibility 0 0;
-        -moz-transition: opacity 0.2s 0, visibility 0 0;
-        transition: opacity 0.2s 0, visibility 0 0;
-    }
+    visibility: visible;
+    opacity: 1;
+    top: -15px;
+
     &:after {
         content: '';
         position: absolute;
         left: 22px;
-        bottom: 100%;
+        bottom: -5px;
         height: 0;
         width: 0;
-        border-left: 8px solid transparent;
-        border-right: 8px solid transparent;
-        border-bottom: 8px solid rgba(215, 102, 102, 0.9);
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid rgba(215, 102, 102, 0.9);
     }
+}
+
+.alert-danger,
+.alert-success {
+  @include font-size(11px);
+  text-align: center;
+}
+
+.alert-danger {
+  color: rgba(215, 102, 102, 0.9);
+}
+
+.alert-success {
+  color: rgba(82, 215, 114, 0.9);
 }
 
 .forgot-pass {
@@ -107,7 +113,7 @@ $submit-btn-color: #fff;
 }
 
 .facebook-ico {
-    background: url('../images/facebook.svg');
+    background: url('../images/icons/social/l-facebook.svg');
     background-size: cover;
     display: block;
     float: left;
@@ -116,7 +122,7 @@ $submit-btn-color: #fff;
 }
 
 .google-ico {
-    background: url('../images/google.svg');
+    background: url('../images/icons/social/l-google.svg');
     background-size: cover;
     display: block;
     float: left;

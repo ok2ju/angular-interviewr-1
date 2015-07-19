@@ -1,20 +1,23 @@
 <div class="form-container">
+  <!-- Real error messages -->
   <div ng-show="vm.error">{{vm.error}}</div>
+  <!-- Fake Error message -->
+  <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
   <form class="form" name="form" role="form" autocomplete="off" ng-submit="vm.login()">
     <div class="auth-form-body">
       <p>
         <input ng-model="vm.username" name="username" type="text" placeholder="USERNAME" class="input-block login-field" required>
-        <span class="error-message">Wrong username!</span>
+        <span ng-show="form.username.$dirty && form.username.$error.required" class="error-message">Wrong username!</span>
       </p>
       <p>
         <input ng-model="vm.password" name="password" type="password" placeholder="PASSWORD" class="input-block password-field" required>
-        <span class="error-message">Oops, wrong password!</span>
+        <span ng-show="form.password.$dirty && form.password.$error.required" class="error-message">Oops, password is required!</span>
       </p>
       <div class="help-btns-wrapper"><a href="#" class="forgot-pass">Forgot password?</a>
         <div class="social-btns"><a href="#"><i class="facebook-ico"></i></a><a href="#"><i class="google-ico"></i></a></div>
       </div>
       <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="login-button">Sign in</button>
-      <p class="dha">Don't have an account? -<a ui-sref="intro.register">Sign up</a></p>
+      <p class="dha">Don't have an account? - <a ui-sref="intro.register">Sign up</a></p>
     </div>
   </form>
 </div>
