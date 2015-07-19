@@ -30,14 +30,35 @@ $header-font-color: #fff;
 }
 
 .content {
-  padding-top: 90px;
+  padding: 60px 15px 0 15px;
+  margin: 0 auto;
   position: relative;
-  transition: all .3s ease-in-out;
-  left: 0;
+}
 
-  &.active {
-    left: 280px;
-    overflow: hidden;
+.content-inner {
+  @include make-row;
+}
+
+.main-area {
+  padding: 30px 15px 0 15px;
+
+  @media (min-width: 640px) {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  @include respond-to('small') {
+    width: percentage(9/12);
+    margin-left: 25%;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  @include respond-to('medium') {
+    width: percentage(10/12);
+    margin-left: 16.66666667%;
+    padding-left: 80px;
+    padding-right: 80px;
   }
 }
 

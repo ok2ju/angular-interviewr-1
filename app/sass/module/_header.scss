@@ -7,7 +7,6 @@ $header-border-bottom-color: rgba(137,137,137,0.3);
 
 .c-header-wrapper {
   background-color: $company-page-header-bg-color;
-  //border-bottom: 1px solid $header-border-bottom-color;
   box-shadow: rgba(0, 0, 0, 0.04) 0 1px;
   height: 60px;
   left: 0;
@@ -17,19 +16,6 @@ $header-border-bottom-color: rgba(137,137,137,0.3);
   transition: all .3s ease-in-out;
   width: 100%;
   z-index: 9999999999999;
-
-  &.active {
-    left: 280px;
-  }
-}
-
-// test
-.header-row {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 88.28125%;
-  height: 50px;
-  position: relative;
 }
 
 .header-inner {
@@ -39,85 +25,15 @@ $header-border-bottom-color: rgba(137,137,137,0.3);
 
 .navbar-header {
   float: left;
-  margin-right: 40px;
   position: relative;
-  top: 18px;
-  left: 35px;
-
-  @media only screen and (max-width: 960px) {
-    float: none;
-  }
-}
-
-.c-header__list {
-  height: 65px;
-
-  @media only screen and (max-width: 768px) {
-    height: auto;
-
-    &:first-child {
-      border-top: 1px solid rgba(0, 0, 0, .15);
-    }
-
-    &:last-child {
-      box-shadow: 0 1px 1px rgba(34, 34, 34, .15);
-    }
-  }
-}
-
-.c-header__list-item {
-  display: inline-block;
-  height: 100%;
-  margin-right: 40px;
-
-  @media only screen and (max-width: 768px) {
-    border-bottom: 1px solid rgba(0, 0, 0, .15);
-    display: block;
-    margin-right: 0;
-
-    &:hover {
-      background-color: rgba(0, 0, 0, .05);
-      transition: all .4s ease;
-    }
-  }
-}
-
-.c-header__company-name {
-  display: inline-block;
-  vertical-align: middle;
-
-  @media only screen and (max-width: 768px) {
-    display: block;
-    float: right;
-  }
+  top: 17px;
+  left: 65px;
 }
 
 .c-header__name {
   @include font-size(20px);
   color: $primary-font-color;
   font-weight: 300;
-}
-
-.c-header__nav {
-  display: inline-block;
-  float: left;
-  margin-left: 60px;
-  vertical-align: middle;
-
-  @media only screen and (max-width: 768px) {
-    background-color: #fff;
-    display: none;
-    margin-left: 0;
-    position: absolute;
-    text-align: center;
-    top: 65px;
-    width: 100%;
-  }
-
-  &.active {
-    display: block;
-    transition: all .4s ease-in-out;
-  }
 }
 
 .aside-toggle-wrapper {
@@ -129,7 +45,7 @@ $header-border-bottom-color: rgba(137,137,137,0.3);
   overflow: hidden;
   top: 0;
   white-space: nowrap;
-  width: 50px;
+  width: 60px;
   position: absolute;
 }
 
@@ -158,8 +74,6 @@ $header-border-bottom-color: rgba(137,137,137,0.3);
   margin-left: -10px;
   transition: background-color .3s .3s;
   background-color: $primary-font-color;
-
-  //test
   height: 1px;
   margin-top: 0;
 }
@@ -284,62 +198,6 @@ $header-border-bottom-color: rgba(137,137,137,0.3);
   vertical-align: middle;
 }
 
-.header-nav {
-  @include clearfix;
-  float: left;
-
-  &.active {
-    display: block;
-  }
-
-  @media only screen and (max-width: 960px) {
-    float: none;
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: -100px;
-    right: -100px;
-    background: #EFEDF0;
-    text-align: center;
-  }
-
-  @media only screen and (max-width: 768px) {
-    left: 0;
-    right: 0;
-  }
-}
-
-.header-nav__list-item {
-  display: inline-block;
-
-  @media only screen and (max-width: 950px) {
-
-    &:hover {
-      background-color: rgba(0, 0, 0, .01);
-    }
-  }
-}
-
-.header-nav__link {
-  @include font-size(13px);
-  color: $primary-font-color;
-  padding: 0 12px;
-  line-height: 60px;
-  display: block;
-
-  //test
-  font-weight: 500;
-
-  &:hover {
-    color: #59728e;
-  }
-
-  @media only screen and (max-width: 960px) {
-    @include font-size(11px);
-    padding: 10px 12px 10px 12px;
-  }
-}
-
 .icon-down-open-big {
   display: none;
   cursor: pointer;
@@ -351,29 +209,5 @@ $header-border-bottom-color: rgba(137,137,137,0.3);
 
   @media only screen and (max-width: 960px) {
     display: inline-block;
-  }
-}
-
-.primary-nav-overlay {
-  transition: all .3s ease;
-  opacity: 0;
-  visibility: hidden;
-
-  &.active {
-    display: block;
-    opacity: .9;
-    visibility: visible;
-    transition: all .3s ease;
-  }
-
-  @media only screen and (max-width: 960px) {
-    position: fixed;
-    top: 93px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #000;
-    z-index: 4;
-    transition: all .3s ease;
   }
 }

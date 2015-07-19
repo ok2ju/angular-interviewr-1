@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "description": "AngularJS interviewr UI",
   "repository": "https://github.com/ok2ju/angular-interviewr-ui.git",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "angular": "^1.4.1",
+    "angular-cookies": "^1.4.3",
     "angular-ui-router": "^0.2.15",
     "browserify": "^10.2.4",
     "del": "^1.2.0",
@@ -17,6 +17,7 @@
     "gulp-sass": "^2.0.3",
     "gulp-streamify": "0.0.5",
     "gulp-uglify": "^1.2.0",
+    "jquery": "^2.1.4",
     "underscore": "^1.8.3",
     "vinyl-paths": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"

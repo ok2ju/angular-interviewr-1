@@ -19,14 +19,18 @@
   }
 
   @include respond-to('small') {
-    width: percentage(250px / 750px);
+    width: 50%;
   }
 
   @include respond-to('medium') {
-    width: 25%;
+    width: 33.33333%;
   }
 
   @include respond-to('large') {
+    width: 25%;
+  }
+
+  @media (min-width: 1400px) {
     width: 20%;
   }
 }
@@ -98,12 +102,9 @@
   }
 
   .description {
-    //@include font-size(14px);
+    @include font-size(12px);
     margin-top: .5em;
     text-align: left;
-
-    //test
-    @include font-size(12px);
   }
 }
 
@@ -158,8 +159,6 @@
     padding: 6px 8px;
     border: 2px solid #fff;
     border-radius: 2px;
-
-    //test
     width: 66px;
 
     &:hover {

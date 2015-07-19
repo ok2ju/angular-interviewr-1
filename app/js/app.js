@@ -1,56 +1,86 @@
-'use strict';
+(function() {
+    'use strict';
 
-var angular = require('angular');
+    var $ = require('jquery');
+    var angular = require('angular');
+    require('angular-ui-router');
+    require('angular-cookies');
 
-require('angular-ui-router');
+    angular
+        .module('app', [
+            'ui.router',
+            'ngCookies',
+            'app.auth',
+            'app.login',
+            'app.register',
+            'app.candidates'
+        ])
+        .config(config)
+        .run(run);
 
-var app = angular.module('interviewrApp', ['ui.router']);
+    require('./auth-services');
+    require('./login');
+    require('./register');
+    require('./candidates');
 
-require('./service');
-require('./controller');
+    function config($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/login');
 
-app.config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/');
+        $stateProvider
+            .state('intro', {
+                abstract: true,
+                views: {
+                    'content': {
+                        templateUrl: 'templates/intro-layout.html'
+                    }
+                }
+            })
+            .state('intro.landing', {
+                url:'/',
+                templateUrl: 'js/landing/landing.html'
+            })
+            .state('intro.login', {
+                url: '/login',
+                controller: 'LoginController',
+                templateUrl: 'js/login/login.html',
+                controllerAs: 'vm'
+            })
+            .state('intro.register', {
+                url: '/register',
+                controller: 'RegisterController',
+                templateUrl: 'js/register/register.html',
+                controllerAs: 'vm'
+            })
+            .state('app', {
+                abstract: true,
+                views: {
+                    'content': {
+                        templateUrl: 'templates/app-layout.html'
+                    }
+                }
+            })
+            .state('app.candidates', {
+                url: '/candidates',
+                templateUrl: 'js/candidates/candidates.html',
+                controller: 'CandidatesController'
+            });
+    }
 
-  $stateProvider
-      .state('landing', {
-          url:'/',
-          views: {
-              'content': {
-                  templateUrl: 'views/landing.html'
-              }
-          }
-      })
-      .state('auth', {
-          abstract: true,
-          url: '/auth',
-          views: {
-              'content': {
-                  templateUrl: 'views/auth/auth-layout.html'
-              }
-          }
-      })
-      .state('auth.login', {
-          url: '/login',
-          templateUrl: 'views/auth/login.html'
-      })
-      .state('auth.register', {
-          url: '/register',
-          templateUrl: 'views/auth/register.html'
-      })
-      .state('app', {
-          url: '/companies',
-          views: {
-              'header': {
-                  templateUrl: 'views/header.html'
-              },
-              'content': {
-                  templateUrl: 'views/companyPage.html',
-                  controller: 'CandidatesController'
-              },
-              'aside': {
-                  templateUrl: 'views/aside.html'
-              }
-          }
-      });
-});
+    function run($rootScope, $location, $cookieStore, $http) {
+        // keep user logged in after page refresh
+        $rootScope.globals = $cookieStore.get('globals') || {};
+        if($rootScope.globals.currentUser) {
+            $http.defaults.headers.common['Authorization'] = 'Basic' + $rootScope.globals.currentUser.authdata;
+        }
+
+        $rootScope.$on('$locationChangeStart', function(event, next, current) {
+            // redirect to login page if not logged in and trying to access a restricted page
+            var restrictedPage = $.inArray($location.path(), ['/', '/login', '/register']) === -1;
+            var loggedIn = $rootScope.globals.currentUser;
+            if(restrictedPage && !loggedIn) {
+                $location.path('/');
+            }
+        });
+    }
+
+})();

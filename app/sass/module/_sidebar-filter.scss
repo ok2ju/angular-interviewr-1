@@ -8,15 +8,20 @@ $sideblock-bg-color: #161616;
   background-color: $sideblock-bg-color;
   bottom: 0;
   color: #fff;
-  overflow-y: auto;
+  overflow-y: hidden;
   position: fixed;
-  top: 0;
-  width: 280px;
-  left: -280px;
-  transition: all .3s ease-in-out;
+  top: 60px;
+  left: 0;
+  display: none;
 
-  &.active {
-    left: 0;
+  @include respond-to('small') {
+    width: percentage(3/12);
+    display: block;
+  }
+
+  @include respond-to('medium') {
+    width: percentage(2/12);
+    display: block;
   }
 }
 
@@ -34,86 +39,60 @@ $sideblock-bg-color: #161616;
 
 .int-section__list {
   list-style: disc;
-  padding-left: 40px;
 }
 
 .int-section__list > li {
-  margin-bottom: 15px;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
-  &.red {
-    color: #d65831;
+  &.active {
+    background-color: #101010;
+
+    &:before {
+      background-color: #5cb85c;
+    }
+
+    &:after {
+      display: block;
+    }
+  }
+  
+  &:before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: 17px;
+    left: 10px;
+    background-color: #fff;
   }
 
-  &.green {
-    color: #40bf53;
+  &:after {
+    content: '';
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 5px 0;
+    border-color: transparent #f2f2f2 transparent transparent;
   }
-
-  &.orange {
-    color: #c38c17;
-  }
-
-  &.blue {
-    color: #31d6cc;
-  }
-}
-
-.int-section__list > li > span {
-  color: #fff;
-  font-size: 14px;
-}
-
-.pay-attention {
-  margin-bottom: 50px;
-  padding: 0 25px;
-}
-
-.pay-attention__header {
-  color: #6b6b6b;
-  font-size: 14px;
-  font-weight: 400;
-  margin-bottom: 20px;
-}
-
-.card-link {
-  color: #fff;
-  font-size: 14px;
-}
-
-.user-skills {
-  color: #6b6b6b;
-  font-size: 11px;
-}
-
-.p-photo-container {
-  display: inline-block;
-  margin-right: 15px;
-  vertical-align: middle;
-}
-
-.card-link__photo {
-  border-radius: 50%;
-  width: 100px;
-}
-
-.card-container {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.footer-list {
-  padding: 0 25px;
-}
-
-.footer-list__item {
-  display: inline-block;
-}
-
-.footer-link {
-  color: #6b6b6b;
-  font-size: 10px;
 
   &:hover {
-    text-decoration: underline;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  a {
+    @include font-size(14px);
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 40px;
+    display: block;
+    padding: 0 30px;
   }
 }
 
