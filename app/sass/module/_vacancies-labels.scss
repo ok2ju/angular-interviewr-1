@@ -11,8 +11,9 @@
 }
 
 .vacancies-tag {
-  @include font-size(13px);
+  @include font-size(11px);
   margin-right: 15px;
+  text-transform: uppercase;
 }
 
 .vacancies-label {
@@ -25,7 +26,7 @@
   white-space: nowrap;
   padding: 0 10px;
   display: block;
-  line-height: 20px;
+  line-height: 18px;
 }
 
 .label-default {

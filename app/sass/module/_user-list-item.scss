@@ -21,6 +21,9 @@ $progress-fill-bg: #8dc63f;
     @include clearfix;
     display: block;
     float: none;
+    width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
 
     @include respond-to('small') {
       float: left;
@@ -43,10 +46,11 @@ $progress-fill-bg: #8dc63f;
 .user-card-item__name {
   @include font-size(14px);
   color: rgba(0, 0, 0, 0.87);
-  font-weight: bold;
-  float: left;
+  font-weight: 500;
   line-height: 50px;
   margin-left: 15px;
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .u-second-info {
@@ -83,9 +87,8 @@ $progress-fill-bg: #8dc63f;
 
 .card-list-group {
   @include font-size(12px);
-  color: rgba(0, 0, 0, 0.54);
+  color: $secondary-font-color;
   display: inline-block;
-  font-weight: 500;
 }
 
 .progress-bg {

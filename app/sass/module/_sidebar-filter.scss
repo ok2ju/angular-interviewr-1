@@ -52,16 +52,16 @@ $sideblock-bg-color: #161616;
       color: #fff;
     }
 
-    &:before {
+    /*&:before {
       background-color: #5cb85c;
-    }
+    }*/
 
     &:after {
       display: block;
     }
   }
   
-  &:before {
+  /*&:before {
     content: '';
     display: block;
     width: 6px;
@@ -71,7 +71,7 @@ $sideblock-bg-color: #161616;
     top: 17px;
     left: 15px;
     background-color: #fff;
-  }
+  }*/
 
   &:after {
     content: '';
@@ -92,11 +92,14 @@ $sideblock-bg-color: #161616;
 
   a {
     @include font-size(14px);
-    text-transform: uppercase;
     color: #999;
     line-height: 40px;
     display: block;
-    padding: 0 35px;
+    padding: 0 15px;
+  }
+
+  .sidebar-ico {
+    margin-right: 10px;
   }
 }
 

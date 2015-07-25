@@ -76,7 +76,7 @@
   h1 {
     @include font-size(14px);
     color: $primary-font-color;
-    font-weight: bold;
+    font-weight: 500;
     white-space: nowrap;
     overflow: hidden;
   }
@@ -98,7 +98,6 @@
   .group {
     color: $secondary-font-color;
     display: inline-block;
-    font-weight: 500;
   }
 
   .description {

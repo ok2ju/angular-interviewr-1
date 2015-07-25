@@ -3,29 +3,34 @@ module.exports = function() {
 
     vm.items = [
         {
-            name: 'messages',
+            name: 'Messages',
             url: '/messages',
-            active: false
+            active: false,
+            icon: 'icon-mail'
         },
         {
-            name: 'candidates',
+            name: 'Candidates',
             url: '/candidates',
-            active: true
+            active: true,
+            icon: 'icon-users'
         },
         {
-            name: 'vacancy',
+            name: 'Vacancy',
             url: '/vancancies',
-            active: false
+            active: false,
+            icon: 'icon-newspaper'
         },
         {
-            name: 'search',
+            name: 'Search',
             url: '/calendar',
-            active: false
+            active: false,
+            icon: 'icon-search'
         },
         {
-            name: 'companies',
+            name: 'Companies',
             url: '/companies',
-            active: false
+            active: false,
+            icon: 'icon-hospital'
         }
     ];
 };

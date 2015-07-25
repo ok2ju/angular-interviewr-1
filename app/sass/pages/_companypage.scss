@@ -15,7 +15,7 @@ $grid-controls-hover-color: #59728e;
   color: $primary-font-color;
   float: left;
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 300;
   text-transform: uppercase;
 }
 
@@ -24,8 +24,9 @@ $grid-controls-hover-color: #59728e;
   margin-top: 5px;
 
   .grid-controls__label {
-    @include font-size(13px);
+    @include font-size(11px);
     vertical-align: middle;
+    text-transform: uppercase;
   }
 
   i {

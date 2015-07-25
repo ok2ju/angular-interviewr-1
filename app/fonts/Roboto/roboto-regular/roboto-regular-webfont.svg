@@ -223,8 +223,8 @@
 <glyph unicode="&#x2010;" horiz-adv-x="565" d="M37 543v151h488v-151h-488z" />
 <glyph unicode="&#x2011;" horiz-adv-x="565" d="M37 543v151h488v-151h-488z" />
 <glyph unicode="&#x2012;" horiz-adv-x="565" d="M37 543v151h488v-151h-488z" />
-<glyph unicode="&#x2013;" horiz-adv-x="1344" d="M155 651v151h1002v-151h-1002z" />
-<glyph unicode="&#x2014;" horiz-adv-x="1599" d="M71 651v151h1336v-151h-1336z" />
+<glyph unicode="&#x2013;" horiz-adv-x="1344" d="M163 651v151h1002v-151h-1002z" />
+<glyph unicode="&#x2014;" horiz-adv-x="1599" d="M145 651v151h1336v-151h-1336z" />
 <glyph unicode="&#x2018;" horiz-adv-x="409" d="M96 1073v116q0 102 48.5 202t125.5 164l106 -72q-93 -127 -96 -274v-136h-184z" />
 <glyph unicode="&#x2019;" horiz-adv-x="409" d="M48 1118q93 130 96 274v144h183v-130q-1 -100 -49.5 -199.5t-124.5 -160.5z" />
 <glyph unicode="&#x201a;" horiz-adv-x="407" d="M36 -210q91 127 94 273v118h185v-100q0 -101 -49.5 -202t-124.5 -162z" />
