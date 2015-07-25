@@ -7,36 +7,17 @@
                 <li class="navbar-btns__item"><a href="#" aria-label="Messages" class="navbar-ico img-replace tooltip-v">MESSAGES<i class="ico-controll icon-chat-empty"></i></a></li>
                 <li class="navbar-btns__item"><a href="#" aria-label="Actions" class="navbar-ico img-replace tooltip-v">ACTIONS<i class="ico-controll icon-bell"></i></a></li>
                 <li class="navbar-btns__item"><a href="#" aria-label="Settings" class="navbar-ico img-replace tooltip-v">SETTINGS<i class="ico-controll icon-cog"></i></a></li>
-            </ul><a href="#" class="acc-photo-link"><i class="icon-down-dir"></i><img src="images/1.png" class="acc-photo__img"></a>
+            </ul>
+            <a href="#" class="acc-photo-link">
+                <i class="icon-down-dir"></i>
+                <img src="images/default-user.png" class="acc-photo__img">
+            </a>
         </div>
     </div>
 </header>
 <main role="main" class="content">
     <div class="content-inner">
-        <aside class="sideblock">
-            <section class="int-section">
-                <ul class="int-section__list">
-                    <li class="item">
-                        <a href="#">messages</a>
-                    </li>
-                    <li class="item active">
-                        <a href="#">candidates</a>
-                    </li>
-                    <li class="item">
-                        <a href="#">vacancy</a>
-                    </li>
-                    <li class="item">
-                        <a href="#">search</a>
-                    </li>
-                    <li class="item">
-                        <a href="#">calendar</a>
-                    </li>
-                    <li class="item">
-                        <a href="#">companies</a>
-                    </li>
-                </ul>
-            </section>
-        </aside>
+        <side-bar info="test"></side-bar>
         <section class="main-area" ui-view>
 
         </section>

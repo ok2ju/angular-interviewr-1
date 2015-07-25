@@ -1,0 +1,26 @@
+<ul class="user-cards-list">
+    <li class="user-card-item" ng-repeat="candidate in vm.candidates">
+        <div class="u-main-info">
+            <a href="#" class="u-main-info-link">
+                <img ng-src="{{candidate.avatar}}" alt="candidate" class="user-card-item__photo">
+                <h1 class="user-card-item__name">{{candidate.name}} {{candidate.surname}}</h1>
+            </a>
+            <div class="u-main-info-pos">
+                <span class="card-list-indicate {{candidate.posColor}}"></span>
+                <a href="#" class="card-list-group">{{candidate.position}}</a>
+            </div>
+        </div>
+        <div class="u-second-info">
+            <span class="card-list__ico-wrapper">
+                <span class="progress-bg">
+                    <span style="width: 82%;" class="progress-fg"></span>
+                </span>
+                <span class="card-list__test-score">{{candidate.testResult}}%</span>
+            </span>
+            <span class="card-list__ico-wrapper">
+                <i class="fa i-card fa-clock-o"></i>
+                <span class="card-list__test-score">{{candidate.applicationDate | date:'dd.MM.yyyy'}}</span>
+            </span>
+        </div>
+    </li>
+</ul>

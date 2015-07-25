@@ -36,11 +36,13 @@
     &:after {
       @include center(x);
       bottom: -38px;
+      opacity: 1;
     }
 
     &:before {
       bottom: -15px;
       left: 0;
+      opacity: 1;
     }
   }
 

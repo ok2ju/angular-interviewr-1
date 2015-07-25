@@ -13,7 +13,8 @@
             'app.auth',
             'app.login',
             'app.register',
-            'app.candidates'
+            'app.candidates',
+            'app.sidebar'
         ])
         .config(config)
         .run(run);
@@ -22,6 +23,7 @@
     require('./login');
     require('./register');
     require('./candidates');
+    require('./sidebar');
 
     function config($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/login');
@@ -62,7 +64,14 @@
             .state('app.candidates', {
                 url: '/candidates',
                 templateUrl: 'js/candidates/candidates.html',
-                controller: 'CandidatesController'
+                controller: 'CandidatesController',
+                controllerAs: 'vm'
+            })
+            .state('app.candidates.grid', {
+                templateUrl: 'js/candidates/views/grid-view.html'
+            })
+            .state('app.candidates.list', {
+                templateUrl: 'js/candidates/views/list-view.html'
             });
     }
 
