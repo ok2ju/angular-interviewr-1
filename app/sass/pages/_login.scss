@@ -11,24 +11,34 @@ $submit-btn-color: #fff;
 .auth-form-body {
     padding: 35px 20px 0 20px;
 
-    .has-error {
-        border: 1px solid #d76666;
+    p {
+        position: relative;
     }
 
-    p {
+    .form-group {
         position: relative;
     }
 }
 
 .input-block {
     @include font-size(11px);
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
     background: none;
     color: rgba(255, 255, 255, .5);
     display: block;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     padding: 10px 0;
     text-align: center;
     width: 100%;
+
+    &.has-success {
+        border-bottom: 1px solid #539665;
+    }
+
+    &.has-error {
+        border-bottom: 1px solid #d76666;
+    }
 }
 
 .error-message {
@@ -59,18 +69,19 @@ $submit-btn-color: #fff;
 }
 
 .alert-danger,
-.alert-success {
+.alert-success,
+.alert-info {
   @include font-size(11px);
   text-align: center;
 }
 
-.alert-danger {
+/* .alert-danger {
   color: rgba(215, 102, 102, 0.9);
 }
 
 .alert-success {
   color: rgba(82, 215, 114, 0.9);
-}
+} */
 
 .forgot-pass {
     @include font-size(11px);

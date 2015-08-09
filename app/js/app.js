@@ -5,27 +5,39 @@
     var angular = require('angular');
     require('angular-ui-router');
     require('angular-cookies');
+    require('angular-resource');
+    require('angular-messages');
+    require('angular-strap');
+    require('angular-strap-tpl');
+    require('ng-tags-input');
 
     angular
         .module('app', [
             'ui.router',
             'ngCookies',
+            'ngResource',
+            'ngMessages',
+            'mgcrea.ngStrap.alert',
             'app.auth',
             'app.login',
             'app.register',
             'app.candidates',
-            'app.sidebar'
+            'app.sidebar',
+            'app.header',
+            'app.fillprofile'
         ])
-        .config(config)
-        .run(run);
+        .config(config);
 
     require('./auth-services');
     require('./login');
     require('./register');
     require('./candidates');
     require('./sidebar');
+    require('./header');
+    require('./fill-profile');
 
-    function config($stateProvider, $urlRouterProvider) {
+    function config($stateProvider, $urlRouterProvider, $locationProvider) {
+        $locationProvider.html5Mode(true);
         $urlRouterProvider.otherwise('/login');
 
         $stateProvider
@@ -72,24 +84,13 @@
             })
             .state('app.candidates.list', {
                 templateUrl: 'js/candidates/views/list-view.html'
+            })
+            .state('app.fillprofile', {
+                url: '/fillprofile',
+                templateUrl: 'js/fill-profile/fillProfile.html',
+                controller: 'FillprofileController',
+                controllerAs: 'vm'
             });
-    }
-
-    function run($rootScope, $location, $cookieStore, $http) {
-        // keep user logged in after page refresh
-        $rootScope.globals = $cookieStore.get('globals') || {};
-        if($rootScope.globals.currentUser) {
-            $http.defaults.headers.common['Authorization'] = 'Basic' + $rootScope.globals.currentUser.authdata;
-        }
-
-        $rootScope.$on('$locationChangeStart', function(event, next, current) {
-            // redirect to login page if not logged in and trying to access a restricted page
-            var restrictedPage = $.inArray($location.path(), ['/', '/login', '/register']) === -1;
-            var loggedIn = $rootScope.globals.currentUser;
-            if(restrictedPage && !loggedIn) {
-                $location.path('/');
-            }
-        });
     }
 
 })();

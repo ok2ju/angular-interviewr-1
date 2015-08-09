@@ -6,17 +6,10 @@ $company-page-bg-color: #f9f9f9;
 $company-page-header-bg-color: #fff;
 $grid-controls-hover-color: #59728e;
 
-.c-content-header {
-  @include clearfix;
-  margin-bottom: 20px;
-}
+// "c" prefix means that this class applies only to "company page"
 
-.c-content-header__name {
-  color: $primary-font-color;
+.c-header {
   float: left;
-  font-size: 24px;
-  font-weight: 300;
-  text-transform: uppercase;
 }
 
 .grid-controls {

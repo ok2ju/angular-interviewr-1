@@ -62,7 +62,14 @@ $header-font-color: #fff;
   }
 }
 
-.p-col {
-  padding-left: 15px;
-  padding-right: 15px;
+.content-header {
+  @include clearfix;
+  margin-bottom: 20px;
+}
+
+.content-header__name {
+  @include font-size(24px);
+  color: $primary-font-color;
+  font-weight: 300;
+  text-transform: uppercase;
 }

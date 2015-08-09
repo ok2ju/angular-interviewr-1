@@ -1,0 +1,28 @@
+<header class="c-header-wrapper">
+    <div class="header-inner">
+        <a class="aside-toggle-wrapper">
+            <span class="btn-aside-toggle"></span>
+        </a>
+        <div class="navbar-header">
+            <a href="#" class="c-header__name">INTERVIEWR</a>
+        </div>
+        <div class="acc-photo">
+            <ul class="navbar-btns">
+                <li class="navbar-btns__item">
+                    <a href="#" class="navbar-ico img-replace drop-profile">PROFILE</a>
+                </li>
+                <li class="navbar-btns__item"><a href="#" aria-label="Messages" class="navbar-ico img-replace tooltip-v">MESSAGES<i class="ico-controll icon-chat-empty"></i></a></li>
+                <li class="navbar-btns__item"><a href="#" aria-label="Actions" class="navbar-ico img-replace tooltip-v">ACTIONS<i class="ico-controll icon-bell"></i></a></li>
+                <li class="navbar-btns__item"><a ui-sref="app.fillprofile" aria-label="Settings" class="navbar-ico img-replace tooltip-v">SETTINGS<i class="ico-controll icon-cog"></i></a></li>
+                <li class="navbar-btns__item"><a href="javascript:void(0)" ng-click="vm.logout()" aria-label="Logout" class="navbar-ico img-replace tooltip-v">LOGOUT<i class="ico-controll icon-logout"></i></a></li>
+            </ul>
+            <a href="#" class="acc-photo-link">
+                <i class="icon-down-dir"></i>
+                <div class="header-userinfo">
+                    <p class="header-userinfo__name">{{vm.username}}</p>
+                </div>
+                <img src="images/default-user.png" class="acc-photo__img">
+            </a>
+        </div>
+    </div>
+</header>

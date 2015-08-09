@@ -1,19 +1,13 @@
-module.exports = function(FakeUserService, $location, $rootScope, FlashService) {
+module.exports = function(Auth) {
     var vm = this;
 
     vm.register = register;
 
     function register() {
-        vm.dataLoading = true;
-
-        FakeUserService.Create(vm.user).then(function(response) {
-            if(response.success) {
-                FlashService.Success('Registration successful', true);
-                $location.path('/login');
-            } else {
-                FlashService.Error(response.message);
-                vm.dataLoading = false;
-            }
+        Auth.signup({
+            username: vm.user.username,
+            email: vm.user.email,
+            password: vm.user.password
         });
     }
 };

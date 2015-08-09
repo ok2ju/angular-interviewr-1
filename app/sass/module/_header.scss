@@ -228,7 +228,7 @@ $header-border-bottom-color: rgba(137,137,137,0.3);
 .header-userinfo {
   float: left;
   text-align: right;
-  margin: 4px 10px 0 0;
+  margin-right: 10px;
 
   @media only screen and (max-width: 768px) {
     display: none;
@@ -238,7 +238,7 @@ $header-border-bottom-color: rgba(137,137,137,0.3);
 .header-userinfo__name {
   @include font-size(13px);
   color: $primary-font-color;
-  line-height: 13px;
+  line-height: 32px;
 }
 
 .header-userinfo__email {
