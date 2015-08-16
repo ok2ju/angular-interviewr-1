@@ -2,7 +2,7 @@
     <section class="int-section">
         <ul class="int-section__list">
             <li ng-repeat="item in vm.items" class="item" ng-class="{'active' : {{item.active}}}">
-                <a href="#">
+                <a ui-sref="{{item.state}}">
                     <i class="sidebar-ico {{item.icon}}"></i>
                     {{item.name}}
                 </a>

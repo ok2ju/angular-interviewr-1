@@ -9,7 +9,6 @@
     require('angular-messages');
     require('angular-strap');
     require('angular-strap-tpl');
-    require('ng-tags-input');
 
     angular
         .module('app', [
@@ -24,7 +23,9 @@
             'app.candidates',
             'app.sidebar',
             'app.header',
-            'app.fillprofile'
+            'app.fillprofile',
+            'app.regCompany',
+            'app.myCompanyProfile'
         ])
         .config(config);
 
@@ -35,8 +36,13 @@
     require('./sidebar');
     require('./header');
     require('./fill-profile');
+    require('./register-company');
+    require('./my-company-profile');
 
-    function config($stateProvider, $urlRouterProvider, $locationProvider) {
+    function config($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
         $locationProvider.html5Mode(true);
         $urlRouterProvider.otherwise('/login');
 
@@ -89,6 +95,18 @@
                 url: '/fillprofile',
                 templateUrl: 'js/fill-profile/fillProfile.html',
                 controller: 'FillprofileController',
+                controllerAs: 'vm'
+            })
+            .state('app.regCompany', {
+                url: '/regcompany',
+                templateUrl: 'js/register-company/register-company.html',
+                controller: 'RegCompanyController',
+                controllerAs: 'vm'
+            })
+            .state('app.myCompanyProfile', {
+                url: '/mycompany',
+                templateUrl: 'js/my-company-profile/my-company-profile.html',
+                controller: 'MyCompanyProfileController',
                 controllerAs: 'vm'
             });
     }

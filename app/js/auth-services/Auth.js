@@ -1,12 +1,12 @@
-module.exports = function($http, $location, $rootScope, $cookieStore, $alert) {
-  sessionStorage.setItem('currentUser', JSON.stringify($cookieStore.get('user')));
-  $cookieStore.remove('user');
+module.exports = function($http, $location, $cookies, $alert, $window) {
+  $window.sessionStorage.setItem('currentUser', JSON.stringify($cookies.get('user')));
+  $cookies.remove('user');
 
   return {
     login: function(user) {
-      return $http.post('/api/login', user).success(function(data) {
-        sessionStorage.setItem('currentUser', JSON.stringify(data));
-        $location.path('/candidates');
+      return $http.post('http://localhost:3000/api/login', user).success(function(data) {
+        $window.sessionStorage.setItem('currentUser', JSON.stringify(data));
+        $location.path('/fillprofile');
 
         $alert({
           title: 'Cheers!',
@@ -26,7 +26,7 @@ module.exports = function($http, $location, $rootScope, $cookieStore, $alert) {
         });
     },
     signup: function(user) {
-      return $http.post('/api/signup', user).success(function(data) {
+      return $http.post('http://localhost:3000/api/signup', user).success(function(data) {
         $location.path('/login');
 
         $alert({
@@ -47,9 +47,9 @@ module.exports = function($http, $location, $rootScope, $cookieStore, $alert) {
         });
     },
     logout: function() {
-      return $http.get('/api/logout').success(function() {
-        sessionStorage.setItem('currentUser', null);
-        $cookieStore.remove('user');
+      return $http.get('http://localhost:3000/api/logout').success(function() {
+        $window.sessionStorage.setItem('currentUser', null);
+        $cookies.remove('user');
         $location.path('/login');
 
         $alert({

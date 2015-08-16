@@ -1,7 +1,7 @@
-module.exports = function(Auth) {
+module.exports = function(Auth, $window) {
   var vm = this;
 
-  var user = sessionStorage.getItem('currentUser');
+  var user = $window.sessionStorage.getItem('currentUser');
   var actualUserObj = JSON.parse(user);
 
   vm.username = actualUserObj.username;

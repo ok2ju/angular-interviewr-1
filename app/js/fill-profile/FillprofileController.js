@@ -12,21 +12,6 @@ module.exports = function(FillprofileService) {
 
   vm.fillProfile = updateProfile;
 
-  vm.tags = [
-    { text: 'java' },
-    { text: 'javascript' },
-    { text: 'scala' },
-    { text: 'python' }
-  ];
-
-  vm.loadSkills = function($query) {
-    var skills = FillprofileService.getListOfSkills();
-    console.log(skills);
-    /*return skills.filter(function(skill) {
-      return skill.name.toLowerCase().indexOf($query.toLowerCase()) != -1;
-    });*/
-  };
-
   function updateProfile() {
     actualUserObj.name = vm.name;
     actualUserObj.surname = vm.surname;
