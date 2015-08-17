@@ -1,20 +1,28 @@
 module.exports = function($http, $location, $cookies, $alert, $window) {
-  $window.sessionStorage.setItem('currentUser', JSON.stringify($cookies.get('user')));
-  $cookies.remove('user');
+  /*$window.sessionStorage.setItem('currentUser', JSON.stringify($cookies.get('user')));*/
+  $window.sessionStorage.setItem('currentUser', $cookies.get('user'));
+  /*$cookies.remove('user');*/
 
   return {
     login: function(user) {
-      return $http.post('http://localhost:3000/api/login', user).success(function(data) {
-        $window.sessionStorage.setItem('currentUser', JSON.stringify(data));
-        $location.path('/fillprofile');
+      return $http({
+        method: 'POST',
+        url: 'http://localhost:3000/api/login',
+        withCredentials: true,
+        data: user
+      }).success(function(data) {
+          console.log(data);
+          console.log($cookies.get('user'));
+          $window.sessionStorage.setItem('currentUser', JSON.stringify(data));
+          $location.path('/fillprofile');
 
-        $alert({
-          title: 'Cheers!',
-          content: 'You have successfully logged in.',
-          placement: 'top-right',
-          type: 'success',
-          duration: 3
-        });
+          $alert({
+            title: 'Cheers!',
+            content: 'You have successfully logged in.',
+            placement: 'top-right',
+            type: 'success',
+            duration: 3
+          });
       }).error(function() {
           $alert({
             title: 'Error!',
