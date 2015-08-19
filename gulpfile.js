@@ -1,7 +1,4 @@
-'use strict';
-
 var browserify = require('browserify'),
-    connect = require('gulp-connect'),
     gulp = require('gulp'),
     ngAnnotate = require('gulp-ng-annotate'),
     source = require('vinyl-source-stream'),
@@ -10,10 +7,12 @@ var browserify = require('browserify'),
     del = require('del'),
     vinylPaths = require('vinyl-paths'),
     sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer');
+    autoprefixer = require('gulp-autoprefixer'),
+    browserSync = require('browser-sync').create(),
+    nodemon = require('gulp-nodemon');
 
-var liveReload = true;
 var SASS_FILES = 'app/sass/**/*.scss';
+var BROWSER_SYNC_RELOAD_DELAY = 500;
 
 gulp.task('sass', function() {
     return gulp.src(SASS_FILES)
@@ -34,8 +33,7 @@ gulp.task('browserify', function() {
   return browserify('app/js/app.js')
   .bundle()
   .pipe(source('app.js'))
-  .pipe(gulp.dest('app/dist'))
-  .pipe(connect.reload());
+  .pipe(gulp.dest('app/dist'));
 });
 
 gulp.task('ngmin', function() {
@@ -54,24 +52,52 @@ gulp.task('browserify-min', ['ngmin'], function() {
   .pipe(gulp.dest('app/dist'));
 });
 
-gulp.task('server', ['browserify'], function() {
-  connect.server({
-    root: 'app',
-    livereload: liveReload
-  });
-});
-
-gulp.task('watch', function() {
-  gulp.start('server');
-  gulp.watch(['app/js/**/*.js'], ['fast']);
-  gulp.watch(SASS_FILES, ['sass']);
-});
-
 gulp.task('fast', ['clean'], function() {
   gulp.start('browserify');
 });
 
 gulp.task('default', ['clean'], function() {
-  liveReload = false;
   gulp.start('browserify', 'browserify-min');
+});
+
+//------------------------
+
+gulp.task('js-watch', ['fast'], browserSync.reload);
+gulp.task('sass-watch', ['sass'], browserSync.reload);
+
+gulp.task('nodemon', function (cb) {
+  var called = false;
+
+  return nodemon({
+
+    // nodemon expressjs server
+    script: 'client.js',
+
+    // watch core server file(s) that require server restart on change
+    watch: ['app.js']
+  })
+  .on('start', function onStart() {
+    // ensure start only got called once
+    if(!called) { cb(); }
+    called = true;
+  })
+  .on('restart', function onRestart() {
+    // reload connected browsers after a slight delat
+    setTimeout(function reload() {
+      browserSync.reload({
+        stream: false
+      });
+    }, BROWSER_SYNC_RELOAD_DELAY);
+  });
+});
+
+gulp.task('serve', ['nodemon'], function() {
+  browserSync.init({
+    proxy: "http://localhost:8000",
+    port: 4000,
+  });
+
+  gulp.watch(['app/js/**/*.js'], ['js-watch']);
+  gulp.watch(SASS_FILES, ['sass-watch']);
+  gulp.watch(['app/**/*.html']).on('change', browserSync.reload);
 });
