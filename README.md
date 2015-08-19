@@ -1,4 +1,7 @@
 # Angular-interviewr-ui
+[![Dependency Status](https://david-dm.org/ok2ju/angular-interviewr-ui.svg)](https://david-dm.org/ok2ju/angular-interviewr-ui)
+[![devDependency Status](https://david-dm.org/ok2ju/angular-interviewr-ui/dev-status.svg)](https://david-dm.org/ok2ju/angular-interviewr-ui#info=devDependencies)
+
 AngularJS App of INTERVIEWR
 
 ## Prerequisites
