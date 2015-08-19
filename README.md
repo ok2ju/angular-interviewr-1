@@ -5,6 +5,16 @@ AngularJS App of INTERVIEWR
 
 Interviewr-ui is an [AngularJS](https://angularjs.org/) single page web application which runs on a [NodeJS](http://nodejs.org/) server using [ExpressJS](http://expressjs.com/).
 
+## Installation
+
+Clone repo:
+
+    git clone https://github.com/ok2ju/angular-interviewr-ui.git
+
+Then install npm dependencies by running following command:
+
+    npm install
+
 ## Development
 
 To start develop run following command in your terminal:
@@ -15,8 +25,8 @@ Visit your app at [http://localhost:4000](http://localhost:4000)
 
 ## Note
 
-ExpressJS server running at port:8000
-But BrowserSync proxying it at port:4000. NodeJS API allow to establish connection to http://localhost:4000. When development will be done, change CORS-enable part at Back-End API to allow establish connection on port:8000.
+ExpressJS server running at `port:8000`
+But BrowserSync proxying it at `port:4000`. NodeJS API allow to establish connection to [http://localhost:4000](http://localhost:4000). When development will be done, change CORS-enable part at Back-End API to allow establish connection on `port:8000` (IMPORTANT).
 
 ## License
 
