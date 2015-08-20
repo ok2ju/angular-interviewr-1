@@ -2,5 +2,5 @@
     'use strict';
 
     require('angular').module('app.auth', [])
-        .factory('Auth', require('./Auth'));
+        .factory('Auth', require('./auth.service'));
 })();

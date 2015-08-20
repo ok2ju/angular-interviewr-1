@@ -28,6 +28,60 @@ Visit your app at [http://localhost:4000](http://localhost:4000)
 ExpressJS server running at `port:8000`
 But BrowserSync proxying it at `port:4000`. NodeJS API allow to establish connection to [http://localhost:4000](http://localhost:4000). When development will be done, change CORS-enable part at Back-End API to allow establish connection on `port:8000` (IMPORTANT).
 
+## Code quality standards
+
+###### [Feature File Names]
+
+Use consistent names for all components following a pattern `feature.type.js`
+
+```javascript
+
+    // controllers
+    profile.controller.js
+
+    // services/factories
+    logger.service.js
+
+    // constants
+    constants.js
+
+    // module definition
+    profile.module.js
+
+    // routes
+    profile.routes.js
+
+    // configuration
+    profile.config.js
+
+    // directives
+    avenger-profile.directive.js
+    ```
+
+###### [Controller and Service Names]
+
+Use UpperCamelCase for controllers and services
+
+```javascript
+
+    // profile.controller.js
+    angular
+        .module
+        .controller('ProfileController', ProfileController);
+
+    function ProfileController() { }
+    ```
+
+```javascript
+
+    // profile.service.js
+    angular
+        .module
+        .factory('profileService', profileService);
+
+    function profileService() { }
+    ```
+
 ## License
 
 The MIT License (MIT)

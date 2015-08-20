@@ -2,6 +2,6 @@
   'use strict';
 
     require('angular').module('app.myCompanyProfile', [])
-        .controller('MyCompanyProfileController', require('./MyCompanyProfileController'))
-        .factory('MyCompanyProfileService', require('./MyCompanyProfileService'));
+        .controller('MyCompanyProfileController', require('./myCompanyProfile.controller'))
+        .factory('MyCompanyProfileService', require('./myCompanyProfile.service'));
 })();

@@ -2,5 +2,5 @@
     'use strict';
 
     require('angular').module('app.login', ['app.auth'])
-        .controller('LoginController', require('./LoginController'));
+        .controller('LoginController', require('./login.controller'));
 })();

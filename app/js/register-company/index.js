@@ -2,6 +2,6 @@
     'use strict';
 
     require('angular').module('app.regCompany', [])
-        .controller('RegCompanyController', require('./RegCompanyController'))
-        .factory('CompanyService', require('./CompanyService'));
+        .controller('RegCompanyController', require('./regCompany.controller'))
+        .factory('CompanyService', require('./company.service'));
 })();
