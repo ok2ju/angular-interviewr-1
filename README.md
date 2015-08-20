@@ -59,7 +59,7 @@ Use consistent names for all components following a pattern `feature.type.js`
 
     // directives
     avenger-profile.directive.js
-    ```
+```
 
 ###### [Controller and Service Names]
 
@@ -73,7 +73,7 @@ Use UpperCamelCase for controllers and services
         .controller('ProfileController', ProfileController);
 
     function ProfileController() { }
-    ```
+```
 
 ```javascript
 
@@ -83,7 +83,7 @@ Use UpperCamelCase for controllers and services
         .factory('profileService', profileService);
 
     function profileService() { }
-    ```
+```
 
 ## License
 
