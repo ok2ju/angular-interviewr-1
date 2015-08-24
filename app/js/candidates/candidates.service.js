@@ -1,5 +1,3 @@
-var _ = require('underscore');
-
 module.exports = function($http) {
 
     return $http.get('../api/candidates.json').success(function(data) {

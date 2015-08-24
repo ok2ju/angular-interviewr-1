@@ -6,6 +6,13 @@ module.exports = function(MyCompanyProfileService) {
 
   var company = MyCompanyProfileService.get({ id: actualUserObj.companies[0] }, function() {
     vm.company = company.name;
-    console.log(company);
   });
+
+  var allCompanies = MyCompanyProfileService.get();
+
+  vm.companies = allCompanies;
+
+  vm.test = function() {
+    console.log(actualUserObj.companies[0]);
+  };
 };

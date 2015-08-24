@@ -27,10 +27,13 @@ $submit-btn-color: #fff;
     background: none;
     color: rgba(255, 255, 255, .5);
     display: block;
-    /* margin-bottom: 20px; */
     padding: 10px 0;
     text-align: center;
     width: 100%;
+
+    &:focus {
+        border-bottom: solid 1px #969696
+    }
 
     &.has-success {
         border-bottom: 1px solid #539665;

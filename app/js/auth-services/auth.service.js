@@ -1,7 +1,5 @@
 module.exports = function($http, $location, $cookies, $alert, $window) {
-  /*$window.sessionStorage.setItem('currentUser', JSON.stringify($cookies.get('user')));*/
   $window.sessionStorage.setItem('currentUser', $cookies.get('user'));
-  /*$cookies.remove('user');*/
 
   return {
     login: function(user) {
@@ -11,8 +9,6 @@ module.exports = function($http, $location, $cookies, $alert, $window) {
         withCredentials: true,
         data: user
       }).success(function(data) {
-          console.log(data);
-          console.log($cookies.get('user'));
           $window.sessionStorage.setItem('currentUser', JSON.stringify(data));
           $location.path('/fillprofile');
 
@@ -67,6 +63,12 @@ module.exports = function($http, $location, $cookies, $alert, $window) {
           duration: 3
         });
       });
+    },
+    getAutentificatedUserId: function() {
+      var user = $window.sessionStorage.getItem('currentUser');
+      var userObject = JSON.parse(user);
+
+      return  userObject._id;
     }
   };
 };
