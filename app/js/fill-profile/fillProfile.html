@@ -2,55 +2,90 @@
   <h1 class="content-header__name">Account</h1>
 </header>
 <div class="form-content">
+  <h2 class="form-content__header">Change the language and basic account settings.</h2>
   <form name="fillForm" ng-submit="vm.fillProfile()" class="profile-form" novalidate>
-    <div class="form-group">
-      <div class="label-col">
-        <label for="up-name" class="form-group__label">First name</label>
+    <div class="form-row">
+      <div class="form-group">
+        <div class="label-column">
+          <label for="up-name" class="form-group__label">
+            <i class="sidebar-ico icon-videocam"></i>
+            FirstName
+          </label>
+        </div>
+        <div class="input-column">
+          <input ng-model="vm.name" type="text" name="name" class="form-group__input" id="up-name">
+        </div>    
       </div>
-      <div class="input-col">
-        <input ng-model="vm.name" type="text" name="name" class="form-group__input" id="up-name">
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="label-col">
-        <label for="up-surname" class="form-group__label">Second name</label>
-      </div>
-      <div class="input-col">
-        <input ng-model="vm.surname" type="text" name="surname" class="form-group__input" id="up-surname">
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="label-col">
-        <label for="up-email" class="form-group__label">Email</label>
-      </div>
-      <div class="input-col">
-        <input ng-model="vm.email" type="email" name="email" class="form-group__input" id="up-email">
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="label-col">
-        <label for="up-country" class="form-group__label">Country</label>
-      </div>
-      <div class="input-col">
-        <select ng-model="vm.country" name="country" class="form-group__select" id="country">
-          <option value="Belarus">Belarus</option>
-          <option value="Russia">Russia</option>
-          <option value="United States">United States</option>
-          <option value="Canada">Canada</option>
-          <option value="Ukraine">Ukraine</option>
-          <option value="UK">United Kindom</option>
-          <option value="France">France</option>
-        </select>
+      <div class="form-group">
+        <div class="label-column">
+          <label for="up-surname" class="form-group__label">
+            <i class="sidebar-ico icon-videocam"></i>
+            SecondName
+          </label>
+        </div>
+        <div class="input-column">
+          <input ng-model="vm.surname" type="text" name="surname" class="form-group__input" id="up-surname">
+        </div>    
       </div>
     </div>
-    <div class="form-group">
-      <div class="label-col">
-        <label for="up-photo" class="form-group__label">Photo</label>
+    <div class="form-row">
+      <div class="form-group">
+        <div class="label-column">
+          <label for="up-email" class="form-group__label">
+            <i class="sidebar-ico icon-videocam"></i>
+            Email
+          </label>
+        </div>
+        <div class="input-column">
+          <input ng-model="vm.email" type="email" name="email" class="form-group__input" id="up-email">
+        </div>    
       </div>
-      <div class="input-col">
-        <input type="file" id="up-photo">
+      <div class="form-group">
+        <div class="label-column">
+          <label for="up-country" class="form-group__label">
+            <i class="sidebar-ico icon-videocam"></i>
+            Country
+          </label>
+        </div>
+        <div class="input-column">
+          <select ng-model="vm.country" name="country" class="form-group__select" id="up-country">
+            <option value="Belarus">Belarus</option>
+            <option value="Russia">Russia</option>
+            <option value="United States">United States</option>
+            <option value="Canada">Canada</option>
+            <option value="Ukraine">Ukraine</option>
+            <option value="UK">United Kindom</option>
+            <option value="France">France</option>
+          </select>
+        </div>    
       </div>
     </div>
-    <button type="submit" class="form-group__submit-btn">Save</button>
+    <div class="form-row">
+      <div class="form-group">
+        <div class="label-column">
+          <label for="up-timezone" class="form-group__label">
+            <i class="sidebar-ico icon-videocam"></i>
+            TimeZone
+          </label>
+        </div>
+        <div class="input-column">
+          <input type="date" class="form-group__input" id="up-timezone">
+        </div> 
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <div class="label-column">
+          <label for="up-photo" class="form-group__label">
+            <i class="sidebar-ico icon-videocam"></i>
+            Photo
+          </label>
+        </div>
+        <div class="input-column">
+          <input type="file" name="upload" id="up-photo">
+        </div> 
+      </div>
+    </div>
+    <button type="submit" class="form-group__submit-btn">Update</button>
   </form>
 </div>

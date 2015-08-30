@@ -10,9 +10,10 @@ $sideblock-bg-color: #161616;
   color: #fff;
   overflow-y: hidden;
   position: fixed;
-  top: 60px;
+  top: 0;
   left: 0;
   display: none;
+  z-index: 5;
 
   @include respond-to('small') {
     width: percentage(3/12);
@@ -25,9 +26,19 @@ $sideblock-bg-color: #161616;
   }
 }
 
+.sideblock-header {
+  text-align: center;
+}
+
+.sideblock-header__text {
+  @include font-size(20px);
+  color: #fff;
+  font-weight: 300;
+  line-height: 60px;
+}
+
 .int-section {
   margin-bottom: 50px;
-  margin-top: 25px;
 }
 
 .int-section__header {
@@ -55,6 +66,15 @@ $sideblock-bg-color: #161616;
     /*&:before {
       background-color: #5cb85c;
     }*/
+
+    &:before {
+      content: '';
+      display: block;
+      box-shadow: inset 5px 0 0 #a2c093, inset 6px 0 0;
+      position: absolute;
+      width: 5px;
+      height: 100%;
+    }
 
     &:after {
       display: block;
@@ -90,12 +110,16 @@ $sideblock-bg-color: #161616;
     background: rgba(255, 255, 255, 0.05);
   }
 
+  &:first-child {
+    border-top: 1px solid rgba(255, 255, 255, .1);
+  }
+
   a {
     @include font-size(14px);
     color: #999;
     line-height: 40px;
     display: block;
-    padding: 0 15px;
+    padding: 0 25px;
   }
 
   .sidebar-ico {
@@ -107,3 +131,5 @@ $sideblock-bg-color: #161616;
   color: #6b6b6b;
   font-size: 10px;
 }
+
+

@@ -23,7 +23,7 @@
             'app.register',
             'app.candidates',
             'app.sidebar',
-            /*'app.header',*/
+            'app.header',
             'app.fillprofile',
             'app.regCompany',
             'app.myCompanyProfile'

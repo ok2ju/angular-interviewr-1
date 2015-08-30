@@ -1,14 +1,22 @@
-module.exports = function(Auth, $window) {
+module.exports = function($state, $alert, store, jwtHelper) {
   var vm = this;
 
-  var user = $window.sessionStorage.getItem('currentUser');
-  var actualUserObj = JSON.parse(user);
+  var jwt = store.get('jwt');
+  var decodedJwt = jwt && jwtHelper.decodeToken(jwt);
 
-  vm.username = actualUserObj.username;
+  vm.username = decodedJwt.username;
 
   vm.logout = logout;
 
   function logout() {
-    Auth.logout();
+    store.remove('jwt');
+    $state.go('intro.login');
+
+    $alert({
+      content: 'You have been logged out.',
+      placement: 'top-right',
+      type: 'info',
+      duration: 3
+    });
   }
 };

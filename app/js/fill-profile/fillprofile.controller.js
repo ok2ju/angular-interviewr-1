@@ -1,14 +1,14 @@
-module.exports = function(FillprofileService) {
+module.exports = function(FillprofileService, store, jwtHelper) {
   var vm = this;
 
-  var user = sessionStorage.getItem('currentUser');
-  var actualUserObj = JSON.parse(user);
+  var jwt = store.get('jwt');
+  var decodedJwt = jwt && jwtHelper.decodeToken(jwt);
 
-  vm.name = actualUserObj.name;
-  vm.surname = actualUserObj.surname;
-  vm.email = actualUserObj.email;
-  vm.username = actualUserObj.username;
-  vm.country = actualUserObj.country;
+  vm.name = decodedJwt.name;
+  vm.surname = decodedJwt.surname;
+  vm.email = decodedJwt.email;
+  vm.username = decodedJwt.username;
+  vm.country = decodedJwt.country;
 
   vm.fillProfile = updateProfile;
 

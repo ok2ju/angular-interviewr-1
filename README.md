@@ -1,6 +1,6 @@
 # Angular-interviewr-ui
-[![Dependency Status](https://david-dm.org/ok2ju/angular-interviewr-ui.svg)](https://david-dm.org/ok2ju/angular-interviewr-ui)
-[![devDependency Status](https://david-dm.org/ok2ju/angular-interviewr-ui/dev-status.svg)](https://david-dm.org/ok2ju/angular-interviewr-ui#info=devDependencies)
+[![Dependency Status](https://david-dm.org/ok2ju/angular-interviewr.svg)](https://david-dm.org/ok2ju/angular-interviewr)
+[![devDependency Status](https://david-dm.org/ok2ju/angular-interviewr/dev-status.svg)](https://david-dm.org/ok2ju/angular-interviewr#info=devDependencies)
 
 AngularJS App of INTERVIEWR
 
@@ -12,7 +12,7 @@ Interviewr-ui is an [AngularJS](https://angularjs.org/) single page web applicat
 
 Clone repo:
 
-    git clone https://github.com/ok2ju/angular-interviewr-ui.git
+    git clone https://github.com/ok2ju/angular-interviewr.git
 
 Then install npm dependencies by running following command:
 
@@ -22,7 +22,7 @@ Then install npm dependencies by running following command:
 
 To start develop run following command in your terminal:
 
-    cd angular-interviewr-ui && npm start
+    cd angular-interviewr && npm start
     
 Visit your app at [http://localhost:4000](http://localhost:4000)
 
