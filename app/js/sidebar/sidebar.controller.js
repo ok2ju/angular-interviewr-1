@@ -13,14 +13,14 @@ module.exports = function() {
             name: 'Candidates',
             url: '/candidates',
             active: true,
-            icon: 'icon-user',
+            icon: 'icon-users',
             state: 'app.test'
         },
         {
             name: 'Vacancies',
             url: '/vancancies',
             active: false,
-            icon: 'icon-doc',
+            icon: 'icon-newspaper',
             state: 'app.test'
         },
         {
@@ -34,14 +34,14 @@ module.exports = function() {
             name: 'Companies',
             url: '/companies',
             active: false,
-            icon: 'icon-globe',
+            icon: 'icon-building',
             state: 'app.test'
         },
         {
             name: 'My company',
             url: '/mycompany',
             active: false,
-            icon: 'icon-globe',
+            icon: 'icon-diamond',
             state: 'app.myCompanyProfile'
         }
     ];

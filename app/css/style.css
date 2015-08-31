@@ -968,7 +968,7 @@ textarea {
   white-space: nowrap;
   padding: 0 10px;
   display: block;
-  line-height: 18px; }
+  line-height: 20px; }
 
 .label-default {
   background-color: #777; }
@@ -1468,14 +1468,29 @@ textarea {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   width: 100%;
-  border: 1px solid #e8e8e8; }
+  border: 1px solid #e8e8e8;
+  padding-left: 35px;
+  position: relative; }
+  .form-group__label i {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 30px;
+    top: 0;
+    text-align: center;
+    line-height: 32px;
+    background-color: transparent; }
+    @media (min-width: 475px) {
+      .form-group__label i {
+        background-color: #DCDCDC; } }
   .form-group__label:focus {
     outline: none; }
   @media (min-width: 475px) {
     .form-group__label {
       border-left: 0;
       border-top-right-radius: 0;
-      border-bottom-left-radius: 3px; } }
+      border-bottom-left-radius: 3px;
+      padding-left: 45px; } }
 
 .form-group__input {
   border: 1px solid rgba(34, 36, 38, 0.15);

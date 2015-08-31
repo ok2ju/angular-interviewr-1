@@ -83,6 +83,23 @@
   border-bottom-left-radius: 0;
   width: 100%;
   border: 1px solid #e8e8e8;
+  padding-left: 35px;
+  position: relative;
+
+  i {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 30px;
+    top: 0;
+    text-align: center;
+    line-height: 32px;
+    background-color: transparent;
+
+    @media (min-width: 475px) {
+      background-color: #DCDCDC;
+    }
+  }
 
   &:focus {
     outline: none;
@@ -92,6 +109,7 @@
     border-left: 0;
     border-top-right-radius: 0;
     border-bottom-left-radius: 3px;
+    padding-left: 45px;
   }
 }
 
@@ -99,7 +117,7 @@
   border: 1px solid rgba(34,36,38,.15);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  border-top: 0; 
+  border-top: 0;
   padding: 7px 20px;
   color: #666;
   height: 34px;
