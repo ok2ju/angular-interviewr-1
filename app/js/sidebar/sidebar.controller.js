@@ -10,13 +10,6 @@ module.exports = function() {
             state: 'app.test'
         },
         {
-            name: 'Candidates',
-            url: '/candidates',
-            active: true,
-            icon: 'icon-users',
-            state: 'app.test'
-        },
-        {
             name: 'Vacancies',
             url: '/vancancies',
             active: false,
@@ -36,13 +29,30 @@ module.exports = function() {
             active: false,
             icon: 'icon-building',
             state: 'app.test'
-        },
-        {
-            name: 'My company',
-            url: '/mycompany',
-            active: false,
-            icon: 'icon-diamond',
-            state: 'app.myCompanyProfile'
         }
+    ];
+
+    vm.company = [
+      {
+        name: 'My Company',
+        url: '/mycompany',
+        active: false,
+        icon: 'icon-diamond',
+        state: 'app.myCompanyProfile'
+      },
+      {
+        name: 'Candidates',
+        url: '/candidates',
+        active: true,
+        icon: 'icon-users',
+        state: 'app.test'
+      },
+      {
+        name: 'Vacancy',
+        url: '/vacancy',
+        active: false,
+        icon: 'icon-newspaper',
+        state: 'app.test'
+      }
     ];
 };

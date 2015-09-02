@@ -40,18 +40,19 @@ $header-font-color: #fff;
 }
 
 .main-area {
-  padding: 30px 15px 0 15px;
+  /* padding: 30px 15px 0 15px; */
+  padding: 30px;
 
-  @media (min-width: 640px) {
+  /* @media (min-width: 640px) {
     padding-left: 80px;
     padding-right: 80px;
-  }
+  } */
 
   @include respond-to('small') {
     width: percentage(9/12);
     margin-left: 25%;
-    padding-left: 50px;
-    padding-right: 50px;
+    /* padding-left: 50px;
+    padding-right: 50px; */
   }
 
   @include respond-to('medium') {

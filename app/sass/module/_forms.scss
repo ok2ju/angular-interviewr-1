@@ -3,7 +3,7 @@
   background-color: #fff;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .22);
   border-radius: 4px;
-  padding: 35px 15px;
+  padding: 30px;
 }
 
 .form-content__header {
@@ -15,7 +15,7 @@
   float: left;
   width: 100%;
 
-  @media (min-width: 475px) {
+  @media (min-width: 580px) {
     width: 35%;
   }
 
@@ -36,7 +36,7 @@
   float: left;
   width: 100%;
 
-  @media (min-width: 475px) {
+  @media (min-width: 580px) {
     width: 65%;
   }
 
@@ -96,7 +96,7 @@
     line-height: 32px;
     background-color: transparent;
 
-    @media (min-width: 475px) {
+    @media (min-width: 580px) {
       background-color: #DCDCDC;
     }
   }
@@ -105,7 +105,7 @@
     outline: none;
   }
 
-  @media (min-width: 475px) {
+  @media (min-width: 580px) {
     border-left: 0;
     border-top-right-radius: 0;
     border-bottom-left-radius: 3px;
@@ -127,7 +127,7 @@
     border-color: #ccc;
   }
 
-  @media (min-width: 475px) {
+  @media (min-width: 580px) {
     border-left: 0;
     border-bottom-left-radius: 0;
     border-top-right-radius: 3px;
@@ -148,7 +148,7 @@
     outline: none;
   }
 
-  @media (min-width: 475px) {
+  @media (min-width: 580px) {
     border-left: 0;
     border-bottom-left-radius: 0;
     border-top-right-radius: 3px;

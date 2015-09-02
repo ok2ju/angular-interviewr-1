@@ -12,4 +12,15 @@
             </li>
         </ul>
     </section>
+    <section class="int-section">
+      <h2 class="int-section__header">Company</h2>
+      <ul class="int-section__list">
+        <li ng-repeat="citem in vm.company" class="item" ng-class="{'active' : {{citem.active}}}">
+          <a ui-sref="{{citem.state}}">
+            <i class="sidebar-ico {{citem.icon}}"></i>
+              {{citem.name}}
+          </a>
+        </li>
+      </ul>
+    </section>
 </aside>
