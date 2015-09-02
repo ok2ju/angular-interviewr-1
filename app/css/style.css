@@ -192,7 +192,7 @@ textarea {
 .pull-right {
   float: right; }
 
-.btn, .quick-view__info-link, .form-group__submit-btn, .landing-register-link, .user-button, .company-head__btn, .submit-wrapper .c-btn-submit {
+.btn, .quick-view__info-link, .form-row-group__submit-btn, .landing-register-link, .user-button, .company-head__btn, .submit-wrapper .c-btn-submit {
   font-size: 14px;
   font-size: 0.875rem;
   border-radius: 2px;
@@ -219,10 +219,10 @@ textarea {
 .raised-btn {
   box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); }
 
-.btn-primary, .form-group__submit-btn {
+.btn-primary, .form-row-group__submit-btn {
   background-color: #86ad73;
   color: #fff; }
-  .btn-primary:hover, .form-group__submit-btn:hover {
+  .btn-primary:hover, .form-row-group__submit-btn:hover {
     background-color: #a2c093; }
 
 .btn-danger {
@@ -1435,7 +1435,7 @@ textarea {
     content: '';
     display: table; }
 
-.form-group {
+.form-row-group {
   margin-bottom: 25px;
   float: left;
   min-height: 1px;
@@ -1444,7 +1444,7 @@ textarea {
   position: relative;
   width: 100%; }
   @media (min-width: 1050px) {
-    .form-group {
+    .form-row-group {
       float: left;
       min-height: 1px;
       padding-left: 15px;
@@ -1452,15 +1452,15 @@ textarea {
       position: relative;
       width: 50%; } }
 
-.form-group__label,
-.form-group__input,
-.form-group__select {
+.form-row-group__label,
+.form-row-group__input,
+.form-row-group__select {
   font-size: 13px;
   font-size: 0.8125rem;
   border-radius: 3px;
   display: block; }
 
-.form-group__label {
+.form-row-group__label {
   padding: 7px 20px;
   border: 0;
   background-color: #e8e8e8;
@@ -1471,7 +1471,7 @@ textarea {
   border: 1px solid #e8e8e8;
   padding-left: 35px;
   position: relative; }
-  .form-group__label i {
+  .form-row-group__label i {
     position: absolute;
     left: 0;
     height: 100%;
@@ -1481,18 +1481,18 @@ textarea {
     line-height: 32px;
     background-color: transparent; }
     @media (min-width: 475px) {
-      .form-group__label i {
+      .form-row-group__label i {
         background-color: #DCDCDC; } }
-  .form-group__label:focus {
+  .form-row-group__label:focus {
     outline: none; }
   @media (min-width: 475px) {
-    .form-group__label {
+    .form-row-group__label {
       border-left: 0;
       border-top-right-radius: 0;
       border-bottom-left-radius: 3px;
       padding-left: 45px; } }
 
-.form-group__input {
+.form-row-group__input {
   border: 1px solid rgba(34, 36, 38, 0.15);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -1501,27 +1501,27 @@ textarea {
   color: #666;
   height: 34px;
   width: 100%; }
-  .form-group__input:focus {
+  .form-row-group__input:focus {
     border-color: #ccc; }
   @media (min-width: 475px) {
-    .form-group__input {
+    .form-row-group__input {
       border-left: 0;
       border-bottom-left-radius: 0;
       border-top-right-radius: 3px;
       border-top: 1px solid rgba(34, 36, 38, 0.15);
       padding: 7px 10px; } }
 
-.form-group__select {
+.form-row-group__select {
   border: 1px solid rgba(34, 36, 38, 0.15);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   width: 100%;
   height: 34px;
   padding: 7px 20px; }
-  .form-group__select:focus {
+  .form-row-group__select:focus {
     outline: none; }
   @media (min-width: 475px) {
-    .form-group__select {
+    .form-row-group__select {
       border-left: 0;
       border-bottom-left-radius: 0;
       border-top-right-radius: 3px;
@@ -1529,7 +1529,7 @@ textarea {
       padding: 7px 10px;
       width: auto; } }
 
-.form-group__submit-btn {
+.form-row-group__submit-btn {
   border: 0;
   outline: 0;
   float: right;
@@ -1741,7 +1741,8 @@ tags-input .autocomplete .suggestion-item em {
   .auth-form-body p {
     position: relative; }
   .auth-form-body .form-group {
-    position: relative; }
+    position: relative;
+    margin-bottom: 20px; }
 
 .input-block {
   font-size: 11px;
