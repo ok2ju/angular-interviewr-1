@@ -4,8 +4,8 @@ module.exports = function() {
         scope: {
             info: '='
         },
-        templateUrl: 'js/sidebar/sidebar.html',
-        controller: 'SidebarController',
+        templateUrl: 'js/layout/header/header.html',
+        controller: 'HeaderController',
         controllerAs: 'vm',
         bindToController: true
     };
