@@ -11,7 +11,7 @@ module.exports = function(store, $http, $state, $alert) {
       data: vm.user
     }).then(function(response) {
       store.set('jwt', response.data.id_token);
-      $state.go('app.fillprofile');
+      $state.go('app.userSettings');
       $alert({
         title: 'Congratulations!',
         content: 'Your account has been created.',

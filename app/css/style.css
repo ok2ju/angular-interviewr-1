@@ -469,7 +469,10 @@ textarea {
   float: left;
   position: relative;
   top: 17px;
-  left: 65px; }
+  left: 60px; }
+  @media (min-width: 768px) {
+    .navbar-header {
+      left: 30px; } }
 
 .c-header__name {
   font-size: 20px;
@@ -487,10 +490,10 @@ textarea {
   white-space: nowrap;
   width: 60px;
   position: absolute;
-  display: none; }
-  @media only screen and (max-width: 768px) {
+  display: block; }
+  @media (min-width: 768px) {
     .aside-toggle-wrapper {
-      display: block; } }
+      display: none; } }
 
 .aside-toggle-wrapper.active .btn-aside-toggle {
   background-color: transparent; }
@@ -601,7 +604,7 @@ textarea {
 
 .acc-photo {
   position: absolute;
-  right: 15px; }
+  right: 30px; }
   .acc-photo:hover > .navbar-btns,
   .acc-photo:focus > .navbar-btns,
   .acc-photo:active > .navbar-btns {

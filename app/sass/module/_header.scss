@@ -36,7 +36,11 @@ $header-border-bottom-color: rgba(137,137,137,0.3);
   float: left;
   position: relative;
   top: 17px;
-  left: 65px;
+  left: 60px;
+
+  @include respond-to('small') {
+    left: 30px;
+  }
 }
 
 .c-header__name {
@@ -55,10 +59,10 @@ $header-border-bottom-color: rgba(137,137,137,0.3);
   white-space: nowrap;
   width: 60px;
   position: absolute;
-  display: none;
+  display: block;
 
-  @media only screen and (max-width: 768px) {
-    display: block;
+  @include respond-to('small') {
+    display: none;
   }
 }
 
@@ -184,7 +188,7 @@ $header-border-bottom-color: rgba(137,137,137,0.3);
 
 .acc-photo {
   position: absolute;
-  right: 15px;
+  right: 30px;
 
   &:hover > .navbar-btns,
   &:focus > .navbar-btns,

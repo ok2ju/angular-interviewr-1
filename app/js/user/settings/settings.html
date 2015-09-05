@@ -3,7 +3,7 @@
 </header>
 <div class="form-content">
   <h2 class="form-content__header">Change the language and basic account settings.</h2>
-  <form name="fillForm" ng-submit="vm.fillProfile()" class="profile-form" novalidate>
+  <form name="fillForm" ng-submit="vm.updateProfile()" class="profile-form" novalidate>
     <div class="form-row">
       <div class="form-row-group">
         <div class="label-column">
@@ -13,7 +13,7 @@
           </label>
         </div>
         <div class="input-column">
-          <input ng-model="vm.name" type="text" name="name" class="form-row-group__input" id="up-name">
+          <input ng-model="vm.user.name" type="text" name="name" class="form-row-group__input" id="up-name">
         </div>
       </div>
       <div class="form-row-group">
@@ -24,7 +24,7 @@
           </label>
         </div>
         <div class="input-column">
-          <input ng-model="vm.surname" type="text" name="surname" class="form-row-group__input" id="up-surname">
+          <input ng-model="vm.user.surname" type="text" name="surname" class="form-row-group__input" id="up-surname">
         </div>
       </div>
     </div>
@@ -37,7 +37,7 @@
           </label>
         </div>
         <div class="input-column">
-          <input ng-model="vm.email" type="email" name="email" class="form-row-group__input" id="up-email">
+          <input ng-model="vm.user.email" type="email" name="email" class="form-row-group__input" id="up-email">
         </div>
       </div>
       <div class="form-row-group">
@@ -48,7 +48,7 @@
           </label>
         </div>
         <div class="input-column">
-          <select ng-model="vm.country" name="country" class="form-row-group__select" id="up-country">
+          <select ng-model="vm.user.country" name="country" class="form-row-group__select" id="up-country">
             <option value="Belarus">Belarus</option>
             <option value="Russia">Russia</option>
             <option value="United States">United States</option>

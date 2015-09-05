@@ -27,7 +27,7 @@
             'app.login',
             'app.signup',
             'app.candidates',
-            'app.fillprofile',
+            'app.user.settings',
             'app.regCompany',
             'app.myCompanyProfile'
         ])
@@ -39,7 +39,7 @@
     require('./layout/header');
     require('./user/login');
     require('./user/signup');
-    require('./user/fill-profile');
+    require('./user/settings');
     require('./user/my-company-profile');
     require('./company/register-company');
     require('./vacancy/candidates');
