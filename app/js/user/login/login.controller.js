@@ -11,7 +11,7 @@ module.exports = function(store, $state, $http, $alert) {
       data: vm.user
     }).then(function(response) {
       store.set('jwt', response.data.id_token);
-      $state.go('app.fillprofile');
+      $state.go('app.userSettings');
       $alert({
         title: 'Cheers!',
         content: 'You have successfully logged in.',
