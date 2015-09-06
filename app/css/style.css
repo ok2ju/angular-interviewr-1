@@ -193,7 +193,7 @@ textarea {
 .pull-right {
   float: right; }
 
-.btn, .quick-view__info-link, .form-row-group__submit-btn, .landing-register-link, .user-button, .company-head__btn, .submit-wrapper .c-btn-submit {
+.btn, .quick-view__info-link, .form-row-group__submit-btn, .company-more-btn, .landing-register-link, .user-button, .company-head__btn, .submit-wrapper .c-btn-submit {
   font-size: 14px;
   font-size: 0.875rem;
   border-radius: 2px;
@@ -220,10 +220,10 @@ textarea {
 .raised-btn {
   box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); }
 
-.btn-primary, .form-row-group__submit-btn {
+.btn-primary, .form-row-group__submit-btn, .company-more-btn {
   background-color: #86ad73;
   color: #fff; }
-  .btn-primary:hover, .form-row-group__submit-btn:hover {
+  .btn-primary:hover, .form-row-group__submit-btn:hover, .company-more-btn:hover {
     background-color: #a2c093; }
 
 .btn-danger {
@@ -1746,6 +1746,72 @@ tags-input .autocomplete .suggestion-item.selected em {
 tags-input .autocomplete .suggestion-item em {
   color: #000;
   background-color: #fff; }
+
+.company-card {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px; }
+
+.company-card__image {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  display: block;
+  width: 150px; }
+  .company-card__image img {
+    display: block; }
+
+.company-card__body {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  display: block;
+  padding-left: 20px; }
+
+.company-card__header {
+  font-size: 18px;
+  font-size: 1.125rem;
+  color: rgba(0, 0, 0, 0.87); }
+
+.company-card__meta {
+  margin-bottom: 5px; }
+  .company-card__meta a {
+    font-size: 12px;
+    font-size: 0.75rem;
+    color: #999;
+    margin-right: 5px; }
+
+.company-card__description {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  color: rgba(0, 0, 0, 0.87); }
+
+.company-card__extra {
+  margin-top: 8px; }
+  .company-card__extra::after {
+    clear: both;
+    content: '';
+    display: table; }
+
+.company-owner img {
+  vertical-align: middle;
+  width: 28px; }
+
+.company-owner span {
+  font-size: 12px;
+  font-size: 0.75rem;
+  color: #999;
+  vertical-align: middle; }
+
+.company-more-btn {
+  float: right;
+  padding: 0.3em 0.57em;
+  cursor: pointer; }
 
 .pull-left {
   float: left; }

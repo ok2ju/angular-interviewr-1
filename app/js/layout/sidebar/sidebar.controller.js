@@ -28,7 +28,7 @@ module.exports = function() {
             url: '/companies',
             active: false,
             icon: 'icon-building',
-            state: 'app.test'
+            state: 'app.companies'
         }
     ];
 
