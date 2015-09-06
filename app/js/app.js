@@ -29,6 +29,7 @@
             'app.user.profile',
             'app.user.settings',
             'app.company.create',
+            'app.company.list',
             'app.vacancy.candidates',
             'app.myCompanyProfile'
         ])
@@ -44,6 +45,7 @@
     require('./user/settings');
     require('./user/my-company-profile');
     require('./company/create');
+    require('./company/list');
     require('./vacancy/candidates');
 
     function run($rootScope, $state, store, jwtHelper) {
