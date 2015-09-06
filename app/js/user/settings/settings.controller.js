@@ -1,4 +1,4 @@
-module.exports = function(UserSettingsService, store, jwtHelper, $alert, $state) {
+module.exports = function(UserSettingsService, store, jwtHelper, toastr, $state) {
   var vm = this;
 
   var jwt = store.get('jwt');
@@ -10,15 +10,8 @@ module.exports = function(UserSettingsService, store, jwtHelper, $alert, $state)
 
   function updateProfile() {
     vm.user.$update(function() {
-      $alert({
-        title: 'Updated!',
-        content: 'Your settings was successfully updated.',
-        placement: 'top-right',
-        type: 'success',
-        duration: 3
-      });
-
       $state.go($state.current, {}, { reload: true });
+      toastr.success('Your settings was successfully updated.', 'Yay!');
     });
   }
 };

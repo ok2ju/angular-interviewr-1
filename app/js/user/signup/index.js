@@ -5,7 +5,7 @@
     .module('app.signup', [
         'angular-storage',
         'ui.router',
-        'mgcrea.ngStrap.alert',
+        'toastr',
         'ngMessages'
     ])
     .config(require('./signup.config'))

@@ -7,3 +7,4 @@ node_modules
 app/ngmin
 app/dist
 .idea
+bower_components

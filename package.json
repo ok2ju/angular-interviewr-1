@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "angular": "^1.4.1",
-    "angular-cookies": "^1.4.3",
     "angular-messages": "^1.4.3",
     "angular-resource": "^1.4.3",
     "angular-storage": "0.0.13",
@@ -33,7 +32,6 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "browser": {
-    "angular-strap": "./app/js/third-party/angular-strap.min.js",
-    "angular-strap-tpl": "./app/js/third-party/angular-strap.tpl.min.js"
+    "angular-toastr": "./app/js/third-party/angular-toastr.tpls.min.js"
   }
 }
