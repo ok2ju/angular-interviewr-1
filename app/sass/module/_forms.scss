@@ -7,50 +7,9 @@
 }
 
 .form-content__header {
+  @include font-size(13px);
   font-weight: 400;
   margin-bottom: 15px;
-}
-
-.label-column {
-  float: left;
-  width: 100%;
-
-  @media (min-width: 580px) {
-    width: 35%;
-  }
-
-  @media (min-width: 1050px) {
-    width: 40%;
-  }
-
-  @media (min-width: 1330px) {
-    width: 30%;
-  }
-
-  @media (min-width: 1550px) {
-    width: 25%;
-  }
-}
-
-.input-column {
-  float: left;
-  width: 100%;
-
-  @media (min-width: 580px) {
-    width: 65%;
-  }
-
-  @media (min-width: 1050px) {
-    width: 60%;
-  }
-
-  @media (min-width: 1330px) {
-    width: 70%;
-  }
-
-  @media (min-width: 1550px) {
-    width: 75%;
-  }
 }
 
 .form-row {
@@ -60,6 +19,7 @@
 .form-row-group {
   margin-bottom: 25px;
   @include make-col(12);
+  display: table;
 
   @media (min-width: 1050px) {
     @include make-col(6);
@@ -75,16 +35,17 @@
 }
 
 .form-row-group__label {
+  display: block;
   padding: 7px 20px;
   border: 0;
   background-color: #e8e8e8;
   color: #666;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
-  width: 100%;
   border: 1px solid #e8e8e8;
   padding-left: 35px;
   position: relative;
+  width: 100%;
 
   i {
     position: absolute;
@@ -96,7 +57,7 @@
     line-height: 32px;
     background-color: transparent;
 
-    @media (min-width: 580px) {
+    @media (min-width: 500px) {
       background-color: #DCDCDC;
     }
   }
@@ -105,11 +66,14 @@
     outline: none;
   }
 
-  @media (min-width: 580px) {
+  @media (min-width: 500px) {
+    display: table-cell;
     border-left: 0;
     border-top-right-radius: 0;
     border-bottom-left-radius: 3px;
     padding-left: 45px;
+    width: 150px;
+    max-width: 150px;
   }
 }
 
@@ -122,12 +86,13 @@
   color: #666;
   height: 34px;
   width: 100%;
+  display: table-cell;
 
   &:focus {
-    border-color: #ccc;
+    border-color: #85b7d9;
   }
 
-  @media (min-width: 580px) {
+  @media (min-width: 500px) {
     border-left: 0;
     border-bottom-left-radius: 0;
     border-top-right-radius: 3px;
@@ -148,7 +113,7 @@
     outline: none;
   }
 
-  @media (min-width: 580px) {
+  @media (min-width: 500px) {
     border-left: 0;
     border-bottom-left-radius: 0;
     border-top-right-radius: 3px;

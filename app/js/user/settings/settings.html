@@ -6,71 +6,51 @@
   <form name="fillForm" ng-submit="vm.updateProfile()" class="profile-form" novalidate>
     <div class="form-row">
       <div class="form-row-group">
-        <div class="label-column">
-          <label for="up-name" class="form-row-group__label">
-            <i class="sidebar-ico icon-user"></i>
-            FirstName
-          </label>
-        </div>
-        <div class="input-column">
-          <input ng-model="vm.user.name" type="text" name="name" class="form-row-group__input" id="up-name">
-        </div>
+        <label for="up-name" class="form-row-group__label">
+          <i class="sidebar-ico icon-user"></i>
+          FirstName
+        </label>
+        <input ng-model="vm.user.name" type="text" name="name" class="form-row-group__input" id="up-name">
       </div>
       <div class="form-row-group">
-        <div class="label-column">
-          <label for="up-surname" class="form-row-group__label">
-            <i class="sidebar-ico icon-user"></i>
-            SecondName
-          </label>
-        </div>
-        <div class="input-column">
-          <input ng-model="vm.user.surname" type="text" name="surname" class="form-row-group__input" id="up-surname">
-        </div>
+        <label for="up-surname" class="form-row-group__label">
+          <i class="sidebar-ico icon-user"></i>
+          SecondName
+        </label>
+        <input ng-model="vm.user.surname" type="text" name="surname" class="form-row-group__input" id="up-surname">
       </div>
     </div>
     <div class="form-row">
       <div class="form-row-group">
-        <div class="label-column">
-          <label for="up-email" class="form-row-group__label">
-            <i class="sidebar-ico icon-mail"></i>
-            Email
-          </label>
-        </div>
-        <div class="input-column">
-          <input ng-model="vm.user.email" type="email" name="email" class="form-row-group__input" id="up-email">
-        </div>
+        <label for="up-email" class="form-row-group__label">
+          <i class="sidebar-ico icon-mail"></i>
+          Email
+        </label>
+        <input ng-model="vm.user.email" type="email" name="email" class="form-row-group__input" id="up-email">
       </div>
       <div class="form-row-group">
-        <div class="label-column">
-          <label for="up-country" class="form-row-group__label">
-            <i class="sidebar-ico icon-location"></i>
-            Country
-          </label>
-        </div>
-        <div class="input-column">
-          <select ng-model="vm.user.country" name="country" class="form-row-group__select" id="up-country">
-            <option value="Belarus">Belarus</option>
-            <option value="Russia">Russia</option>
-            <option value="United States">United States</option>
-            <option value="Canada">Canada</option>
-            <option value="Ukraine">Ukraine</option>
-            <option value="UK">United Kindom</option>
-            <option value="France">France</option>
-          </select>
-        </div>
+        <label for="up-country" class="form-row-group__label">
+          <i class="sidebar-ico icon-location"></i>
+          Country
+        </label>
+        <select ng-model="vm.user.country" name="country" class="form-row-group__select" id="up-country">
+          <option value="Belarus">Belarus</option>
+          <option value="Russia">Russia</option>
+          <option value="United States">United States</option>
+          <option value="Canada">Canada</option>
+          <option value="Ukraine">Ukraine</option>
+          <option value="UK">United Kindom</option>
+          <option value="France">France</option>
+        </select>
       </div>
     </div>
     <div class="form-row">
       <div class="form-row-group">
-        <div class="label-column">
-          <label for="up-timezone" class="form-row-group__label">
-            <i class="sidebar-ico icon-globe"></i>
-            TimeZone
-          </label>
-        </div>
-        <div class="input-column">
-          <input type="date" class="form-row-group__input" id="up-timezone">
-        </div>
+        <label for="up-timezone" class="form-row-group__label">
+          <i class="sidebar-ico icon-globe"></i>
+          TimeZone
+        </label>
+        <input type="date" class="form-row-group__input" id="up-timezone">
       </div>
       <div class="form-row-group">
         <tags-input ng-model="vm.user.skills" add-on-paste="true" placeholder="add skill">
@@ -80,15 +60,11 @@
     </div>
     <div class="form-row">
       <div class="form-row-group">
-        <div class="label-column">
-          <label for="up-photo" class="form-row-group__label">
-            <i class="sidebar-ico icon-camera"></i>
-            Photo
-          </label>
-        </div>
-        <div class="input-column">
-          <input type="file" name="upload" id="up-photo">
-        </div>
+        <label for="up-photo" class="form-row-group__label">
+          <i class="sidebar-ico icon-camera"></i>
+          Photo
+        </label>
+        <input type="file" name="upload" id="up-photo">
       </div>
     </div>
     <button type="submit" class="form-row-group__submit-btn">Update</button>
