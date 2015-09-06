@@ -2,7 +2,7 @@
   'use strict';
 
   require('angular')
-    .module('app.signup', [
+    .module('app.user.signup', [
         'angular-storage',
         'ui.router',
         'toastr',

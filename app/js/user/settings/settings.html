@@ -72,6 +72,11 @@
           <input type="date" class="form-row-group__input" id="up-timezone">
         </div>
       </div>
+      <div class="form-row-group">
+        <tags-input ng-model="vm.user.skills" add-on-paste="true" placeholder="add skill">
+          <auto-complete source="vm.loadTags($query)"></auto-complete>
+        </tags-input>
+      </div>
     </div>
     <div class="form-row">
       <div class="form-row-group">
