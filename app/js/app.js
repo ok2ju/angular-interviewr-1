@@ -6,8 +6,7 @@
     require('angular-ui-router');
     require('angular-resource');
     require('angular-messages');
-    require('angular-strap');
-    require('angular-strap-tpl');
+    require('angular-toastr');
     require('angular-jwt');
     require('angular-storage');
 
@@ -28,7 +27,7 @@
             'app.signup',
             'app.candidates',
             'app.user.settings',
-            'app.regCompany',
+            'app.company.create',
             'app.myCompanyProfile'
         ])
         .config(require('./app.config'))
@@ -41,7 +40,7 @@
     require('./user/signup');
     require('./user/settings');
     require('./user/my-company-profile');
-    require('./company/register-company');
+    require('./company/create');
     require('./vacancy/candidates');
 
     function run($rootScope, $state, store, jwtHelper) {

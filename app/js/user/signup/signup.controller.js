@@ -1,4 +1,4 @@
-module.exports = function(store, $http, $state, $alert) {
+module.exports = function(store, $http, $state, toastr) {
   var vm = this;
 
   vm.user = {};
@@ -12,21 +12,9 @@ module.exports = function(store, $http, $state, $alert) {
     }).then(function(response) {
       store.set('jwt', response.data.id_token);
       $state.go('app.userSettings');
-      $alert({
-        title: 'Congratulations!',
-        content: 'Your account has been created.',
-        placement: 'top-right',
-        type: 'success',
-        duration: 3
-      });
+      toastr.success('Your account has been created.', 'Congratulations!');
     }, function(error) {
-        $alert({
-          title: 'Error!',
-          content: response.data,
-          placement: 'top-right',
-          type: 'danger',
-          duration: 3
-        });
+        toastr.error('Something goes wrong.', 'Error!');
     });
   }
 };

@@ -1,4 +1,4 @@
-module.exports = function($state, $alert, store, jwtHelper) {
+module.exports = function($state, toastr, store, jwtHelper) {
   var vm = this;
 
   var jwt = store.get('jwt');
@@ -11,12 +11,6 @@ module.exports = function($state, $alert, store, jwtHelper) {
   function logout() {
     store.remove('jwt');
     $state.go('intro.login');
-
-    $alert({
-      content: 'You have been logged out.',
-      placement: 'top-right',
-      type: 'info',
-      duration: 3
-    });
+    toastr.info('You have been logged out.', 'Info!');
   }
 };

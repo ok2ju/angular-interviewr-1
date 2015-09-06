@@ -1,4 +1,4 @@
-module.exports = function(store, $state, $http, $alert) {
+module.exports = function(store, $state, $http, toastr) {
   var vm = this;
 
   vm.user = {};
@@ -12,21 +12,10 @@ module.exports = function(store, $state, $http, $alert) {
     }).then(function(response) {
       store.set('jwt', response.data.id_token);
       $state.go('app.userSettings');
-      $alert({
-        title: 'Cheers!',
-        content: 'You have successfully logged in.',
-        placement: 'top-right',
-        type: 'success',
-        duration: 3
-      });
+      toastr.success('You have successfully logged in.', 'Cheers!');
+
     }, function(error) {
-        $alert({
-          title: 'Error!',
-          content: 'Invalid username or password.',
-          placement: 'top-right',
-          type: 'danger',
-          duration: 3
-        });
+        toastr.error('Invalid username or password.', 'Error!');
     });
   }
 };

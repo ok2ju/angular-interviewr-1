@@ -1,4 +1,5 @@
-module.exports = function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, jwtInterceptorProvider) {
+module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
+                          $httpProvider, jwtInterceptorProvider, toastrConfig) {
   $httpProvider.defaults.useXDomain = true;
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
@@ -10,6 +11,18 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
   };
 
   $httpProvider.interceptors.push('jwtInterceptor');
+
+  // Toastr config
+  angular.extend(toastrConfig, {
+    autoDismiss: false,
+    containerId: 'toast-container',
+    maxOpened: 0,
+    newestOnTop: true,
+    positionClass: 'toast-bottom-right',
+    preventDuplicates: false,
+    preventOpenDuplicates: false,
+    target: 'body'
+  });
 
   $stateProvider
     .state('intro', {
