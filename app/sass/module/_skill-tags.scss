@@ -13,12 +13,17 @@ tags-input .host:active {
 }
 
 tags-input .tags {
-  padding: 1px;
+  padding: 4px 10px;
+  border-radius: 3px;
   overflow: hidden;
   word-wrap: break-word;
   cursor: text;
   border: 1px solid rgba(34,36,38,.15);
   height: 100%;
+
+  &:focus {
+    outline: none;
+  }
 }
 tags-input .tags.focused {
   outline: none;
@@ -62,6 +67,8 @@ tags-input .tags .input {
   padding-left: 5px;
   float: left;
   line-height: 20px;
+  min-width: 60px;
+  padding: 0 5px;
 }
 tags-input .tags .input.invalid-tag {
   color: #ff0000;
@@ -113,6 +120,8 @@ tags-input .autocomplete .suggestion-list {
   position: relative;
 }
 tags-input .autocomplete .suggestion-item {
+  @include font-size(14px);
+  color: rgba(0, 0, 0, .87);
   padding: 5px 10px;
   cursor: pointer;
   white-space: nowrap;
@@ -122,8 +131,8 @@ tags-input .autocomplete .suggestion-item {
   background-color: #fff;
 }
 tags-input .autocomplete .suggestion-item.selected {
-  color: #fff;
-  background-color: #0097cf;
+  color: #000;
+  background-color: rgba(0, 0, 0, .04);
 }
 tags-input .autocomplete .suggestion-item.selected em {
   color: #fff;

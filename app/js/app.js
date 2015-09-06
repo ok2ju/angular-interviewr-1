@@ -9,6 +9,7 @@
     require('angular-toastr');
     require('angular-jwt');
     require('angular-storage');
+    require('ng-tags-input');
 
     angular
         .module('app', [
@@ -20,14 +21,15 @@
             /* Layout areas */
             'app.header',
             'app.sidebar',
+            'app.landing',
 
             /* Feature areas */
-            'app.landing',
-            'app.login',
-            'app.signup',
-            'app.candidates',
+            'app.user.login',
+            'app.user.signup',
+            'app.user.profile',
             'app.user.settings',
             'app.company.create',
+            'app.vacancy.candidates',
             'app.myCompanyProfile'
         ])
         .config(require('./app.config'))
@@ -38,6 +40,7 @@
     require('./layout/header');
     require('./user/login');
     require('./user/signup');
+    require('./user/profile');
     require('./user/settings');
     require('./user/my-company-profile');
     require('./company/create');
