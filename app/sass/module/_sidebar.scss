@@ -28,17 +28,18 @@ $sideblock-bg-color: #161616;
 }
 
 .sideblock-header {
-  text-align: left;
   background-color: lighten($sideblock-bg-color, 3%);
   box-shadow: 0 1px 1px rgba(0, 0, 0, .06);
-  padding: 0 25px;
+  padding: 16px 25px;
 }
 
 .sideblock-header__text {
   @include font-size(20px);
   color: #fff;
   font-weight: 300;
-  line-height: 60px;
+  display: block;
+  width: 120px;
+  margin: 0 auto;
 }
 
 .int-section {
