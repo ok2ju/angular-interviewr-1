@@ -6,7 +6,7 @@ module.exports = function(store, $state, $http, toastr) {
 
   function login() {
     $http({
-      url: 'http://localhost:3000/api/login',
+      url: 'http://localhost:3000/api/v1/login',
       method: 'POST',
       data: vm.user
     }).then(function(response) {
