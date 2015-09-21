@@ -4,6 +4,9 @@ module.exports = function($stateProvider) {
       url: '/login',
       controller: 'LoginController',
       templateUrl: 'js/user/login/login.html',
-      controllerAs: 'vm'
+      controllerAs: 'vm',
+      data: {
+        pageTitle: 'Login'
+      }
     });
 };

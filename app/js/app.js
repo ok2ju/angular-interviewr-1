@@ -57,6 +57,13 @@
                 }
             }
         });
+
+        $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
+        if (angular.isDefined(toState.data.pageTitle)) {
+          $rootScope.pageTitle = toState.data.pageTitle + ' | interviewr';
+          $rootScope.pageName = toState.data.pageTitle;
+        }
+      });
     }
 
 })();

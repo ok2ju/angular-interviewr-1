@@ -6,7 +6,8 @@ module.exports = function($stateProvider) {
       controller: 'UserSettingsController',
       controllerAs: 'vm',
       data: {
-        requiresLogin: true
+        requiresLogin: true,
+        pageTitle: 'Settings'
       }
     });
 };
