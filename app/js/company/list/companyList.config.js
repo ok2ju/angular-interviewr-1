@@ -4,6 +4,9 @@ module.exports = function($stateProvider) {
       url: '/companies',
       templateUrl: 'js/company/list/companies-list.html',
       controller: 'CompanyListController',
-      controllerAs: 'vm'
+      controllerAs: 'vm',
+      data: {
+        pageTitle: 'Companies'
+      }
     });
 };

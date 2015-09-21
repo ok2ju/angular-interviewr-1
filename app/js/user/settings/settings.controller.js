@@ -1,4 +1,4 @@
-module.exports = function(UserSettingsService, store, jwtHelper, toastr, $state, $http) {
+module.exports = function(UserSettingsService, store, jwtHelper, toastr, $state, $http, $rootScope) {
   var vm = this;
 
   var jwt = store.get('jwt');

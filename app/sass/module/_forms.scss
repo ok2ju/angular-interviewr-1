@@ -131,3 +131,30 @@
   float: right;
   padding: 5px 10px;
 }
+
+.full-len-input {
+  width: 100%;
+  padding: 0 15px;
+  margin-bottom: 25px;
+}
+
+.full-len-input__label {
+  @extend .form-row-group__label;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.full-len-input__input {
+  @extend .form-row-group__input;
+  display: block;
+  width: 100%;
+  border-left: 1px solid rgba(34, 36, 38, .15);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

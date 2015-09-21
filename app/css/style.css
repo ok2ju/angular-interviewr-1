@@ -475,10 +475,11 @@ textarea {
       left: 30px; } }
 
 .c-header__name {
-  font-size: 20px;
-  font-size: 1.25rem;
-  color: rgba(0, 0, 0, 0.87);
-  font-weight: 300; }
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.35);
+  font-weight: 700;
+  text-transform: uppercase; }
 
 .aside-toggle-wrapper {
   color: transparent;
@@ -1520,14 +1521,16 @@ button.toast-close-button {
       width: 50%; } }
 
 .form-row-group__label,
+.full-len-input__label,
 .form-row-group__input,
+.full-len-input__input,
 .form-row-group__select {
   font-size: 13px;
   font-size: 0.8125rem;
   border-radius: 3px;
   display: block; }
 
-.form-row-group__label {
+.form-row-group__label, .full-len-input__label {
   display: block;
   padding: 7px 20px;
   border: 0;
@@ -1539,7 +1542,7 @@ button.toast-close-button {
   padding-left: 35px;
   position: relative;
   width: 100%; }
-  .form-row-group__label i {
+  .form-row-group__label i, .full-len-input__label i {
     position: absolute;
     left: 0;
     height: 100%;
@@ -1549,12 +1552,12 @@ button.toast-close-button {
     line-height: 32px;
     background-color: transparent; }
     @media (min-width: 500px) {
-      .form-row-group__label i {
+      .form-row-group__label i, .full-len-input__label i {
         background-color: #DCDCDC; } }
-  .form-row-group__label:focus {
+  .form-row-group__label:focus, .full-len-input__label:focus {
     outline: none; }
   @media (min-width: 500px) {
-    .form-row-group__label {
+    .form-row-group__label, .full-len-input__label {
       display: table-cell;
       border-left: 0;
       border-top-right-radius: 0;
@@ -1563,7 +1566,7 @@ button.toast-close-button {
       width: 150px;
       max-width: 150px; } }
 
-.form-row-group__input {
+.form-row-group__input, .full-len-input__input {
   border: 1px solid rgba(34, 36, 38, 0.15);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -1573,10 +1576,10 @@ button.toast-close-button {
   height: 34px;
   width: 100%;
   display: table-cell; }
-  .form-row-group__input:focus {
+  .form-row-group__input:focus, .full-len-input__input:focus {
     border-color: #85b7d9; }
   @media (min-width: 500px) {
-    .form-row-group__input {
+    .form-row-group__input, .full-len-input__input {
       border-left: 0;
       border-bottom-left-radius: 0;
       border-top-right-radius: 3px;
@@ -1607,6 +1610,28 @@ button.toast-close-button {
   float: right;
   padding: 5px 10px; }
 
+.full-len-input {
+  width: 100%;
+  padding: 0 15px;
+  margin-bottom: 25px; }
+
+.full-len-input__label {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0; }
+
+.full-len-input__input {
+  display: block;
+  width: 100%;
+  border-left: 1px solid rgba(34, 36, 38, 0.15);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; }
+
 tags-input {
   display: block; }
 
@@ -1621,7 +1646,7 @@ tags-input .host:active {
   outline: none; }
 
 tags-input .tags {
-  padding: 2px 10px;
+  padding: 2px;
   border-radius: 3px;
   overflow: hidden;
   word-wrap: break-word;

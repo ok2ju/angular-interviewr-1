@@ -4,6 +4,9 @@ module.exports = function($stateProvider) {
       url: '/signup',
       controller: 'SignupController',
       templateUrl: 'js/user/signup/signup.html',
-      controllerAs: 'vm'
+      controllerAs: 'vm',
+      data: {
+        pageTitle: 'SignUp'
+      }
     });
 };
