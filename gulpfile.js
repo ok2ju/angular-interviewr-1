@@ -60,11 +60,6 @@ gulp.task('default', ['clean'], function() {
   gulp.start('browserify', 'browserify-min');
 });
 
-//------------------------
-
-gulp.task('js-watch', ['fast'], browserSync.reload);
-gulp.task('sass-watch', ['sass'], browserSync.reload);
-
 gulp.task('nodemon', function (cb) {
   var called = false;
 
@@ -90,6 +85,9 @@ gulp.task('nodemon', function (cb) {
     }, BROWSER_SYNC_RELOAD_DELAY);
   });
 });
+
+gulp.task('js-watch', ['fast'], browserSync.reload);
+gulp.task('sass-watch', ['sass'], browserSync.reload);
 
 gulp.task('serve', ['nodemon'], function() {
   browserSync.init({

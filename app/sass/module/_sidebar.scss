@@ -12,11 +12,10 @@ $sideblock-bg-color: #161616;
   position: fixed;
   top: 0;
   left: 0;
-  display: none;
   z-index: 5;
   overflow-y: auto;
 
-  @include respond-to('small') {
+  /* @include respond-to('small') {
     width: percentage(3/12);
     display: block;
   }
@@ -24,13 +23,25 @@ $sideblock-bg-color: #161616;
   @include respond-to('medium') {
     width: percentage(2/12);
     display: block;
+  } */
+
+  width: 65px;
+
+  @include respond-to('medium') {
+    width: 230px;
+    display: block;
   }
 }
 
 .sideblock-header {
   background-color: lighten($sideblock-bg-color, 3%);
   box-shadow: 0 1px 1px rgba(0, 0, 0, .06);
-  padding: 16px 25px;
+  padding: 17px 15px;
+  height: 60px;
+
+  @include respond-to('medium') {
+    padding: 21px 25px;
+  }
 }
 
 .sideblock-header__text {
@@ -38,8 +49,27 @@ $sideblock-bg-color: #161616;
   color: #fff;
   font-weight: 300;
   display: block;
-  width: 120px;
-  margin: 0 auto;
+  width: 35px;
+
+  .big-logo {
+    display: none;
+
+    @include respond-to('medium') {
+      display: block;
+    }
+  }
+
+  .min-logo {
+    display: block;
+
+    @include respond-to('medium') {
+      display: none;
+    }
+  }
+
+  @include respond-to('medium') {
+    width: 120px;
+  }
 }
 
 .int-section {
@@ -51,6 +81,11 @@ $sideblock-bg-color: #161616;
   margin-bottom: 10px;
   padding: 0 25px;
   text-transform: uppercase;
+  display: none;
+
+  @include respond-to('medium') {
+    display: block;
+  }
 }
 
 .int-section__list {
@@ -74,6 +109,7 @@ $sideblock-bg-color: #161616;
       position: absolute;
       width: 3px;
       height: 100%;
+      top: 0;
     }
 
     &:after {
@@ -102,8 +138,12 @@ $sideblock-bg-color: #161616;
     @include font-size(14px);
     color: #999;
     line-height: 40px;
-    display: block;
+    display: inline;
     padding: 0 25px;
+
+    @include respond-to('medium') {
+      display: block;
+    }
   }
 
   .sidebar-ico {
@@ -116,4 +156,10 @@ $sideblock-bg-color: #161616;
   font-size: 10px;
 }
 
+.sidebar-item-text {
+  display: none;
 
+  @include respond-to('medium') {
+    display: inline-block;
+  }
+}

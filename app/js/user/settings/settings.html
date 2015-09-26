@@ -1,79 +1,93 @@
-<header class="content-header">
-  <h1 class="content-header__name">Account</h1>
-</header>
 <div class="form-content">
-  <h2 class="form-content__header">Change the language and basic account settings.</h2>
-  <form name="fillForm" ng-submit="vm.updateProfile()" class="profile-form" novalidate>
-    <div class="form-row">
-      <div class="form-row-group">
-        <label for="up-name" class="form-row-group__label">
-          <i class="sidebar-ico icon-user"></i>
-          FirstName
-        </label>
-        <input ng-model="vm.user.name" type="text" name="name" class="form-row-group__input" id="up-name">
+  <div class="s-content-head">
+    <h2 class="s-content-head__header">Change basic account settings.</h2>
+  </div>
+  <form name="fillForm" ng-submit="vm.updateProfile()" class="settings-form" novalidate>
+    <div class="settings-form__row">
+      <div class="form-fields">
+        <div class="form-row">
+          <div class="form-row-group">
+            <label for="up-name" class="form-row-group__label">
+              <i class="sidebar-ico icon-user"></i>
+              FirstName
+            </label>
+            <input ng-model="vm.user.name" type="text" name="name" class="form-row-group__input" id="up-name">
+          </div>
+          <div class="form-row-group">
+            <label for="up-surname" class="form-row-group__label">
+              <i class="sidebar-ico icon-user"></i>
+              SecondName
+            </label>
+            <input ng-model="vm.user.surname" type="text" name="surname" class="form-row-group__input" id="up-surname">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-row-group">
+            <label for="up-email" class="form-row-group__label">
+              <i class="sidebar-ico icon-mail"></i>
+              Email
+            </label>
+            <input ng-model="vm.user.email" type="email" name="email" class="form-row-group__input" id="up-email">
+          </div>
+          <div class="form-row-group">
+            <label for="up-country" class="form-row-group__label">
+              <i class="sidebar-ico icon-location"></i>
+              Country
+            </label>
+            <select ng-model="vm.user.country" name="country" class="form-row-group__select" id="up-country">
+              <option value="Belarus">Belarus</option>
+              <option value="Russia">Russia</option>
+              <option value="United States">United States</option>
+              <option value="Canada">Canada</option>
+              <option value="Ukraine">Ukraine</option>
+              <option value="UK">United Kindom</option>
+              <option value="France">France</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-row-group">
+            <label for="up-timezone" class="form-row-group__label">
+              <i class="sidebar-ico icon-globe"></i>
+              TimeZone
+            </label>
+            <input ng-model="vm.user.dob" type="date" class="form-row-group__input" id="up-timezone">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="full-len-input">
+            <tags-input ng-model="vm.user.skills" add-on-paste="true" placeholder="add skill">
+              <auto-complete source="vm.loadTags($query)"></auto-complete>
+            </tags-input>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="full-len-input">
+            <label for="up-about" class="full-len-input__label">
+              <i class="sidebar-ico icon-camera sidebar-ico-full"></i>
+              About
+            </label>
+            <textarea ng-model="vm.user.about" class="full-len-input__input" name="about" id="up-about"></textarea>
+          </div>
+        </div>
       </div>
-      <div class="form-row-group">
-        <label for="up-surname" class="form-row-group__label">
-          <i class="sidebar-ico icon-user"></i>
-          SecondName
-        </label>
-        <input ng-model="vm.user.surname" type="text" name="surname" class="form-row-group__input" id="up-surname">
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-row-group">
-        <label for="up-email" class="form-row-group__label">
-          <i class="sidebar-ico icon-mail"></i>
-          Email
-        </label>
-        <input ng-model="vm.user.email" type="email" name="email" class="form-row-group__input" id="up-email">
-      </div>
-      <div class="form-row-group">
-        <label for="up-country" class="form-row-group__label">
-          <i class="sidebar-ico icon-location"></i>
-          Country
-        </label>
-        <select ng-model="vm.user.country" name="country" class="form-row-group__select" id="up-country">
-          <option value="Belarus">Belarus</option>
-          <option value="Russia">Russia</option>
-          <option value="United States">United States</option>
-          <option value="Canada">Canada</option>
-          <option value="Ukraine">Ukraine</option>
-          <option value="UK">United Kindom</option>
-          <option value="France">France</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-row-group">
-        <label for="up-timezone" class="form-row-group__label">
-          <i class="sidebar-ico icon-globe"></i>
-          TimeZone
-        </label>
-        <input type="date" class="form-row-group__input" id="up-timezone">
-      </div>
-      <div class="form-row-group">
-        <tags-input ng-model="vm.user.skills" add-on-paste="true" placeholder="add skill">
-          <auto-complete source="vm.loadTags($query)"></auto-complete>
-        </tags-input>
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-row-group">
-        <label for="up-photo" class="form-row-group__label">
-          <i class="sidebar-ico icon-camera"></i>
-          Photo
-        </label>
-        <input type="file" name="upload" id="up-photo">
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="full-len-input">
-        <label for="up-about" class="full-len-input__label">
-          <i class="sidebar-ico icon-camera sidebar-ico-full"></i>
-          About
-        </label>
-        <textarea class="full-len-input__input" name="about" id="up-about"></textarea>
+      <div class="form-photo">
+        <div class="form-photo-inner">
+          <img src="images/user-default.png" alt="avatar">
+          <div class="form-photo-info">
+            <p>
+              You can upload an avatar here or change it.
+            </p>
+            <hr>
+            <a href="#" class="upload-btn">
+              <i class="sidebar-ico icon-camera sidebar-ico-full"></i>
+              <span>Choose file ...</span>
+            </a>
+            <span class="filename">File name ...</span>
+            <input type="file" name="upload" id="up-photo">
+            <p>The maximum file size allowed is 200KB.</p>
+          </div>
+        </div>
       </div>
     </div>
     <button type="submit" class="form-row-group__submit-btn">Update</button>

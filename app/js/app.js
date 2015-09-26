@@ -10,6 +10,7 @@
     require('angular-jwt');
     require('angular-storage');
     require('ng-tags-input');
+    require('angular-loading-bar');
 
     angular
         .module('app', [
@@ -17,6 +18,7 @@
             'ngResource',
             'angular-jwt',
             'angular-storage',
+            'angular-loading-bar',
 
             /* Layout areas */
             'app.header',

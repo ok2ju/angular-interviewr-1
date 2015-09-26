@@ -1,5 +1,6 @@
 module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
-                          $httpProvider, jwtInterceptorProvider, toastrConfig) {
+                          $httpProvider, jwtInterceptorProvider, toastrConfig,
+                          cfpLoadingBarProvider) {
   $httpProvider.defaults.useXDomain = true;
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
@@ -11,6 +12,9 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
   };
 
   $httpProvider.interceptors.push('jwtInterceptor');
+
+  // angular loading bar config
+  cfpLoadingBarProvider.includeSpinner = false;
 
   // Toastr config
   angular.extend(toastrConfig, {

@@ -412,13 +412,17 @@ $info-header-color: #878787;
 }
 
 .u-p-body {
-  @include make-col(10);
+  @include make-col(11);
   float: none;
   margin: 0 auto;
 }
 
 .u-p-body-sect {
   margin-top: 20px;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .22);
+  border-radius: 4px;
+  padding: 15px;
 }
 
 .u-p-body-sect__head {
@@ -448,6 +452,11 @@ $info-header-color: #878787;
 
     td {
       padding-bottom: 10px;
+
+      &:first-child {
+        text-transform: uppercase;
+        font-weight: 500;
+      }
     }
   }
 }
@@ -462,4 +471,9 @@ $info-header-color: #878787;
 
 .u-social-link {
   @include font-size(15px);
+  color: $primary-font-color;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
