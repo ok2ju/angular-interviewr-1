@@ -18,12 +18,18 @@ $header-border-bottom-color: rgba(137,137,137,0.3);
   z-index: 4;
   padding-left: 0;
 
-  @include respond-to('small') {
+  /* @include respond-to('small') {
     padding-left: 25%;
   }
 
   @include respond-to('medium') {
     padding-left: 16.66666667%;
+  } */
+
+  padding-left: 65px;
+
+  @include respond-to('medium') {
+    padding-left: 230px;
   }
 }
 
