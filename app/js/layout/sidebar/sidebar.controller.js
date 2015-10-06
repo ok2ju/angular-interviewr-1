@@ -38,7 +38,7 @@ module.exports = function() {
         url: '/mycompany',
         active: false,
         icon: 'icon-diamond',
-        state: 'app.myCompanyProfile'
+        state: 'app.createCompany'
       },
       {
         name: 'Candidates',

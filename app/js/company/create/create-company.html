@@ -1,4 +1,70 @@
-<form method="post" ng-submit="vm.registerCompany()">
-  <input ng-model="vm.companyName" name="companyName" type="text">
-  <button type="submit" class="register-button">POST</button>
-</form>
+<div class="form-content">
+  <div class="s-content-head">
+    <h2 class="s-content-head__header">Fill company profile fields</h2>
+  </div>
+  <form class="settings-form" method="post" ng-submit="vm.registerCompany()">
+
+    <div class="settings-form__row">
+      <div class="form-fields">
+
+        <div class="form-row">
+          <div class="form-row-group">
+            <label for="cp-name" class="form-row-group__label">
+              <i class="sidebar-ico icon-user"></i>
+              Name
+            </label>
+            <input ng-model="vm.company.name" type="text" name="companyName" class="form-row-group__input" id="cp-name">
+          </div>
+          <div class="form-row-group">
+            <label for="cp-location" class="form-row-group__label">
+              <i class="sidebar-ico icon-globe"></i>
+              Location
+            </label>
+            <input ng-model="vm.company.location" type="text" class="form-row-group__input" id="cp-location">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-row-group">
+            <label for="cp-category" class="form-row-group__label">
+              <i class="sidebar-ico icon-globe"></i>
+              Category
+            </label>
+            <input ng-model="vm.company.category" type="text" class="form-row-group__input" id="cp-category">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="full-len-input">
+            <label for="cp-about" class="full-len-input__label">
+              <i class="sidebar-ico icon-camera sidebar-ico-full"></i>
+              Description
+            </label>
+            <textarea ng-model="vm.company.description" class="full-len-input__input" name="description" id="cp-about"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-photo">
+        <div class="form-photo-inner">
+          <img src="images/user-default.png" alt="avatar">
+          <div class="form-photo-info">
+            <p>
+              You can upload an company avatar here or change it.
+            </p>
+            <hr>
+            <a href="#" class="upload-btn">
+              <i class="sidebar-ico icon-camera sidebar-ico-full"></i>
+              <span>Choose file ...</span>
+            </a>
+            <span class="filename">File name ...</span>
+            <input type="file" name="upload" id="up-photo">
+            <p>The maximum file size allowed is 200KB.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <button type="submit" class="form-row-group__submit-btn">Create</button>
+
+  </form>
+</div>

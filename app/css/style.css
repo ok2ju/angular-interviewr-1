@@ -963,7 +963,8 @@ textarea {
 
 .vacancies__item {
   display: inline-block;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  margin-right: 5px; }
 
 .vacancies-tag {
   font-size: 11px;

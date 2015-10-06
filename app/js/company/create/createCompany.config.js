@@ -4,6 +4,10 @@ module.exports = function($stateProvider) {
       url: '/company/create',
       templateUrl: 'js/company/create/create-company.html',
       controller: 'CreateCompanyController',
-      controllerAs: 'vm'
+      controllerAs: 'vm',
+      data: {
+        requiresLogin: true,
+        pageTitle: 'Create Company'
+      }
     });
 };

@@ -6,7 +6,7 @@
     </div>
     <div class="u-p-bg-content__info">
       <div class="title">
-        <h1 class="u-name">Billy Joe</h1>
+        <h1 class="u-name">{{vm.user.name}} {{vm.user.surname}}</h1>
         <a href="#" class="follow-btn">Follow</a>
         <p class="u-followers">6.5k Followers<em>•</em><a href="#">133 Following</a></p>
       </div>
@@ -22,23 +22,13 @@
     <h2 class="u-p-body-sect__head">Skills</h2>
     <div class="u-skills">
       <ul class="vacancies">
-        <li class="vacancies__item"><span class="vacancies-label label-success">JavaScript</span></li>
-        <li class="vacancies__item"><span class="vacancies-label label-success">NodeJS</span></li>
-        <li class="vacancies__item"><span class="vacancies-label label-success">Haskell</span></li>
-        <li class="vacancies__item"><span class="vacancies-label label-success">Clojure</span></li>
-        <li class="vacancies__item"><span class="vacancies-label label-success">AngularJS</span></li>
-        <li class="vacancies__item"><span class="vacancies-label label-success">ReactJS</span></li>
-        <li class="vacancies__item"><span class="vacancies-label label-success">Java</span></li>
-        <li class="vacancies__item"><span class="vacancies-label label-success">Python</span></li>
-        <li class="vacancies__item"><span class="vacancies-label label-success">EmberJS</span></li>
-        <li class="vacancies__item"><span class="vacancies-label label-success">MongoDB</span></li>
-        <li class="vacancies__item"><span class="vacancies-label label-success">d3js</span></li>
+        <li ng-repeat="skill in vm.user.skills" class="vacancies__item"><span class="vacancies-label label-success">{{skill.text}}</span></li>
       </ul>
     </div>
   </div>
   <div class="u-p-body-sect">
     <h2 class="u-p-body-sect__head">About</h2>
-    <p class="u-p-body-sect__text-about">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the ...</p>
+    <p class="u-p-body-sect__text-about">{{vm.user.about}}</p>
   </div>
   <div class="u-p-body-sect">
     <h2 class="u-p-body-sect__head">General</h2>
@@ -47,15 +37,15 @@
         <table>
           <tr>
             <td>First Name:</td>
-            <td>Billy</td>
+            <td>{{vm.user.name}}</td>
           </tr>
           <tr>
             <td>Last Name:</td>
-            <td>Joe</td>
+            <td>{{vm.user.surname}}</td>
           </tr>
           <tr>
             <td>Phone:</td>
-            <td>+375 29 5415657</td>
+            <td>{{vm.user.phone}}</td>
           </tr>
         </table>
       </div>
@@ -67,11 +57,11 @@
           </tr>
           <tr>
             <td>Country:</td>
-            <td>Belarus</td>
+            <td>{{vm.user.country}}</td>
           </tr>
           <tr>
             <td>Email:</td>
-            <td>bjoe@gmail.com</td>
+            <td>{{vm.user.email}}</td>
           </tr>
         </table>
       </div>
@@ -84,13 +74,13 @@
         <p class="u-social-wrap">
           <a href="#" class="u-social-link">
             <i class="sidebar-ico icon-twitter"></i>
-            <span>twitter.com/test</span>
+            <span>{{vm.user.social.twitter}}</span>
           </a>
         </p>
         <p class="u-social-wrap">
           <a href="#" class="u-social-link">
             <i class="sidebar-ico icon-facebook"></i>
-            <span>facebook.com/test</span>
+            <span>{{vm.user.social.facebook}}</span>
           </a>
         </p>
       </div>
@@ -98,13 +88,13 @@
         <p class="u-social-wrap">
           <a href="#" class="u-social-link">
             <i class="sidebar-ico icon-linkedin"></i>
-            <span>linkedin.com/test</span>
+            <span>{{vm.user.social.linkedin}}</span>
           </a>
         </p>
         <p class="u-social-wrap">
           <a href="#" class="u-social-link">
             <i class="sidebar-ico icon-github-circled"></i>
-            <span>github.com/test</span>
+            <span>{{vm.user.social.github}}</span>
           </a>
         </p>
       </div>

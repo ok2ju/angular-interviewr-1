@@ -14,26 +14,25 @@
 
     angular
         .module('app', [
-            'ui.router',
-            'ngResource',
-            'angular-jwt',
-            'angular-storage',
-            'angular-loading-bar',
+          'ui.router',
+          'ngResource',
+          'angular-jwt',
+          'angular-storage',
+          'angular-loading-bar',
 
-            /* Layout areas */
-            'app.header',
-            'app.sidebar',
-            'app.landing',
+          /* Layout areas */
+          'app.header',
+          'app.sidebar',
+          'app.landing',
 
-            /* Feature areas */
-            'app.user.login',
-            'app.user.signup',
-            'app.user.profile',
-            'app.user.settings',
-            'app.company.create',
-            'app.company.list',
-            'app.vacancy.candidates',
-            'app.myCompanyProfile'
+          /* Feature areas */
+          'app.user.login',
+          'app.user.signup',
+          'app.user.profile',
+          'app.user.settings',
+          'app.company.create',
+          'app.company.list',
+          'app.vacancy.candidates'
         ])
         .config(require('./app.config'))
         .run(run);
@@ -45,7 +44,6 @@
     require('./user/signup');
     require('./user/profile');
     require('./user/settings');
-    require('./user/my-company-profile');
     require('./company/create');
     require('./company/list');
     require('./vacancy/candidates');

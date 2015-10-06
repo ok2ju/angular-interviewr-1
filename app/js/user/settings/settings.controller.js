@@ -4,12 +4,16 @@ module.exports = function(UserSettingsService, store, jwtHelper, toastr, $state,
   var jwt = store.get('jwt');
   var decodedJwt = jwt && jwtHelper.decodeToken(jwt);
 
-  vm.user = UserSettingsService.get({ id: decodedJwt._id });
+  UserSettingsService.get({ id: decodedJwt._id }, function(data) {
+    vm.user = data;
+    vm.user.social = vm.user.social || {};
+  });
 
   vm.updateProfile = updateProfile;
   vm.loadTags = loadTags;
 
   function updateProfile() {
+    console.log(vm.user.social);
     vm.user.$update(function() {
       $state.go($state.current, {}, { reload: true });
       toastr.success('Your settings was successfully updated.', 'Yay!');
