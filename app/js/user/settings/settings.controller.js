@@ -1,4 +1,5 @@
-module.exports = function(UserSettingsService, store, jwtHelper, toastr, $state, $http, $rootScope) {
+module.exports = function(UserSettingsService, store, jwtHelper,
+                      toastr, $state, $http, $rootScope, $uibModal) {
   var vm = this;
 
   var jwt = store.get('jwt');
@@ -23,4 +24,34 @@ module.exports = function(UserSettingsService, store, jwtHelper, toastr, $state,
   function loadTags(query) {
     return $http.get('./api/tags.json');
   }
+
+  // modal window
+
+  vm.animationsEnabled = true;
+
+  vm.open = function (size) {
+
+    var modalInstance = $uibModal.open({
+      animation: vm.animationsEnabled,
+      templateUrl: 'js/user/settings/modal.html',
+      controller: 'ModalInstanceController',
+      controllerAs: 'vm',
+      size: size,
+      resolve: {
+        /*items: function () {
+          return $scope.items;
+        }*/
+      }
+    });
+
+    modalInstance.result.then(function (selectedItem) {
+      vm.selected = selectedItem;
+    }, function () {
+      console.log('Modal dismissed at: ' + new Date());
+    });
+  };
+
+  vm.toggleAnimation = function () {
+    vm.animationsEnabled = !vm.animationsEnabled;
+  };
 };

@@ -11,6 +11,8 @@
     require('angular-storage');
     require('ng-tags-input');
     require('angular-loading-bar');
+    require('cropper');
+    require('angular-modal');
 
     angular
         .module('app', [
