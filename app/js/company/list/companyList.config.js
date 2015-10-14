@@ -6,6 +6,7 @@ module.exports = function($stateProvider) {
       controller: 'CompanyListController',
       controllerAs: 'vm',
       data: {
+        requiresLogin: true,
         pageTitle: 'Companies'
       }
     });

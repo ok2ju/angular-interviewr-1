@@ -53,6 +53,54 @@
             </label>
             <input ng-model="vm.user.dob" type="date" class="form-row-group__input" id="up-timezone">
           </div>
+          <div class="form-row-group">
+            <label for="up-phone" class="form-row-group__label">
+              <i class="sidebar-ico icon-globe"></i>
+              Phone
+            </label>
+            <input ng-model="vm.user.phone" type="text" class="form-row-group__input" id="up-phone">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-row-group">
+            <label for="up-social-twitter" class="form-row-group__label">
+              <i class="sidebar-ico icon-globe"></i>
+              Twitter
+            </label>
+            <input ng-model="vm.user.social.twitter" type="text" class="form-row-group__input" id="up-social-twitter">
+          </div>
+          <div class="form-row-group">
+            <label for="up-social-facebook" class="form-row-group__label">
+              <i class="sidebar-ico icon-globe"></i>
+              Facebook
+            </label>
+            <input ng-model="vm.user.social.facebook" type="text" class="form-row-group__input" id="up-social-facebook">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-row-group">
+            <label for="up-social-github" class="form-row-group__label">
+              <i class="sidebar-ico icon-globe"></i>
+              GitHub
+            </label>
+            <input ng-model="vm.user.social.github" type="text" class="form-row-group__input" id="up-social-github">
+          </div>
+          <div class="form-row-group">
+            <label for="up-social-linkedin" class="form-row-group__label">
+              <i class="sidebar-ico icon-globe"></i>
+              LinkedIn
+            </label>
+            <input ng-model="vm.user.social.linkedin" type="text" class="form-row-group__input" id="up-social-linkedin">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-row-group">
+            <label for="up-dob" class="form-row-group__label">
+              <i class="sidebar-ico icon-globe"></i>
+              DoB
+            </label>
+            <input ng-model="vm.user.dob" type="date" class="form-row-group__input" id="up-dob">
+          </div>
         </div>
         <div class="form-row">
           <div class="full-len-input">
@@ -79,11 +127,10 @@
               You can upload an avatar here or change it.
             </p>
             <hr>
-            <a href="#" class="upload-btn">
+            <a href="#" class="upload-btn" ng-click="vm.open()">
               <i class="sidebar-ico icon-camera sidebar-ico-full"></i>
               <span>Choose file ...</span>
             </a>
-            <span class="filename">File name ...</span>
             <input type="file" name="upload" id="up-photo">
             <p>The maximum file size allowed is 200KB.</p>
           </div>

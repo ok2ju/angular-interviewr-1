@@ -192,7 +192,7 @@ textarea {
 .pull-right {
   float: right; }
 
-.btn, .quick-view__info-link, .form-row-group__submit-btn, .company-more-btn, .landing-register-link, .user-button, .follow-btn, .company-head__btn, .submit-wrapper .c-btn-submit {
+.btn, .form-row-group__submit-btn, .company-more-btn, .landing-register-link, .user-button, .follow-btn, .company-head__btn, .submit-wrapper .c-btn-submit {
   font-size: 14px;
   font-size: 0.875rem;
   border-radius: 2px;
@@ -255,11 +255,11 @@ textarea {
   .btn-success:hover {
     background-color: #54d98c; }
 
-.btn-info, .quick-view__info-link, .landing-register-link, .login-button, .register-button, .user-button, .company-head__btn, .submit-wrapper .c-btn-submit {
+.btn-info, .landing-register-link, .login-button, .register-button, .user-button, .company-head__btn, .submit-wrapper .c-btn-submit {
   background: linear-gradient(135deg, #03aaf4 50%, #2989d8 50%, #04aef5 50%);
   background: linear-gradient(135deg, #0c6b95 50%, #207cca 50%, #2989d8 50%, #0e6f98 50%);
   color: #fff; }
-  .btn-info:hover, .quick-view__info-link:hover, .landing-register-link:hover, .login-button:hover, .register-button:hover, .user-button:hover, .company-head__btn:hover, .submit-wrapper .c-btn-submit:hover {
+  .btn-info:hover, .landing-register-link:hover, .login-button:hover, .register-button:hover, .user-button:hover, .company-head__btn:hover, .submit-wrapper .c-btn-submit:hover {
     background-color: #5faee3; }
 
 .pull-left {
@@ -798,123 +798,129 @@ textarea {
   height: 100%;
   background-color: #f9fafb; }
 
-.pull-left {
-  float: left; }
-
-.pull-right {
-  float: right; }
+.modal-open {
+  overflow: hidden; }
 
 .modal {
   position: fixed;
-  left: 0;
   top: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(55, 55, 55, 0.9);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s 0s, visibility 0s 0.3s; }
-  .modal.is-visible {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.3s 0s, visibility 0s 0s;
-    z-index: 999; }
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0; }
+
+.modal.fade .modal-dialog {
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  -webkit-transform: translate(0, -25%);
+  -ms-transform: translate(0, -25%);
+  transform: translate(0, -25%); }
+
+.modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0); }
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto; }
+
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px; }
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  outline: 0;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5); }
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000; }
+
+.modal-backdrop.fade {
+  filter: alpha(opacity=0);
+  opacity: 0; }
+
+.modal-backdrop.in {
+  filter: alpha(opacity=50);
+  opacity: .5; }
 
 .modal-header {
-  padding: 1em;
-  font-size: 16px;
-  font-weight: 300;
-  text-align: center;
-  background-color: #cfd9db; }
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5; }
 
-.modal-container {
+.modal-header .close {
+  margin-top: -2px; }
+
+.modal-title {
+  margin: 0;
+  line-height: 1.42857143; }
+
+.modal-body {
   position: relative;
-  width: 90%;
-  max-width: 400px;
-  margin: 4em auto;
-  background: #FFF;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  -webkit-transform: translateY(-40px);
-  -ms-transform: translateY(-40px);
-  transform: translateY(-40px);
-  transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-duration: 0.3s;
-  margin-top: 200px; }
+  padding: 15px; }
 
-.set-date-form {
-  padding-top: 0;
-  padding: 2em; }
+.modal-footer {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5; }
 
-.modal-close-btn {
+.modal-footer .btn + .btn, .modal-footer .form-row-group__submit-btn + .btn, .modal-footer .company-more-btn + .btn, .modal-footer .landing-register-link + .btn, .modal-footer .user-button + .btn, .modal-footer .follow-btn + .btn, .modal-footer .company-head__btn + .btn, .modal-footer .submit-wrapper .c-btn-submit + .btn, .submit-wrapper .modal-footer .c-btn-submit + .btn, .modal-footer .btn + .form-row-group__submit-btn, .modal-footer .form-row-group__submit-btn + .form-row-group__submit-btn, .modal-footer .company-more-btn + .form-row-group__submit-btn, .modal-footer .landing-register-link + .form-row-group__submit-btn, .modal-footer .user-button + .form-row-group__submit-btn, .modal-footer .follow-btn + .form-row-group__submit-btn, .modal-footer .company-head__btn + .form-row-group__submit-btn, .modal-footer .submit-wrapper .c-btn-submit + .form-row-group__submit-btn, .submit-wrapper .modal-footer .c-btn-submit + .form-row-group__submit-btn, .modal-footer .btn + .company-more-btn, .modal-footer .form-row-group__submit-btn + .company-more-btn, .modal-footer .company-more-btn + .company-more-btn, .modal-footer .landing-register-link + .company-more-btn, .modal-footer .user-button + .company-more-btn, .modal-footer .follow-btn + .company-more-btn, .modal-footer .company-head__btn + .company-more-btn, .modal-footer .submit-wrapper .c-btn-submit + .company-more-btn, .submit-wrapper .modal-footer .c-btn-submit + .company-more-btn, .modal-footer .btn + .landing-register-link, .modal-footer .form-row-group__submit-btn + .landing-register-link, .modal-footer .company-more-btn + .landing-register-link, .modal-footer .landing-register-link + .landing-register-link, .modal-footer .user-button + .landing-register-link, .modal-footer .follow-btn + .landing-register-link, .modal-footer .company-head__btn + .landing-register-link, .modal-footer .submit-wrapper .c-btn-submit + .landing-register-link, .submit-wrapper .modal-footer .c-btn-submit + .landing-register-link, .modal-footer .btn + .user-button, .modal-footer .form-row-group__submit-btn + .user-button, .modal-footer .company-more-btn + .user-button, .modal-footer .landing-register-link + .user-button, .modal-footer .user-button + .user-button, .modal-footer .follow-btn + .user-button, .modal-footer .company-head__btn + .user-button, .modal-footer .submit-wrapper .c-btn-submit + .user-button, .submit-wrapper .modal-footer .c-btn-submit + .user-button, .modal-footer .btn + .follow-btn, .modal-footer .form-row-group__submit-btn + .follow-btn, .modal-footer .company-more-btn + .follow-btn, .modal-footer .landing-register-link + .follow-btn, .modal-footer .user-button + .follow-btn, .modal-footer .follow-btn + .follow-btn, .modal-footer .company-head__btn + .follow-btn, .modal-footer .submit-wrapper .c-btn-submit + .follow-btn, .submit-wrapper .modal-footer .c-btn-submit + .follow-btn, .modal-footer .btn + .company-head__btn, .modal-footer .form-row-group__submit-btn + .company-head__btn, .modal-footer .company-more-btn + .company-head__btn, .modal-footer .landing-register-link + .company-head__btn, .modal-footer .user-button + .company-head__btn, .modal-footer .follow-btn + .company-head__btn, .modal-footer .company-head__btn + .company-head__btn, .modal-footer .submit-wrapper .c-btn-submit + .company-head__btn, .submit-wrapper .modal-footer .c-btn-submit + .company-head__btn, .modal-footer .submit-wrapper .btn + .c-btn-submit, .submit-wrapper .modal-footer .btn + .c-btn-submit, .modal-footer .submit-wrapper .form-row-group__submit-btn + .c-btn-submit, .submit-wrapper .modal-footer .form-row-group__submit-btn + .c-btn-submit, .modal-footer .submit-wrapper .company-more-btn + .c-btn-submit, .submit-wrapper .modal-footer .company-more-btn + .c-btn-submit, .modal-footer .submit-wrapper .landing-register-link + .c-btn-submit, .submit-wrapper .modal-footer .landing-register-link + .c-btn-submit, .modal-footer .submit-wrapper .user-button + .c-btn-submit, .submit-wrapper .modal-footer .user-button + .c-btn-submit, .modal-footer .submit-wrapper .follow-btn + .c-btn-submit, .submit-wrapper .modal-footer .follow-btn + .c-btn-submit, .modal-footer .submit-wrapper .company-head__btn + .c-btn-submit, .submit-wrapper .modal-footer .company-head__btn + .c-btn-submit, .modal-footer .submit-wrapper .c-btn-submit + .c-btn-submit, .submit-wrapper .modal-footer .c-btn-submit + .c-btn-submit {
+  margin-bottom: 0;
+  margin-left: 5px; }
+
+.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .form-row-group__submit-btn + .btn, .modal-footer .btn-group .company-more-btn + .btn, .modal-footer .btn-group .landing-register-link + .btn, .modal-footer .btn-group .user-button + .btn, .modal-footer .btn-group .follow-btn + .btn, .modal-footer .btn-group .company-head__btn + .btn, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .btn, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .btn, .modal-footer .btn-group .btn + .form-row-group__submit-btn, .modal-footer .btn-group .form-row-group__submit-btn + .form-row-group__submit-btn, .modal-footer .btn-group .company-more-btn + .form-row-group__submit-btn, .modal-footer .btn-group .landing-register-link + .form-row-group__submit-btn, .modal-footer .btn-group .user-button + .form-row-group__submit-btn, .modal-footer .btn-group .follow-btn + .form-row-group__submit-btn, .modal-footer .btn-group .company-head__btn + .form-row-group__submit-btn, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .form-row-group__submit-btn, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .form-row-group__submit-btn, .modal-footer .btn-group .btn + .company-more-btn, .modal-footer .btn-group .form-row-group__submit-btn + .company-more-btn, .modal-footer .btn-group .company-more-btn + .company-more-btn, .modal-footer .btn-group .landing-register-link + .company-more-btn, .modal-footer .btn-group .user-button + .company-more-btn, .modal-footer .btn-group .follow-btn + .company-more-btn, .modal-footer .btn-group .company-head__btn + .company-more-btn, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .company-more-btn, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .company-more-btn, .modal-footer .btn-group .btn + .landing-register-link, .modal-footer .btn-group .form-row-group__submit-btn + .landing-register-link, .modal-footer .btn-group .company-more-btn + .landing-register-link, .modal-footer .btn-group .landing-register-link + .landing-register-link, .modal-footer .btn-group .user-button + .landing-register-link, .modal-footer .btn-group .follow-btn + .landing-register-link, .modal-footer .btn-group .company-head__btn + .landing-register-link, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .landing-register-link, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .landing-register-link, .modal-footer .btn-group .btn + .user-button, .modal-footer .btn-group .form-row-group__submit-btn + .user-button, .modal-footer .btn-group .company-more-btn + .user-button, .modal-footer .btn-group .landing-register-link + .user-button, .modal-footer .btn-group .user-button + .user-button, .modal-footer .btn-group .follow-btn + .user-button, .modal-footer .btn-group .company-head__btn + .user-button, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .user-button, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .user-button, .modal-footer .btn-group .btn + .follow-btn, .modal-footer .btn-group .form-row-group__submit-btn + .follow-btn, .modal-footer .btn-group .company-more-btn + .follow-btn, .modal-footer .btn-group .landing-register-link + .follow-btn, .modal-footer .btn-group .user-button + .follow-btn, .modal-footer .btn-group .follow-btn + .follow-btn, .modal-footer .btn-group .company-head__btn + .follow-btn, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .follow-btn, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .follow-btn, .modal-footer .btn-group .btn + .company-head__btn, .modal-footer .btn-group .form-row-group__submit-btn + .company-head__btn, .modal-footer .btn-group .company-more-btn + .company-head__btn, .modal-footer .btn-group .landing-register-link + .company-head__btn, .modal-footer .btn-group .user-button + .company-head__btn, .modal-footer .btn-group .follow-btn + .company-head__btn, .modal-footer .btn-group .company-head__btn + .company-head__btn, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .company-head__btn, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .company-head__btn, .modal-footer .btn-group .submit-wrapper .btn + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .btn + .c-btn-submit, .modal-footer .btn-group .submit-wrapper .form-row-group__submit-btn + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .form-row-group__submit-btn + .c-btn-submit, .modal-footer .btn-group .submit-wrapper .company-more-btn + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .company-more-btn + .c-btn-submit, .modal-footer .btn-group .submit-wrapper .landing-register-link + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .landing-register-link + .c-btn-submit, .modal-footer .btn-group .submit-wrapper .user-button + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .user-button + .c-btn-submit, .modal-footer .btn-group .submit-wrapper .follow-btn + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .follow-btn + .c-btn-submit, .modal-footer .btn-group .submit-wrapper .company-head__btn + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .company-head__btn + .c-btn-submit, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .c-btn-submit {
+  margin-left: -1px; }
+
+.modal-footer .btn-block + .btn-block, .modal-footer .login-button + .btn-block, .modal-footer .register-button + .btn-block, .modal-footer .user-button + .btn-block, .modal-footer .btn-block + .login-button, .modal-footer .login-button + .login-button, .modal-footer .register-button + .login-button, .modal-footer .user-button + .login-button, .modal-footer .btn-block + .register-button, .modal-footer .login-button + .register-button, .modal-footer .register-button + .register-button, .modal-footer .user-button + .register-button, .modal-footer .btn-block + .user-button, .modal-footer .login-button + .user-button, .modal-footer .register-button + .user-button, .modal-footer .user-button + .user-button {
+  margin-left: 0; }
+
+.modal-scrollbar-measure {
   position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 30px;
-  height: 30px; }
-  .modal-close-btn:before,
-  .modal-close-btn:after {
-    content: '';
-    position: absolute;
-    top: 12px;
-    width: 14px;
-    height: 1px;
-    background-color: #47374e; }
-  .modal-close-btn:before {
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-    left: 8px; }
-  .modal-close-btn:after {
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    right: 8px; }
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll; }
 
-.quick-view {
-  background-color: #fff;
-  display: block;
-  max-width: 900px;
-  z-index: 999;
-  margin: 4em auto;
-  position: relative;
-  -webkit-transform: translateY(-40px);
-  -ms-transform: translateY(-40px);
-  transform: translateY(-40px);
-  transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-duration: 0.3s;
-  margin-top: 200px; }
-  .quick-view::after {
-    clear: both;
-    content: '';
-    display: table; }
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 600px;
+    margin: 30px auto; }
+  .modal-content {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); }
+  .modal-sm {
+    width: 300px; } }
 
-.quick-view__photo {
-  width: 40%;
-  float: left; }
+@media (min-width: 992px) {
+  .modal-lg {
+    width: 900px; } }
 
-.quick-view__info {
-  width: 60%;
-  float: left;
-  padding: 2em;
-  transition: opacity 0.3s, visibility 0s; }
-  .quick-view__info .quick-view__info-name {
-    font-size: 24px;
-    font-size: 1.5rem; }
-  .quick-view__info .quick-view__info-about {
-    font-size: 14px;
-    font-size: 0.875rem;
-    margin: 1em 0; }
+.modal-header:before,
+.modal-header:after,
+.modal-footer:before,
+.modal-footer:after {
+  display: table;
+  content: " "; }
 
-.quick-view__info-btns-item {
-  display: inline-block; }
-
-.clear-float {
-  float: none !important; }
-
-.clear-padding {
-  padding: 0; }
+.modal-header:after,
+.modal-footer:after {
+  clear: both; }
 
 .c-form-label {
   font-size: 12px;
@@ -963,7 +969,8 @@ textarea {
 
 .vacancies__item {
   display: inline-block;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  margin-right: 5px; }
 
 .vacancies-tag {
   font-size: 11px;
@@ -1955,6 +1962,265 @@ tags-input .autocomplete .suggestion-item em {
     transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
+
+.cropper-container {
+  position: relative;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  -ms-touch-action: none;
+  touch-action: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  direction: ltr !important;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none; }
+
+.cropper-container img {
+  display: block;
+  width: 100%;
+  min-width: 0 !important;
+  max-width: none !important;
+  height: 100%;
+  min-height: 0 !important;
+  max-height: none !important;
+  image-orientation: 0deg !important; }
+
+.cropper-canvas,
+.cropper-drag-box,
+.cropper-crop-box,
+.cropper-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.cropper-drag-box {
+  background-color: #fff;
+  filter: alpha(opacity=0);
+  opacity: 0; }
+
+.cropper-modal {
+  background-color: #000;
+  filter: alpha(opacity=50);
+  opacity: .5; }
+
+.cropper-view-box {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  outline: 1px solid #39f;
+  outline-color: rgba(51, 153, 255, 0.75); }
+
+.cropper-dashed {
+  position: absolute;
+  display: block;
+  filter: alpha(opacity=50);
+  border: 0 dashed #eee;
+  opacity: .5; }
+
+.cropper-dashed.dashed-h {
+  top: 33.33333%;
+  left: 0;
+  width: 100%;
+  height: 33.33333%;
+  border-top-width: 1px;
+  border-bottom-width: 1px; }
+
+.cropper-dashed.dashed-v {
+  top: 0;
+  left: 33.33333%;
+  width: 33.33333%;
+  height: 100%;
+  border-right-width: 1px;
+  border-left-width: 1px; }
+
+.cropper-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0;
+  height: 0;
+  filter: alpha(opacity=75);
+  opacity: .75; }
+
+.cropper-center:before,
+.cropper-center:after {
+  position: absolute;
+  display: block;
+  content: " ";
+  background-color: #eee; }
+
+.cropper-center:before {
+  top: 0;
+  left: -3px;
+  width: 7px;
+  height: 1px; }
+
+.cropper-center:after {
+  top: -3px;
+  left: 0;
+  width: 1px;
+  height: 7px; }
+
+.cropper-face,
+.cropper-line,
+.cropper-point {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter: alpha(opacity=10);
+  opacity: .1; }
+
+.cropper-face {
+  top: 0;
+  left: 0;
+  background-color: #fff; }
+
+.cropper-line {
+  background-color: #39f; }
+
+.cropper-line.line-e {
+  top: 0;
+  right: -3px;
+  width: 5px;
+  cursor: e-resize; }
+
+.cropper-line.line-n {
+  top: -3px;
+  left: 0;
+  height: 5px;
+  cursor: n-resize; }
+
+.cropper-line.line-w {
+  top: 0;
+  left: -3px;
+  width: 5px;
+  cursor: w-resize; }
+
+.cropper-line.line-s {
+  bottom: -3px;
+  left: 0;
+  height: 5px;
+  cursor: s-resize; }
+
+.cropper-point {
+  width: 5px;
+  height: 5px;
+  background-color: #39f;
+  filter: alpha(opacity=75);
+  opacity: .75; }
+
+.cropper-point.point-e {
+  top: 50%;
+  right: -3px;
+  margin-top: -3px;
+  cursor: e-resize; }
+
+.cropper-point.point-n {
+  top: -3px;
+  left: 50%;
+  margin-left: -3px;
+  cursor: n-resize; }
+
+.cropper-point.point-w {
+  top: 50%;
+  left: -3px;
+  margin-top: -3px;
+  cursor: w-resize; }
+
+.cropper-point.point-s {
+  bottom: -3px;
+  left: 50%;
+  margin-left: -3px;
+  cursor: s-resize; }
+
+.cropper-point.point-ne {
+  top: -3px;
+  right: -3px;
+  cursor: ne-resize; }
+
+.cropper-point.point-nw {
+  top: -3px;
+  left: -3px;
+  cursor: nw-resize; }
+
+.cropper-point.point-sw {
+  bottom: -3px;
+  left: -3px;
+  cursor: sw-resize; }
+
+.cropper-point.point-se {
+  right: -3px;
+  bottom: -3px;
+  width: 20px;
+  height: 20px;
+  cursor: se-resize;
+  filter: alpha(opacity=100);
+  opacity: 1; }
+
+.cropper-point.point-se:before {
+  position: absolute;
+  right: -50%;
+  bottom: -50%;
+  display: block;
+  width: 200%;
+  height: 200%;
+  content: " ";
+  background-color: #39f;
+  filter: alpha(opacity=0);
+  opacity: 0; }
+
+@media (min-width: 768px) {
+  .cropper-point.point-se {
+    width: 15px;
+    height: 15px; } }
+
+@media (min-width: 992px) {
+  .cropper-point.point-se {
+    width: 10px;
+    height: 10px; } }
+
+@media (min-width: 1200px) {
+  .cropper-point.point-se {
+    width: 5px;
+    height: 5px;
+    filter: alpha(opacity=75);
+    opacity: .75; } }
+
+.cropper-bg {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC"); }
+
+.cropper-invisible {
+  filter: alpha(opacity=0);
+  opacity: 0; }
+
+.cropper-hide {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0; }
+
+.cropper-hidden {
+  display: none !important; }
+
+.cropper-move {
+  cursor: move; }
+
+.cropper-crop {
+  cursor: crosshair; }
+
+.cropper-disabled .cropper-drag-box,
+.cropper-disabled .cropper-face,
+.cropper-disabled .cropper-line,
+.cropper-disabled .cropper-point {
+  cursor: not-allowed; }
 
 .pull-left {
   float: left; }
