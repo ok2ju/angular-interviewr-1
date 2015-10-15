@@ -34,7 +34,8 @@
           'app.user.settings',
           'app.company.create',
           'app.company.list',
-          'app.vacancy.candidates'
+          'app.vacancy.candidates',
+          'app.vacancy.list'
         ])
         .config(require('./app.config'))
         .run(run);
@@ -49,6 +50,7 @@
     require('./company/create');
     require('./company/list');
     require('./vacancy/candidates');
+    require('./vacancy/list');
 
     function run($rootScope, $state, store, jwtHelper) {
         $rootScope.$on('$stateChangeStart', function(e, to) {

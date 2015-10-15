@@ -36,20 +36,22 @@ $sideblock-bg-color: #161616;
 .sideblock-header {
   background-color: lighten($sideblock-bg-color, 3%);
   box-shadow: 0 1px 1px rgba(0, 0, 0, .06);
-  padding: 17px 15px;
+  padding: 20px 0;
   height: 60px;
+  text-align: center;
 
   @include respond-to('medium') {
     padding: 21px 25px;
+    text-align: left;
   }
 }
 
 .sideblock-header__text {
   @include font-size(20px);
   color: #fff;
-  font-weight: 300;
-  display: block;
-  width: 35px;
+  font-weight: 400;
+  display: inline-block;
+  width: 28px;
 
   .big-logo {
     display: none;

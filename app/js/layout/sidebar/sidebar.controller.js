@@ -14,7 +14,7 @@ module.exports = function() {
             url: '/vancancies',
             active: false,
             icon: 'icon-newspaper',
-            state: 'app.test'
+            state: 'app.vacancies'
         },
         {
             name: 'Calendar',

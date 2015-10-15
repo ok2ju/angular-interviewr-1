@@ -1,7 +1,7 @@
 // imports
 @import '../utils/fontUtils';
 // variables
-$primary-font: 'Proxima', sans-serif;
+$primary-font: 'Open Sans', sans-serif;
 $secondary-font: 'Roboto', sans-serif;
 $primary-font-color: rgba(#000, .87);
 $secondary-font-color: #999;
@@ -27,13 +27,11 @@ body {
 }
 
 body {
-  //background-color: #f3f5f6;
+  @include font-smoothing;
   background-color: #f2f2f2;
   color: $primary-font-color;
-  font-family: $secondary-font;
+  font-family: $primary-font;
   font-size: 1em;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
