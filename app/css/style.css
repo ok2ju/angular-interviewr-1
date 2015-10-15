@@ -15,12 +15,12 @@ body {
   box-sizing: inherit; }
 
 body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background-color: #f2f2f2;
   color: rgba(0, 0, 0, 0.87);
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1em;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden; }
 
@@ -105,6 +105,30 @@ textarea {
   src: url("../fonts/Roboto/roboto-regular/roboto-regular-webfont.eot");
   src: url("../fonts/Roboto/roboto-regular/roboto-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto/roboto-regular/roboto-regular-webfont.woff2") format("woff2"), url("../fonts/Roboto/roboto-regular/roboto-regular-webfont.woff") format("woff"), url("../fonts/Roboto/roboto-regular/roboto-regular-webfont.ttf") format("truetype"), url("../fonts/Roboto/roboto-regular/roboto-regular-webfont.svg#robotoregular") format("svg");
   font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/OpenSans/OpenSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/OpenSans/OpenSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/OpenSans/OpenSans-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/OpenSans/OpenSans-Bold.ttf") format("truetype");
+  font-weight: 700;
   font-style: normal; }
 
 .pull-left {
@@ -192,7 +216,7 @@ textarea {
 .pull-right {
   float: right; }
 
-.btn, .form-row-group__submit-btn, .company-more-btn, .landing-register-link, .user-button, .follow-btn, .company-head__btn, .submit-wrapper .c-btn-submit {
+.btn, .form-row-group__submit-btn, .company-more-btn, .landing-register-link, .user-button, .follow-btn, .submit-wrapper .c-btn-submit {
   font-size: 14px;
   font-size: 0.875rem;
   border-radius: 2px;
@@ -255,11 +279,11 @@ textarea {
   .btn-success:hover {
     background-color: #54d98c; }
 
-.btn-info, .landing-register-link, .login-button, .register-button, .user-button, .company-head__btn, .submit-wrapper .c-btn-submit {
+.btn-info, .landing-register-link, .login-button, .register-button, .user-button, .submit-wrapper .c-btn-submit {
   background: linear-gradient(135deg, #03aaf4 50%, #2989d8 50%, #04aef5 50%);
   background: linear-gradient(135deg, #0c6b95 50%, #207cca 50%, #2989d8 50%, #0e6f98 50%);
   color: #fff; }
-  .btn-info:hover, .landing-register-link:hover, .login-button:hover, .register-button:hover, .user-button:hover, .company-head__btn:hover, .submit-wrapper .c-btn-submit:hover {
+  .btn-info:hover, .landing-register-link:hover, .login-button:hover, .register-button:hover, .user-button:hover, .submit-wrapper .c-btn-submit:hover {
     background-color: #5faee3; }
 
 .pull-left {
@@ -353,7 +377,7 @@ textarea {
     font-size: 14px;
     font-size: 0.875rem;
     color: rgba(0, 0, 0, 0.87);
-    font-weight: 500;
+    font-weight: 600;
     white-space: nowrap;
     overflow: hidden; }
   .card-content .meta {
@@ -426,11 +450,10 @@ textarea {
     font-size: 0.75rem;
     color: #fff;
     display: inline-block;
-    font-weight: bold;
     padding: 6px 8px;
     border: 2px solid #fff;
     border-radius: 2px;
-    width: 66px; }
+    width: 75px; }
     .card-overlay .card-overlay-link:hover {
       background-color: #fff;
       color: rgba(0, 0, 0, 0.87); }
@@ -482,7 +505,7 @@ textarea {
   font-size: 14px;
   font-size: 0.875rem;
   color: rgba(0, 0, 0, 0.35);
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase; }
 
 .aside-toggle-wrapper {
@@ -657,8 +680,8 @@ textarea {
       display: none; } }
 
 .header-userinfo__name {
-  font-size: 13px;
-  font-size: 0.8125rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   color: rgba(0, 0, 0, 0.87);
   line-height: 32px; }
 
@@ -881,11 +904,11 @@ textarea {
   text-align: right;
   border-top: 1px solid #e5e5e5; }
 
-.modal-footer .btn + .btn, .modal-footer .form-row-group__submit-btn + .btn, .modal-footer .company-more-btn + .btn, .modal-footer .landing-register-link + .btn, .modal-footer .user-button + .btn, .modal-footer .follow-btn + .btn, .modal-footer .company-head__btn + .btn, .modal-footer .submit-wrapper .c-btn-submit + .btn, .submit-wrapper .modal-footer .c-btn-submit + .btn, .modal-footer .btn + .form-row-group__submit-btn, .modal-footer .form-row-group__submit-btn + .form-row-group__submit-btn, .modal-footer .company-more-btn + .form-row-group__submit-btn, .modal-footer .landing-register-link + .form-row-group__submit-btn, .modal-footer .user-button + .form-row-group__submit-btn, .modal-footer .follow-btn + .form-row-group__submit-btn, .modal-footer .company-head__btn + .form-row-group__submit-btn, .modal-footer .submit-wrapper .c-btn-submit + .form-row-group__submit-btn, .submit-wrapper .modal-footer .c-btn-submit + .form-row-group__submit-btn, .modal-footer .btn + .company-more-btn, .modal-footer .form-row-group__submit-btn + .company-more-btn, .modal-footer .company-more-btn + .company-more-btn, .modal-footer .landing-register-link + .company-more-btn, .modal-footer .user-button + .company-more-btn, .modal-footer .follow-btn + .company-more-btn, .modal-footer .company-head__btn + .company-more-btn, .modal-footer .submit-wrapper .c-btn-submit + .company-more-btn, .submit-wrapper .modal-footer .c-btn-submit + .company-more-btn, .modal-footer .btn + .landing-register-link, .modal-footer .form-row-group__submit-btn + .landing-register-link, .modal-footer .company-more-btn + .landing-register-link, .modal-footer .landing-register-link + .landing-register-link, .modal-footer .user-button + .landing-register-link, .modal-footer .follow-btn + .landing-register-link, .modal-footer .company-head__btn + .landing-register-link, .modal-footer .submit-wrapper .c-btn-submit + .landing-register-link, .submit-wrapper .modal-footer .c-btn-submit + .landing-register-link, .modal-footer .btn + .user-button, .modal-footer .form-row-group__submit-btn + .user-button, .modal-footer .company-more-btn + .user-button, .modal-footer .landing-register-link + .user-button, .modal-footer .user-button + .user-button, .modal-footer .follow-btn + .user-button, .modal-footer .company-head__btn + .user-button, .modal-footer .submit-wrapper .c-btn-submit + .user-button, .submit-wrapper .modal-footer .c-btn-submit + .user-button, .modal-footer .btn + .follow-btn, .modal-footer .form-row-group__submit-btn + .follow-btn, .modal-footer .company-more-btn + .follow-btn, .modal-footer .landing-register-link + .follow-btn, .modal-footer .user-button + .follow-btn, .modal-footer .follow-btn + .follow-btn, .modal-footer .company-head__btn + .follow-btn, .modal-footer .submit-wrapper .c-btn-submit + .follow-btn, .submit-wrapper .modal-footer .c-btn-submit + .follow-btn, .modal-footer .btn + .company-head__btn, .modal-footer .form-row-group__submit-btn + .company-head__btn, .modal-footer .company-more-btn + .company-head__btn, .modal-footer .landing-register-link + .company-head__btn, .modal-footer .user-button + .company-head__btn, .modal-footer .follow-btn + .company-head__btn, .modal-footer .company-head__btn + .company-head__btn, .modal-footer .submit-wrapper .c-btn-submit + .company-head__btn, .submit-wrapper .modal-footer .c-btn-submit + .company-head__btn, .modal-footer .submit-wrapper .btn + .c-btn-submit, .submit-wrapper .modal-footer .btn + .c-btn-submit, .modal-footer .submit-wrapper .form-row-group__submit-btn + .c-btn-submit, .submit-wrapper .modal-footer .form-row-group__submit-btn + .c-btn-submit, .modal-footer .submit-wrapper .company-more-btn + .c-btn-submit, .submit-wrapper .modal-footer .company-more-btn + .c-btn-submit, .modal-footer .submit-wrapper .landing-register-link + .c-btn-submit, .submit-wrapper .modal-footer .landing-register-link + .c-btn-submit, .modal-footer .submit-wrapper .user-button + .c-btn-submit, .submit-wrapper .modal-footer .user-button + .c-btn-submit, .modal-footer .submit-wrapper .follow-btn + .c-btn-submit, .submit-wrapper .modal-footer .follow-btn + .c-btn-submit, .modal-footer .submit-wrapper .company-head__btn + .c-btn-submit, .submit-wrapper .modal-footer .company-head__btn + .c-btn-submit, .modal-footer .submit-wrapper .c-btn-submit + .c-btn-submit, .submit-wrapper .modal-footer .c-btn-submit + .c-btn-submit {
+.modal-footer .btn + .btn, .modal-footer .form-row-group__submit-btn + .btn, .modal-footer .company-more-btn + .btn, .modal-footer .landing-register-link + .btn, .modal-footer .user-button + .btn, .modal-footer .follow-btn + .btn, .modal-footer .submit-wrapper .c-btn-submit + .btn, .submit-wrapper .modal-footer .c-btn-submit + .btn, .modal-footer .btn + .form-row-group__submit-btn, .modal-footer .form-row-group__submit-btn + .form-row-group__submit-btn, .modal-footer .company-more-btn + .form-row-group__submit-btn, .modal-footer .landing-register-link + .form-row-group__submit-btn, .modal-footer .user-button + .form-row-group__submit-btn, .modal-footer .follow-btn + .form-row-group__submit-btn, .modal-footer .submit-wrapper .c-btn-submit + .form-row-group__submit-btn, .submit-wrapper .modal-footer .c-btn-submit + .form-row-group__submit-btn, .modal-footer .btn + .company-more-btn, .modal-footer .form-row-group__submit-btn + .company-more-btn, .modal-footer .company-more-btn + .company-more-btn, .modal-footer .landing-register-link + .company-more-btn, .modal-footer .user-button + .company-more-btn, .modal-footer .follow-btn + .company-more-btn, .modal-footer .submit-wrapper .c-btn-submit + .company-more-btn, .submit-wrapper .modal-footer .c-btn-submit + .company-more-btn, .modal-footer .btn + .landing-register-link, .modal-footer .form-row-group__submit-btn + .landing-register-link, .modal-footer .company-more-btn + .landing-register-link, .modal-footer .landing-register-link + .landing-register-link, .modal-footer .user-button + .landing-register-link, .modal-footer .follow-btn + .landing-register-link, .modal-footer .submit-wrapper .c-btn-submit + .landing-register-link, .submit-wrapper .modal-footer .c-btn-submit + .landing-register-link, .modal-footer .btn + .user-button, .modal-footer .form-row-group__submit-btn + .user-button, .modal-footer .company-more-btn + .user-button, .modal-footer .landing-register-link + .user-button, .modal-footer .user-button + .user-button, .modal-footer .follow-btn + .user-button, .modal-footer .submit-wrapper .c-btn-submit + .user-button, .submit-wrapper .modal-footer .c-btn-submit + .user-button, .modal-footer .btn + .follow-btn, .modal-footer .form-row-group__submit-btn + .follow-btn, .modal-footer .company-more-btn + .follow-btn, .modal-footer .landing-register-link + .follow-btn, .modal-footer .user-button + .follow-btn, .modal-footer .follow-btn + .follow-btn, .modal-footer .submit-wrapper .c-btn-submit + .follow-btn, .submit-wrapper .modal-footer .c-btn-submit + .follow-btn, .modal-footer .submit-wrapper .btn + .c-btn-submit, .submit-wrapper .modal-footer .btn + .c-btn-submit, .modal-footer .submit-wrapper .form-row-group__submit-btn + .c-btn-submit, .submit-wrapper .modal-footer .form-row-group__submit-btn + .c-btn-submit, .modal-footer .submit-wrapper .company-more-btn + .c-btn-submit, .submit-wrapper .modal-footer .company-more-btn + .c-btn-submit, .modal-footer .submit-wrapper .landing-register-link + .c-btn-submit, .submit-wrapper .modal-footer .landing-register-link + .c-btn-submit, .modal-footer .submit-wrapper .user-button + .c-btn-submit, .submit-wrapper .modal-footer .user-button + .c-btn-submit, .modal-footer .submit-wrapper .follow-btn + .c-btn-submit, .submit-wrapper .modal-footer .follow-btn + .c-btn-submit, .modal-footer .submit-wrapper .c-btn-submit + .c-btn-submit, .submit-wrapper .modal-footer .c-btn-submit + .c-btn-submit {
   margin-bottom: 0;
   margin-left: 5px; }
 
-.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .form-row-group__submit-btn + .btn, .modal-footer .btn-group .company-more-btn + .btn, .modal-footer .btn-group .landing-register-link + .btn, .modal-footer .btn-group .user-button + .btn, .modal-footer .btn-group .follow-btn + .btn, .modal-footer .btn-group .company-head__btn + .btn, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .btn, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .btn, .modal-footer .btn-group .btn + .form-row-group__submit-btn, .modal-footer .btn-group .form-row-group__submit-btn + .form-row-group__submit-btn, .modal-footer .btn-group .company-more-btn + .form-row-group__submit-btn, .modal-footer .btn-group .landing-register-link + .form-row-group__submit-btn, .modal-footer .btn-group .user-button + .form-row-group__submit-btn, .modal-footer .btn-group .follow-btn + .form-row-group__submit-btn, .modal-footer .btn-group .company-head__btn + .form-row-group__submit-btn, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .form-row-group__submit-btn, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .form-row-group__submit-btn, .modal-footer .btn-group .btn + .company-more-btn, .modal-footer .btn-group .form-row-group__submit-btn + .company-more-btn, .modal-footer .btn-group .company-more-btn + .company-more-btn, .modal-footer .btn-group .landing-register-link + .company-more-btn, .modal-footer .btn-group .user-button + .company-more-btn, .modal-footer .btn-group .follow-btn + .company-more-btn, .modal-footer .btn-group .company-head__btn + .company-more-btn, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .company-more-btn, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .company-more-btn, .modal-footer .btn-group .btn + .landing-register-link, .modal-footer .btn-group .form-row-group__submit-btn + .landing-register-link, .modal-footer .btn-group .company-more-btn + .landing-register-link, .modal-footer .btn-group .landing-register-link + .landing-register-link, .modal-footer .btn-group .user-button + .landing-register-link, .modal-footer .btn-group .follow-btn + .landing-register-link, .modal-footer .btn-group .company-head__btn + .landing-register-link, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .landing-register-link, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .landing-register-link, .modal-footer .btn-group .btn + .user-button, .modal-footer .btn-group .form-row-group__submit-btn + .user-button, .modal-footer .btn-group .company-more-btn + .user-button, .modal-footer .btn-group .landing-register-link + .user-button, .modal-footer .btn-group .user-button + .user-button, .modal-footer .btn-group .follow-btn + .user-button, .modal-footer .btn-group .company-head__btn + .user-button, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .user-button, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .user-button, .modal-footer .btn-group .btn + .follow-btn, .modal-footer .btn-group .form-row-group__submit-btn + .follow-btn, .modal-footer .btn-group .company-more-btn + .follow-btn, .modal-footer .btn-group .landing-register-link + .follow-btn, .modal-footer .btn-group .user-button + .follow-btn, .modal-footer .btn-group .follow-btn + .follow-btn, .modal-footer .btn-group .company-head__btn + .follow-btn, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .follow-btn, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .follow-btn, .modal-footer .btn-group .btn + .company-head__btn, .modal-footer .btn-group .form-row-group__submit-btn + .company-head__btn, .modal-footer .btn-group .company-more-btn + .company-head__btn, .modal-footer .btn-group .landing-register-link + .company-head__btn, .modal-footer .btn-group .user-button + .company-head__btn, .modal-footer .btn-group .follow-btn + .company-head__btn, .modal-footer .btn-group .company-head__btn + .company-head__btn, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .company-head__btn, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .company-head__btn, .modal-footer .btn-group .submit-wrapper .btn + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .btn + .c-btn-submit, .modal-footer .btn-group .submit-wrapper .form-row-group__submit-btn + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .form-row-group__submit-btn + .c-btn-submit, .modal-footer .btn-group .submit-wrapper .company-more-btn + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .company-more-btn + .c-btn-submit, .modal-footer .btn-group .submit-wrapper .landing-register-link + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .landing-register-link + .c-btn-submit, .modal-footer .btn-group .submit-wrapper .user-button + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .user-button + .c-btn-submit, .modal-footer .btn-group .submit-wrapper .follow-btn + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .follow-btn + .c-btn-submit, .modal-footer .btn-group .submit-wrapper .company-head__btn + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .company-head__btn + .c-btn-submit, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .c-btn-submit {
+.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .form-row-group__submit-btn + .btn, .modal-footer .btn-group .company-more-btn + .btn, .modal-footer .btn-group .landing-register-link + .btn, .modal-footer .btn-group .user-button + .btn, .modal-footer .btn-group .follow-btn + .btn, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .btn, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .btn, .modal-footer .btn-group .btn + .form-row-group__submit-btn, .modal-footer .btn-group .form-row-group__submit-btn + .form-row-group__submit-btn, .modal-footer .btn-group .company-more-btn + .form-row-group__submit-btn, .modal-footer .btn-group .landing-register-link + .form-row-group__submit-btn, .modal-footer .btn-group .user-button + .form-row-group__submit-btn, .modal-footer .btn-group .follow-btn + .form-row-group__submit-btn, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .form-row-group__submit-btn, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .form-row-group__submit-btn, .modal-footer .btn-group .btn + .company-more-btn, .modal-footer .btn-group .form-row-group__submit-btn + .company-more-btn, .modal-footer .btn-group .company-more-btn + .company-more-btn, .modal-footer .btn-group .landing-register-link + .company-more-btn, .modal-footer .btn-group .user-button + .company-more-btn, .modal-footer .btn-group .follow-btn + .company-more-btn, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .company-more-btn, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .company-more-btn, .modal-footer .btn-group .btn + .landing-register-link, .modal-footer .btn-group .form-row-group__submit-btn + .landing-register-link, .modal-footer .btn-group .company-more-btn + .landing-register-link, .modal-footer .btn-group .landing-register-link + .landing-register-link, .modal-footer .btn-group .user-button + .landing-register-link, .modal-footer .btn-group .follow-btn + .landing-register-link, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .landing-register-link, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .landing-register-link, .modal-footer .btn-group .btn + .user-button, .modal-footer .btn-group .form-row-group__submit-btn + .user-button, .modal-footer .btn-group .company-more-btn + .user-button, .modal-footer .btn-group .landing-register-link + .user-button, .modal-footer .btn-group .user-button + .user-button, .modal-footer .btn-group .follow-btn + .user-button, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .user-button, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .user-button, .modal-footer .btn-group .btn + .follow-btn, .modal-footer .btn-group .form-row-group__submit-btn + .follow-btn, .modal-footer .btn-group .company-more-btn + .follow-btn, .modal-footer .btn-group .landing-register-link + .follow-btn, .modal-footer .btn-group .user-button + .follow-btn, .modal-footer .btn-group .follow-btn + .follow-btn, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .follow-btn, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .follow-btn, .modal-footer .btn-group .submit-wrapper .btn + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .btn + .c-btn-submit, .modal-footer .btn-group .submit-wrapper .form-row-group__submit-btn + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .form-row-group__submit-btn + .c-btn-submit, .modal-footer .btn-group .submit-wrapper .company-more-btn + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .company-more-btn + .c-btn-submit, .modal-footer .btn-group .submit-wrapper .landing-register-link + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .landing-register-link + .c-btn-submit, .modal-footer .btn-group .submit-wrapper .user-button + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .user-button + .c-btn-submit, .modal-footer .btn-group .submit-wrapper .follow-btn + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .follow-btn + .c-btn-submit, .modal-footer .btn-group .submit-wrapper .c-btn-submit + .c-btn-submit, .submit-wrapper .modal-footer .btn-group .c-btn-submit + .c-btn-submit {
   margin-left: -1px; }
 
 .modal-footer .btn-block + .btn-block, .modal-footer .login-button + .btn-block, .modal-footer .register-button + .btn-block, .modal-footer .user-button + .btn-block, .modal-footer .btn-block + .login-button, .modal-footer .login-button + .login-button, .modal-footer .register-button + .login-button, .modal-footer .user-button + .login-button, .modal-footer .btn-block + .register-button, .modal-footer .login-button + .register-button, .modal-footer .register-button + .register-button, .modal-footer .user-button + .register-button, .modal-footer .btn-block + .user-button, .modal-footer .login-button + .user-button, .modal-footer .register-button + .user-button, .modal-footer .user-button + .user-button {
@@ -1237,19 +1260,21 @@ textarea {
 .sideblock-header {
   background-color: #1e1e1e;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
-  padding: 17px 15px;
-  height: 60px; }
+  padding: 20px 0;
+  height: 60px;
+  text-align: center; }
   @media (min-width: 992px) {
     .sideblock-header {
-      padding: 21px 25px; } }
+      padding: 21px 25px;
+      text-align: left; } }
 
 .sideblock-header__text {
   font-size: 20px;
   font-size: 1.25rem;
   color: #fff;
-  font-weight: 300;
-  display: block;
-  width: 35px; }
+  font-weight: 400;
+  display: inline-block;
+  width: 28px; }
   .sideblock-header__text .big-logo {
     display: none; }
     @media (min-width: 992px) {
@@ -1847,7 +1872,8 @@ tags-input .autocomplete .suggestion-item em {
 .company-card__header {
   font-size: 18px;
   font-size: 1.125rem;
-  color: rgba(0, 0, 0, 0.87); }
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 600; }
 
 .company-card__meta {
   margin-bottom: 5px; }
@@ -2253,10 +2279,10 @@ tags-input .autocomplete .suggestion-item em {
       width: 400px; } }
 
 .landing-about {
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   color: #fff;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 50px;
   text-align: center; }
 
@@ -2957,8 +2983,8 @@ main.test-vid {
   vertical-align: middle; }
 
 .u-followers {
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   color: #fff;
   margin-top: 10px;
   font-weight: 300; }
@@ -2979,8 +3005,9 @@ main.test-vid {
   color: #fff; }
 
 .u-preferences__user-time {
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 600;
   text-align: center; }
   .u-preferences__user-time span {
     color: #ccc; }
@@ -3007,12 +3034,12 @@ main.test-vid {
   padding: 15px; }
 
 .u-p-body-sect__head {
-  font-size: 18px;
-  font-size: 1.125rem;
+  font-size: 16px;
+  font-size: 1rem;
   text-transform: uppercase;
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
-  font-weight: 300; }
+  font-weight: 400; }
 
 .u-p-body-sect__text-about {
   font-size: 15px;
@@ -3043,7 +3070,7 @@ main.test-vid {
       padding-bottom: 10px; }
       .u-bs-col table td:first-child {
         text-transform: uppercase;
-        font-weight: 500; }
+        font-weight: 600; }
 
 .u-skills {
   margin-top: 20px; }
@@ -3058,166 +3085,89 @@ main.test-vid {
   .u-social-link:hover {
     text-decoration: underline; }
 
-.pull-left {
-  float: left; }
-
-.pull-right {
-  float: right; }
-
-.search-wrapper {
-  padding: 2em 0;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 88.28125%; }
-  .search-wrapper::after {
-    clear: both;
-    content: '';
-    display: table; }
-
-.filter {
-  float: left;
-  margin-right: 50px; }
-
-input.input-filter {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50px;
-  padding: 0.5em 1.5em; }
-
-.companylist-wrapper {
-  float: left;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  width: 83.33333%; }
-
-.company-list {
-  background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 0 1px #d4d4d5, 0 1px 1px #d4d4d5; }
-  .company-list :last-child {
-    border-bottom: 0; }
-
-.company-list__item {
-  border-bottom: 1px solid #e7eaec;
-  padding: 10px;
-  display: table;
-  padding-right: 0; }
-  .company-list__item::after {
-    clear: both;
-    content: '';
-    display: table; }
-
-.company-col {
-  display: table-cell;
-  vertical-align: middle; }
-
-.company-logo {
-  padding: 1em;
-  width: 20%; }
-
-.company-info {
-  padding: 1em;
-  width: 65%;
-  border-right: 1px solid #e7eaec; }
-
-.company-head::after {
+.vacancy-row::after {
   clear: both;
   content: '';
   display: table; }
 
-.company-head__name {
-  font-size: 16px;
-  font-size: 1rem;
-  margin: 0;
-  font-weight: 500; }
-
-.company-head__btn {
-  font-size: 11px;
-  font-size: 0.6875rem; }
-
-.company-site {
-  font-size: 12px;
-  font-size: 0.75rem;
-  color: blue;
-  margin-left: 10px; }
-  .company-site:hover {
-    text-decoration: underline; }
-
-.company-location {
-  font-size: 12px;
-  font-size: 0.75rem;
-  color: #999;
-  font-weight: 500; }
-
-.company-body {
-  margin-bottom: 15px; }
-
-.company-body__about {
-  font-size: 13px;
-  font-size: 0.8125rem;
-  margin-top: 10px;
-  text-overflow: ellipsis; }
-
-.company-more {
-  width: 15%;
-  text-align: center;
-  padding: 1em; }
-
-.company-more__inf {
-  margin-bottom: 15px; }
-
-.company-more__num-emp {
-  font-size: 20px;
-  font-size: 1.25rem;
-  font-weight: 400;
-  margin: 0; }
-
-.company-more__label {
-  font-size: 13px;
-  font-size: 0.8125rem;
-  display: block;
-  font-weight: 400; }
-
-.filter-wrap {
+.vacancy-card {
   float: left;
-  min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  position: relative;
-  width: 16.66667%; }
+  width: 50%; }
 
-.cl-filter {
-  margin-bottom: 15px; }
+.vacancy-card-inner {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px; }
 
-.filter-list {
-  text-align: right;
-  border-right: 2px solid #59728e;
-  padding-right: 10px;
-  margin-bottom: 40px; }
+.vacancy-card__head {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding-bottom: 10px; }
 
-.filter-list__item {
-  padding: 3px 0; }
+.vacancy-card__head-title {
+  font-size: 18px;
+  font-size: 1.125rem;
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 600; }
 
-.filter-list-link {
-  font-size: 13px;
-  font-size: 0.8125rem;
-  color: rgba(0, 0, 0, 0.87); }
-  .filter-list-link:hover {
-    text-decoration: underline; }
-
-.filter-list-label {
-  font-size: 16px;
-  font-size: 1rem;
-  color: #59728e;
-  font-weight: 500; }
-
-.company-body__vac-type {
+.vacancy-card__head-info {
   font-size: 12px;
   font-size: 0.75rem;
-  margin-left: 10px;
+  color: #999; }
+  .vacancy-card__head-info a {
+    color: #999;
+    text-decoration: underline; }
+
+.vacancy-card__body {
+  padding-bottom: 10px; }
+  .vacancy-card__body .vacancies {
+    margin: 10px 0; }
+    .vacancy-card__body .vacancies li {
+      margin-right: 0; }
+  .vacancy-card__body .vacancy-about {
+    margin-left: -15px;
+    margin-right: -15px; }
+    .vacancy-card__body .vacancy-about::after {
+      clear: both;
+      content: '';
+      display: table; }
+  .vacancy-card__body .vacancy-about-col {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 35%;
+    float: left; }
+  .vacancy-card__body .vacancy-about-col__text {
+    font-size: 14px;
+    font-size: 0.875rem; }
+
+.vacancy-card__footer::after {
+  clear: both;
+  content: '';
+  display: table; }
+
+.vacancy-card__footer .left {
+  float: left; }
+
+.vacancy-card__footer .right {
+  float: right; }
+
+.vacancy-location {
+  font-size: 12px;
+  font-size: 0.75rem;
+  color: #999; }
+
+.vacancy-footer-link {
+  font-size: 12px;
+  font-size: 0.75rem;
   color: #999;
-  font-weight: 500; }
+  margin-left: 10px; }
+  .vacancy-footer-link:first-child {
+    margin-left: 0; }
+  .vacancy-footer-link:hover {
+    text-decoration: underline; }
 
 .pull-left {
   float: left; }

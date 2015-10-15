@@ -83,7 +83,7 @@
   h1 {
     @include font-size(14px);
     color: $primary-font-color;
-    font-weight: 500;
+    font-weight: 600;
     white-space: nowrap;
     overflow: hidden;
   }
@@ -161,11 +161,10 @@
     @include font-size(12px);
     color: #fff;
     display: inline-block;
-    font-weight: bold;
     padding: 6px 8px;
     border: 2px solid #fff;
     border-radius: 2px;
-    width: 66px;
+    width: 75px;
 
     &:hover {
       background-color: #fff;

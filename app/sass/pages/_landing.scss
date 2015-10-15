@@ -36,9 +36,9 @@ $landing-primary-font-color: #fff;
 }
 
 .landing-about {
-  @include font-size(16px);
+  @include font-size(14px);
   color: $landing-primary-font-color;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 50px;
   text-align: center;
 }
