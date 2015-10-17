@@ -26,6 +26,7 @@
           'app.header',
           'app.sidebar',
           'app.landing',
+          'app.dropdown',
 
           /* Feature areas */
           'app.user.login',
@@ -34,6 +35,7 @@
           'app.user.settings',
           'app.company.create',
           'app.company.list',
+          'app.company.profile',
           'app.vacancy.candidates',
           'app.vacancy.list'
         ])
@@ -43,12 +45,14 @@
     require('./layout/landing');
     require('./layout/sidebar');
     require('./layout/header');
+    require('./layout/dropdown');
     require('./user/login');
     require('./user/signup');
     require('./user/profile');
     require('./user/settings');
     require('./company/create');
     require('./company/list');
+    require('./company/profile');
     require('./vacancy/candidates');
     require('./vacancy/list');
 

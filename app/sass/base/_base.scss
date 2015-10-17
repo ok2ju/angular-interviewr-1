@@ -1,10 +1,5 @@
 // imports
 @import '../utils/fontUtils';
-// variables
-$primary-font: 'Open Sans', sans-serif;
-$secondary-font: 'Roboto', sans-serif;
-$primary-font-color: rgba(#000, .87);
-$secondary-font-color: #999;
 
 html {
   box-sizing: border-box;
@@ -28,10 +23,10 @@ body {
 
 body {
   @include font-smoothing;
-  background-color: #f2f2f2;
+  background-color: $body-color;
   color: $primary-font-color;
   font-family: $primary-font;
-  font-size: 1em;
+  font-size: $font-size-base;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
@@ -64,8 +59,8 @@ h1 {
 
 h2 {
   @include font-size(14px);
-  color: lighten($primary-font-color, 46%);
-  font-weight: 500;
+  color: $secondary-font-color;
+  font-weight: 600;
 }
 
 .form-control,
