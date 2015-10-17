@@ -41,3 +41,140 @@ $grid-controls-hover-color: #59728e;
     color: #000;
   }
 }
+
+// new styles
+
+.c-profilebox {
+  @include make-row;
+}
+
+.c-main-info {
+  @include make-col(8);
+}
+
+.c-main-info__inner {
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.c-profile-header {
+  @include clearfix;
+}
+
+.c-profile-photo {
+  @include make-col(2);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15),-1px 0 0 rgba(0,0,0,0.03),1px 0 0 rgba(0,0,0,0.03),0 1px 0 rgba(0,0,0,0.12);
+  border-radius: 4px;
+  float: left;
+
+  img {
+    border-radius: 4px;
+  }
+}
+
+.c-profile-info {
+  @include make-col(10);
+}
+
+.c-profile-info__header-inner {
+  @include clearfix;
+
+  .social-btns {
+    margin-top: 6px;
+  }
+}
+
+.c-profile-info__header {
+  @include font-size(24px);
+  color: $primary-font-color;
+  float: left;
+}
+
+.c-profile-info__sm {
+  @include font-size(12px);
+  color: $secondary-font-color;
+}
+
+.c-profile-info__spec {
+  @include font-size(13px);
+  margin-top: 15px;
+}
+
+.c-profile-body {
+  margin-top: 25px;
+}
+
+.c-profile-body__text {
+  @include font-size(13px);
+}
+
+.c-profile-body__head {
+  @include font-size(14px);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.c-sidebar-info {
+  @include make-col(4);
+}
+
+.c-sidebar-info__inner {
+  background: darken($body-color, 3%);
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.c-sidebar-info__head {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.c-sidebar-info-list {
+  margin-bottom: 25px;
+}
+
+.c-sidebar-info-list__item {
+  @include font-size(13px);
+}
+
+// ## Switcher panel
+
+.switcher-panel {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.switcher-panel-inner {
+  padding: 15px;
+  background: darken($body-color, 3%);
+}
+
+.switcher-panel__control {
+  @include font-size(14px);
+  color: $secondary-font-color;
+  padding: 0 15px;
+  display: inline-block;
+
+  &:after {
+    display:block;
+    content: '';
+    padding-bottom:5px;
+    border-bottom: solid 1px #FFA411;
+    transform: scaleX(0.0001);
+    transition: transform 350ms ease-in-out;
+  }
+
+  &:hover:after {
+    transform: scaleX(1);
+  }
+
+  &.active {
+
+    &:after {
+      transform: scaleX(1);
+    }
+  }
+}

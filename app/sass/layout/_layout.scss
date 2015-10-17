@@ -30,8 +30,6 @@ $header-font-color: #fff;
 }
 
 .content {
-  /* padding: 60px 15px 0 15px;
-  margin: 0 auto; */
   padding-left: 65px;
   padding-top: 60px;
   position: relative;
@@ -47,16 +45,6 @@ $header-font-color: #fff;
 
 .main-area {
   padding: 30px;
-
-  /* @include respond-to('small') {
-    width: percentage(9/12);
-    margin-left: 25%;
-  }
-
-  @include respond-to('medium') {
-    width: percentage(10/12);
-    margin-left: 16.66666667%;
-  } */
 
   /* max-width: 1200px; */
   margin: 0 auto;

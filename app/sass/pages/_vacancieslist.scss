@@ -1,5 +1,5 @@
 .vacancy-row {
-  @include clearfix;
+  @include make-row;
 }
 
 .vacancy-card {

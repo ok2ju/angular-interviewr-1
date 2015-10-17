@@ -1,0 +1,17 @@
+//## Typography
+
+$primary-font: 'Open Sans', sans-serif;
+$secondary-font: 'Roboto', sans-serif;
+
+$font-size-base: 1em;
+$font-size-content: 13px;
+
+//## Colors
+
+$body-color: #f2f2f2;
+
+$base-font-color: #000;
+$primary-font-color: lighten($base-font-color, 13%);
+$secondary-font-color: #999;
+
+//## Media queries breakpoints

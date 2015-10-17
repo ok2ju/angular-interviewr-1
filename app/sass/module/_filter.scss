@@ -1,0 +1,32 @@
+.filter {
+  @include clearfix;
+  margin-bottom: 20px;
+  background-color: darken($body-color, 3%);
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0 0px 1px 0 rgba(0, 0, 0, .22);
+}
+
+.filter-group {
+  float: left;
+  margin-right: 20px;
+}
+
+.filter-group__label {
+  @include font-size(13px);
+  font-weight: 600;
+  color: #666;
+  margin-right: 10px;
+}
+
+.filter-group-input {
+  display: inline-block;
+
+  input {
+    height: 35px;
+    cursor: text !important;
+    line-height: 35px !important;
+    padding: 0 10px;
+    color: #666;
+  }
+}
