@@ -1,12 +1,13 @@
-module.exports = function(store, $state, $http, toastr) {
+module.exports = function(store, $state, $http, toastr, config) {
   var vm = this;
+  var login_url = config.api_url + '/api/v1/login';
 
   vm.user = {};
   vm.login = login;
 
   function login() {
     $http({
-      url: 'http://localhost:3000/api/v1/login',
+      url: login_url,
       method: 'POST',
       data: vm.user
     }).then(function(response) {

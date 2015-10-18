@@ -1,5 +1,6 @@
 module.exports = function(UserSettingsService, store, jwtHelper,
-                      toastr, $state, $http, $rootScope, $uibModal) {
+                      toastr, $state, $http, $rootScope, $uibModal,
+                      config) {
   var vm = this;
 
   var jwt = store.get('jwt');
