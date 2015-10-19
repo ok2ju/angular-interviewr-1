@@ -1,12 +1,13 @@
-module.exports = function(store, $http, $state, toastr) {
+module.exports = function(store, $http, $state, toastr, config) {
   var vm = this;
+  var url = config.api_url + '/api/v1/users';
 
   vm.user = {};
   vm.register = register;
 
   function register() {
     $http({
-      url: 'http://localhost:3000/api/v1/users',
+      url: url,
       method: 'POST',
       data: vm.user
     }).then(function(response) {

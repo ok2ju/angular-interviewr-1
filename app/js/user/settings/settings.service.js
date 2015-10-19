@@ -1,5 +1,7 @@
-module.exports = function($resource) {
-  return $resource('http://localhost:3000/api/v1/users/:id', { id: '@_id' }, {
+module.exports = function($resource, config) {
+  var settings_url = config.api_url + '/api/v1/users/:id';
+
+  return $resource(settings_url, { id: '@_id' }, {
     update: {
       method: 'PUT'
     }

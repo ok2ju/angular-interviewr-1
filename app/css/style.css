@@ -3717,8 +3717,7 @@ main.test-vid {
   font-size: 0.75rem;
   color: #999; }
   .vacancy-card__head-info a {
-    color: #999;
-    text-decoration: underline; }
+    color: #999; }
 
 .vacancy-card__body {
   padding-bottom: 10px; }
@@ -3728,7 +3727,8 @@ main.test-vid {
       margin-right: 0; }
   .vacancy-card__body .vacancy-about {
     margin-left: -15px;
-    margin-right: -15px; }
+    margin-right: -15px;
+    position: relative; }
     .vacancy-card__body .vacancy-about::after {
       clear: both;
       content: '';
@@ -3738,6 +3738,9 @@ main.test-vid {
     padding-right: 15px;
     width: 35%;
     float: left; }
+  .vacancy-card__body .vacancy-icon {
+    padding: 0 15px;
+    float: right; }
   .vacancy-card__body .vacancy-about-col__text {
     font-size: 14px;
     font-size: 0.875rem; }
