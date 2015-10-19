@@ -4,15 +4,6 @@ module.exports = function($resource, config) {
   return $resource(url, {id: '@_id'}, {
     update: {
       method: 'PUT'
-    },
-    get: {
-      method: 'GET'
-    },
-    query: {
-      method: 'GET'
-    },
-    save: {
-      method: 'POST'
     }
   });
 };

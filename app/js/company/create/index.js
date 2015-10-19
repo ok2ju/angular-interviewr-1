@@ -1,8 +1,10 @@
 (function() {
   'use strict';
 
-  require('angular').module('app.company.create', ['ui.router'])
+  require('angular').module('app.company.create', [
+      'ui.router',
+      'app.company.resource'
+    ])
     .config(require('./createCompany.config'))
-    .controller('CreateCompanyController', require('./createCompany.controller'))
-    .factory('CompanyService', require('./company.service'));
+    .controller('CreateCompanyController', require('./createCompany.controller'));
 })();
