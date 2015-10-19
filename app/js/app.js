@@ -13,6 +13,7 @@
     require('angular-loading-bar');
     require('cropper');
     require('angular-modal');
+    require('ng-file-upload');
 
 
     angular
