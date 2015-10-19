@@ -60,7 +60,7 @@ gulp.task('default', ['clean'], function() {
   gulp.start('browserify', 'browserify-min');
 });
 
-gulp.task('nodemon', function (cb) {
+gulp.task('nodemon', ['fast', 'sass'], function (cb) {
   var called = false;
 
   return nodemon({

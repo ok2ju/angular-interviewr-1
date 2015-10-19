@@ -14,10 +14,12 @@
     require('cropper');
     require('angular-modal');
 
+
     angular
         .module('app', [
           'ui.router',
           'ngResource',
+          'ngFileUpload',
           'angular-jwt',
           'angular-storage',
           'angular-loading-bar',
@@ -42,7 +44,7 @@
         .config(require('./app.config'))
         .run(run)
         .constant('config', {
-          'api_url': 'http://192.168.99.100:32770'
+          'api_url': 'http://192.168.99.100:3000'
         });
 
     require('./layout/landing');

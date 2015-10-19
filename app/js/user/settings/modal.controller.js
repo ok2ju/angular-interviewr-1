@@ -1,6 +1,6 @@
 var $ = require('jquery');
 
-module.exports = function($modalInstance) {
+module.exports = function($modalInstance, ngFileUpload) {
   var vm = this;
 
   vm.ok = function () {
