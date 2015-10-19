@@ -1,6 +1,6 @@
-module.exports = function(UserSettingsService, store, jwtHelper,
+module.exports = function(store, jwtHelper,
                       toastr, $state, $http, $rootScope, $uibModal,
-                      config, UserResource, Upload) {
+                      config, Upload, UserResource) {
   var vm = this;
 
   var jwt = store.get('jwt');
@@ -30,7 +30,7 @@ module.exports = function(UserSettingsService, store, jwtHelper,
 
   vm.onFileSelected = function() {
     vm.open();
-  }
+  };
 
   // modal window
 
