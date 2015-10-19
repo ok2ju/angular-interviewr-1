@@ -45,8 +45,13 @@
         .config(require('./app.config'))
         .run(run)
         .constant('config', {
-          'api_url': 'http://192.168.99.100:3000'
+          'api_url': 'http://192.168.99.100:32769'
         });
+
+    // Resources
+    require('./user/resource');
+    require('./company/resource');
+    require('./vacancy/resource');
 
     require('./layout/landing');
     require('./layout/sidebar');

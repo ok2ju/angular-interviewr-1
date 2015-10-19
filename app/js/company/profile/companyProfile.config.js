@@ -1,7 +1,7 @@
 module.exports = function($stateProvider) {
   $stateProvider
     .state('app.companyProfile', {
-      url: '/companies/1',
+      url: '/companies/:id/view',
       templateUrl: 'js/company/profile/company-profile.html',
       controller: 'CompanyProfileController',
       controllerAs: 'vm',

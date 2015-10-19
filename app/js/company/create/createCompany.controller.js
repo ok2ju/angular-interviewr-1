@@ -1,11 +1,10 @@
-module.exports = function(CompanyService) {
+module.exports = function(CompanyResource) {
   var vm = this;
 
   vm.registerCompany = registerCompany;
-  vm.company = new CompanyService();
+  vm.company = new CompanyResource();
 
   function registerCompany() {
-    console.log(vm.company);
     vm.company.$save(function() {
       console.log('Company Saved');
     });

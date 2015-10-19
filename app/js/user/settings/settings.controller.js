@@ -1,12 +1,12 @@
-module.exports = function(UserSettingsService, store, jwtHelper,
+module.exports = function(store, jwtHelper,
                       toastr, $state, $http, $rootScope, $uibModal,
-                      config) {
+                      config, UserResource) {
   var vm = this;
 
   var jwt = store.get('jwt');
   var decodedJwt = jwt && jwtHelper.decodeToken(jwt);
 
-  UserSettingsService.get({ id: decodedJwt._id }, function(data) {
+  UserResource.get({ id: decodedJwt._id }, function(data) {
     vm.user = data;
     vm.user.social = vm.user.social || {};
   });
