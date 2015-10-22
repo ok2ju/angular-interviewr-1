@@ -25,10 +25,31 @@
   width: 1%;
   white-space: nowrap;
   vertical-align: middle;
+  background-color: rgba(242, 242, 242, 0.3);
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  border-radius: 3px;
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 
   button {
     border: 0;
     margin: 0;
+    background: transparent;
+    padding: 0 10px;
+    min-width: 0;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background: transparent;
+    }
+
+    i {
+      color: #666;
+    }
   }
 }
 
