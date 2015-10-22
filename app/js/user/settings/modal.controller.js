@@ -1,7 +1,9 @@
 var $ = require('jquery');
 
-module.exports = function($modalInstance, ngFileUpload) {
+module.exports = function ModalController($modalInstance, $timeout, Upload, file) {
   var vm = this;
+
+  vm.file = file;
 
   vm.ok = function () {
     /*$modalInstance.close(vm.selected.item);*/
@@ -11,12 +13,12 @@ module.exports = function($modalInstance, ngFileUpload) {
     $modalInstance.dismiss('cancel');
   };
 
-   angular.element(document).ready(function() {
-    init();
-   });
+  $modalInstance.rendered.then(function() {
+    $timeout(init, 100);//TODO: here is dirty hack.
+  });
 
   function init() {
-    $('.modal-body > img').cropper({
+    vm.cropper = $('.modal-body > img').cropper({
       aspectRatio: 1 / 1,
       crop: function(e) {
         // Output the result data for cropping image.

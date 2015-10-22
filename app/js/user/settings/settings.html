@@ -127,6 +127,7 @@
               You can upload an avatar here or change it.
             </p>
             <hr>
+            <input type="file" ngf-select="vm.onFileSelected()" ng-model="vm.file" name="file" accept="image/*" ngf-max-size="1MB"/>
             <a href="#" class="upload-btn" ng-click="vm.open()">
               <i class="sidebar-ico icon-camera sidebar-ico-full"></i>
               <span>Choose file ...</span>

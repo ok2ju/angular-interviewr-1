@@ -1,6 +1,6 @@
 module.exports = function(store, jwtHelper,
                       toastr, $state, $http, $rootScope, $uibModal,
-                      config, UserResource) {
+                      config, Upload, UserResource) {
   var vm = this;
 
   var jwt = store.get('jwt');
@@ -26,6 +26,12 @@ module.exports = function(store, jwtHelper,
     return $http.get('./api/tags.json');
   }
 
+  //file upload
+
+  vm.onFileSelected = function() {
+    vm.open();
+  };
+
   // modal window
 
   vm.animationsEnabled = true;
@@ -39,9 +45,9 @@ module.exports = function(store, jwtHelper,
       controllerAs: 'vm',
       size: size,
       resolve: {
-        /*items: function () {
-          return $scope.items;
-        }*/
+        file: function () {
+          return vm.file;
+        }
       }
     });
 
