@@ -6,6 +6,10 @@ module.exports = function(CompanyResource, $scope) {
   vm.registerCompany = registerCompany;
   vm.company = new CompanyResource();
 
+  $scope.$watch('vm.company.description', function(current, original) {
+    vm.company.shortDesc = vm.company.description ? current.substring(0, 180) + '...' : '';
+  });
+
   function registerCompany() {
     vm.company.$save(function() {
       console.log('Company Saved');
