@@ -15,7 +15,6 @@
     require('angular-modal');
     require('ng-file-upload');
 
-
     angular
         .module('app', [
           'ui.router',
@@ -45,7 +44,7 @@
         .config(require('./app.config'))
         .run(run)
         .constant('config', {
-          'api_url': 'http://192.168.99.100:32769'
+          'api_url': 'http://192.168.99.100:32768'
         });
 
     // Resources
@@ -68,16 +67,16 @@
     require('./vacancy/list');
 
     function run($rootScope, $state, store, jwtHelper) {
-        $rootScope.$on('$stateChangeStart', function(e, to) {
-            if(to.data && to.data.requiresLogin) {
-                if(!store.get('jwt') || jwtHelper.isTokenExpired(store.get('jwt'))) {
-                    e.preventDefault();
-                    $state.go('intro.login');
-                }
-            }
-        });
+      $rootScope.$on('$stateChangeStart', function(e, to) {
+        if(to.data && to.data.requiresLogin) {
+          if(!store.get('jwt') || jwtHelper.isTokenExpired(store.get('jwt'))) {
+            e.preventDefault();
+            $state.go('intro.login');
+          }
+        }
+      });
 
-        $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
+      $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
         if (angular.isDefined(toState.data.pageTitle)) {
           $rootScope.pageTitle = toState.data.pageTitle + ' | interviewr';
           $rootScope.pageName = toState.data.pageTitle;
