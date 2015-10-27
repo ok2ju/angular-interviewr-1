@@ -49,7 +49,11 @@ $grid-controls-hover-color: #59728e;
 }
 
 .c-main-info {
-  @include make-col(8);
+  @include make-col(12);
+
+  @media only screen and (min-width: 1280px) {
+    @include make-col(8);
+  }
 }
 
 .c-main-info__inner {
@@ -118,10 +122,26 @@ $grid-controls-hover-color: #59728e;
 }
 
 .c-sidebar-info {
-  @include make-col(4);
+  @include make-col(12);
+  margin-top: 20px;
+
+  @media only screen and (min-width: 1280px) {
+    @include make-col(4);
+    margin-top: 0;
+  }
+}
+
+.sidebarBox {
+  float: left;
+  margin-right: 35px;
+
+  @media only screen and (min-width: 1280px) {
+    float: none;
+  }
 }
 
 .c-sidebar-info__inner {
+  @include clearfix;
   background: darken($body-color, 3%);
   padding: 20px;
   border-radius: 4px;

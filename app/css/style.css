@@ -3220,7 +3220,15 @@ main.test-vid {
   padding-left: 15px;
   padding-right: 15px;
   position: relative;
-  width: 66.66667%; }
+  width: 100%; }
+  @media only screen and (min-width: 1280px) {
+    .c-main-info {
+      float: left;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      position: relative;
+      width: 66.66667%; } }
 
 .c-main-info__inner {
   background-color: #fff;
@@ -3298,12 +3306,33 @@ main.test-vid {
   padding-left: 15px;
   padding-right: 15px;
   position: relative;
-  width: 33.33333%; }
+  width: 100%;
+  margin-top: 20px; }
+  @media only screen and (min-width: 1280px) {
+    .c-sidebar-info {
+      float: left;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      position: relative;
+      width: 33.33333%;
+      margin-top: 0; } }
+
+.sidebarBox {
+  float: left;
+  margin-right: 35px; }
+  @media only screen and (min-width: 1280px) {
+    .sidebarBox {
+      float: none; } }
 
 .c-sidebar-info__inner {
   background: #eaeaea;
   padding: 20px;
   border-radius: 4px; }
+  .c-sidebar-info__inner::after {
+    clear: both;
+    content: '';
+    display: table; }
 
 .c-sidebar-info__head {
   text-transform: uppercase;

@@ -11,8 +11,8 @@
             <div class="social-btns"><a href="#"><i class="facebook-ico"></i></a><a href="#"><i class="google-ico"></i></a></div>
           </div>
           <p class="c-profile-info__sm">
-            <span>Category</span> |
-            <span><strong>Since</strong> 19.05.1993</span>
+            <span>{{vm.company.category}}</span> |
+            <span><strong>Since</strong> {{vm.company.creation_date | moment: 'DD.MM.YYYY'}}</span>
           </p>
           <p class="c-profile-info__spec"><strong>Specialization:</strong> Product Development, Enterprise Application Platforms, Application Development, Application Testing, Application Maintenance & Support, ASM & Infrastructure Services</p>
         </div>
@@ -20,27 +20,31 @@
       <div class="c-profile-body">
         <div class="c-profile-body__block">
           <h2 class="c-profile-body__head">About</h2>
-          <p class="c-profile-body__text">Established in 1993, EPAM Systems, Inc. (NYSE: EPAM) is recognized as a leader in software product development by independent research agencies. Headquartered in the United States, EPAM serves clients worldwide utilizing its award-winning global delivery platform and its locations in 20 countries across North America, Europe, Asia and Australia. EPAM was ranked #6 in 2013 America's 25 Fastest-Growing Tech Companies and #3 in 2014 America’s Best Small Companies lists by Forbes Magazine. </p>
+          <p class="c-profile-body__text">{{vm.company.description}}</p>
         </div>
       </div>
     </div>
   </div>
   <div class="c-sidebar-info">
     <div class="c-sidebar-info__inner">
-      <h2 class="c-sidebar-info__head">Contact data</h2>
-      <ul class="c-sidebar-info-list">
-        <li class="c-sidebar-info-list__item"><strong>Email:</strong> {{vm.company.email}}</li>
-        <li class="c-sidebar-info-list__item"><strong>Phone:</strong> {{vm.company.phone}}</li>
-        <li class="c-sidebar-info-list__item"><strong>Site:</strong> {{vm.company.site}}</li>
-        <li class="c-sidebar-info-list__item"><strong>Location:</strong> {{vm.company.location}}</li>
-      </ul>
-      <h2 class="c-sidebar-info__head">Owner data</h2>
-      <ul class="c-sidebar-info-list">
-        <li class="c-sidebar-info-list__item"><strong>Name:</strong> info@interviewr.com</li>
-        <li class="c-sidebar-info-list__item"><strong>Phone:</strong> +375 29 4353536</li>
-        <li class="c-sidebar-info-list__item"><strong>Email:</strong> interviewr.io</li>
-        <li class="c-sidebar-info-list__item"><strong>Country:</strong> interviewr.io</li>
-      </ul>
+      <div class="sidebarBox">
+        <h2 class="c-sidebar-info__head">Contact data</h2>
+        <ul class="c-sidebar-info-list">
+          <li class="c-sidebar-info-list__item"><strong>Email:</strong> {{vm.company.email}}</li>
+          <li class="c-sidebar-info-list__item"><strong>Phone:</strong> {{vm.company.phone}}</li>
+          <li class="c-sidebar-info-list__item"><strong>Site:</strong> {{vm.company.site}}</li>
+          <li class="c-sidebar-info-list__item"><strong>Location:</strong> {{vm.company.location}}</li>
+        </ul>
+      </div>
+      <div class="sidebarBox">
+        <h2 class="c-sidebar-info__head">Owner data</h2>
+        <ul class="c-sidebar-info-list">
+          <li class="c-sidebar-info-list__item"><strong>Name:</strong> info@interviewr.com</li>
+          <li class="c-sidebar-info-list__item"><strong>Phone:</strong> +375 29 4353536</li>
+          <li class="c-sidebar-info-list__item"><strong>Email:</strong> interviewr.io</li>
+          <li class="c-sidebar-info-list__item"><strong>Country:</strong> interviewr.io</li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
