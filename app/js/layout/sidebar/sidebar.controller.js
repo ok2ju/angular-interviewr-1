@@ -55,4 +55,9 @@ module.exports = function() {
         state: 'app.test'
       }
     ];
+
+    vm.btnToggler = function(menuItem) {
+      menuItem.active = true;
+      console.log(menuItem);
+    };
 };

@@ -29,7 +29,9 @@ module.exports = function() {
 
   var directive = {
         restrict: 'EA',
-        scope: true,
+        scope: {
+          dropdownData: '=dropdownAttr'
+        },
         templateUrl: 'js/layout/dropdown/dropdown.html',
         link: link
     };

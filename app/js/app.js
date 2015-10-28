@@ -44,7 +44,7 @@
         .config(require('./app.config'))
         .run(run)
         .constant('config', {
-          'api_url': 'http://192.168.99.100:3000'
+          'api_url': 'http://localhost:3000'
         });
 
     // Resources
