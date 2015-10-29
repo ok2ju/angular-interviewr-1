@@ -1,7 +1,9 @@
 var moment = require('moment');
 
-module.exports = function(CompanyResource, $scope) {
+module.exports = function(CompanyResource, $scope, $http, config) {
   var vm = this;
+  var countries_url = config.api_url + '/api/v1/countries';
+  var categories_url = config.api_url + '/api/v1/categories';
 
   vm.registerCompany = registerCompany;
   vm.company = new CompanyResource();
@@ -43,5 +45,43 @@ module.exports = function(CompanyResource, $scope) {
 
   $scope.$watch('vm.company.yof', function(current, original) {
     vm.company.yof = moment.utc(current).format();
+  });
+
+  // Get data for fields
+
+  vm.getCountries = function() {
+    $http({
+      url: countries_url,
+      method: 'GET'
+    }).then(function(response) {
+      vm.countries = response.data;
+    }, function(error) {
+      console.log('Error!');
+    });
+  };
+
+  vm.getCategories = function() {
+    $http({
+      url: categories_url,
+      method: 'GET'
+    }).then(function(response) {
+      vm.categories = response.data;
+    }, function(error) {
+      console.log('Error!');
+    });
+  };
+
+  vm.getCountries();
+  vm.getCategories();
+
+  vm.country = '';
+  vm.category = '';
+
+  $scope.$watch('vm.country', function(current, original) {
+    vm.company.location = current.name;
+  });
+
+  $scope.$watch('vm.category', function(current, original) {
+    vm.company.category = current.name;
   });
 };

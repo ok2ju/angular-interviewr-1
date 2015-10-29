@@ -1191,6 +1191,12 @@ textarea {
 .ui.button.dropdown .menu {
   min-width: 100%; }
 
+.form-dd .ui.selection.dropdown {
+  width: 100%;
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0; }
+
 /* Displays like a select box */
 .ui.selection.dropdown {
   font-size: 13px;
@@ -1210,12 +1216,9 @@ textarea {
   padding: 10px;
   box-shadow: none;
   border: 1px solid rgba(34, 36, 38, 0.15);
-  border-radius: 0.28571429rem;
+  border-radius: 3px;
+  z-index: 1;
   transition: box-shadow 0.1s ease, width 0.1s ease; }
-
-.ui.selection.dropdown.visible,
-.ui.selection.dropdown.active {
-  z-index: 10; }
 
 select.ui.dropdown {
   height: 38px;
@@ -1294,7 +1297,8 @@ select.ui.dropdown {
 /* Active */
 .ui.selection.active.dropdown {
   border-color: #96c8da;
-  box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15); }
+  box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
+  z-index: 2; }
 
 .ui.selection.active.dropdown .menu {
   border-color: #96c8da;
@@ -2075,6 +2079,10 @@ button.toast-close-button {
       border-top-right-radius: 3px;
       border-top: 1px solid rgba(34, 36, 38, 0.15);
       padding: 7px 10px; } }
+
+.datepicker-input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0; }
 
 .form-row-group__select {
   border: 1px solid rgba(34, 36, 38, 0.15);

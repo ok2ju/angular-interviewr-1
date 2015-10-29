@@ -85,6 +85,10 @@
           $rootScope.pageName = toState.data.pageTitle;
         }
       });
+
+      angular.element(document).on('click', function(e) {
+        $rootScope.$broadcast('documentClicked', angular.element(e.target));
+      });
     }
 
 })();

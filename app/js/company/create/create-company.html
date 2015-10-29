@@ -20,7 +20,7 @@
               <i class="sidebar-ico icon-globe"></i>
               Location
             </label>
-            <input ng-model="vm.company.location" type="text" class="form-row-group__input" id="cp-location">
+            <drop-down class="form-dd" placeholder="Country" property="name" selected="vm.country" dropdown-attr="vm.countries"></drop-down>
           </div>
         </div>
         <div class="form-row">
@@ -29,14 +29,14 @@
               <i class="sidebar-ico icon-globe"></i>
               Category
             </label>
-            <input ng-model="vm.company.category" type="text" class="form-row-group__input" id="cp-category">
+            <drop-down class="form-dd" placeholder="Category" property="name" selected="vm.category" dropdown-attr="vm.categories"></drop-down>
           </div>
           <div class="form-row-group">
             <label for="cp-yof" class="form-row-group__label">
               <i class="sidebar-ico icon-globe"></i>
               Foundation
             </label>
-            <input id="cp-yof" type="text" class="form-row-group__input" uib-datepicker-popup="{{vm.format}}" ng-model="vm.company.yof" is-open="vm.status.opened" max-date="vm.maxDate" datepicker-options="vm.dateOptions" ng-required="true" show-button-bar="false" show-weeks="false" />
+            <input id="cp-yof" type="text" class="form-row-group__input datepicker-input" uib-datepicker-popup="{{vm.format}}" ng-model="vm.company.yof" is-open="vm.status.opened" max-date="vm.maxDate" datepicker-options="vm.dateOptions" ng-required="true" show-button-bar="false" show-weeks="false" />
             <span class="input-group-btn">
               <button type="button" class="btn btn-default" ng-click="vm.open($event)"><i class="icon-calendar"></i></button>
             </span>

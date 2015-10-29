@@ -1,36 +1,51 @@
 var $ = require('jquery');
 
-module.exports = function() {
+module.exports = function($rootScope) {
+
   function link(scope, element, attrs) {
 
-    var dropdown = element.children();
+    scope.listVisible = false;
+    scope.isPlaceholder = true;
 
-    dropdown.on('click', function() {
-      var menu = $(this).find('.menu');
+    scope.select = function(item) {
+      scope.isPlaceholder = false;
+      scope.selected = item;
 
-      $(this).toggleClass('active');
-      $(this).toggleClass('visible');
+      if(scope.onChange != undefined) {
+        scope.onChange(item);
+      }
+    };
 
-      menu.toggleClass('visible');
-      menu.toggleClass('hidden');
+    scope.isSelected = function(item) {
+      return item[scope.property] === scope.selected[scope.property];
+    };
+
+    scope.show = function() {
+      scope.listVisible = true;
+    };
+
+    $rootScope.$on('documentClicked', function(inner, target) {
+      if(!$(target[0]).is('.ui.dropdown') && !$(target[0]).is('.ui-dropdown-item')) {
+        scope.$apply(function() {
+          scope.listVisible = false;
+        });
+      }
     });
 
-    $(document).on('click', function(event) {
-      if (!$(event.target).closest('.dropdown, .menu').length) {
-        // Hide the menus.
-        $('.dropdown').removeClass('active');
-        $('.dropdown').removeClass('visible');
-        $('.dropdown').find('.menu').removeClass('visible');
-        $('.dropdown').find('.menu').removeClass('hidden');
-      }
+    scope.$watch('selected', function(value) {
+      scope.isPlaceholder = scope.selected[scope.property] === undefined;
+      scope.display = scope.selected[scope.property];
     });
 
   }
 
   var directive = {
-        restrict: 'EA',
+        restrict: 'E',
         scope: {
-          dropdownData: '=dropdownAttr'
+          placeholder: '@',
+          dropdownData: '=dropdownAttr',
+          selected: '=',
+          property: '@'
         },
         templateUrl: 'js/layout/dropdown/dropdown.html',
         link: link
