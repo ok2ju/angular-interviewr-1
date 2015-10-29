@@ -1,4 +1,4 @@
-module.exports = function(CompanyResource, $http, config) {
+module.exports = function(CompanyResource, $http, $scope, config) {
   var vm = this;
   var countries_url = config.api_url + '/api/v1/countries';
   var categories_url = config.api_url + '/api/v1/categories';
@@ -29,4 +29,7 @@ module.exports = function(CompanyResource, $http, config) {
 
   vm.getCountries();
   vm.getCategories();
+
+  vm.country = '';
+  vm.category = '';
 };
