@@ -4,7 +4,7 @@
 
 AngularJS App of INTERVIEWR
 
-## Prerequisites
+## Prerequisites 
 
 Interviewr-ui is an [AngularJS](https://angularjs.org/) single page web application which runs on a [NodeJS](http://nodejs.org/) server using [ExpressJS](http://expressjs.com/).
 
