@@ -22,6 +22,7 @@ module.exports = function(CompanyResource, $http, $scope, config) {
       method: 'GET'
     }).then(function(response) {
       vm.categories = response.data;
+      vm.categories.unshift({id:9999, name: 'All'});
     }, function(error) {
       console.log('Error!');
     });
