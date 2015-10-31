@@ -1,12 +1,35 @@
 var $ = require('jquery');
 
-module.exports = function ModalController($modalInstance, $timeout, Upload, file) {
+var cropKeys = [
+  'width',
+  'height',
+  'x',
+  'y',
+  'scaleX',
+  'scaleY'
+];
+
+module.exports = function ModalController($modalInstance, $timeout, Upload, config, file) {
   var vm = this;
 
   vm.file = file;
+  vm.cropData = {};
 
   vm.ok = function () {
-    /*$modalInstance.close(vm.selected.item);*/
+    //$modalInstance.close(vm.selected.item);
+
+    var data = {
+      file: vm.file,
+      "Content-Type": vm.file.type != '' ? vm.file.type : 'application/octet-stream'
+    }
+
+    Upload.upload({
+      url: config.api_url + '/api/v1/images',
+      data: data,
+      headers: {
+        crop: JSON.stringify(vm.cropData)
+      }
+    })
   };
 
   vm.cancel = function () {
@@ -21,14 +44,9 @@ module.exports = function ModalController($modalInstance, $timeout, Upload, file
     vm.cropper = $('.modal-body > img').cropper({
       aspectRatio: 1 / 1,
       crop: function(e) {
-        // Output the result data for cropping image.
-        console.log(e.x);
-        console.log(e.y);
-        console.log(e.width);
-        console.log(e.height);
-        console.log(e.rotate);
-        console.log(e.scaleX);
-        console.log(e.scaleY);
+        cropKeys.forEach(function(key) {
+          vm.cropData[key] = e[key];
+        });
       },
       movable: false,
       zoomable: false,

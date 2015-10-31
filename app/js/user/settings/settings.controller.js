@@ -1,4 +1,6 @@
-module.exports = function(store, jwtHelper,
+var $ = require('jquery');
+
+module.exports = function SettingsController(store, jwtHelper,
                       toastr, $state, $http, $rootScope, $uibModal,
                       config, Upload, UserResource) {
   var vm = this;
@@ -29,7 +31,13 @@ module.exports = function(store, jwtHelper,
   //file upload
 
   vm.onFileSelected = function() {
-    vm.open();
+    if(vm.file) {
+      vm.open();
+    }
+  };
+
+  vm.openFileDialog = function() {
+    $('#up-photo').click();
   };
 
   // modal window
@@ -37,7 +45,6 @@ module.exports = function(store, jwtHelper,
   vm.animationsEnabled = true;
 
   vm.open = function (size) {
-
     var modalInstance = $uibModal.open({
       animation: vm.animationsEnabled,
       templateUrl: 'js/user/settings/modal.html',
