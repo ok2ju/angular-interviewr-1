@@ -874,24 +874,23 @@ textarea {
   opacity: .5; }
 
 .modal-header {
-  padding: 15px;
-  border-bottom: 1px solid #e5e5e5; }
+  padding: 15px; }
 
 .modal-header .close {
   margin-top: -2px; }
 
 .modal-title {
   margin: 0;
-  line-height: 1.42857143; }
+  line-height: 1.42857143;
+  font-weight: 500; }
 
 .modal-body {
   position: relative;
   padding: 15px; }
 
 .modal-footer {
-  padding: 15px;
-  text-align: right;
-  border-top: 1px solid #e5e5e5; }
+  padding: 10px;
+  text-align: right; }
 
 .modal-footer .btn + .btn, .modal-footer .form-row-group__submit-btn + .btn, .modal-footer .company-more-btn + .btn, .modal-footer .landing-register-link + .btn, .modal-footer .user-button + .btn, .modal-footer .follow-btn + .btn, .modal-footer .submit-wrapper .c-btn-submit + .btn, .submit-wrapper .modal-footer .c-btn-submit + .btn, .modal-footer .btn + .form-row-group__submit-btn, .modal-footer .form-row-group__submit-btn + .form-row-group__submit-btn, .modal-footer .company-more-btn + .form-row-group__submit-btn, .modal-footer .landing-register-link + .form-row-group__submit-btn, .modal-footer .user-button + .form-row-group__submit-btn, .modal-footer .follow-btn + .form-row-group__submit-btn, .modal-footer .submit-wrapper .c-btn-submit + .form-row-group__submit-btn, .submit-wrapper .modal-footer .c-btn-submit + .form-row-group__submit-btn, .modal-footer .btn + .company-more-btn, .modal-footer .form-row-group__submit-btn + .company-more-btn, .modal-footer .company-more-btn + .company-more-btn, .modal-footer .landing-register-link + .company-more-btn, .modal-footer .user-button + .company-more-btn, .modal-footer .follow-btn + .company-more-btn, .modal-footer .submit-wrapper .c-btn-submit + .company-more-btn, .submit-wrapper .modal-footer .c-btn-submit + .company-more-btn, .modal-footer .btn + .landing-register-link, .modal-footer .form-row-group__submit-btn + .landing-register-link, .modal-footer .company-more-btn + .landing-register-link, .modal-footer .landing-register-link + .landing-register-link, .modal-footer .user-button + .landing-register-link, .modal-footer .follow-btn + .landing-register-link, .modal-footer .submit-wrapper .c-btn-submit + .landing-register-link, .submit-wrapper .modal-footer .c-btn-submit + .landing-register-link, .modal-footer .btn + .user-button, .modal-footer .form-row-group__submit-btn + .user-button, .modal-footer .company-more-btn + .user-button, .modal-footer .landing-register-link + .user-button, .modal-footer .user-button + .user-button, .modal-footer .follow-btn + .user-button, .modal-footer .submit-wrapper .c-btn-submit + .user-button, .submit-wrapper .modal-footer .c-btn-submit + .user-button, .modal-footer .btn + .follow-btn, .modal-footer .form-row-group__submit-btn + .follow-btn, .modal-footer .company-more-btn + .follow-btn, .modal-footer .landing-register-link + .follow-btn, .modal-footer .user-button + .follow-btn, .modal-footer .follow-btn + .follow-btn, .modal-footer .submit-wrapper .c-btn-submit + .follow-btn, .submit-wrapper .modal-footer .c-btn-submit + .follow-btn, .modal-footer .submit-wrapper .btn + .c-btn-submit, .submit-wrapper .modal-footer .btn + .c-btn-submit, .modal-footer .submit-wrapper .form-row-group__submit-btn + .c-btn-submit, .submit-wrapper .modal-footer .form-row-group__submit-btn + .c-btn-submit, .modal-footer .submit-wrapper .company-more-btn + .c-btn-submit, .submit-wrapper .modal-footer .company-more-btn + .c-btn-submit, .modal-footer .submit-wrapper .landing-register-link + .c-btn-submit, .submit-wrapper .modal-footer .landing-register-link + .c-btn-submit, .modal-footer .submit-wrapper .user-button + .c-btn-submit, .submit-wrapper .modal-footer .user-button + .c-btn-submit, .modal-footer .submit-wrapper .follow-btn + .c-btn-submit, .submit-wrapper .modal-footer .follow-btn + .c-btn-submit, .modal-footer .submit-wrapper .c-btn-submit + .c-btn-submit, .submit-wrapper .modal-footer .c-btn-submit + .c-btn-submit {
   margin-bottom: 0;
@@ -1213,7 +1212,7 @@ textarea {
   min-height: 2.7142em;
   background: #ffffff;
   display: inline-block;
-  padding: 10px;
+  padding: 10px 25px 10px 10px;
   box-shadow: none;
   border: 1px solid rgba(34, 36, 38, 0.15);
   border-radius: 3px;
@@ -1719,6 +1718,8 @@ select.ui.dropdown {
   margin-top: 30px; }
 
 .int-section__header {
+  font-size: 12px;
+  font-size: 0.75rem;
   color: #fff;
   margin-bottom: 10px;
   padding: 0 25px;
@@ -1761,17 +1762,26 @@ select.ui.dropdown {
   .int-section__list > li:hover {
     background: rgba(255, 255, 255, 0.05); }
   .int-section__list > li a {
-    font-size: 14px;
-    font-size: 0.875rem;
-    color: #999;
-    line-height: 40px;
+    font-size: 12px;
+    font-size: 0.75rem;
+    color: #969696;
+    line-height: 35px;
     display: inline;
-    padding: 0 25px; }
+    padding: 0 22px;
+    font-weight: 600;
+    text-transform: uppercase; }
     @media (min-width: 992px) {
       .int-section__list > li a {
-        display: block; } }
+        display: block;
+        padding: 0 25px; } }
   .int-section__list > li .sidebar-ico {
+    font-size: 14px;
+    font-size: 0.875rem;
     margin-right: 10px; }
+    @media (min-width: 992px) {
+      .int-section__list > li .sidebar-ico {
+        font-size: 15px;
+        font-size: 0.9375rem; } }
 
 .copyright {
   color: #6b6b6b;
@@ -3759,16 +3769,16 @@ main.test-vid {
   padding: 15px; }
 
 .u-p-body-sect__head {
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   text-transform: uppercase;
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
   font-weight: 400; }
 
 .u-p-body-sect__text-about {
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   margin-top: 20px; }
 
 .u-bs-row {
@@ -3804,8 +3814,8 @@ main.test-vid {
   margin-bottom: 10px; }
 
 .u-social-link {
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   color: #212121; }
   .u-social-link:hover {
     text-decoration: underline; }
