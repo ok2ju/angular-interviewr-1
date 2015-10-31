@@ -14,7 +14,8 @@
             <span>{{vm.company.category}}</span> |
             <span><strong>Since</strong> {{vm.company.creation_date | moment: 'DD.MM.YYYY'}}</span>
           </p>
-          <p class="c-profile-info__spec"><strong>Specialization:</strong> Product Development, Enterprise Application Platforms, Application Development, Application Testing, Application Maintenance & Support, ASM & Infrastructure Services</p>
+          <p class="c-profile-info__spec"><strong>Specialization:</strong>
+          <span ng-repeat="spec in vm.company.specialization">{{spec.text}}</span></p>
         </div>
       </div>
       <div class="c-profile-body">
@@ -39,10 +40,10 @@
       <div class="sidebarBox">
         <h2 class="c-sidebar-info__head">Owner data</h2>
         <ul class="c-sidebar-info-list">
-          <li class="c-sidebar-info-list__item"><strong>Name:</strong> info@interviewr.com</li>
-          <li class="c-sidebar-info-list__item"><strong>Phone:</strong> +375 29 4353536</li>
-          <li class="c-sidebar-info-list__item"><strong>Email:</strong> interviewr.io</li>
-          <li class="c-sidebar-info-list__item"><strong>Country:</strong> interviewr.io</li>
+          <li class="c-sidebar-info-list__item"><strong>Name:</strong> {{vm.owner.name}} {{vm.owner.surname}}</li>
+          <li class="c-sidebar-info-list__item"><strong>Phone:</strong> {{vm.owner.phone}}</li>
+          <li class="c-sidebar-info-list__item"><strong>Email:</strong> {{vm.owner.email}}</li>
+          <li class="c-sidebar-info-list__item"><strong>Country:</strong> {{vm.owner.country}}</li>
         </ul>
       </div>
     </div>

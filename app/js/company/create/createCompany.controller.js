@@ -1,19 +1,22 @@
 var moment = require('moment');
 
-module.exports = function(CompanyResource, $scope, $http, config) {
+module.exports = function(CompanyResource, $scope, $http, config, toastr, $state) {
   var vm = this;
   var countries_url = config.api_url + '/api/v1/countries';
   var categories_url = config.api_url + '/api/v1/categories';
 
   vm.registerCompany = registerCompany;
-  vm.company = new CompanyResource();
+  vm.company = new CompanyResource.Profile();
 
   $scope.$watch('vm.company.description', function(current, original) {
     vm.company.shortDesc = vm.company.description ? current.substring(0, 180) + '...' : '';
   });
 
   function registerCompany() {
+    console.log(vm.company.owner_id);
     vm.company.$save(function() {
+      toastr.success('Company created.', 'Yay!');
+      $state.go('app.companies');
       console.log('Company Saved');
     });
   }
@@ -84,4 +87,5 @@ module.exports = function(CompanyResource, $scope, $http, config) {
   $scope.$watch('vm.category', function(current, original) {
     vm.company.category = current.name;
   });
+
 };

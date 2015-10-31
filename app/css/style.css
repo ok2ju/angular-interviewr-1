@@ -2110,7 +2110,8 @@ button.toast-close-button {
 .full-len-input {
   width: 100%;
   padding: 0 15px;
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+  position: relative; }
 
 .full-len-input__label {
   display: block;
@@ -3293,6 +3294,10 @@ main.test-vid {
   font-size: 13px;
   font-size: 0.8125rem;
   margin-top: 15px; }
+  .c-profile-info__spec span:after {
+    content: ', '; }
+  .c-profile-info__spec span:last-child:after {
+    content: ''; }
 
 .c-profile-body {
   margin-top: 25px; }
@@ -3385,6 +3390,13 @@ main.test-vid {
     -webkit-transform: scaleX(1);
     -ms-transform: scaleX(1);
     transform: scaleX(1); }
+
+.v-form-error {
+  font-size: 11px;
+  font-size: 0.6875rem;
+  position: absolute;
+  top: -20px;
+  color: #d9534f; }
 
 .pull-left {
   float: left; }

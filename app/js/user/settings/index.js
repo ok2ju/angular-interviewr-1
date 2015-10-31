@@ -7,7 +7,8 @@
       'ui.router',
       'toastr',
       'ngTagsInput',
-      'ui.bootstrap'
+      'ui.bootstrap',
+      'ngMessages'
     ])
     .config(require('./settings.config'))
     .controller('UserSettingsController', require('./settings.controller'))
