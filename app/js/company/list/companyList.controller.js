@@ -3,7 +3,7 @@ module.exports = function(CompanyResource, $http, $scope, config) {
   var countries_url = config.api_url + '/api/v1/countries';
   var categories_url = config.api_url + '/api/v1/categories';
 
-  vm.companies = CompanyResource.query();
+  vm.companies = CompanyResource.Profile.query();
 
   vm.getCountries = function() {
     $http({

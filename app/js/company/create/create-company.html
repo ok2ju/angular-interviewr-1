@@ -2,18 +2,24 @@
   <div class="s-content-head">
     <h2 class="s-content-head__header">Fill company profile fields</h2>
   </div>
-  <form class="settings-form" method="post" ng-submit="vm.registerCompany()">
+  <form class="settings-form" method="post" ng-submit="vm.registerCompany()" name="createCompany">
 
     <div class="settings-form__row">
       <div class="form-fields">
 
         <div class="form-row">
           <div class="form-row-group">
+            <div class="v-form-error" ng-messages="createCompany.companyName.$error" ng-if="createCompany.companyName.$dirty">
+              <div ng-message="required">You did not enter a company name</div>
+              <div ng-message="minlength">Your company name is too short</div>
+              <div ng-message="maxlength">Your company name is too long</div>
+            </div>
             <label for="cp-name" class="form-row-group__label">
               <i class="sidebar-ico icon-user"></i>
               Name
             </label>
-            <input ng-model="vm.company.name" type="text" name="companyName" class="form-row-group__input" id="cp-name">
+            <input ng-model="vm.company.name" type="text" name="companyName" class="form-row-group__input" id="cp-name" ng-minlength="5"
+           ng-maxlength="15" required>
           </div>
           <div class="form-row-group">
             <label for="cp-location" class="form-row-group__label">
@@ -44,36 +50,57 @@
         </div>
         <div class="form-row">
           <div class="form-row-group">
+            <div class="v-form-error" ng-messages="createCompany.companyEmail.$error" ng-if="createCompany.companyEmail.$dirty">
+              <div ng-message="required">You did not enter a email field</div>
+              <div ng-message="email">Your email address is invalid</div>
+            </div>
             <label for="cp-email" class="form-row-group__label">
               <i class="sidebar-ico icon-globe"></i>
               Email
             </label>
-            <input ng-model="vm.company.email" type="text" class="form-row-group__input" id="cp-email">
+            <input name="companyEmail" ng-model="vm.company.email" type="email" class="form-row-group__input" id="cp-email" required>
           </div>
           <div class="form-row-group">
+            <div class="v-form-error" ng-messages="createCompany.companyPhone.$error" ng-if="createCompany.companyPhone.$dirty">
+              <div ng-message="required">You did not enter a phone</div>
+              <div ng-message="pattern">Must be a valid 10 digit phone number</div>
+            </div>
             <label for="cp-phone" class="form-row-group__label">
               <i class="sidebar-ico icon-globe"></i>
               Phone
             </label>
-            <input ng-model="vm.company.phone" type="text" class="form-row-group__input" id="cp-phone">
+            <input name="companyPhone" ng-model="vm.company.phone" type="text" class="form-row-group__input" id="cp-phone" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/" required>
           </div>
         </div>
         <div class="form-row">
           <div class="form-row-group">
+            <div class="v-form-error" ng-messages="createCompany.companySite.$error" ng-if="createCompany.companySite.$dirty">
+              <div ng-message="required">You did not enter a site url</div>
+              <div ng-message="pattern">Must be a valid url</div>
+            </div>
             <label for="cp-site" class="form-row-group__label">
               <i class="sidebar-ico icon-globe"></i>
               Site
             </label>
-            <input ng-model="vm.company.site" type="text" class="form-row-group__input" id="cp-site">
+            <input name="companySite" ng-model="vm.company.site" type="text" class="form-row-group__input" id="cp-site" ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/" required>
           </div>
         </div>
         <div class="form-row">
           <div class="full-len-input">
+            <tags-input ng-model="vm.company.specialization"></tags-input>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="full-len-input">
+            <div class="v-form-error" ng-messages="createCompany.description.$error" ng-if="createCompany.description.$dirty">
+              <div ng-message="required">You did not enter a description</div>
+              <div ng-message="minlength">Description field is too short</div>
+            </div>
             <label for="cp-about" class="full-len-input__label">
               <i class="sidebar-ico icon-camera sidebar-ico-full"></i>
               Description
             </label>
-            <textarea ng-model="vm.company.description" class="full-len-input__input" name="description" id="cp-about"></textarea>
+            <textarea ng-model="vm.company.description" class="full-len-input__input" name="description" id="cp-about" ng-minlength="50" required></textarea>
           </div>
         </div>
       </div>

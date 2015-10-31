@@ -104,6 +104,18 @@ $grid-controls-hover-color: #59728e;
 .c-profile-info__spec {
   @include font-size(13px);
   margin-top: 15px;
+
+  span {
+    &:after {
+      content: ', ';
+    }
+
+    &:last-child {
+      &:after {
+        content: '';
+      }
+    }
+  }
 }
 
 .c-profile-body {
@@ -197,4 +209,13 @@ $grid-controls-hover-color: #59728e;
       transform: scaleX(1);
     }
   }
+}
+
+// Validation fields errors!
+
+.v-form-error {
+  @include font-size(11px);
+  position: absolute;
+  top: -20px;
+  color: #d9534f;
 }

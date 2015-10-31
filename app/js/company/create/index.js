@@ -4,7 +4,10 @@
   require('angular').module('app.company.create', [
       'ui.router',
       'app.company.resource',
-      'ui.bootstrap'
+      'toastr',
+      'ngTagsInput',
+      'ui.bootstrap',
+      'ngMessages'
     ])
     .config(require('./createCompany.config'))
     .controller('CreateCompanyController', require('./createCompany.controller'));
