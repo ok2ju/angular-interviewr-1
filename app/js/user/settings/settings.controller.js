@@ -16,6 +16,14 @@ module.exports = function SettingsController(store, jwtHelper,
   vm.updateProfile = updateProfile;
   vm.loadTags = loadTags;
 
+  vm.getImageUrl = function() {
+    if(vm.user.imageId) {
+      return config.api_url + '/api/v1/images/' + vm.user.imageId;
+    } else {
+      return 'images/user-default.png';
+    }
+  }
+
   function updateProfile() {
     console.log(vm.user.social);
     vm.user.$update(function() {
@@ -54,6 +62,9 @@ module.exports = function SettingsController(store, jwtHelper,
       resolve: {
         file: function () {
           return vm.file;
+        },
+        user: function() {
+          return vm.user;
         }
       }
     });
