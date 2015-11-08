@@ -8,7 +8,7 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
   $urlRouterProvider.otherwise('/login');
 
   jwtInterceptorProvider.tokenGetter = function(store) {
-      return store.get('jwt');
+    return store.get('jwt');
   };
 
   $httpProvider.interceptors.push('jwtInterceptor');
