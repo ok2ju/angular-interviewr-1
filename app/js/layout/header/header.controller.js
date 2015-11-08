@@ -7,6 +7,9 @@ module.exports = function($state, toastr, store, jwtHelper, $http, config) {
   var url = config.api_url + '/api/v1/users/' + decodedJwt._id;
 
   vm.username = decodedJwt.username;
+  vm.getImageUrl = getImageUrl;
+  vm.logout = logout;
+  getUserInfo();
 
   function getUserInfo() {
     $http({
@@ -19,9 +22,7 @@ module.exports = function($state, toastr, store, jwtHelper, $http, config) {
     });
   }
 
-  getUserInfo();
-
-  vm.getImageUrl = function() {
+  function getImageUrl() {
     var res = '';
     if(vm.user && vm.user.imageId) {
       res = config.api_url + '/api/v1/images/' + vm.user.imageId;
@@ -30,8 +31,6 @@ module.exports = function($state, toastr, store, jwtHelper, $http, config) {
     }
     return res;
   }
-
-  vm.logout = logout;
 
   function logout() {
     store.remove('jwt');
