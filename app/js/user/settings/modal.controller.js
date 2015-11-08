@@ -9,10 +9,16 @@ var cropKeys = [
   'scaleY'
 ];
 
-module.exports = function ModalController($modalInstance, $timeout, Upload, config, file) {
+module.exports = function ModalController($modalInstance, $timeout, Upload, config, UserResource, file, user) {
   var vm = this;
 
   vm.file = file;
+  Upload.dataUrl(file).then(function(url) {
+    vm.dataUrl = url;
+    $timeout(init.bind(this));
+
+  });
+
   vm.cropData = {};
 
   vm.ok = function () {
@@ -29,16 +35,33 @@ module.exports = function ModalController($modalInstance, $timeout, Upload, conf
       headers: {
         crop: JSON.stringify(vm.cropData)
       }
-    })
+    }).then(function(resp) {
+        var data = resp.data;
+        if(data._id) {
+          UserResource.update({id: user._id}, {imageId: data._id}).then(function() {
+            vm.cancel();
+          });
+        }
+    });
   };
 
   vm.cancel = function () {
     $modalInstance.dismiss('cancel');
   };
 
-  $modalInstance.rendered.then(function() {
-    $timeout(init, 100);//TODO: here is dirty hack.
-  });
+  /*$modalInstance.rendered.then(function() {
+    //TODO: here is dirty hack.
+
+    $('.modal-body img').on(function(e) {console.log(e)})
+
+    var interval = setInterval(function() {
+      var img = $('.modal-body img');
+      if(img.prop('src')) {
+        clearInterval(interval);
+        init();
+      }
+    }, 50);
+  });*/
 
   function init() {
     vm.cropper = $('.modal-body > img').cropper({
