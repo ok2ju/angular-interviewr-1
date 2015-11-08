@@ -1,10 +1,7 @@
 var moment = require('moment');
 
-module.exports = function(CompanyResource, $scope, $http, config, toastr, $state) {
+module.exports = function(CompanyResource, metaService, $scope, $http, toastr, $state) {
   var vm = this;
-  var countries_url = config.api_url + '/api/v1/countries';
-  var categories_url = config.api_url + '/api/v1/categories';
-
   vm.registerCompany = registerCompany;
   vm.company = new CompanyResource.Profile();
 
@@ -53,10 +50,7 @@ module.exports = function(CompanyResource, $scope, $http, config, toastr, $state
   // Get data for fields
 
   vm.getCountries = function() {
-    $http({
-      url: countries_url,
-      method: 'GET'
-    }).then(function(response) {
+    metaService.getCountries().then(function(response) {
       vm.countries = response.data;
     }, function(error) {
       console.log('Error!');
@@ -64,10 +58,7 @@ module.exports = function(CompanyResource, $scope, $http, config, toastr, $state
   };
 
   vm.getCategories = function() {
-    $http({
-      url: categories_url,
-      method: 'GET'
-    }).then(function(response) {
+    metaService.getCategories().then(function(response) {
       vm.categories = response.data;
     }, function(error) {
       console.log('Error!');

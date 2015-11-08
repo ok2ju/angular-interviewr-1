@@ -16,38 +16,38 @@
     require('ng-file-upload');
 
     angular
-        .module('app', [
-          'ui.router',
-          'ngResource',
-          'ngFileUpload',
-          'angular-jwt',
-          'angular-storage',
-          'angular-loading-bar',
+      .module('app', [
+        'ui.router',
+        'ngResource',
+        'ngFileUpload',
+        'angular-jwt',
+        'angular-storage',
+        'angular-loading-bar',
 
-          /* Layout areas */
-          'app.header',
-          'app.sidebar',
-          'app.landing',
-          'app.dropdown',
+        /* Layout areas */
+        'app.header',
+        'app.sidebar',
+        'app.landing',
+        'app.dropdown',
 
-          /* Feature areas */
-          'app.user.login',
-          'app.user.signup',
-          'app.user.profile',
-          'app.user.settings',
-          'app.company.manage',
-          'app.company.create',
-          'app.company.list',
-          'app.company.profile',
-          'app.vacancy.manage',
-          'app.vacancy.candidates',
-          'app.vacancy.list'
-        ])
-        .config(require('./app.config'))
-        .run(run)
-        .constant('config', {
-          'api_url': 'http://localhost:3000'
-        });
+        /* Feature areas */
+        'app.user.login',
+        'app.user.signup',
+        'app.user.profile',
+        'app.user.settings',
+        'app.company.manage',
+        'app.company.create',
+        'app.company.list',
+        'app.company.profile',
+        'app.vacancy.manage',
+        'app.vacancy.candidates',
+        'app.vacancy.list'
+      ])
+      .config(require('./app.config'))
+      .run(run)
+      .constant('config', {
+        'api_url': 'http://localhost:3000'
+      });
 
     // Resources
     require('./user/resource');
@@ -56,6 +56,7 @@
 
     // Shared
     require('./shared/filters');
+    require('./shared/meta');
 
     require('./layout/landing');
     require('./layout/sidebar');

@@ -17,6 +17,9 @@ module.exports = function($rootScope) {
     };
 
     scope.isSelected = function(item) {
+      if(!scope.selected) {
+        return false;
+      }
       return item[scope.property] === scope.selected[scope.property];
     };
 
@@ -33,8 +36,10 @@ module.exports = function($rootScope) {
     });
 
     scope.$watch('selected', function(value) {
-      scope.isPlaceholder = scope.selected[scope.property] === undefined;
-      scope.display = scope.selected[scope.property];
+      if(scope.selected) {
+        scope.isPlaceholder = scope.selected[scope.property] === undefined;
+        scope.display = scope.selected[scope.property];
+      }
     });
 
   }

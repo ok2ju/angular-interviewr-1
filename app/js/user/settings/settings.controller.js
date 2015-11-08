@@ -70,12 +70,6 @@ module.exports = function SettingsController(store, jwtHelper,
         }
       }
     });
-
-    modalInstance.result.then(function (selectedItem) {
-      vm.selected = selectedItem;
-    }, function () {
-      console.log('Modal dismissed at: ' + new Date());
-    });
   };
 
   vm.toggleAnimation = function () {

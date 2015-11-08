@@ -9,5 +9,16 @@ module.exports = function($stateProvider) {
         requiresLogin: true,
         pageTitle: 'Manage Vacancies'
       }
+    })
+
+    .state('app.createVacancy', {
+      url: '/vacancies/create',
+      templateUrl: 'js/vacancy/manage/create.html',
+      controller: 'VacancyCreateController',
+      controllerAs: 'vm',
+      data: {
+        requiresLogin: true,
+        pageTitle: 'Create Vacancy'
+      }
     });
 };
