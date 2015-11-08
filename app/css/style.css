@@ -2718,6 +2718,14 @@ tags-input .autocomplete .suggestion-item em {
   .card-content__header:hover {
     text-decoration: underline; }
 
+.card-content-head {
+  position: relative; }
+
+.v-edit {
+  position: absolute;
+  right: 0;
+  top: 0; }
+
 .card-content__meta {
   font-size: .8rem;
   color: #999;

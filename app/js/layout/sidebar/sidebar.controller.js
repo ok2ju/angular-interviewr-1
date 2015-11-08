@@ -35,10 +35,10 @@ module.exports = function() {
     vm.company = [
       {
         name: 'My Company',
-        url: '/mycompany',
+        url: '/company/manage',
         active: false,
         icon: 'icon-diamond',
-        state: 'app.createCompany'
+        state: 'app.manageCompany'
       },
       {
         name: 'Candidates',
@@ -49,10 +49,10 @@ module.exports = function() {
       },
       {
         name: 'Vacancy',
-        url: '/vacancy',
+        url: '/vacancies/manage',
         active: false,
         icon: 'icon-newspaper',
-        state: 'app.test'
+        state: 'app.vacanciesManage'
       }
     ];
 

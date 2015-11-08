@@ -35,9 +35,11 @@
           'app.user.signup',
           'app.user.profile',
           'app.user.settings',
+          'app.company.manage',
           'app.company.create',
           'app.company.list',
           'app.company.profile',
+          'app.vacancy.manage',
           'app.vacancy.candidates',
           'app.vacancy.list'
         ])
@@ -63,9 +65,11 @@
     require('./user/signup');
     require('./user/profile');
     require('./user/settings');
+    require('./company/manage');
     require('./company/create');
     require('./company/list');
     require('./company/profile');
+    require('./vacancy/manage');
     require('./vacancy/candidates');
     require('./vacancy/list');
 
