@@ -4,6 +4,7 @@
   require('angular')
     .module('app.user.settings', [
       'app.user.resource',
+      'app.shared.meta',
       'ui.router',
       'toastr',
       'ngTagsInput',

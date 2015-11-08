@@ -24,13 +24,16 @@ module.exports = function($rootScope) {
     };
 
     scope.show = function() {
-      scope.listVisible = true;
+      scope.listVisible = !scope.listVisible;
     };
 
     $rootScope.$on('documentClicked', function(inner, target) {
-      if(!$(target[0]).is('.ui.dropdown') && !$(target[0]).is('.ui-dropdown-item')) {
+      var dropdown = $(element).find('.ui.dropdown');
+      var dropdownItem = $(element).find('.ui-dropdown-item');
+
+      if(!$(target[0]).is(dropdown) && !$(target[0]).is(dropdownItem)) {
         scope.$apply(function() {
-          scope.listVisible = false;
+          scope.listVisible = false
         });
       }
     });
@@ -50,6 +53,7 @@ module.exports = function($rootScope) {
           placeholder: '@',
           dropdownData: '=dropdownAttr',
           selected: '=',
+          display: '=',
           property: '@'
         },
         templateUrl: 'js/layout/dropdown/dropdown.html',

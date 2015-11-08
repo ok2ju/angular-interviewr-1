@@ -2,9 +2,9 @@ var $ = require('jquery');
 
 module.exports = function SettingsController(store, jwtHelper,
                       toastr, $state, $http, $rootScope, $uibModal,
-                      config, Upload, UserResource) {
-  var vm = this;
+                      config, Upload, UserResource, metaService) {
 
+  var vm = this;
   var jwt = store.get('jwt');
   var decodedJwt = jwt && jwtHelper.decodeToken(jwt);
 
@@ -39,7 +39,6 @@ module.exports = function SettingsController(store, jwtHelper,
   }
 
   //file upload
-
   vm.onFileSelected = function() {
     if(vm.file) {
       vm.open();
@@ -51,7 +50,6 @@ module.exports = function SettingsController(store, jwtHelper,
   };
 
   // modal window
-
   vm.animationsEnabled = true;
 
   vm.open = function (size) {
@@ -75,4 +73,15 @@ module.exports = function SettingsController(store, jwtHelper,
   vm.toggleAnimation = function () {
     vm.animationsEnabled = !vm.animationsEnabled;
   };
+
+  // Get Countries for dropdown
+  vm.getCountries = function() {
+    metaService.getCountries().then(function(response) {
+      vm.countries = response.data;
+    }, function(error) {
+      console.log('Error!');
+    });
+  };
+
+  vm.getCountries();
 };
