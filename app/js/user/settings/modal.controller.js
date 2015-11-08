@@ -16,7 +16,6 @@ module.exports = function ModalController($modalInstance, $timeout, Upload, conf
   Upload.dataUrl(file).then(function(url) {
     vm.dataUrl = url;
     $timeout(init.bind(this));
-
   });
 
   vm.cropData = {};
@@ -38,7 +37,8 @@ module.exports = function ModalController($modalInstance, $timeout, Upload, conf
     }).then(function(resp) {
         var data = resp.data;
         if(data._id) {
-          UserResource.update({id: user._id}, {imageId: data._id}).then(function() {
+          UserResource.update({id: user._id}, {imageId: data._id}, function() {
+            user.imageId = data._id;
             vm.cancel();
           });
         }
