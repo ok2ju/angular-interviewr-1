@@ -17,11 +17,13 @@ module.exports = function SettingsController(store, jwtHelper,
   vm.loadTags = loadTags;
 
   vm.getImageUrl = function() {
-    if(vm.user.imageId) {
-      return config.api_url + '/api/v1/images/' + vm.user.imageId;
+    var res = '';
+    if(vm.user && vm.user.imageId) {
+      res = config.api_url + '/api/v1/images/' + vm.user.imageId;
     } else {
-      return 'images/user-default.png';
+      res = 'images/user-default.png';
     }
+    return res;
   }
 
   function updateProfile() {
