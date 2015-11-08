@@ -2689,6 +2689,110 @@ tags-input .autocomplete .suggestion-item em {
 .cropper-disabled .cropper-point {
   cursor: not-allowed; }
 
+.v-card {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  float: left; }
+  @media (min-width: 768px) {
+    .v-card {
+      width: 50%; } }
+  @media only screen and (min-width: 1280px) {
+    .v-card {
+      width: 33.33333%; } }
+
+.v-card-inner {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px 0 #D4D4D5, 0 0 0 1px #D4D4D5;
+  margin-bottom: 20px; }
+
+.card-content {
+  padding: 1em;
+  font-size: 1rem; }
+
+.card-content__header {
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #212121; }
+  .card-content__header:hover {
+    text-decoration: underline; }
+
+.card-content__meta {
+  font-size: .8rem;
+  color: #999;
+  margin-top: 5px; }
+  .card-content__meta .time {
+    float: right;
+    font-size: .8rem; }
+
+.n-skills {
+  list-style: none;
+  margin-top: 5px; }
+
+.n-skills__item {
+  display: inline-block; }
+  .n-skills__item span {
+    background: #5cb85c;
+    border-radius: 2px;
+    font-size: 11px;
+    padding: 0 10px;
+    line-height: 18px;
+    display: block;
+    color: #fff; }
+
+.extra {
+  font-size: 14px;
+  font-size: 0.875rem;
+  padding: 0.5em 1em;
+  border-top: 1px solid rgba(0, 0, 0, 0.05); }
+  .extra .pos {
+    float: left;
+    position: relative;
+    padding-left: 1em;
+    margin-top: 5px; }
+    .extra .pos:before {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #f0ad4e;
+      position: absolute;
+      top: 6px;
+      left: 0; }
+  .extra .owner {
+    float: right;
+    color: #999; }
+    .extra .owner img {
+      width: 2em;
+      height: 2em;
+      border-radius: 50%;
+      display: inline-block;
+      vertical-align: middle; }
+  .extra:after {
+    display: block;
+    content: ' ';
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden; }
+
+.follow {
+  font-size: 12px;
+  font-size: 0.75rem;
+  display: block;
+  text-align: center;
+  padding: 0.8em 1.5em;
+  background: #E0E1E2;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #666;
+  transition: background 0.2s ease, color 0.2s ease; }
+  .follow:hover {
+    background: #c6c8c9;
+    color: #fff; }
+
 .filter {
   margin-bottom: 20px;
   background-color: #eaeaea;
@@ -3827,88 +3931,6 @@ main.test-vid {
     clear: both;
     content: '';
     display: table; }
-
-.vacancy-card {
-  float: left;
-  padding-left: 15px;
-  padding-right: 15px;
-  width: 50%; }
-
-.vacancy-card-inner {
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
-  border-radius: 4px;
-  background-color: #fff;
-  padding: 20px;
-  margin-bottom: 20px; }
-
-.vacancy-card__head {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  padding-bottom: 10px; }
-
-.vacancy-card__head-title {
-  font-size: 18px;
-  font-size: 1.125rem;
-  color: rgba(0, 0, 0, 0.87);
-  font-weight: 600; }
-
-.vacancy-card__head-info {
-  font-size: 12px;
-  font-size: 0.75rem;
-  color: #999; }
-  .vacancy-card__head-info a {
-    color: #999; }
-
-.vacancy-card__body {
-  padding-bottom: 10px; }
-  .vacancy-card__body .vacancies {
-    margin: 10px 0; }
-    .vacancy-card__body .vacancies li {
-      margin-right: 0; }
-  .vacancy-card__body .vacancy-about {
-    margin-left: -15px;
-    margin-right: -15px;
-    position: relative; }
-    .vacancy-card__body .vacancy-about::after {
-      clear: both;
-      content: '';
-      display: table; }
-  .vacancy-card__body .vacancy-about-col {
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 35%;
-    float: left; }
-  .vacancy-card__body .vacancy-icon {
-    padding: 0 15px;
-    float: right; }
-  .vacancy-card__body .vacancy-about-col__text {
-    font-size: 14px;
-    font-size: 0.875rem; }
-
-.vacancy-card__footer::after {
-  clear: both;
-  content: '';
-  display: table; }
-
-.vacancy-card__footer .left {
-  float: left; }
-
-.vacancy-card__footer .right {
-  float: right; }
-
-.vacancy-location {
-  font-size: 12px;
-  font-size: 0.75rem;
-  color: #999; }
-
-.vacancy-footer-link {
-  font-size: 12px;
-  font-size: 0.75rem;
-  color: #999;
-  margin-left: 10px; }
-  .vacancy-footer-link:first-child {
-    margin-left: 0; }
-  .vacancy-footer-link:hover {
-    text-decoration: underline; }
 
 .pull-left {
   float: left; }
