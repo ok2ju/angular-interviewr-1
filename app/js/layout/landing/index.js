@@ -1,6 +1,2 @@
-(function() {
-  'use strict';
-
-  require('angular').module('app.landing', ['ui.router'])
-        .config(require('./landing.config'));
-})();
+require('angular').module('app.landing', [])
+      .config(require('./landing.config'));

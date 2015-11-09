@@ -1,6 +1,10 @@
-module.exports = function MetaService($http, config) {
+require('angular')
+  .module('app.resource.meta', ['ngResource'])
+    .factory('MetaResource', metaResource);
+
+function metaResource($http, config) {
   var countries_url = config.api_url + '/api/v1/countries';
-  var categories_url = config.api_url + '/api/v1/categories';  
+  var categories_url = config.api_url + '/api/v1/categories';
 
   function getCountries() {
     return $http({

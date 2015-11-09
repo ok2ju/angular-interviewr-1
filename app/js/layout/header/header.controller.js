@@ -1,4 +1,4 @@
-module.exports = function($state, toastr, store, jwtHelper, $http, config) {
+module.exports = function LayoutHeaderController($state, toastr, store, jwtHelper, $http, config) {
   var vm = this;
 
   var jwt = store.get('jwt');

@@ -1,4 +1,4 @@
-module.exports = function(UserResource, store, jwtHelper) {
+module.exports = function UserProfileController(UserResource, store, jwtHelper) {
   var vm = this;
 
   var jwt = store.get('jwt');

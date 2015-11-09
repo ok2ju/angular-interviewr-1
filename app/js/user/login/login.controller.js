@@ -1,4 +1,4 @@
-module.exports = function(store, $state, $http, toastr, config) {
+module.exports = function UserLoginController(store, $state, $http, toastr, config) {
   var vm = this;
   var login_url = config.api_url + '/api/v1/login';
 

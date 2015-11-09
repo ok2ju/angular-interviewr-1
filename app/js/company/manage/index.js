@@ -2,8 +2,7 @@
   'use strict';
 
   require('angular').module('app.company.manage', [
-      'ui.router',
-      'app.company.resource',
+      'app.resource.company',
       'toastr'
     ])
     .config(require('./manage.config'))

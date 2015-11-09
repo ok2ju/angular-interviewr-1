@@ -18,8 +18,6 @@
     angular
       .module('app', [
         'ui.router',
-        'ngResource',
-        'ngFileUpload',
         'angular-jwt',
         'angular-storage',
         'angular-loading-bar',
@@ -35,10 +33,12 @@
         'app.user.signup',
         'app.user.profile',
         'app.user.settings',
+
         'app.company.manage',
         'app.company.create',
         'app.company.list',
         'app.company.profile',
+
         'app.vacancy.manage',
         'app.vacancy.candidates',
         'app.vacancy.list'
@@ -50,26 +50,30 @@
       });
 
     // Resources
-    require('./user/resource');
-    require('./company/resource');
-    require('./vacancy/resource');
+    require('./services/user.service');
+    require('./services/company.service');
+    require('./services/vacancy.service');
+    require('./services/meta.service');
 
-    // Shared
-    require('./shared/filters');
-    require('./shared/meta');
+    // Filters
+    require('./filters/date.filter');
+    require('./filters/category.filter');
 
     require('./layout/landing');
     require('./layout/sidebar');
     require('./layout/header');
     require('./layout/dropdown');
+
     require('./user/login');
     require('./user/signup');
     require('./user/profile');
     require('./user/settings');
+
     require('./company/manage');
     require('./company/create');
     require('./company/list');
     require('./company/profile');
+
     require('./vacancy/manage');
     require('./vacancy/candidates');
     require('./vacancy/list');
