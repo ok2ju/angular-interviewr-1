@@ -48,15 +48,7 @@
               <i class="sidebar-ico icon-location"></i>
               Country
             </label>
-            <select ng-model="vm.user.country" name="country" class="form-row-group__select" id="up-country">
-              <option value="Belarus">Belarus</option>
-              <option value="Russia">Russia</option>
-              <option value="United States">United States</option>
-              <option value="Canada">Canada</option>
-              <option value="Ukraine">Ukraine</option>
-              <option value="UK">United Kindom</option>
-              <option value="France">France</option>
-            </select>
+            <drop-down class="form-dd" placeholder="Country" property="name" selected="vm.country" display="vm.user.country" dropdown-attr="vm.countries"></drop-down>
           </div>
         </div>
         <div class="form-row">

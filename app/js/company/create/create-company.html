@@ -5,6 +5,24 @@
   <form class="settings-form" method="post" ng-submit="vm.registerCompany()" name="createCompany">
 
     <div class="settings-form__row">
+
+      <div class="form-photo">
+        <div class="form-photo-inner">
+          <img src="images/user-default.png" alt="avatar">
+          <div class="form-photo-info">
+            <p>
+              You can upload an company avatar here or change it.
+            </p>
+            <hr>
+            <a href="#" class="upload-btn">
+              <i class="sidebar-ico icon-camera sidebar-ico-full"></i>
+              <span>Choose file ...</span>
+            </a>
+            <input type="file" name="upload" id="up-photo">
+          </div>
+        </div>
+      </div>
+
       <div class="form-fields">
 
         <div class="form-row">
@@ -101,25 +119,6 @@
               Description
             </label>
             <textarea ng-model="vm.company.description" class="full-len-input__input" name="description" id="cp-about" ng-minlength="50" required></textarea>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-photo">
-        <div class="form-photo-inner">
-          <img src="images/user-default.png" alt="avatar">
-          <div class="form-photo-info">
-            <p>
-              You can upload an company avatar here or change it.
-            </p>
-            <hr>
-            <a href="#" class="upload-btn">
-              <i class="sidebar-ico icon-camera sidebar-ico-full"></i>
-              <span>Choose file ...</span>
-            </a>
-            <span class="filename">File name ...</span>
-            <input type="file" name="upload" id="up-photo">
-            <p>The maximum file size allowed is 200KB.</p>
           </div>
         </div>
       </div>

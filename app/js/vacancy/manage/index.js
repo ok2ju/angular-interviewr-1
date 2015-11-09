@@ -1,11 +1,10 @@
 require('angular')
   .module('app.vacancy.manage', [
-    'ui.router', 
-    'ui.bootstrap', 
-    'ngMessages', 
+    'ui.bootstrap',
+    'ngMessages',
     'toastr',
-    'app.shared.meta',
-    'app.vacancy.resource'
+    'app.resource.meta',
+    'app.resource.vacancy'
   ])
     .config(require('./manage.config'))
     .controller('ManageVacanciesController', require('./manage.controller'))

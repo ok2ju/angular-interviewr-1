@@ -1,4 +1,4 @@
-module.exports = function(CandidatesService, $state) {
+module.exports = function VacancyCandidatesController(CandidatesService, $state) {
     var vm = this;
 
     $state.go('app.candidates.grid');

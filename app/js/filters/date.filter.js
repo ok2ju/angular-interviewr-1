@@ -1,7 +1,11 @@
 var moment = require('moment');
 
-module.exports = function() {
+require('angular')
+  .module('app.filter.date', [])
+    .filter('moment', momentFilter);
+
+function momentFilter() {
   return function(dateString, format) {
     return moment(dateString).format(format);
   };
-};
+}

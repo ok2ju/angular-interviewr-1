@@ -1,7 +1,7 @@
-module.exports = function(CompanyResource, $stateParams) {
+module.exports = function CompanyProfileController(CompanyResource, UserResource, $stateParams) {
   var vm = this;
 
-  vm.company = CompanyResource.Profile.get({ id: $stateParams.id }, function() {
-    vm.owner = CompanyResource.Owner.get({ id: vm.company.owner_id });
+  vm.company = CompanyResource.get({ id: $stateParams.id }, function() {
+    vm.owner = UserResource.get({ id: vm.company.owner_id });
   });
 };
