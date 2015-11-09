@@ -426,7 +426,7 @@ $info-header-color: #878787;
 }
 
 .u-p-body-sect__head {
-  @include font-size(16px);
+  @include font-size(12px);
   text-transform: uppercase;
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
@@ -434,7 +434,7 @@ $info-header-color: #878787;
 }
 
 .u-p-body-sect__text-about {
-  @include font-size(15px);
+  @include font-size(14px);
   margin-top: 20px;
 }
 
@@ -470,7 +470,7 @@ $info-header-color: #878787;
 }
 
 .u-social-link {
-  @include font-size(15px);
+  @include font-size(14px);
   color: $primary-font-color;
 
   &:hover {

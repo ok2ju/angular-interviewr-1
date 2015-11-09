@@ -97,6 +97,11 @@
   }
 }
 
+.datepicker-input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
 .form-row-group__select {
   border: 1px solid rgba(34,36,38,.15);
   border-top-left-radius: 0;
@@ -131,6 +136,7 @@
   width: 100%;
   padding: 0 15px;
   margin-bottom: 25px;
+  position: relative;
 }
 
 .full-len-input__label {

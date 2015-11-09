@@ -1,9 +1,9 @@
-<div class="ui selection dropdown">
-    <input type="hidden" name="gender" value="0">
-    <i class="dropdown icon"></i>
-    <div class="text">Female</div>
+<div class="ui selection dropdown" ng-click="show()" ng-class="{ active: listVisible}">
+    <input ng-model="vm.dropdownModel" type="hidden" name="gender" value="0">
+    <i class="dropdown icon ui-dropdown-item"></i>
+    <div class="text ui-dropdown-item" ng-if="!isPlaceholder">{{display}}</div>
+    <div class="text ui-dropdown-item" ng-if="isPlaceholder">{{placeholder}}</div>
     <div class="menu transition hidden" tabindex="-1">
-        <div class="item" data-value="1">Male</div>
-        <div class="item active selected" data-value="0">Female</div>
+        <div class="item" data-value="1" ng-repeat="item in dropdownData" ng-click="select(item)" ng-class="{ selected: isSelected(item) }">{{property !== undefined ? item[property] : item}}</div>
     </div>
 </div>

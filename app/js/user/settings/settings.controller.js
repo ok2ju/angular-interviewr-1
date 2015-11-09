@@ -1,18 +1,30 @@
-module.exports = function(UserSettingsService, store, jwtHelper,
-                      toastr, $state, $http, $rootScope, $uibModal,
-                      config) {
-  var vm = this;
+var $ = require('jquery');
 
+module.exports = function SettingsController(store, jwtHelper,
+                      toastr, $state, $http, $rootScope, $uibModal,
+                      config, Upload, UserResource, MetaResource) {
+
+  var vm = this;
   var jwt = store.get('jwt');
   var decodedJwt = jwt && jwtHelper.decodeToken(jwt);
 
-  UserSettingsService.get({ id: decodedJwt._id }, function(data) {
+  UserResource.get({ id: decodedJwt._id }, function(data) {
     vm.user = data;
     vm.user.social = vm.user.social || {};
   });
 
   vm.updateProfile = updateProfile;
   vm.loadTags = loadTags;
+
+  vm.getImageUrl = function() {
+    var res = '';
+    if(vm.user && vm.user.imageId) {
+      res = config.api_url + '/api/v1/images/' + vm.user.imageId;
+    } else {
+      res = 'images/user-default.png';
+    }
+    return res;
+  }
 
   function updateProfile() {
     console.log(vm.user.social);
@@ -26,12 +38,21 @@ module.exports = function(UserSettingsService, store, jwtHelper,
     return $http.get('./api/tags.json');
   }
 
-  // modal window
+  //file upload
+  vm.onFileSelected = function() {
+    if(vm.file) {
+      vm.open();
+    }
+  };
 
+  vm.openFileDialog = function() {
+    $('#up-photo').click();
+  };
+
+  // modal window
   vm.animationsEnabled = true;
 
   vm.open = function (size) {
-
     var modalInstance = $uibModal.open({
       animation: vm.animationsEnabled,
       templateUrl: 'js/user/settings/modal.html',
@@ -39,20 +60,28 @@ module.exports = function(UserSettingsService, store, jwtHelper,
       controllerAs: 'vm',
       size: size,
       resolve: {
-        /*items: function () {
-          return $scope.items;
-        }*/
+        file: function () {
+          return vm.file;
+        },
+        user: function() {
+          return vm.user;
+        }
       }
-    });
-
-    modalInstance.result.then(function (selectedItem) {
-      vm.selected = selectedItem;
-    }, function () {
-      console.log('Modal dismissed at: ' + new Date());
     });
   };
 
   vm.toggleAnimation = function () {
     vm.animationsEnabled = !vm.animationsEnabled;
   };
+
+  // Get Countries for dropdown
+  vm.getCountries = function() {
+    MetaResource.getCountries().then(function(response) {
+      vm.countries = response.data;
+    }, function(error) {
+      console.log('Error!');
+    });
+  };
+
+  vm.getCountries();
 };

@@ -1,0 +1,99 @@
+<div class="form-content">
+  <div class="s-content-head">
+    <h2 class="s-content-head__header">Fill vacancy profile</h2>
+  </div>
+  <form class="settings-form" method="post" ng-submit="vm.registerVacancy()" name="createVacancy">
+    <div class="settings-form__row">
+      <div class="form-fields">
+        <div class="form-row">
+          <div class="form-row-group">
+            <div class="v-form-error" ng-messages="createVacancy.title.$error" ng-if="createVacancy.title.$dirty">
+              <div ng-message="required">You did not enter a vacancy title</div>
+              <div ng-message="minlength">Your company name is too short</div>
+              <div ng-message="maxlength">Your company name is too long</div>
+            </div>
+            <label for="cp-name" class="form-row-group__label">
+              <i class="sidebar-ico icon-user"></i>
+              Title
+            </label>
+            <input id="cp-name" class="form-row-group__input" ng-model="vm.vacancy.title" type="text" name="title" ng-minlength="5" ng-maxlength="20" required>
+          </div>
+          <div class="form-row-group">
+            <label for="cp-location" class="form-row-group__label">
+              <i class="sidebar-ico icon-globe"></i>
+              Location
+            </label>
+            <drop-down class="form-dd" placeholder="Country" property="name" selected="vm.vacancy.country" dropdown-attr="vm.countries"></drop-down>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-row-group">
+            <label for="cp-category" class="form-row-group__label">
+              <i class="sidebar-ico icon-globe"></i>
+              Category
+            </label>
+            <drop-down class="form-dd" placeholder="Category" property="name" selected="vm.vacancy.category" dropdown-attr="vm.categories"></drop-down>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-row-group">
+            <div class="v-form-error" ng-messages="createVacancy.vacancyEmail.$error" ng-if="createVacancy.vacancyEmail.$dirty">
+              <div ng-message="required">You did not enter a email field</div>
+              <div ng-message="email">Your email address is invalid</div>
+            </div>
+            <label for="cp-email" class="form-row-group__label">
+              <i class="sidebar-ico icon-globe"></i>
+              Email
+            </label>
+            <input name="vacancyEmail" ng-model="vm.vacancy.email" type="email" class="form-row-group__input" id="cp-email" required>
+          </div>
+          <div class="form-row-group">
+            <div class="v-form-error" ng-messages="createVacancy.companyPhone.$error" ng-if="createVacancy.companyPhone.$dirty">
+              <div ng-message="required">You did not enter a phone</div>
+              <div ng-message="pattern">Must be a valid 10 digit phone number</div>
+            </div>
+            <label for="cp-phone" class="form-row-group__label">
+              <i class="sidebar-ico icon-globe"></i>
+              Phone
+            </label>
+            <input name="companyPhone" ng-model="vm.vacancy.phone" type="text" class="form-row-group__input" id="cp-phone" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-row-group">
+            <div class="v-form-error" ng-messages="createVacancy.companySite.$error" ng-if="createVacancy.companySite.$dirty">
+              <div ng-message="required">You did not enter a site url</div>
+              <div ng-message="pattern">Must be a valid url</div>
+            </div>
+            <label for="cp-site" class="form-row-group__label">
+              <i class="sidebar-ico icon-globe"></i>
+              Site
+            </label>
+            <input name="companySite" ng-model="vm.vacancy.site" type="text" class="form-row-group__input" id="cp-site" ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="full-len-input">
+            <tags-input ng-model="vm.vacancy.specialization"></tags-input>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="full-len-input">
+            <div class="v-form-error" ng-messages="createVacancy.description.$error" ng-if="createVacancy.description.$dirty">
+              <div ng-message="required">You did not enter a description</div>
+              <div ng-message="minlength">Description field is too short</div>
+            </div>
+            <label for="cp-about" class="full-len-input__label">
+              <i class="sidebar-ico icon-camera sidebar-ico-full"></i>
+              Description
+            </label>
+            <textarea ng-model="vm.vacancy.description" class="full-len-input__input" name="description" id="cp-about" ng-minlength="50" required></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="form-row-group__submit-btn">Create</button>
+
+  </form>
+</div>

@@ -1,6 +1,7 @@
 module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
                           $httpProvider, jwtInterceptorProvider, toastrConfig,
                           cfpLoadingBarProvider) {
+  
   $httpProvider.defaults.useXDomain = true;
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
@@ -8,7 +9,7 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
   $urlRouterProvider.otherwise('/login');
 
   jwtInterceptorProvider.tokenGetter = function(store) {
-      return store.get('jwt');
+    return store.get('jwt');
   };
 
   $httpProvider.interceptors.push('jwtInterceptor');

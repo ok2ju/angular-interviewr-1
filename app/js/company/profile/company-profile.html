@@ -7,39 +7,45 @@
         </div>
         <div class="c-profile-info">
           <div class="c-profile-info__header-inner">
-            <h2 class="c-profile-info__header">Epam Systems</h2>
+            <h2 class="c-profile-info__header">{{vm.company.name}}</h2>
             <div class="social-btns"><a href="#"><i class="facebook-ico"></i></a><a href="#"><i class="google-ico"></i></a></div>
           </div>
           <p class="c-profile-info__sm">
-            <span>Category</span> |
-            <span><strong>Since</strong> 19.05.1993</span>
+            <span>{{vm.company.category}}</span> |
+            <span><strong>Since</strong> {{vm.company.creation_date | moment: 'DD.MM.YYYY'}}</span>
           </p>
-          <p class="c-profile-info__spec"><strong>Specialization:</strong> Product Development, Enterprise Application Platforms, Application Development, Application Testing, Application Maintenance & Support, ASM & Infrastructure Services</p>
+          <p class="c-profile-info__spec"><strong>Specialization:</strong>
+          <span ng-repeat="spec in vm.company.specialization">{{spec.text}}</span></p>
         </div>
       </div>
       <div class="c-profile-body">
         <div class="c-profile-body__block">
           <h2 class="c-profile-body__head">About</h2>
-          <p class="c-profile-body__text">Established in 1993, EPAM Systems, Inc. (NYSE: EPAM) is recognized as a leader in software product development by independent research agencies. Headquartered in the United States, EPAM serves clients worldwide utilizing its award-winning global delivery platform and its locations in 20 countries across North America, Europe, Asia and Australia. EPAM was ranked #6 in 2013 America's 25 Fastest-Growing Tech Companies and #3 in 2014 America’s Best Small Companies lists by Forbes Magazine. </p>
+          <p class="c-profile-body__text">{{vm.company.description}}</p>
         </div>
       </div>
     </div>
   </div>
   <div class="c-sidebar-info">
     <div class="c-sidebar-info__inner">
-      <h2 class="c-sidebar-info__head">Contact data</h2>
-      <ul class="c-sidebar-info-list">
-        <li class="c-sidebar-info-list__item"><strong>Email:</strong> info@interviewr.com</li>
-        <li class="c-sidebar-info-list__item"><strong>Phone:</strong> +375 29 4353536</li>
-        <li class="c-sidebar-info-list__item"><strong>Site:</strong> interviewr.io</li>
-      </ul>
-      <h2 class="c-sidebar-info__head">Owner data</h2>
-      <ul class="c-sidebar-info-list">
-        <li class="c-sidebar-info-list__item"><strong>Name:</strong> info@interviewr.com</li>
-        <li class="c-sidebar-info-list__item"><strong>Phone:</strong> +375 29 4353536</li>
-        <li class="c-sidebar-info-list__item"><strong>Email:</strong> interviewr.io</li>
-        <li class="c-sidebar-info-list__item"><strong>Country:</strong> interviewr.io</li>
-      </ul>
+      <div class="sidebarBox">
+        <h2 class="c-sidebar-info__head">Contact data</h2>
+        <ul class="c-sidebar-info-list">
+          <li class="c-sidebar-info-list__item"><strong>Email:</strong> {{vm.company.email}}</li>
+          <li class="c-sidebar-info-list__item"><strong>Phone:</strong> {{vm.company.phone}}</li>
+          <li class="c-sidebar-info-list__item"><strong>Site:</strong> {{vm.company.site}}</li>
+          <li class="c-sidebar-info-list__item"><strong>Location:</strong> {{vm.company.location}}</li>
+        </ul>
+      </div>
+      <div class="sidebarBox">
+        <h2 class="c-sidebar-info__head">Owner data</h2>
+        <ul class="c-sidebar-info-list">
+          <li class="c-sidebar-info-list__item"><strong>Name:</strong> {{vm.owner.name}} {{vm.owner.surname}}</li>
+          <li class="c-sidebar-info-list__item"><strong>Phone:</strong> {{vm.owner.phone}}</li>
+          <li class="c-sidebar-info-list__item"><strong>Email:</strong> {{vm.owner.email}}</li>
+          <li class="c-sidebar-info-list__item"><strong>Country:</strong> {{vm.owner.country}}</li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
@@ -52,164 +58,78 @@
 </div>
 
 <div class="vacancy-row">
-  <div class="vacancy-card">
-    <div class="vacancy-card-inner">
-      <div class="vacancy-card__head">
-        <h2 class="vacancy-card__head-title">Big Data analythic</h2>
-        <div class="vacancy-card__head-info">
-          <span>15 Oct 2015</span> |
-          <a href="#">Interviewr</a>
+  <div class="v-card">
+    <div class="v-card-inner">
+      <div class="card-content">
+        <div class="card-content-head">
+          <h2 class="card-content__header">Big Shmata analythic</h2>
+          <div class="v-edit">
+            <i class="sidebar-ico icon-pencil"></i>
+            <i class="sidebar-ico icon-cancel"></i>
+          </div>
         </div>
-      </div>
-      <div class="vacancy-card__body">
-        <ul class="vacancies">
-          <li class="vacancies__item"><span class="vacancies-label label-success">Java</span></li>
-          <li class="vacancies__item"><span class="vacancies-label label-success">Oracle</span></li>
-          <li class="vacancies__item"><span class="vacancies-label label-success">Elastic</span></li>
+        <div class="card-content__meta">
+          <span class="comp">Yambex at New York</span>
+          <span class="time">15 Oct 2015</span>
+        </div>
+        <ul class="n-skills">
+          <li class="n-skills__item"><span>Apple</span></li>
+          <li class="n-skills__item"><span>Orange</span></li>
+          <li class="n-skills__item"><span>Potato</span></li>
+          <li class="n-skills__item"><span>Raspberry</span></li>
+          <li class="n-skills__item"><span>Raspberry</span></li>
+          <li class="n-skills__item"><span>Raspberry</span></li>
+          <li class="n-skills__item"><span>Raspberry</span></li>
         </ul>
-        <div class="vacancy-about">
-          <div class="vacancy-about-col">
-            <h2 class="vacancy-about-col__head">Type</h2>
-            <p class="vacancy-about-col__text">Developer</p>
-          </div>
-          <div class="vacancy-about-col">
-            <h2 class="vacancy-about-col__head">Position</h2>
-            <p class="vacancy-about-col__text">Senior</p>
-          </div>
-          <div class="vacancy-icon">
-            <img src="images/icons/vacancies/coder.svg" alt="">
-          </div>
+        <div class="content__description"></div>
+      </div>
+      <div class="extra">
+        <div class="pos">Middle</div>
+        <div class="owner">
+          <img class="ui avatar image" src="http://semantic-ui.com/images/avatar/small/matt.jpg">
+          Potato
         </div>
       </div>
-      <div class="vacancy-card__footer">
-        <div class="left">
-          <span class="vacancy-location">#New York City</span>
-        </div>
-        <div class="right">
-          <a class="vacancy-footer-link" href="#">Follow</a>
-          <a class="vacancy-footer-link" href="#">More</a>
-        </div>
-      </div>
+      <a href="#" class="follow">
+        <span>Follow</span>
+      </a>
     </div>
   </div>
-  <div class="vacancy-card">
-    <div class="vacancy-card-inner">
-      <div class="vacancy-card__head">
-        <h2 class="vacancy-card__head-title">Big Data analythic</h2>
-        <div class="vacancy-card__head-info">
-          <span>15 Oct 2015</span> |
-          <a href="#">Interviewr</a>
+  <div class="v-card">
+    <div class="v-card-inner">
+      <div class="card-content">
+        <div class="card-content-head">
+          <h2 class="card-content__header">Big Shmata analythic</h2>
+          <div class="v-edit">
+            <i class="sidebar-ico icon-pencil"></i>
+            <i class="sidebar-ico icon-cancel"></i>
+          </div>
         </div>
-      </div>
-      <div class="vacancy-card__body">
-        <ul class="vacancies">
-          <li class="vacancies__item"><span class="vacancies-label label-success">Java</span></li>
-          <li class="vacancies__item"><span class="vacancies-label label-success">Oracle</span></li>
-          <li class="vacancies__item"><span class="vacancies-label label-success">Elastic</span></li>
+        <div class="card-content__meta">
+          <span class="comp">Yambex at New York</span>
+          <span class="time">15 Oct 2015</span>
+        </div>
+        <ul class="n-skills">
+          <li class="n-skills__item"><span>Apple</span></li>
+          <li class="n-skills__item"><span>Orange</span></li>
+          <li class="n-skills__item"><span>Potato</span></li>
+          <li class="n-skills__item"><span>Raspberry</span></li>
+          <li class="n-skills__item"><span>Raspberry</span></li>
+          <li class="n-skills__item"><span>Raspberry</span></li>
+          <li class="n-skills__item"><span>Raspberry</span></li>
         </ul>
-        <div class="vacancy-about">
-          <div class="vacancy-about-col">
-            <h2 class="vacancy-about-col__head">Type</h2>
-            <p class="vacancy-about-col__text">Developer</p>
-          </div>
-          <div class="vacancy-about-col">
-            <h2 class="vacancy-about-col__head">Position</h2>
-            <p class="vacancy-about-col__text">Senior</p>
-          </div>
-          <div class="vacancy-icon">
-            <img src="images/icons/vacancies/hr.svg" alt="">
-          </div>
+        <div class="content__description"></div>
+      </div>
+      <div class="extra">
+        <div class="pos">Middle</div>
+        <div class="owner">
+          <img class="ui avatar image" src="http://semantic-ui.com/images/avatar/small/matt.jpg">
+          Potato
         </div>
       </div>
-      <div class="vacancy-card__footer">
-        <div class="left">
-          <span class="vacancy-location">#New York City</span>
-        </div>
-        <div class="right">
-          <a class="vacancy-footer-link" href="#">Follow</a>
-          <a class="vacancy-footer-link" href="#">More</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="vacancy-card">
-    <div class="vacancy-card-inner">
-      <div class="vacancy-card__head">
-        <h2 class="vacancy-card__head-title">Big Data analythic</h2>
-        <div class="vacancy-card__head-info">
-          <span>15 Oct 2015</span> |
-          <a href="#">Interviewr</a>
-        </div>
-      </div>
-      <div class="vacancy-card__body">
-        <ul class="vacancies">
-          <li class="vacancies__item"><span class="vacancies-label label-success">Java</span></li>
-          <li class="vacancies__item"><span class="vacancies-label label-success">Oracle</span></li>
-          <li class="vacancies__item"><span class="vacancies-label label-success">Elastic</span></li>
-        </ul>
-        <div class="vacancy-about">
-          <div class="vacancy-about-col">
-            <h2 class="vacancy-about-col__head">Type</h2>
-            <p class="vacancy-about-col__text">Developer</p>
-          </div>
-          <div class="vacancy-about-col">
-            <h2 class="vacancy-about-col__head">Position</h2>
-            <p class="vacancy-about-col__text">Senior</p>
-          </div>
-          <div class="vacancy-icon">
-            <img src="images/icons/vacancies/business.svg" alt="">
-          </div>
-        </div>
-      </div>
-      <div class="vacancy-card__footer">
-        <div class="left">
-          <span class="vacancy-location">#New York City</span>
-        </div>
-        <div class="right">
-          <a class="vacancy-footer-link" href="#">Follow</a>
-          <a class="vacancy-footer-link" href="#">More</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="vacancy-card">
-    <div class="vacancy-card-inner">
-      <div class="vacancy-card__head">
-        <h2 class="vacancy-card__head-title">Big Data analythic</h2>
-        <div class="vacancy-card__head-info">
-          <span>15 Oct 2015</span> |
-          <a href="#">Interviewr</a>
-        </div>
-      </div>
-      <div class="vacancy-card__body">
-        <ul class="vacancies">
-          <li class="vacancies__item"><span class="vacancies-label label-success">Java</span></li>
-          <li class="vacancies__item"><span class="vacancies-label label-success">Oracle</span></li>
-          <li class="vacancies__item"><span class="vacancies-label label-success">Elastic</span></li>
-        </ul>
-        <div class="vacancy-about">
-          <div class="vacancy-about-col">
-            <h2 class="vacancy-about-col__head">Type</h2>
-            <p class="vacancy-about-col__text">Developer</p>
-          </div>
-          <div class="vacancy-about-col">
-            <h2 class="vacancy-about-col__head">Position</h2>
-            <p class="vacancy-about-col__text">Senior</p>
-          </div>
-          <div class="vacancy-icon">
-            <img src="images/icons/vacancies/sales.svg" alt="">
-          </div>
-        </div>
-      </div>
-      <div class="vacancy-card__footer">
-        <div class="left">
-          <span class="vacancy-location">#New York City</span>
-        </div>
-        <div class="right">
-          <a class="vacancy-footer-link" href="#">Follow</a>
-          <a class="vacancy-footer-link" href="#">More</a>
-        </div>
-      </div>
+      <a href="#" class="follow">
+        <span>Follow</span>
+      </a>
     </div>
   </div>
 </div>

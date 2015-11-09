@@ -1,35 +1,61 @@
 var $ = require('jquery');
 
-module.exports = function() {
+module.exports = function($rootScope) {
+
   function link(scope, element, attrs) {
 
-    var dropdown = element.children();
+    scope.listVisible = false;
+    scope.isPlaceholder = true;
 
-    dropdown.on('click', function() {
-      var menu = $(this).find('.menu');
+    scope.select = function(item) {
+      scope.isPlaceholder = false;
+      scope.selected = item;
 
-      $(this).toggleClass('active');
-      $(this).toggleClass('visible');
+      if(scope.onChange != undefined) {
+        scope.onChange(item);
+      }
+    };
 
-      menu.toggleClass('visible');
-      menu.toggleClass('hidden');
+    scope.isSelected = function(item) {
+      if(!scope.selected) {
+        return false;
+      }
+      return item[scope.property] === scope.selected[scope.property];
+    };
+
+    scope.show = function() {
+      scope.listVisible = !scope.listVisible;
+    };
+
+    $rootScope.$on('documentClicked', function(inner, target) {
+      var dropdown = $(element).find('.ui.dropdown');
+      var dropdownItem = $(element).find('.ui-dropdown-item');
+
+      if(!$(target[0]).is(dropdown) && !$(target[0]).is(dropdownItem)) {
+        scope.$apply(function() {
+          scope.listVisible = false
+        });
+      }
     });
 
-    $(document).on('click', function(event) {
-      if (!$(event.target).closest('.dropdown, .menu').length) {
-        // Hide the menus.
-        $('.dropdown').removeClass('active');
-        $('.dropdown').removeClass('visible');
-        $('.dropdown').find('.menu').removeClass('visible');
-        $('.dropdown').find('.menu').removeClass('hidden');
+    scope.$watch('selected', function(value) {
+      if(scope.selected) {
+        scope.isPlaceholder = scope.selected[scope.property] === undefined;
+        scope.display = scope.selected[scope.property];
       }
     });
 
   }
 
   var directive = {
-        restrict: 'EA',
-        scope: true,
+        restrict: 'E',
+        scope: {
+          placeholder: '@',
+          dropdownData: '=dropdownAttr',
+          selected: '=',
+          display: '=',
+          property: '@'
+        },
         templateUrl: 'js/layout/dropdown/dropdown.html',
         link: link
     };

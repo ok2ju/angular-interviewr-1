@@ -12,7 +12,7 @@ Interviewr-ui is an [AngularJS](https://angularjs.org/) single page web applicat
 
 Clone repo:
 
-    git clone https://github.com/ok2ju/angular-interviewr.git
+    git clone https://github.com/futturum/angular-interviewr.git
 
 Then install npm dependencies by running following command:
 

@@ -79,6 +79,7 @@ $sideblock-bg-color: #161616;
 }
 
 .int-section__header {
+  @include font-size(12px);
   color: #fff;
   margin-bottom: 10px;
   padding: 0 25px;
@@ -137,19 +138,27 @@ $sideblock-bg-color: #161616;
   }
 
   a {
-    @include font-size(14px);
-    color: #999;
-    line-height: 40px;
+    @include font-size(12px);
+    color: lighten(#161616, 50%);
+    line-height: 35px;
     display: inline;
-    padding: 0 25px;
+    padding: 0 22px;
+    font-weight: 600;
+    text-transform: uppercase;
 
     @include respond-to('medium') {
       display: block;
+      padding: 0 25px;
     }
   }
 
   .sidebar-ico {
+    @include font-size(14px);
     margin-right: 10px;
+
+    @include respond-to('medium') {
+      @include font-size(15px);
+    }
   }
 }
 
