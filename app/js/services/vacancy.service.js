@@ -1,6 +1,6 @@
 require('angular')
   .module('app.resource.vacancy', ['ngResource'])
-    .factory('VacancyResource', vacancyResource);
+    .factory('vacancyResource', vacancyResource);
 
 function vacancyResource($resource, config) {
   var vacancyUrl = config.api_url + '/api/v1/vacancies/:id';

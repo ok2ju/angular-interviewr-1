@@ -1,6 +1,6 @@
 require('angular')
   .module('app.resource.meta', ['ngResource'])
-    .factory('MetaResource', metaResource);
+    .factory('metaResource', metaResource);
 
 function metaResource($http, config) {
   var countries_url = config.api_url + '/api/v1/countries';
@@ -23,5 +23,5 @@ function metaResource($http, config) {
   return {
     getCountries: getCountries,
     getCategories: getCategories
-  }
+  };
 }
