@@ -1,4 +1,4 @@
-module.exports = function($uibModal) {
+module.exports = function VacancyManageController($uibModal) {
   var vm = this;
 
   vm.open = function() {
@@ -9,5 +9,5 @@ module.exports = function($uibModal) {
       controllerAs: 'vm',
       resolve: {}
     });
-  }
+  };
 };

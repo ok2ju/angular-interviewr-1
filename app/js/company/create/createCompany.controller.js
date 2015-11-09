@@ -1,9 +1,9 @@
 var moment = require('moment');
 
-module.exports = function(CompanyResource, metaService, $scope, $http, toastr, $state) {
+module.exports = function CompanyCreateController(CompanyResource, MetaResource, $scope, $http, toastr, $state) {
   var vm = this;
   vm.registerCompany = registerCompany;
-  vm.company = new CompanyResource.Profile();
+  vm.company = new CompanyResource();
 
   $scope.$watch('vm.company.description', function(current, original) {
     vm.company.shortDesc = vm.company.description ? current.substring(0, 180) + '...' : '';
@@ -50,7 +50,7 @@ module.exports = function(CompanyResource, metaService, $scope, $http, toastr, $
   // Get data for fields
 
   vm.getCountries = function() {
-    metaService.getCountries().then(function(response) {
+    MetaResource.getCountries().then(function(response) {
       vm.countries = response.data;
     }, function(error) {
       console.log('Error!');
@@ -58,7 +58,7 @@ module.exports = function(CompanyResource, metaService, $scope, $http, toastr, $
   };
 
   vm.getCategories = function() {
-    metaService.getCategories().then(function(response) {
+    MetaResource.getCategories().then(function(response) {
       vm.categories = response.data;
     }, function(error) {
       console.log('Error!');

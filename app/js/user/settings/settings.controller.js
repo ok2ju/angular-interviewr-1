@@ -2,7 +2,7 @@ var $ = require('jquery');
 
 module.exports = function SettingsController(store, jwtHelper,
                       toastr, $state, $http, $rootScope, $uibModal,
-                      config, Upload, UserResource, metaService) {
+                      config, Upload, UserResource, MetaResource) {
 
   var vm = this;
   var jwt = store.get('jwt');
@@ -76,7 +76,7 @@ module.exports = function SettingsController(store, jwtHelper,
 
   // Get Countries for dropdown
   vm.getCountries = function() {
-    metaService.getCountries().then(function(response) {
+    MetaResource.getCountries().then(function(response) {
       vm.countries = response.data;
     }, function(error) {
       console.log('Error!');

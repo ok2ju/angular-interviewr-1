@@ -3,9 +3,8 @@
 
   require('angular')
     .module('app.company.profile', [
-        'ui.router',
-        'app.company.resource',
-        'app.shared.filters'
+        'app.resource.company',
+        'app.resource.user'
       ])
       .config(require('./companyProfile.config'))
       .controller('CompanyProfileController', require('./companyProfile.controller'));

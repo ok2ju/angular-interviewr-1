@@ -1,4 +1,4 @@
-module.exports = function(store, $http, $state, toastr, config) {
+module.exports = function UserSignupController(store, $http, $state, toastr, config) {
   var vm = this;
   var url = config.api_url + '/api/v1/users';
 
