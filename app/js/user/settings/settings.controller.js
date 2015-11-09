@@ -2,13 +2,13 @@ var $ = require('jquery');
 
 module.exports = function SettingsController(store, jwtHelper,
                       toastr, $state, $http, $rootScope, $uibModal,
-                      config, Upload, UserResource, MetaResource) {
+                      config, Upload, userResource, metaResource) {
 
   var vm = this;
   var jwt = store.get('jwt');
   var decodedJwt = jwt && jwtHelper.decodeToken(jwt);
 
-  UserResource.get({ id: decodedJwt._id }, function(data) {
+  userResource.get({ id: decodedJwt._id }, function(data) {
     vm.user = data;
     vm.user.social = vm.user.social || {};
   });
@@ -76,7 +76,7 @@ module.exports = function SettingsController(store, jwtHelper,
 
   // Get Countries for dropdown
   vm.getCountries = function() {
-    MetaResource.getCountries().then(function(response) {
+    metaResource.getCountries().then(function(response) {
       vm.countries = response.data;
     }, function(error) {
       console.log('Error!');

@@ -1,10 +1,10 @@
-module.exports = function UserProfileController(UserResource, store, jwtHelper) {
+module.exports = function UserProfileController(userResource, store, jwtHelper) {
   var vm = this;
 
   var jwt = store.get('jwt');
   var decodedJwt = jwt && jwtHelper.decodeToken(jwt);
 
-  UserResource.get({ id: decodedJwt._id }, function(data) {
+  userResource.get({ id: decodedJwt._id }, function(data) {
     vm.user = data;
   });
 };

@@ -1,17 +1,17 @@
-module.exports = function VacancyCreateController(VacancyResource, MetaService, toastr, $scope) {
+module.exports = function VacancyCreateController(vacancyResource, metaService, toastr, $scope) {
   var vm = this;
 
-  vm.vacancy = new VacancyResource();
+  vm.vacancy = new vacancyResource();
 
   vm.registerVacancy = function() {
     vm.vacancy.$save(function() {
       toastr.success('Vacancy created.', 'Yay!');
       $state.go('app.vacancy');
     });
-  }
+  };
 
   vm.getCountries = function() {
-    MetaService.getCountries().then(function(response) {
+    metaService.getCountries().then(function(response) {
       vm.countries = response.data;
     }, function(error) {
       console.log('Error!');
@@ -19,7 +19,7 @@ module.exports = function VacancyCreateController(VacancyResource, MetaService, 
   };
 
   vm.getCategories = function() {
-    MetaService.getCategories().then(function(response) {
+    metaService.getCategories().then(function(response) {
       vm.categories = response.data;
     }, function(error) {
       console.log('Error!');
@@ -28,4 +28,4 @@ module.exports = function VacancyCreateController(VacancyResource, MetaService, 
 
   vm.getCountries();
   vm.getCategories();
-}
+};
