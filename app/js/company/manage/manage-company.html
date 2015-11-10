@@ -3,3 +3,24 @@
 <a ui-sref="app.createCompany">Create Company</a>
 <a ui-sref="app.editCompany">Edit Company</a>
 <a ui-sref="app.removeCompany">Remove Company</a>
+
+<div class="company-card" ng-repeat="company in vm.companies">
+  <div class="company-card__image">
+    <img src="/images/companies/default.png" alt="">
+  </div>
+  <div class="company-card__body">
+    <a href="#" class="company-card__header">{{company.name}}</a>
+    <div class="company-card__meta">
+      <a href="#">{{company.creation_date | moment: 'DD.MM.YYYY'}}</a>
+      <a href="#">{{company.category}}</a>
+    </div>
+    <div class="company-card__description">{{company.short_description}}</div>
+    <div class="company-card__extra">
+      <div class="company-more-btn" ui-sref="app.companyProfile({id:company._id})">More</div>
+      <div class="company-owner">
+        <img src="/images/user-default.png" alt="">
+        <span>Username</span>
+      </div>
+    </div>
+  </div>
+</div>

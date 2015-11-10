@@ -23,5 +23,5 @@ function metaResource($http, config) {
   return {
     getCountries: getCountries,
     getCategories: getCategories
-  }
+  };
 }
