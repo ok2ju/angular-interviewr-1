@@ -1,6 +1,6 @@
 require('angular')
   .module('app.resource.user', ['ngResource'])
-    .factory('userResource', userResource);
+    .factory('UserResource', userResource);
 
 function userResource($resource, config) {
   var userUrl = config.api_url + '/api/v1/users/:id';

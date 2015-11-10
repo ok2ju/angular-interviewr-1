@@ -1,6 +1,6 @@
 require('angular')
   .module('app.resource.company', ['ngResource'])
-    .factory('companyResource', companyResource);
+    .factory('CompanyResource', companyResource);
 
 function companyResource($resource, config) {
   var companyUrl = config.api_url + '/api/v1/companies/:id';

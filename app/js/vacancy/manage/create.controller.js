@@ -1,7 +1,7 @@
-module.exports = function VacancyCreateController(vacancyResource, metaService, toastr, $scope) {
+module.exports = function VacancyCreateController(VacancyResource, metaService, toastr, $scope) {
   var vm = this;
 
-  vm.vacancy = new vacancyResource();
+  vm.vacancy = new VacancyResource();
 
   vm.registerVacancy = function() {
     vm.vacancy.$save(function() {

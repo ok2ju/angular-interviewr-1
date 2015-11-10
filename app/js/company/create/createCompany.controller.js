@@ -1,9 +1,9 @@
 var moment = require('moment');
 
-module.exports = function CompanyCreateController(companyResource, metaResource, $scope, $http, toastr, $state) {
+module.exports = function CompanyCreateController(CompanyResource, metaResource, $scope, $http, toastr, $state) {
   var vm = this;
   vm.registerCompany = registerCompany;
-  vm.company = new companyResource();
+  vm.company = new CompanyResource();
 
   $scope.$watch('vm.company.description', function(current, original) {
     vm.company.shortDesc = vm.company.description ? current.substring(0, 180) + '...' : '';

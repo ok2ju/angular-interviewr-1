@@ -6,6 +6,7 @@ var browserify = require('browserify'),
     streamify = require('gulp-streamify'),
     del = require('del'),
     vinylPaths = require('vinyl-paths'),
+    sourcemaps = require('gulp-sourcemaps'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync').create(),
@@ -16,11 +17,13 @@ var BROWSER_SYNC_RELOAD_DELAY = 500;
 
 gulp.task('sass', function() {
     return gulp.src(SASS_FILES)
+        .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(autoprefixer({
             browsers: ['last 3 versions', 'ie 8', 'ie 9'],
             cascade: false
         }))
+        .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest('app/css'));
 });
 

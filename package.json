@@ -18,6 +18,7 @@
     "bootstrap": "^3.3.5",
     "cropper": "^1.0.0",
     "express": "^4.13.2",
+    "gulp-sourcemaps": "^1.6.0",
     "install": "^0.1.8",
     "jquery": "^2.1.4",
     "lodash": "^3.10.1",

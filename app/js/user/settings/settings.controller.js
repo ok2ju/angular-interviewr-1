@@ -2,13 +2,13 @@ var $ = require('jquery');
 
 module.exports = function SettingsController(store, jwtHelper,
                       toastr, $state, $http, $rootScope, $uibModal,
-                      config, Upload, userResource, metaResource) {
+                      config, Upload, UserResource, metaResource) {
 
   var vm = this;
   var jwt = store.get('jwt');
   var decodedJwt = jwt && jwtHelper.decodeToken(jwt);
 
-  userResource.get({ id: decodedJwt._id }, function(data) {
+  UserResource.get({ id: decodedJwt._id }, function(data) {
     vm.user = data;
     vm.user.social = vm.user.social || {};
   });
