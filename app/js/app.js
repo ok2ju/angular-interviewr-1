@@ -2,6 +2,7 @@
     'use strict';
 
     var $ = require('jquery');
+    global._ = require('lodash');
     var angular = require('angular');
     require('angular-ui-router');
     require('angular-resource');
@@ -14,6 +15,7 @@
     require('cropper');
     require('angular-modal');
     require('ng-file-upload');
+    require('restangular');
 
     angular
       .module('app', [

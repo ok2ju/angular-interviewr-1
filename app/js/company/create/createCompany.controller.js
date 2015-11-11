@@ -1,25 +1,25 @@
 var moment = require('moment');
 
-module.exports = function CompanyCreateController(CompanyResource, metaResource, $scope, $http, toastr, $state) {
+module.exports = function CompanyCreateController(CompanyResource, metaResource, $scope, toastr, $state) {
   var vm = this;
+  vm.company = {};
   vm.registerCompany = registerCompany;
-  vm.company = new CompanyResource();
 
   $scope.$watch('vm.company.description', function(current, original) {
     vm.company.shortDesc = vm.company.description ? current.substring(0, 180) + '...' : '';
   });
 
   function registerCompany() {
-    console.log(vm.company.owner_id);
-    vm.company.$save(function() {
+    CompanyResource.postCompany(vm.company).then(function() {
       toastr.success('Company created.', 'Yay!');
       $state.go('app.companies');
       console.log('Company Saved');
+    }, function(err) {
+        toastr.error('Error while creating company.', 'Error!');
     });
   }
 
   // Datepicker options
-
   vm.today = function() {
     vm.company.yof = new Date();
   };
@@ -47,36 +47,18 @@ module.exports = function CompanyCreateController(CompanyResource, metaResource,
     vm.company.yof = moment.utc(current).format();
   });
 
-  // Get data for fields
-
-  vm.getCountries = function() {
-    metaResource.getCountries().then(function(response) {
-      vm.countries = response.data;
-    }, function(error) {
-      console.log('Error!');
-    });
-  };
-
-  vm.getCategories = function() {
-    metaResource.getCategories().then(function(response) {
-      vm.categories = response.data;
-    }, function(error) {
-      console.log('Error!');
-    });
-  };
-
-  vm.getCountries();
-  vm.getCategories();
-
-  vm.country = '';
-  vm.category = '';
-
-  $scope.$watch('vm.country', function(current, original) {
-    vm.company.location = current.name;
+  // Fetching data for countries dropdown
+  metaResource.getCountries().then(function(countries) {
+    vm.countries = countries;
+  }, function(err) {
+      console.log('Error fetching countries!');
   });
 
-  $scope.$watch('vm.category', function(current, original) {
-    vm.company.category = current.name;
+  // Fetching data for categories dropdown
+  metaResource.getCategories().then(function(categories) {
+    vm.categories = categories;
+  }, function(err) {
+      console.log('Error fetching categories!');
   });
 
 };

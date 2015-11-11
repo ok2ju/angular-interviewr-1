@@ -26,7 +26,7 @@ module.exports = function ModalController($modalInstance, $timeout, Upload, conf
     var data = {
       file: vm.file,
       "Content-Type": vm.file.type != '' ? vm.file.type : 'application/octet-stream'
-    }
+    };
 
     Upload.upload({
       url: config.api_url + '/api/v1/images',
@@ -48,20 +48,6 @@ module.exports = function ModalController($modalInstance, $timeout, Upload, conf
   vm.cancel = function () {
     $modalInstance.dismiss('cancel');
   };
-
-  /*$modalInstance.rendered.then(function() {
-    //TODO: here is dirty hack.
-
-    $('.modal-body img').on(function(e) {console.log(e)})
-
-    var interval = setInterval(function() {
-      var img = $('.modal-body img');
-      if(img.prop('src')) {
-        clearInterval(interval);
-        init();
-      }
-    }, 50);
-  });*/
 
   function init() {
     vm.cropper = $('.modal-body > img').cropper({

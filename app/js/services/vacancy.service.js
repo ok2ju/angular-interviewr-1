@@ -1,10 +1,26 @@
 require('angular')
-  .module('app.resource.vacancy', ['ngResource'])
+  .module('app.resource.vacancy', ['restangular'])
     .factory('VacancyResource', vacancyResource);
 
-function vacancyResource($resource, config) {
-  var vacancyUrl = config.api_url + '/api/v1/vacancies/:id';
-  return $resource(vacancyUrl, { id: '@_id' }, {
-    update: {method: 'PUT'}
-  });
+function vacancyResource(Restangular) {
+
+  var service = {
+    listVacancies: listVacancies,
+    oneVacancy: oneVacancy,
+    postVacancy: postVacancy
+  };
+
+  function listVacancies() {
+    return Restangular.all('vacancies').getList();
+  }
+
+  function oneVacancy(id) {
+    return Restangular.one('vacancies', id).get();
+  }
+
+  function postVacancy(vacancy) {
+    return Restangular.all('vacancies').post(vacancy);
+  }
+
+  return service;
 }

@@ -1,7 +1,13 @@
 module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
                           $httpProvider, jwtInterceptorProvider, toastrConfig,
-                          cfpLoadingBarProvider) {
-  
+                          cfpLoadingBarProvider, RestangularProvider) {
+
+  RestangularProvider.setBaseUrl('http://localhost:3000/api/v1');
+
+  RestangularProvider.setRestangularFields({
+    id: "_id"
+  });
+
   $httpProvider.defaults.useXDomain = true;
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
 

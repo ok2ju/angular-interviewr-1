@@ -1,31 +1,26 @@
-module.exports = function VacancyCreateController(VacancyResource, metaService, toastr, $scope) {
+module.exports = function VacancyCreateController(VacancyResource, metaResource, toastr) {
   var vm = this;
+  vm.vacancy = {};
+  vm.registerVacancy = registerVacancy;
 
-  vm.vacancy = new VacancyResource();
+  metaResource.getCountries().then(function(countries) {
+    vm.countries = countries;
+  }, function(err) {
+    console.log('Error fetching countries!');
+  });
 
-  vm.registerVacancy = function() {
-    vm.vacancy.$save(function() {
+  metaResource.getCategories().then(function(categories) {
+    vm.categories = categories;
+  }, function(err) {
+    console.log('Error fetching categories!');
+  });
+
+  function registerVacancy() {
+    VacancyResource.postVacancy(vm.vacancy).then(function() {
       toastr.success('Vacancy created.', 'Yay!');
       $state.go('app.vacancy');
+    }, function(err) {
+        toastr.error('Error while creating vacancy.', 'Error!');
     });
-  };
-
-  vm.getCountries = function() {
-    metaService.getCountries().then(function(response) {
-      vm.countries = response.data;
-    }, function(error) {
-      console.log('Error!');
-    });
-  };
-
-  vm.getCategories = function() {
-    metaService.getCategories().then(function(response) {
-      vm.categories = response.data;
-    }, function(error) {
-      console.log('Error!');
-    });
-  };
-
-  vm.getCountries();
-  vm.getCategories();
+  }
 };

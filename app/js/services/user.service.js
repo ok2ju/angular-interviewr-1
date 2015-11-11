@@ -1,10 +1,26 @@
 require('angular')
-  .module('app.resource.user', ['ngResource'])
+  .module('app.resource.user', ['restangular'])
     .factory('UserResource', userResource);
 
-function userResource($resource, config) {
-  var userUrl = config.api_url + '/api/v1/users/:id';
-  return $resource(userUrl, { id: '@_id' }, {
-    update: {method: 'PUT'}
-  });
+function userResource(Restangular) {
+
+  var service = {
+    listUsers: listUsers,
+    oneUser: oneUser,
+    userCompanies: userCompanies
+  };
+
+  function listUsers() {
+    return Restangular.all('users').getList();
+  }
+
+  function oneUser(id) {
+    return Restangular.one('users', id).get();
+  }
+
+  function userCompanies(id) {
+    return Restangular.one('users', id).getList('companies');
+  }
+
+  return service;
 }

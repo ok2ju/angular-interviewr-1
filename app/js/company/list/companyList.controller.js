@@ -1,36 +1,24 @@
-module.exports = function CompanyListController(CompanyResource, $http, $scope, config) {
+module.exports = function CompanyListController(CompanyResource, metaResource) {
   var vm = this;
-  var countries_url = config.api_url + '/api/v1/countries';
-  var categories_url = config.api_url + '/api/v1/categories';
 
-  vm.companies = CompanyResource.query();
+  CompanyResource.listCompanies().then(function(companies) {
+    vm.companies = companies;
+  });
 
-  vm.getCountries = function() {
-    $http({
-      url: countries_url,
-      method: 'GET'
-    }).then(function(response) {
-      vm.countries = response.data;
-    }, function(error) {
-      console.log('Error!');
-    });
-  };
+  // Fetch data for countries dropdown
+  metaResource.getCountries().then(function(countries) {
+    vm.countries = countries;
+  }, function(err) {
+      console.log('Error fetching countries!');
+  });
 
-  vm.getCategories = function() {
-    $http({
-      url: categories_url,
-      method: 'GET'
-    }).then(function(response) {
-      vm.categories = response.data;
-      vm.categories.unshift({id:9999, name: 'All'});
-    }, function(error) {
-      console.log('Error!');
-    });
-  };
+  // Fetch data for categories dropdown
+  // unshift hardcore here! TODO: add 'All' category to categories collection
+  metaResource.getCategories().then(function(categories) {
+    vm.categories = categories;
+    vm.categories.unshift({id:9999, name: 'All'});
+  }, function(err) {
+      console.log('Error fetching categories!');
+  });
 
-  vm.getCountries();
-  vm.getCategories();
-
-  vm.country = '';
-  vm.category = '';
 };

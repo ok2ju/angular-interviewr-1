@@ -1,15 +1,15 @@
 var $ = require('jquery');
 
 module.exports = function SettingsController(store, jwtHelper,
-                      toastr, $state, $http, $rootScope, $uibModal,
+                      toastr, $state, $http, $uibModal,
                       config, Upload, UserResource, metaResource) {
 
   var vm = this;
   var jwt = store.get('jwt');
   var decodedJwt = jwt && jwtHelper.decodeToken(jwt);
 
-  UserResource.get({ id: decodedJwt._id }, function(data) {
-    vm.user = data;
+  UserResource.oneUser(decodedJwt._id).then(function(user) {
+    vm.user = user;
     vm.user.social = vm.user.social || {};
   });
 
@@ -24,13 +24,16 @@ module.exports = function SettingsController(store, jwtHelper,
       res = 'images/user-default.png';
     }
     return res;
-  }
+  };
 
   function updateProfile() {
     console.log(vm.user.social);
-    vm.user.$update(function() {
+
+    vm.user.put().then(function() {
       $state.go($state.current, {}, { reload: true });
       toastr.success('Your settings was successfully updated.', 'Yay!');
+    }, function(err) {
+      toastr.error('Error while updating.', 'Error!');
     });
   }
 
@@ -74,14 +77,10 @@ module.exports = function SettingsController(store, jwtHelper,
     vm.animationsEnabled = !vm.animationsEnabled;
   };
 
-  // Get Countries for dropdown
-  vm.getCountries = function() {
-    metaResource.getCountries().then(function(response) {
-      vm.countries = response.data;
-    }, function(error) {
-      console.log('Error!');
-    });
-  };
-
-  vm.getCountries();
+  // Fetch countries for dropdown
+  metaResource.getCountries().then(function(countries) {
+    vm.countries = countries;
+  }, function(err) {
+      console.log('Error fetching countries!');
+  });
 };
