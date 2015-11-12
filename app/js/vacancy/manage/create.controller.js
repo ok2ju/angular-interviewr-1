@@ -1,4 +1,4 @@
-module.exports = function VacancyCreateController(VacancyResource, metaResource, toastr) {
+module.exports = function VacancyCreateController($state, VacancyResource, metaResource, toastr) {
   var vm = this;
   vm.vacancy = {};
   vm.registerVacancy = registerVacancy;
