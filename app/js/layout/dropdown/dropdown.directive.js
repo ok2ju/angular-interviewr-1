@@ -1,6 +1,6 @@
 var $ = require('jquery');
 
-module.exports = function($rootScope) {
+module.exports = function($rootScope, $timeout) {
 
   function link(scope, element, attrs) {
 
@@ -28,14 +28,16 @@ module.exports = function($rootScope) {
     };
 
     $rootScope.$on('documentClicked', function(inner, target) {
-      var dropdown = $(element).find('.ui.dropdown');
-      var dropdownItem = $(element).find('.ui-dropdown-item');
+      $timeout(function() {
+        var dropdown = $(element).find('.ui.dropdown');
+        var dropdownItem = $(element).find('.ui-dropdown-item');
 
-      if(!$(target[0]).is(dropdown) && !$(target[0]).is(dropdownItem)) {
-        scope.$apply(function() {
-          scope.listVisible = false
-        });
-      }
+        if(!$(target[0]).is(dropdown) && !$(target[0]).is(dropdownItem)) {
+          scope.$apply(function() {
+            scope.listVisible = false
+          });
+        }
+      });
     });
 
     scope.$watch('selected', function(value) {

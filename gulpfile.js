@@ -1,4 +1,4 @@
-var browserify = require('browserify'),
+var browserify = require('gulp-browserify'),
     gulp = require('gulp'),
     ngAnnotate = require('gulp-ng-annotate'),
     source = require('vinyl-source-stream'),
@@ -33,9 +33,8 @@ gulp.task('clean', function() {
 });
 
 gulp.task('browserify', function() {
-  return browserify('app/js/app.js')
-  .bundle()
-  .pipe(source('app.js'))
+  gulp.src('app/js/app.js')
+  .pipe(browserify({debug: true}))
   .pipe(gulp.dest('app/dist'));
 });
 
