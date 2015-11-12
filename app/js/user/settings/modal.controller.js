@@ -25,7 +25,7 @@ module.exports = function ModalController($modalInstance, $timeout, Upload, conf
 
     var data = {
       file: vm.file,
-      "Content-Type": vm.file.type != '' ? vm.file.type : 'application/octet-stream'
+      "Content-Type": vm.file.type !== '' ? vm.file.type : 'application/octet-stream'
     };
 
     Upload.upload({

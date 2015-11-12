@@ -5,10 +5,20 @@ require('angular')
 function userResource(Restangular) {
 
   var service = {
+    login: login,
+    postUser: postUser,
     listUsers: listUsers,
     oneUser: oneUser,
     userCompanies: userCompanies
   };
+
+  function login(user) {
+    return Restangular.all('login').post(user);
+  }
+
+  function postUser(user) {
+    return Restangular.all('users').post(user);
+  }
 
   function listUsers() {
     return Restangular.all('users').getList();
