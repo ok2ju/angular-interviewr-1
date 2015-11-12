@@ -37,7 +37,7 @@ module.exports = function ModalController($modalInstance, $timeout, Upload, conf
     }).then(function(resp) {
         var data = resp.data;
         if(data._id) {
-          UserResource.update({id: user._id}, {imageId: data._id}, function() {
+          UserResource.updateUser(user._id, {imageId: data._id}).then(function() {
             user.imageId = data._id;
             vm.cancel();
           });

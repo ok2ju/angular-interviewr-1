@@ -7,6 +7,7 @@ function userResource(Restangular) {
   var service = {
     login: login,
     postUser: postUser,
+    updateUser: updateUser,
     listUsers: listUsers,
     oneUser: oneUser,
     userCompanies: userCompanies
@@ -18,6 +19,10 @@ function userResource(Restangular) {
 
   function postUser(user) {
     return Restangular.all('users').post(user);
+  }
+
+  function updateUser(id, data) {
+    return Restangular.one('users', id).customPUT(data);
   }
 
   function listUsers() {
