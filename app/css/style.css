@@ -544,6 +544,7 @@ textarea {
   position: absolute;
   transition: -webkit-transform .3s .3s;
   transition: transform .3s .3s;
+  transition: transform .3s .3s, -webkit-transform .3s .3s;
   width: 100%; }
 
 .btn-aside-toggle:before {
@@ -824,6 +825,7 @@ textarea {
 .modal.fade .modal-dialog {
   transition: -webkit-transform .3s ease-out;
   transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
   -webkit-transform: translate(0, -25%);
   -ms-transform: translate(0, -25%);
   transform: translate(0, -25%); }
@@ -1203,6 +1205,7 @@ textarea {
   white-space: normal;
   outline: 0;
   -webkit-transform: rotateZ(0deg);
+  -ms-transform: rotate(0deg);
   transform: rotateZ(0deg);
   min-width: 10em;
   min-height: 2.7142em;
@@ -3496,7 +3499,8 @@ main.test-vid {
     -ms-transform: scaleX(0.0001);
     transform: scaleX(0.0001);
     transition: -webkit-transform 350ms ease-in-out;
-    transition: transform 350ms ease-in-out; }
+    transition: transform 350ms ease-in-out;
+    transition: transform 350ms ease-in-out, -webkit-transform 350ms ease-in-out; }
   .switcher-panel__control:hover:after {
     -webkit-transform: scaleX(1);
     -ms-transform: scaleX(1);

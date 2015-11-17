@@ -23,53 +23,23 @@
               <i class="sidebar-ico icon-globe"></i>
               Location
             </label>
-            <drop-down class="form-dd" placeholder="Country" property="name" selected="vm.vacancy.country" dropdown-attr="vm.countries"></drop-down>
+            <input id="cp-location" class="form-row-group__input" ng-model="vm.vacancy.location" type="text" name="location" ng-minlength="5" ng-maxlength="20" required>
           </div>
         </div>
         <div class="form-row">
           <div class="form-row-group">
-            <label for="cp-category" class="form-row-group__label">
+            <label for="cp-type" class="form-row-group__label">
               <i class="sidebar-ico icon-globe"></i>
-              Category
+              Type
             </label>
-            <drop-down class="form-dd" placeholder="Category" property="name" selected="vm.vacancy.category" dropdown-attr="vm.categories"></drop-down>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-row-group">
-            <div class="v-form-error" ng-messages="createVacancy.vacancyEmail.$error" ng-if="createVacancy.vacancyEmail.$dirty">
-              <div ng-message="required">You did not enter a email field</div>
-              <div ng-message="email">Your email address is invalid</div>
-            </div>
-            <label for="cp-email" class="form-row-group__label">
-              <i class="sidebar-ico icon-globe"></i>
-              Email
-            </label>
-            <input name="vacancyEmail" ng-model="vm.vacancy.email" type="email" class="form-row-group__input" id="cp-email" required>
+            <drop-down class="form-dd" placeholder="Type" property="name" selected="vm.vacancy.category" dropdown-attr="vm.categories"></drop-down>
           </div>
           <div class="form-row-group">
-            <div class="v-form-error" ng-messages="createVacancy.companyPhone.$error" ng-if="createVacancy.companyPhone.$dirty">
-              <div ng-message="required">You did not enter a phone</div>
-              <div ng-message="pattern">Must be a valid 10 digit phone number</div>
-            </div>
-            <label for="cp-phone" class="form-row-group__label">
+            <label for="cp-position" class="form-row-group__label">
               <i class="sidebar-ico icon-globe"></i>
-              Phone
+              Position
             </label>
-            <input name="companyPhone" ng-model="vm.vacancy.phone" type="text" class="form-row-group__input" id="cp-phone" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/" required>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-row-group">
-            <div class="v-form-error" ng-messages="createVacancy.companySite.$error" ng-if="createVacancy.companySite.$dirty">
-              <div ng-message="required">You did not enter a site url</div>
-              <div ng-message="pattern">Must be a valid url</div>
-            </div>
-            <label for="cp-site" class="form-row-group__label">
-              <i class="sidebar-ico icon-globe"></i>
-              Site
-            </label>
-            <input name="companySite" ng-model="vm.vacancy.site" type="text" class="form-row-group__input" id="cp-site" ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/" required>
+            <drop-down class="form-dd" placeholder="Position" property="name" selected="vm.vacancy.category" dropdown-attr="vm.categories"></drop-down>
           </div>
         </div>
         <div class="form-row">
