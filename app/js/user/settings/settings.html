@@ -5,145 +5,131 @@
   <form name="fillForm" ng-submit="vm.updateProfile()" class="settings-form" novalidate>
     <div class="settings-form__row">
       <div class="form-fields">
-        <div class="form-row">
-          <div class="form-row-group">
-            <div class="v-form-error" ng-messages="fillForm.name.$error" ng-if="fillForm.name.$dirty">
-              <div ng-message="required">You did not enter a name</div>
-              <div ng-message="minlength">Your name is too short</div>
-              <div ng-message="maxlength">Your name is too long</div>
+
+        <div class="grid">
+          <div class="grid-cell">
+            <div class="inputAdd">
+              <div class="v-form-error" ng-messages="fillForm.name.$error" ng-if="fillForm.name.$dirty">
+                <div ng-message="required">You did not enter a name</div>
+                <div ng-message="minlength">Your name is too short</div>
+                <div ng-message="maxlength">Your name is too long</div>
+              </div>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
+              <input ng-model="vm.user.name" name="name" type="text" id="up-name" class="inputAdd-field" placeholder="Name" ng-minlength="3" ng-maxlength="25" required>
             </div>
-            <label for="up-name" class="form-row-group__label">
-              <i class="sidebar-ico icon-user"></i>
-              FirstName
-            </label>
-            <input ng-model="vm.user.name" type="text" name="name" class="form-row-group__input" id="up-name" ng-minlength="3" ng-maxlength="25" required>
+            <div class="inputAdd">
+              <div class="v-form-error" ng-messages="fillForm.surname.$error" ng-if="fillForm.surname.$dirty">
+                <div ng-message="required">You did not enter a second name</div>
+                <div ng-message="minlength">Your second name is too short</div>
+                <div ng-message="maxlength">Your second name is too long</div>
+              </div>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
+              <input ng-model="vm.user.surname" name="surname" type="text" class="inputAdd-field" placeholder="Second name" id="up-surname" ng-minlength="3" ng-maxlength="25" required>
+            </div>
           </div>
-          <div class="form-row-group">
-            <div class="v-form-error" ng-messages="fillForm.surname.$error" ng-if="fillForm.surname.$dirty">
-              <div ng-message="required">You did not enter a second name</div>
-              <div ng-message="minlength">Your second name is too short</div>
-              <div ng-message="maxlength">Your second name is too long</div>
+          <div class="grid-cell">
+            <div class="inputAdd">
+              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
+              <input type="text" class="inputAdd-field" placeholder="Date of birth">
             </div>
-            <label for="up-surname" class="form-row-group__label">
-              <i class="sidebar-ico icon-user"></i>
-              SecondName
-            </label>
-            <input ng-model="vm.user.surname" type="text" name="surname" class="form-row-group__input" id="up-surname" ng-minlength="3" ng-maxlength="25" required>
+            <div class="inputAdd">
+              <div class="v-form-error" ng-messages="fillForm.email.$error" ng-if="fillForm.email.$dirty">
+                <div ng-message="required">You did not enter a email field</div>
+                <div ng-message="email">Your email address is invalid</div>
+              </div>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-mail"></i></span>
+              <input ng-model="vm.user.email" type="email" class="inputAdd-field" placeholder="Email" id="up-email" name="email" required>
+            </div>
           </div>
         </div>
-        <div class="form-row">
-          <div class="form-row-group">
-            <div class="v-form-error" ng-messages="fillForm.email.$error" ng-if="fillForm.email.$dirty">
-              <div ng-message="required">You did not enter a email field</div>
-              <div ng-message="email">Your email address is invalid</div>
+
+        <div class="grid">
+          <div class="grid-cell">
+            <div class="inputAdd">
+              <span class="inputAdd-item"><i class="sidebar-ico icon-location"></i></span>
+              <drop-down class="form-dd" placeholder="Country" property="name" selected="vm.country" display="vm.user.country" dropdown-attr="vm.countries"></drop-down>
             </div>
-            <label for="up-email" class="form-row-group__label">
-              <i class="sidebar-ico icon-mail"></i>
-              Email
-            </label>
-            <input ng-model="vm.user.email" type="email" name="email" class="form-row-group__input" id="up-email" required>
+            <div class="inputAdd">
+              <span class="inputAdd-item"><i class="sidebar-ico icon-globe"></i></span>
+              <input type="text" class="inputAdd-field" placeholder="Time zone">
+            </div>
           </div>
-          <div class="form-row-group">
-            <label for="up-country" class="form-row-group__label">
-              <i class="sidebar-ico icon-location"></i>
-              Country
-            </label>
-            <drop-down class="form-dd" placeholder="Country" property="name" selected="vm.country" display="vm.user.country" dropdown-attr="vm.countries"></drop-down>
+          <div class="grid-cell">
+            <div class="inputAdd">
+              <div class="v-form-error" ng-messages="fillForm.phone.$error" ng-if="fillForm.phone.$dirty">
+                <div ng-message="required">You did not enter a phone</div>
+                <div ng-message="pattern">Must be a valid 10 digit phone number</div>
+              </div>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-globe"></i></span>
+              <input name="phone" ng-model="vm.user.phone" type="text" class="inputAdd-field" placeholder="Phone" id="up-phone" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/" required>
+            </div>
+            <div class="inputAdd">
+              <div class="v-form-error" ng-messages="fillForm.twitterSite.$error" ng-if="fillForm.twitterSite.$dirty">
+                <div ng-message="pattern">Must be a valid url</div>
+              </div>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-globe"></i></span>
+              <input type="text" class="inputAdd-field" placeholder="Twitter" name="twitterSite" ng-model="vm.user.social.twitter" id="up-social-twitter" ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/">
+            </div>
           </div>
         </div>
-        <div class="form-row">
-          <div class="form-row-group">
-            <label for="up-timezone" class="form-row-group__label">
-              <i class="sidebar-ico icon-globe"></i>
-              TimeZone
-            </label>
-            <input ng-model="vm.user.dob" type="date" class="form-row-group__input" id="up-timezone">
-          </div>
-          <div class="form-row-group">
-            <div class="v-form-error" ng-messages="fillForm.phone.$error" ng-if="fillForm.phone.$dirty">
-              <div ng-message="required">You did not enter a phone</div>
-              <div ng-message="pattern">Must be a valid 10 digit phone number</div>
+
+        <div class="grid">
+          <div class="grid-cell">
+            <div class="inputAdd">
+              <div class="v-form-error" ng-messages="fillForm.facebookSite.$error" ng-if="fillForm.facebookSite.$dirty">
+                <div ng-message="pattern">Must be a valid url</div>
+              </div>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-globe"></i></span>
+              <input type="text" class="inputAdd-field" placeholder="Facebook" name="facebookSite" ng-model="vm.user.social.facebook" id="up-social-facebook" ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/">
             </div>
-            <label for="up-phone" class="form-row-group__label">
-              <i class="sidebar-ico icon-globe"></i>
-              Phone
-            </label>
-            <input name="phone" ng-model="vm.user.phone" type="text" class="form-row-group__input" id="up-phone" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/" required>
+            <div class="inputAdd">
+              <div class="v-form-error" ng-messages="fillForm.githubSite.$error" ng-if="fillForm.githubSite.$dirty">
+                <div ng-message="pattern">Must be a valid url</div>
+              </div>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-globe"></i></span>
+              <input type="text" class="inputAdd-field" placeholder="GitHub" name="githubSite" ng-model="vm.user.social.github" id="up-social-github" ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/">
+            </div>
+          </div>
+          <div class="grid-cell">
+            <div class="inputAdd">
+              <div class="v-form-error" ng-messages="fillForm.linkedinSite.$error" ng-if="fillForm.linkedinSite.$dirty">
+                <div ng-message="pattern">Must be a valid url</div>
+              </div>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-globe"></i></span>
+              <input type="text" class="inputAdd-field" placeholder="LinkedIn" name="linkedinSite" ng-model="vm.user.social.linkedin" id="up-social-linkedin" ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/">
+            </div>
+            <div class="inputAdd">
+              <div class="v-form-error" ng-messages="fillForm.dribbbleSite.$error" ng-if="fillForm.dribbbleSite.$dirty">
+                <div ng-message="pattern">Must be a valid url</div>
+              </div>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-globe"></i></span>
+              <input type="text" class="inputAdd-field" placeholder="Dribbble" name="dribbbleSite" ng-model="vm.user.social.dribbble" id="up-social-dribbble" ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/">
+            </div>
           </div>
         </div>
-        <div class="form-row">
-          <div class="form-row-group">
-            <div class="v-form-error" ng-messages="fillForm.twitterSite.$error" ng-if="fillForm.twitterSite.$dirty">
-              <div ng-message="pattern">Must be a valid url</div>
+
+        <div class="grid">
+          <div class="grid-cell">
+            <div class="inputAdd">
+              <tags-input ng-model="vm.user.skills" add-on-paste="true" placeholder="add skill">
+                <auto-complete source="vm.loadTags($query)"></auto-complete>
+              </tags-input>
             </div>
-            <label for="up-social-twitter" class="form-row-group__label">
-              <i class="sidebar-ico icon-globe"></i>
-              Twitter
-            </label>
-            <input name="twitterSite" ng-model="vm.user.social.twitter" type="text" class="form-row-group__input" id="up-social-twitter" ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/">
-          </div>
-          <div class="form-row-group">
-            <div class="v-form-error" ng-messages="fillForm.facebookSite.$error" ng-if="fillForm.facebookSite.$dirty">
-              <div ng-message="pattern">Must be a valid url</div>
-            </div>
-            <label for="up-social-facebook" class="form-row-group__label">
-              <i class="sidebar-ico icon-globe"></i>
-              Facebook
-            </label>
-            <input name="facebookSite" ng-model="vm.user.social.facebook" type="text" class="form-row-group__input" id="up-social-facebook" ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/">
           </div>
         </div>
-        <div class="form-row">
-          <div class="form-row-group">
-            <div class="v-form-error" ng-messages="fillForm.githubSite.$error" ng-if="fillForm.githubSite.$dirty">
-              <div ng-message="pattern">Must be a valid url</div>
+
+        <div class="grid">
+          <div class="grid-cell">
+            <div class="inputAdd">
+              <div class="v-form-error" ng-messages="fillForm.about.$error" ng-if="fillForm.about.$dirty">
+                <div ng-message="required">You did not enter about filed</div>
+                <div ng-message="minlength">About field is too short</div>
+              </div>
+              <textarea type="text" class="inputAdd-field" placeholder="About" ng-model="vm.user.about" name="about" id="up-about" ng-minlength="50" required></textarea>
             </div>
-            <label for="up-social-github" class="form-row-group__label">
-              <i class="sidebar-ico icon-globe"></i>
-              GitHub
-            </label>
-            <input name="githubSite" ng-model="vm.user.social.github" type="text" class="form-row-group__input" id="up-social-github" ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/">
-          </div>
-          <div class="form-row-group">
-            <div class="v-form-error" ng-messages="fillForm.linkedinSite.$error" ng-if="fillForm.linkedinSite.$dirty">
-              <div ng-message="pattern">Must be a valid url</div>
-            </div>
-            <label for="up-social-linkedin" class="form-row-group__label">
-              <i class="sidebar-ico icon-globe"></i>
-              LinkedIn
-            </label>
-            <input name="linkedinSite" ng-model="vm.user.social.linkedin" type="text" class="form-row-group__input" id="up-social-linkedin" ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/">
           </div>
         </div>
-        <div class="form-row">
-          <div class="form-row-group">
-            <label for="up-dob" class="form-row-group__label">
-              <i class="sidebar-ico icon-globe"></i>
-              DoB
-            </label>
-            <input ng-model="vm.user.dob" type="date" class="form-row-group__input" id="up-dob">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="full-len-input">
-            <tags-input ng-model="vm.user.skills" add-on-paste="true" placeholder="add skill">
-              <auto-complete source="vm.loadTags($query)"></auto-complete>
-            </tags-input>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="full-len-input">
-            <div class="v-form-error" ng-messages="fillForm.about.$error" ng-if="fillForm.about.$dirty">
-              <div ng-message="required">You did not enter about filed</div>
-              <div ng-message="minlength">About field is too short</div>
-            </div>
-            <label for="up-about" class="full-len-input__label">
-              <i class="sidebar-ico icon-camera sidebar-ico-full"></i>
-              About
-            </label>
-            <textarea ng-model="vm.user.about" class="full-len-input__input" name="about" id="up-about"></textarea ng-minlength="50" required>
-          </div>
-        </div>
+
       </div>
       <div class="form-photo">
         <div class="form-photo-inner">
@@ -162,6 +148,10 @@
         </div>
       </div>
     </div>
-    <button type="submit" class="form-row-group__submit-btn">Update</button>
+
+    <div class="btn-col">
+      <button type="submit" class="form-row-group__submit-btn">Update</button>
+    </div>
+
   </form>
 </div>

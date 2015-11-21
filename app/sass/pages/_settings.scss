@@ -48,12 +48,12 @@ $content-header-bg-color: rgba(242, 242, 242, .3);
 
 .form-photo-inner {
   padding: 15px;
+  text-align: center;
 
   img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    float: left;
     vertical-align: middle;
     margin-right: 20px;
   }
@@ -91,4 +91,8 @@ $content-header-bg-color: rgba(242, 242, 242, .3);
   border: 1px solid transparent;
   border-color: #e7e9ed;
   color: #666;
+}
+
+.btn-col {
+  padding: 0 15px;
 }

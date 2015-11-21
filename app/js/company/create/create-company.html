@@ -8,17 +8,20 @@
 
       <div class="form-photo">
         <div class="form-photo-inner">
-          <img src="images/user-default.png" alt="avatar">
-          <div class="form-photo-info">
-            <p>
-              You can upload an company avatar here or change it.
-            </p>
-            <hr>
-            <a href="#" class="upload-btn">
-              <i class="sidebar-ico icon-camera sidebar-ico-full"></i>
-              <span>Choose file ...</span>
-            </a>
-            <input type="file" name="upload" id="up-photo">
+          <img ng-src="{{vm.getImageUrl()}}" alt="avatar">
+          <div class="form-photo-inner">
+            <img ng-src="{{vm.getImageUrl()}}" alt="avatar">
+            <div class="form-photo-info">
+              <p>
+                You can upload an avatar here or change it.
+              </p>
+              <hr>
+              <a href="#" class="upload-btn" ng-click="vm.openFileDialog()">
+                <i class="sidebar-ico icon-camera sidebar-ico-full"></i>
+                <span>Choose file ...</span>
+              </a>
+              <input type="file" ngf-select="vm.onFileSelected()" ng-model="vm.file" name="file" accept="image/*" ngf-max-size="1MB" name="upload" id="up-photo">
+            </div>
           </div>
         </div>
       </div>
@@ -62,7 +65,7 @@
             </label>
             <input id="cp-yof" type="text" class="form-row-group__input datepicker-input" uib-datepicker-popup="{{vm.format}}" ng-model="vm.company.yof" is-open="vm.status.opened" max-date="vm.maxDate" datepicker-options="vm.dateOptions" ng-required="true" show-button-bar="false" show-weeks="false" />
             <span class="input-group-btn">
-              <button type="button" class="btn btn-default" ng-click="vm.open($event)"><i class="icon-calendar"></i></button>
+              <button type="button" class="btn btn-default" ng-click="vm.openDatepicker($event)"><i class="icon-calendar"></i></button>
             </span>
           </div>
         </div>

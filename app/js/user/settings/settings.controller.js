@@ -79,7 +79,8 @@ module.exports = function SettingsController(store, jwtHelper,
 
   // Fetch countries for dropdown
   metaResource.getCountries().then(function(countries) {
-    vm.countries = countries;
+    console.log(countries);
+    vm.countries = countries.data;
   }, function(err) {
       console.log('Error fetching countries!');
   });

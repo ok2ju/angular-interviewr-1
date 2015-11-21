@@ -7,7 +7,8 @@ function companyResource(Restangular) {
   var service = {
     listCompanies: listCompanies,
     oneCompany: oneCompany,
-    postCompany: postCompany
+    postCompany: postCompany,
+    updateCompany: updateCompany
   };
 
   function listCompanies() {
@@ -20,6 +21,10 @@ function companyResource(Restangular) {
 
   function postCompany(company) {
     return Restangular.all('companies').post(company);
+  }
+
+  function updateCompany(id, data) {
+    return Restangular.one('companies', id).customPUT(data);
   }
 
   return service;

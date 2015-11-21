@@ -10,11 +10,11 @@ function metaResource(Restangular) {
   };
 
   function getCountries() {
-    return Restangular.all('countries').getList();
+    return Restangular.one('meta', 'countries').get();
   }
 
   function getCategories() {
-    return Restangular.all('categories').getList();
+    return Restangular.one('meta', 'categories').get();
   }
 
   return service;

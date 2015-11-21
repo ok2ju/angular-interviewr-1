@@ -1,6 +1,8 @@
 var moment = require('moment');
+var $ = require('jquery');
 
-module.exports = function CompanyCreateController(CompanyResource, metaResource, $scope, toastr, $state) {
+module.exports = function CompanyCreateController(CompanyResource, metaResource, $scope,
+                                                  toastr, $state, $uibModal, config) {
   var vm = this;
   vm.company = {};
   vm.registerCompany = registerCompany;
@@ -19,6 +21,52 @@ module.exports = function CompanyCreateController(CompanyResource, metaResource,
     });
   }
 
+  vm.getImageUrl = function() {
+    var res = '';
+    if(vm.company && vm.company.imageId) {
+      res = config.api_url + '/api/v1/images/' + vm.company.imageId;
+    } else {
+      res = 'images/companies/default.png';
+    }
+    return res;
+  };
+
+  //file upload
+  vm.onFileSelected = function() {
+    if(vm.file) {
+      vm.open();
+    }
+  };
+
+  vm.openFileDialog = function() {
+    $('#up-photo').click();
+  };
+
+  // modal window
+  vm.animationsEnabled = true;
+
+  vm.open = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: vm.animationsEnabled,
+      templateUrl: 'js/company/create/modal.html',
+      controller: 'CompanyModalController',
+      controllerAs: 'vm',
+      size: size,
+      resolve: {
+        file: function () {
+          return vm.file;
+        },
+        company: function() {
+          return vm.company;
+        }
+      }
+    });
+  };
+
+  vm.toggleAnimation = function () {
+    vm.animationsEnabled = !vm.animationsEnabled;
+  };
+
   // Datepicker options
   vm.today = function() {
     vm.company.yof = new Date();
@@ -27,7 +75,7 @@ module.exports = function CompanyCreateController(CompanyResource, metaResource,
 
   vm.maxDate = new Date(2020, 5, 22);
 
-  vm.open = function($event) {
+  vm.openDatepicker = function($event) {
     vm.status.opened = true;
   };
 
@@ -49,14 +97,14 @@ module.exports = function CompanyCreateController(CompanyResource, metaResource,
 
   // Fetching data for countries dropdown
   metaResource.getCountries().then(function(countries) {
-    vm.countries = countries;
+    vm.countries = countries.data;
   }, function(err) {
       console.log('Error fetching countries!');
   });
 
   // Fetching data for categories dropdown
   metaResource.getCategories().then(function(categories) {
-    vm.categories = categories;
+    vm.categories = categories.data;
   }, function(err) {
       console.log('Error fetching categories!');
   });
