@@ -8,7 +8,8 @@ function companyResource(Restangular) {
     listCompanies: listCompanies,
     oneCompany: oneCompany,
     postCompany: postCompany,
-    updateCompany: updateCompany
+    updateCompany: updateCompany,
+    removeCompany: removeCompany
   };
 
   function listCompanies() {
@@ -25,6 +26,10 @@ function companyResource(Restangular) {
 
   function updateCompany(id, data) {
     return Restangular.one('companies', id).customPUT(data);
+  }
+
+  function removeCompany(id) {
+    return Restangular.one('companies', id).remove();
   }
 
   return service;

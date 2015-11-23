@@ -40,6 +40,7 @@
         'app.company.create',
         'app.company.list',
         'app.company.profile',
+        'app.company.edit',
 
         'app.vacancy.manage',
         'app.vacancy.candidates',
@@ -75,6 +76,7 @@
     require('./company/create');
     require('./company/list');
     require('./company/profile');
+    require('./company/edit');
 
     require('./vacancy/manage');
     require('./vacancy/candidates');

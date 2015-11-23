@@ -1,14 +1,19 @@
 <h2>Welcome to company cabinet</h2>
 
-<a ui-sref="app.createCompany">Create Company</a>
-<a ui-sref="app.editCompany">Edit Company</a>
-<a ui-sref="app.removeCompany">Remove Company</a>
+<div class="c-manage-menu">
+  <a class="c-manage-menu__btn" ui-sref="app.createCompany">Create Company</a>
+</div>
+
 
 <div class="company-card" ng-repeat="company in vm.companies">
   <div class="company-card__image">
     <img src="/images/companies/default.png" alt="">
   </div>
   <div class="company-card__body">
+    <div class="v-edit">
+      <i class="sidebar-ico icon-pencil" ui-sref="app.editCompany({id: company._id})"></i>
+      <i class="sidebar-ico icon-cancel" ng-click="vm.deleteCompany(company)"></i>
+    </div>
     <a href="#" class="company-card__header">{{company.name}}</a>
     <div class="company-card__meta">
       <a href="#">{{company.creation_date | moment: 'DD.MM.YYYY'}}</a>

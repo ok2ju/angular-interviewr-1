@@ -1,0 +1,113 @@
+<div class="form-content">
+  <div class="s-content-head">
+    <h2 class="s-content-head__header">Fill company profile fields</h2>
+  </div>
+  <form class="settings-form" ng-submit="vm.updateCompany()" name="updateCompany">
+
+    <div class="settings-form__row">
+
+      <div class="form-photo">
+        <div class="form-photo-inner">
+          <img ng-src="{{vm.getImageUrl()}}" alt="avatar">
+          <div class="form-photo-inner">
+            <img ng-src="{{vm.getImageUrl()}}" alt="avatar">
+            <div class="form-photo-info">
+              <p>
+                You can upload an avatar here or change it.
+              </p>
+              <hr>
+              <a href="#" class="upload-btn" ng-click="vm.openFileDialog()">
+                <i class="sidebar-ico icon-camera sidebar-ico-full"></i>
+                <span>Choose file ...</span>
+              </a>
+              <input type="file" ngf-select="vm.onFileSelected()" ng-model="vm.file" name="file" accept="image/*" ngf-max-size="1MB" name="upload" id="up-photo">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-fields">
+
+        <div class="form-row">
+          <div class="form-row-group">
+            <label for="cp-name" class="form-row-group__label">
+              <i class="sidebar-ico icon-user"></i>
+              Name
+            </label>
+            <input ng-model="vm.company.name" type="text" name="companyName" class="form-row-group__input" id="cp-name" ng-minlength="5"
+                   ng-maxlength="20">
+          </div>
+          <div class="form-row-group">
+            <label for="cp-location" class="form-row-group__label">
+              <i class="sidebar-ico icon-globe"></i>
+              Location
+            </label>
+            <drop-down class="form-dd" placeholder="Country" property="name" selected="vm.country" display="vm.company.location" dropdown-attr="vm.countries"></drop-down>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-row-group">
+            <label for="cp-category" class="form-row-group__label">
+              <i class="sidebar-ico icon-globe"></i>
+              Category
+            </label>
+            <drop-down class="form-dd" placeholder="Category" property="name" selected="vm.category" display="vm.company.category" dropdown-attr="vm.categories"></drop-down>
+          </div>
+          <div class="form-row-group">
+            <label for="cp-yof" class="form-row-group__label">
+              <i class="sidebar-ico icon-globe"></i>
+              Foundation
+            </label>
+            <input id="cp-yof" type="text" class="form-row-group__input datepicker-input" uib-datepicker-popup="{{vm.format}}" ng-model="vm.company.yof" is-open="vm.status.opened" max-date="vm.maxDate" datepicker-options="vm.dateOptions" show-button-bar="false" show-weeks="false" />
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="vm.openDatepicker($event)"><i class="icon-calendar"></i></button>
+            </span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-row-group">
+            <label for="cp-email" class="form-row-group__label">
+              <i class="sidebar-ico icon-globe"></i>
+              Email
+            </label>
+            <input name="companyEmail" ng-model="vm.company.email" type="email" class="form-row-group__input" id="cp-email">
+          </div>
+          <div class="form-row-group">
+            <label for="cp-phone" class="form-row-group__label">
+              <i class="sidebar-ico icon-globe"></i>
+              Phone
+            </label>
+            <input name="companyPhone" ng-model="vm.company.phone" type="text" class="form-row-group__input" id="cp-phone" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-row-group">
+            <label for="cp-site" class="form-row-group__label">
+              <i class="sidebar-ico icon-globe"></i>
+              Site
+            </label>
+            <input name="companySite" ng-model="vm.company.site" type="text" class="form-row-group__input" id="cp-site" ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="full-len-input">
+            <tags-input ng-model="vm.company.specialization"></tags-input>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="full-len-input">
+            <label for="cp-about" class="full-len-input__label">
+              <i class="sidebar-ico icon-camera sidebar-ico-full"></i>
+              Description
+            </label>
+            <textarea ng-model="vm.company.description" class="full-len-input__input" name="description" id="cp-about" ng-minlength="50"></textarea>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <button type="submit" class="form-row-group__submit-btn">Update</button>
+
+  </form>
+</div>
