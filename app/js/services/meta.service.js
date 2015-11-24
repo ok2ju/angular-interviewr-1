@@ -6,7 +6,9 @@ function metaResource(Restangular) {
 
   var service = {
     getCountries: getCountries,
-    getCategories: getCategories
+    getCategories: getCategories,
+    getVacancyPosition: getVacancyPosition,
+    getVacancyType: getVacancyType
   };
 
   function getCountries() {
@@ -15,6 +17,14 @@ function metaResource(Restangular) {
 
   function getCategories() {
     return Restangular.one('meta', 'categories').get();
+  }
+
+  function getVacancyPosition() {
+    return Restangular.one('meta', 'position').get();
+  }
+
+  function getVacancyType() {
+    return Restangular.one('meta', 'vacancyType').get();
   }
 
   return service;

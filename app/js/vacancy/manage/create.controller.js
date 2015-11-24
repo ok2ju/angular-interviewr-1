@@ -3,16 +3,16 @@ module.exports = function VacancyCreateController($state, VacancyResource, metaR
   vm.vacancy = {};
   vm.registerVacancy = registerVacancy;
 
-  metaResource.getCountries().then(function(countries) {
-    vm.countries = countries;
+  metaResource.getVacancyPosition().then(function(positions) {
+    vm.positions = positions.data;
   }, function(err) {
-    console.log('Error fetching countries!');
+    console.log('Error fetching positions!');
   });
 
-  metaResource.getCategories().then(function(categories) {
-    vm.categories = categories;
+  metaResource.getVacancyType().then(function(types) {
+    vm.vacancyTypes = types.data;
   }, function(err) {
-    console.log('Error fetching categories!');
+    console.log('Error fetching vacancy types!');
   });
 
   function registerVacancy() {
