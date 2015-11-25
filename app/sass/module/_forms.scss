@@ -97,11 +97,6 @@
   }
 }
 
-.datepicker-input {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
 .form-row-group__select {
   border: 1px solid rgba(34,36,38,.15);
   border-top-left-radius: 0;
@@ -213,4 +208,14 @@ textarea.inputAdd-field {
   i {
     @include font-size(13px);
   }
+}
+
+.inputAdd-append-item {
+  border-left: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.datepicker-input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }

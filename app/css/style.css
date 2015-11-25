@@ -2089,10 +2089,6 @@ button.toast-close-button {
       border-top: 1px solid rgba(34, 36, 38, 0.15);
       padding: 7px 10px; } }
 
-.datepicker-input {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0; }
-
 .form-row-group__select {
   border: 1px solid rgba(34, 36, 38, 0.15);
   border-top-left-radius: 0;
@@ -2197,6 +2193,14 @@ textarea.inputAdd-field {
   .inputAdd-item i {
     font-size: 13px;
     font-size: 0.8125rem; }
+
+.inputAdd-append-item {
+  border-left: 0;
+  border-radius: 0 3px 3px 0; }
+
+.datepicker-input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0; }
 
 tags-input {
   display: block;

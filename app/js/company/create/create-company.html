@@ -6,129 +6,112 @@
 
     <div class="settings-form__row">
 
+      <div class="form-fields">
+
+        <div class="grid">
+          <div class="grid-cell">
+            <div class="inputAdd">
+              <div class="v-form-error" ng-messages="createCompany.companyName.$error" ng-if="createCompany.companyName.$dirty">
+                <div ng-message="required">You did not enter a company name</div>
+                <div ng-message="minlength">Your company name is too short</div>
+                <div ng-message="maxlength">Your company name is too long</div>
+              </div>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
+              <input ng-model="vm.company.name" name="companyName" type="text" id="up-name" class="inputAdd-field" placeholder="Name" ng-minlength="5" ng-maxlength="20" required>
+            </div>
+            <div class="inputAdd">
+              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
+              <drop-down class="form-dd" placeholder="Country" property="name" selected="vm.country" display="vm.company.location" dropdown-attr="vm.countries"></drop-down>
+            </div>
+          </div>
+          <div class="grid-cell">
+            <div class="inputAdd">
+              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
+              <drop-down class="form-dd" placeholder="Category" property="name" selected="vm.category" display="vm.company.category" dropdown-attr="vm.categories"></drop-down>
+            </div>
+            <div class="inputAdd">
+              <span class="inputAdd-item"><i class="sidebar-ico icon-mail"></i></span>
+              <input id="cp-yof" type="text" class="inputAdd-field datepicker-input" uib-datepicker-popup="{{vm.format}}" ng-model="vm.company.yof" is-open="vm.status.opened" max-date="vm.maxDate" datepicker-options="vm.dateOptions" ng-required="true" show-button-bar="false" show-weeks="false" />
+              <button type="button" class="inputAdd-item inputAdd-append-item" ng-click="vm.openDatepicker($event)"><i class="icon-calendar"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="grid-cell">
+            <div class="inputAdd">
+              <div class="v-form-error" ng-messages="createCompany.companyEmail.$error" ng-if="createCompany.companyEmail.$dirty">
+                <div ng-message="required">You did not enter a email field</div>
+                <div ng-message="email">Your email address is invalid</div>
+              </div>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
+              <input name="companyEmail" ng-model="vm.company.email" type="email" placeholder="Email" class="inputAdd-field" id="cp-email" required>
+            </div>
+            <div class="inputAdd">
+              <div class="v-form-error" ng-messages="createCompany.companyPhone.$error" ng-if="createCompany.companyPhone.$dirty">
+                <div ng-message="required">You did not enter a phone</div>
+                <div ng-message="pattern">Must be a valid 10 digit phone number</div>
+              </div>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
+              <input name="companyPhone" ng-model="vm.company.phone" type="text" placeholder="Phone" class="inputAdd-field" id="cp-phone" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/" required>
+            </div>
+          </div>
+          <div class="grid-cell">
+            <div class="inputAdd">
+              <div class="v-form-error" ng-messages="createCompany.companySite.$error" ng-if="createCompany.companySite.$dirty">
+                <div ng-message="required">You did not enter a site url</div>
+                <div ng-message="pattern">Must be a valid url</div>
+              </div>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
+              <input name="companySite" ng-model="vm.company.site" type="text" placeholder="Company site" class="inputAdd-field" id="cp-site" ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="grid-cell">
+            <div class="inputAdd">
+              <tags-input ng-model="vm.company.specialization"></tags-input>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="grid-cell">
+            <div class="inputAdd">
+              <div class="v-form-error" ng-messages="createCompany.description.$error" ng-if="createCompany.description.$dirty">
+                <div ng-message="required">You did not enter a description</div>
+                <div ng-message="minlength">Description field is too short</div>
+              </div>
+              <textarea ng-model="vm.company.description" class="inputAdd-field" name="description" placeholder="About" id="cp-about" ng-minlength="50" required></textarea>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
       <div class="form-photo">
         <div class="form-photo-inner">
           <img ng-src="{{vm.getImageUrl()}}" alt="avatar">
-          <div class="form-photo-inner">
-            <img ng-src="{{vm.getImageUrl()}}" alt="avatar">
-            <div class="form-photo-info">
-              <p>
-                You can upload an avatar here or change it.
-              </p>
-              <hr>
-              <a href="#" class="upload-btn" ng-click="vm.openFileDialog()">
-                <i class="sidebar-ico icon-camera sidebar-ico-full"></i>
-                <span>Choose file ...</span>
-              </a>
-              <input type="file" ngf-select="vm.onFileSelected()" ng-model="vm.file" name="file" accept="image/*" ngf-max-size="1MB" name="upload" id="up-photo">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-fields">
-
-        <div class="form-row">
-          <div class="form-row-group">
-            <div class="v-form-error" ng-messages="createCompany.companyName.$error" ng-if="createCompany.companyName.$dirty">
-              <div ng-message="required">You did not enter a company name</div>
-              <div ng-message="minlength">Your company name is too short</div>
-              <div ng-message="maxlength">Your company name is too long</div>
-            </div>
-            <label for="cp-name" class="form-row-group__label">
-              <i class="sidebar-ico icon-user"></i>
-              Name
-            </label>
-            <input ng-model="vm.company.name" type="text" name="companyName" class="form-row-group__input" id="cp-name" ng-minlength="5"
-           ng-maxlength="20" required>
-          </div>
-          <div class="form-row-group">
-            <label for="cp-location" class="form-row-group__label">
-              <i class="sidebar-ico icon-globe"></i>
-              Location
-            </label>
-            <drop-down class="form-dd" placeholder="Country" property="name" selected="vm.country" display="vm.company.location" dropdown-attr="vm.countries"></drop-down>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-row-group">
-            <label for="cp-category" class="form-row-group__label">
-              <i class="sidebar-ico icon-globe"></i>
-              Category
-            </label>
-            <drop-down class="form-dd" placeholder="Category" property="name" selected="vm.category" display="vm.company.category" dropdown-attr="vm.categories"></drop-down>
-          </div>
-          <div class="form-row-group">
-            <label for="cp-yof" class="form-row-group__label">
-              <i class="sidebar-ico icon-globe"></i>
-              Foundation
-            </label>
-            <input id="cp-yof" type="text" class="form-row-group__input datepicker-input" uib-datepicker-popup="{{vm.format}}" ng-model="vm.company.yof" is-open="vm.status.opened" max-date="vm.maxDate" datepicker-options="vm.dateOptions" ng-required="true" show-button-bar="false" show-weeks="false" />
-            <span class="input-group-btn">
-              <button type="button" class="btn btn-default" ng-click="vm.openDatepicker($event)"><i class="icon-calendar"></i></button>
-            </span>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-row-group">
-            <div class="v-form-error" ng-messages="createCompany.companyEmail.$error" ng-if="createCompany.companyEmail.$dirty">
-              <div ng-message="required">You did not enter a email field</div>
-              <div ng-message="email">Your email address is invalid</div>
-            </div>
-            <label for="cp-email" class="form-row-group__label">
-              <i class="sidebar-ico icon-globe"></i>
-              Email
-            </label>
-            <input name="companyEmail" ng-model="vm.company.email" type="email" class="form-row-group__input" id="cp-email" required>
-          </div>
-          <div class="form-row-group">
-            <div class="v-form-error" ng-messages="createCompany.companyPhone.$error" ng-if="createCompany.companyPhone.$dirty">
-              <div ng-message="required">You did not enter a phone</div>
-              <div ng-message="pattern">Must be a valid 10 digit phone number</div>
-            </div>
-            <label for="cp-phone" class="form-row-group__label">
-              <i class="sidebar-ico icon-globe"></i>
-              Phone
-            </label>
-            <input name="companyPhone" ng-model="vm.company.phone" type="text" class="form-row-group__input" id="cp-phone" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/" required>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-row-group">
-            <div class="v-form-error" ng-messages="createCompany.companySite.$error" ng-if="createCompany.companySite.$dirty">
-              <div ng-message="required">You did not enter a site url</div>
-              <div ng-message="pattern">Must be a valid url</div>
-            </div>
-            <label for="cp-site" class="form-row-group__label">
-              <i class="sidebar-ico icon-globe"></i>
-              Site
-            </label>
-            <input name="companySite" ng-model="vm.company.site" type="text" class="form-row-group__input" id="cp-site" ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/" required>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="full-len-input">
-            <tags-input ng-model="vm.company.specialization"></tags-input>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="full-len-input">
-            <div class="v-form-error" ng-messages="createCompany.description.$error" ng-if="createCompany.description.$dirty">
-              <div ng-message="required">You did not enter a description</div>
-              <div ng-message="minlength">Description field is too short</div>
-            </div>
-            <label for="cp-about" class="full-len-input__label">
+          <div class="form-photo-info">
+            <p>
+              You can upload an avatar here or change it.
+            </p>
+            <hr>
+            <a href="#" class="upload-btn" ng-click="vm.openFileDialog()">
               <i class="sidebar-ico icon-camera sidebar-ico-full"></i>
-              Description
-            </label>
-            <textarea ng-model="vm.company.description" class="full-len-input__input" name="description" id="cp-about" ng-minlength="50" required></textarea>
+              <span>Choose file ...</span>
+            </a>
+            <input type="file" ngf-select="vm.onFileSelected()" ng-model="vm.file" name="file" accept="image/*" ngf-max-size="1MB" name="upload" id="up-photo">
           </div>
         </div>
       </div>
 
     </div>
 
-    <button type="submit" class="form-row-group__submit-btn">Create</button>
+    <div class="btn-col">
+      <button type="submit" class="form-row-group__submit-btn">Create</button>
+    </div>
 
   </form>
 </div>
