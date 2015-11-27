@@ -1,4 +1,4 @@
-module.exports = function CompanyManageController(store, jwtHelper, UserResource, CompanyResource) {
+module.exports = function CompanyManageController(store, jwtHelper, UserResource, CompanyResource, toastr, $state) {
   var vm = this;
   var jwt = store.get('jwt');
   var decodedJwt = jwt && jwtHelper.decodeToken(jwt);
@@ -11,7 +11,8 @@ module.exports = function CompanyManageController(store, jwtHelper, UserResource
 
   function deleteCompany(company) {
     CompanyResource.removeCompany(company._id).then(function() {
-      console.log('Company was successfully removed!');
+      $state.go($state.current, {}, { reload: true });
+      toastr.success('Company was successfully deleted.', 'Yay!');
     }, function(err) {
         console.log('Error while deleting company!');
     });
