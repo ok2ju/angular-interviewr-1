@@ -29,7 +29,7 @@
           </div>
           <div class="grid-cell">
             <div class="inputAdd">
-              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-calendar-1"></i></span>
               <input type="text" class="inputAdd-field" placeholder="Date of birth">
             </div>
             <div class="inputAdd">
@@ -46,7 +46,7 @@
         <div class="grid">
           <div class="grid-cell">
             <div class="inputAdd">
-              <span class="inputAdd-item"><i class="sidebar-ico icon-location"></i></span>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-globe-1"></i></span>
               <drop-down class="form-dd" placeholder="Country" property="name" selected="vm.country" display="vm.user.country" dropdown-attr="vm.countries"></drop-down>
             </div>
             <div class="inputAdd">
@@ -60,14 +60,14 @@
                 <div ng-message="required">You did not enter a phone</div>
                 <div ng-message="pattern">Must be a valid 10 digit phone number</div>
               </div>
-              <span class="inputAdd-item"><i class="sidebar-ico icon-globe"></i></span>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-mobile"></i></span>
               <input name="phone" ng-model="vm.user.phone" type="text" class="inputAdd-field" placeholder="Phone" id="up-phone" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/" required>
             </div>
             <div class="inputAdd">
               <div class="v-form-error" ng-messages="fillForm.twitterSite.$error" ng-if="fillForm.twitterSite.$dirty">
                 <div ng-message="pattern">Must be a valid url</div>
               </div>
-              <span class="inputAdd-item"><i class="sidebar-ico icon-globe"></i></span>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-twitter"></i></span>
               <input type="text" class="inputAdd-field" placeholder="Twitter" name="twitterSite" ng-model="vm.user.social.twitter" id="up-social-twitter" ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/">
             </div>
           </div>
@@ -79,14 +79,14 @@
               <div class="v-form-error" ng-messages="fillForm.facebookSite.$error" ng-if="fillForm.facebookSite.$dirty">
                 <div ng-message="pattern">Must be a valid url</div>
               </div>
-              <span class="inputAdd-item"><i class="sidebar-ico icon-globe"></i></span>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-facebook"></i></span>
               <input type="text" class="inputAdd-field" placeholder="Facebook" name="facebookSite" ng-model="vm.user.social.facebook" id="up-social-facebook" ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/">
             </div>
             <div class="inputAdd">
               <div class="v-form-error" ng-messages="fillForm.githubSite.$error" ng-if="fillForm.githubSite.$dirty">
                 <div ng-message="pattern">Must be a valid url</div>
               </div>
-              <span class="inputAdd-item"><i class="sidebar-ico icon-globe"></i></span>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-github-circled"></i></span>
               <input type="text" class="inputAdd-field" placeholder="GitHub" name="githubSite" ng-model="vm.user.social.github" id="up-social-github" ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/">
             </div>
           </div>
@@ -95,14 +95,14 @@
               <div class="v-form-error" ng-messages="fillForm.linkedinSite.$error" ng-if="fillForm.linkedinSite.$dirty">
                 <div ng-message="pattern">Must be a valid url</div>
               </div>
-              <span class="inputAdd-item"><i class="sidebar-ico icon-globe"></i></span>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-linkedin"></i></span>
               <input type="text" class="inputAdd-field" placeholder="LinkedIn" name="linkedinSite" ng-model="vm.user.social.linkedin" id="up-social-linkedin" ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/">
             </div>
             <div class="inputAdd">
               <div class="v-form-error" ng-messages="fillForm.dribbbleSite.$error" ng-if="fillForm.dribbbleSite.$dirty">
                 <div ng-message="pattern">Must be a valid url</div>
               </div>
-              <span class="inputAdd-item"><i class="sidebar-ico icon-globe"></i></span>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-dribbble"></i></span>
               <input type="text" class="inputAdd-field" placeholder="Dribbble" name="dribbbleSite" ng-model="vm.user.social.dribbble" id="up-social-dribbble" ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/">
             </div>
           </div>

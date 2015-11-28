@@ -5,65 +5,55 @@
   <form class="settings-form" method="post" ng-submit="vm.registerVacancy()" name="createVacancy">
     <div class="settings-form__row">
       <div class="form-fields">
-        <div class="form-row">
-          <div class="form-row-group">
-            <div class="v-form-error" ng-messages="createVacancy.title.$error" ng-if="createVacancy.title.$dirty">
-              <div ng-message="required">You did not enter a vacancy title</div>
-              <div ng-message="minlength">Your company name is too short</div>
-              <div ng-message="maxlength">Your company name is too long</div>
+
+        <div class="grid">
+
+          <div class="grid-cell">
+            <div class="inputAdd">
+              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
+              <input class="inputAdd-field" ng-model="vm.vacancy.title" type="text" placeholder="Title" name="title" ng-minlength="5" ng-maxlength="20" required>
             </div>
-            <label for="cp-name" class="form-row-group__label">
-              <i class="sidebar-ico icon-user"></i>
-              Title
-            </label>
-            <input id="cp-name" class="form-row-group__input" ng-model="vm.vacancy.title" type="text" name="title" ng-minlength="5" ng-maxlength="20" required>
-          </div>
-          <div class="form-row-group">
-            <label for="cp-location" class="form-row-group__label">
-              <i class="sidebar-ico icon-globe"></i>
-              Location
-            </label>
-            <input id="cp-location" class="form-row-group__input" ng-model="vm.vacancy.location" type="text" name="location" ng-minlength="5" ng-maxlength="20" required>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-row-group">
-            <label for="cp-type" class="form-row-group__label">
-              <i class="sidebar-ico icon-globe"></i>
-              Type
-            </label>
-            <drop-down class="form-dd" placeholder="Type" property="name" display="vm.vacancy.type" selected="vm.vacancyType" dropdown-attr="vm.vacancyTypes"></drop-down>
-          </div>
-          <div class="form-row-group">
-            <label for="cp-position" class="form-row-group__label">
-              <i class="sidebar-ico icon-globe"></i>
-              Position
-            </label>
-            <drop-down class="form-dd" placeholder="Position" property="name" display="vm.vacancy.position" selected="vm.position" dropdown-attr="vm.positions"></drop-down>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="full-len-input">
-            <tags-input ng-model="vm.vacancy.specialization"></tags-input>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="full-len-input">
-            <div class="v-form-error" ng-messages="createVacancy.description.$error" ng-if="createVacancy.description.$dirty">
-              <div ng-message="required">You did not enter a description</div>
-              <div ng-message="minlength">Description field is too short</div>
+            <div class="inputAdd">
+              <span class="inputAdd-item"><i class="sidebar-ico icon-location"></i></span>
+              <input class="inputAdd-field" ng-model="vm.vacancy.location" type="text" placeholder="Location" name="location" ng-minlength="5" ng-maxlength="20" required>
             </div>
-            <label for="cp-about" class="full-len-input__label">
-              <i class="sidebar-ico icon-camera sidebar-ico-full"></i>
-              Description
-            </label>
-            <textarea ng-model="vm.vacancy.description" class="full-len-input__input" name="description" id="cp-about" ng-minlength="50" required></textarea>
+          </div>
+
+          <div class="grid-cell">
+            <div class="inputAdd">
+              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
+              <drop-down class="form-dd" placeholder="Type" property="name" display="vm.vacancy.type" selected="vm.vacancyType" dropdown-attr="vm.vacancyTypes"></drop-down>
+            </div>
+            <div class="inputAdd">
+              <span class="inputAdd-item"><i class="sidebar-ico icon-pencil-1"></i></span>
+              <drop-down class="form-dd" placeholder="Position" property="name" display="vm.vacancy.position" selected="vm.position" dropdown-attr="vm.positions"></drop-down>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="grid">
+          <div class="grid-cell">
+            <div class="inputAdd">
+              <tags-input ng-model="vm.vacancy.specialization"></tags-input>
+            </div>
           </div>
         </div>
+
+        <div class="grid">
+          <div class="grid-cell">
+            <div class="inputAdd">
+              <textarea ng-model="vm.vacancy.description" class="inputAdd-field" name="description" placeholder="Description" id="cp-about" ng-minlength="50" required></textarea>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <button type="submit" class="form-row-group__submit-btn">Create</button>
+    <div class="btn-col">
+      <button type="submit" class="form-row-group__submit-btn">Create</button>
+    </div>
 
   </form>
 </div>
