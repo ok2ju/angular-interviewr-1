@@ -2802,7 +2802,10 @@ tags-input .autocomplete .suggestion-item em {
   margin-top: 5px; }
 
 .n-skills__item {
-  display: inline-block; }
+  display: inline-block;
+  margin-right: 5px; }
+  .n-skills__item:last-child {
+    margin-right: 0; }
   .n-skills__item span {
     background: #5cb85c;
     border-radius: 2px;
