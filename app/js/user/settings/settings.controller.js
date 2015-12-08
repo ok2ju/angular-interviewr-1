@@ -2,11 +2,14 @@ var $ = require('jquery');
 
 module.exports = function SettingsController(store, jwtHelper,
                       toastr, $state, $http, $uibModal,
-                      config, Upload, UserResource, metaResource) {
+                      config, Upload, UserResource, countries) {
 
   var vm = this;
   var jwt = store.get('jwt');
   var decodedJwt = jwt && jwtHelper.decodeToken(jwt);
+
+  // Fetch countries for dropdown
+  vm.countries = countries.data;
 
   UserResource.oneUser(decodedJwt._id).then(function(user) {
     vm.user = user;
@@ -77,11 +80,4 @@ module.exports = function SettingsController(store, jwtHelper,
     vm.animationsEnabled = !vm.animationsEnabled;
   };
 
-  // Fetch countries for dropdown
-  metaResource.getCountries().then(function(countries) {
-    console.log(countries);
-    vm.countries = countries.data;
-  }, function(err) {
-      console.log('Error fetching countries!');
-  });
 };

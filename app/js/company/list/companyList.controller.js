@@ -1,4 +1,4 @@
-module.exports = function CompanyListController(CompanyResource, metaResource, config) {
+module.exports = function CompanyListController(CompanyResource, metaResource, config, countries, categories) {
   var vm = this;
   vm.getImageUrl = getImageUrl;
 
@@ -7,20 +7,11 @@ module.exports = function CompanyListController(CompanyResource, metaResource, c
   });
 
   // Fetch data for countries dropdown
-  metaResource.getCountries().then(function(countries) {
-    vm.countries = countries.data;
-  }, function(err) {
-      console.log('Error fetching countries!');
-  });
+  vm.countries = countries.data;
 
   // Fetch data for categories dropdown
-  // unshift hardcore here! TODO: add 'All' category to categories collection
-  metaResource.getCategories().then(function(categories) {
-    vm.categories = categories.data;
-    vm.categories.unshift({id:9999, name: 'All'});
-  }, function(err) {
-      console.log('Error fetching categories!');
-  });
+  vm.categories = categories.data;
+  vm.categories.unshift({id:9999, name: 'All'});
 
   function getImageUrl(company) {
     var res = '';

@@ -37,19 +37,38 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
 
   $stateProvider
     .state('intro', {
-        abstract: true,
-        views: {
-            'content': {
-                templateUrl: 'templates/intro-layout.html'
-            }
-        }
+      abstract: true,
+      views: {
+          'content': {
+              templateUrl: 'templates/intro-layout.html'
+          }
+      }
     })
     .state('app', {
-        abstract: true,
-        views: {
-            'content': {
-                templateUrl: 'templates/app-layout.html'
-            }
+      abstract: true,
+      views: {
+          'content': {
+              templateUrl: 'templates/app-layout.html'
+          }
+      },
+      resolve: {
+        metaResource: 'metaResource',
+
+        countries: function(metaResource) {
+          return metaResource.getCountries();
+        },
+
+        categories: function(metaResource) {
+          return metaResource.getCategories();
+        },
+
+        positions: function(metaResource) {
+          return metaResource.getVacancyPosition();
+        },
+
+        vacancyTypes: function(metaResource) {
+          return metaResource.getVacancyType();
         }
+      }
     });
 };

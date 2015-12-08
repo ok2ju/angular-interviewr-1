@@ -1,10 +1,17 @@
 var moment = require('moment');
 var $ = require('jquery');
 
-module.exports = function CompanyCreateController(CompanyResource, metaResource, $scope,
-                                                  toastr, $state, $uibModal, config) {
+module.exports = function CompanyCreateController(CompanyResource, $scope,
+                                                  toastr, $state, $uibModal, config, countries, categories) {
   var vm = this;
   vm.company = {};
+
+  // Fetching data for countries dropdown
+  vm.countries = countries.data;
+
+  // Fetching data for categories dropdown
+  vm.categories = categories.data;
+
   vm.registerCompany = registerCompany;
 
   $scope.$watch('vm.company.description', function(current, original) {
@@ -93,20 +100,6 @@ module.exports = function CompanyCreateController(CompanyResource, metaResource,
 
   $scope.$watch('vm.company.yof', function(current, original) {
     vm.company.yof = moment.utc(current).format();
-  });
-
-  // Fetching data for countries dropdown
-  metaResource.getCountries().then(function(countries) {
-    vm.countries = countries.data;
-  }, function(err) {
-      console.log('Error fetching countries!');
-  });
-
-  // Fetching data for categories dropdown
-  metaResource.getCategories().then(function(categories) {
-    vm.categories = categories.data;
-  }, function(err) {
-      console.log('Error fetching categories!');
   });
 
 };

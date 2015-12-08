@@ -1,12 +1,18 @@
 var moment = require('moment');
 
-module.exports = function(CompanyResource, metaResource, $scope,
-                          toastr, $state, $uibModal, config, $stateParams) {
+module.exports = function(CompanyResource, $scope,
+                          toastr, $state, $uibModal, config, $stateParams, countries, categories) {
   var vm = this;
 
   vm.company = {};
   vm.updateCompany = updateCompany;
   vm.getImageUrl = getImageUrl;
+
+  // Fetching data for countries dropdown
+  vm.countries = countries.data;
+
+  // Fetching data for categories dropdown
+  vm.categories = categories.data;
 
   CompanyResource.oneCompany($stateParams.id).then(function(company) {
     vm.company = company;
@@ -38,20 +44,6 @@ module.exports = function(CompanyResource, metaResource, $scope,
 
   $scope.$watch('vm.company.yof', function(current, original) {
     vm.company.yof = moment.utc(current).format();
-  });
-
-  // Fetching data for countries dropdown
-  metaResource.getCountries().then(function(countries) {
-    vm.countries = countries.data;
-  }, function(err) {
-    console.log('Error fetching countries!');
-  });
-
-  // Fetching data for categories dropdown
-  metaResource.getCategories().then(function(categories) {
-    vm.categories = categories.data;
-  }, function(err) {
-    console.log('Error fetching categories!');
   });
 
   function getImageUrl() {

@@ -24,6 +24,9 @@
         'angular-storage',
         'angular-loading-bar',
 
+        /* Resources */
+        'app.resource.meta',
+
         /* Layout areas */
         'app.header',
         'app.sidebar',

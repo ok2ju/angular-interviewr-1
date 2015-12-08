@@ -1,7 +1,6 @@
 require('angular')
   .module('app.company.create', [
     'app.resource.company',
-    'app.resource.meta',
     'toastr',
     'ngTagsInput',
     'ui.bootstrap',

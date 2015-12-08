@@ -1,19 +1,13 @@
-module.exports = function VacancyCreateController($state, VacancyResource, metaResource, toastr) {
+module.exports = function VacancyCreateController($state, VacancyResource, toastr, positions, vacancyTypes) {
   var vm = this;
   vm.vacancy = {};
   vm.registerVacancy = registerVacancy;
 
-  metaResource.getVacancyPosition().then(function(positions) {
-    vm.positions = positions.data;
-  }, function(err) {
-    console.log('Error fetching positions!');
-  });
+  // Fetch data for positions dropdown
+  vm.positions = positions.data;
 
-  metaResource.getVacancyType().then(function(types) {
-    vm.vacancyTypes = types.data;
-  }, function(err) {
-    console.log('Error fetching vacancy types!');
-  });
+  // Fetch data for vacancy types dropdown
+  vm.vacancyTypes = vacancyTypes.data;
 
   function registerVacancy() {
     VacancyResource.postVacancy(vm.vacancy).then(function() {
