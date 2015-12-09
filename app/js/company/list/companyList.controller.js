@@ -1,4 +1,4 @@
-module.exports = function CompanyListController(CompanyResource, metaResource, config, countries, categories) {
+module.exports = function CompanyListController(CompanyResource, config, countries, categories) {
   var vm = this;
   vm.getImageUrl = getImageUrl;
 

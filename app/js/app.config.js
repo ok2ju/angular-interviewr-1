@@ -53,6 +53,7 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
       },
       resolve: {
         metaResource: 'metaResource',
+        UserResource: 'UserResource',
 
         countries: function(metaResource) {
           return metaResource.getCountries();
@@ -68,6 +69,13 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
 
         vacancyTypes: function(metaResource) {
           return metaResource.getVacancyType();
+        },
+
+        myself: function(UserResource, store, jwtHelper) {
+          var jwt = store.get('jwt');
+          var decodedJwt = jwt && jwtHelper.decodeToken(jwt);
+
+          return UserResource.oneUser(decodedJwt._id);
         }
       }
     });

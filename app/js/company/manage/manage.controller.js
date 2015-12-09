@@ -1,11 +1,9 @@
-module.exports = function CompanyManageController(store, jwtHelper, UserResource, CompanyResource, toastr, $state) {
+module.exports = function CompanyManageController(myself, UserResource, CompanyResource, toastr, $state) {
   var vm = this;
-  var jwt = store.get('jwt');
-  var decodedJwt = jwt && jwtHelper.decodeToken(jwt);
 
   vm.deleteCompany = deleteCompany;
 
-  UserResource.userCompanies(decodedJwt._id).then(function(companies) {
+  UserResource.userCompanies(myself._id).then(function(companies) {
     vm.companies = companies;
   });
 

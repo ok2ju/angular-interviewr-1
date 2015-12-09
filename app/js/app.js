@@ -26,6 +26,7 @@
 
         /* Resources */
         'app.resource.meta',
+        'app.resource.user',
 
         /* Layout areas */
         'app.header',

@@ -1,12 +1,10 @@
-module.exports = function UserProfileController(UserResource, store, jwtHelper, config) {
-  var vm = this;
+module.exports = function UserProfileController(UserResource, config, $stateParams) {
 
-  var jwt = store.get('jwt');
-  var decodedJwt = jwt && jwtHelper.decodeToken(jwt);
+  var vm = this;
 
   vm.getImageUrl = getImageUrl;
 
-  UserResource.oneUser(decodedJwt._id).then(function(user) {
+  UserResource.oneUser($stateParams.id).then(function(user) {
     vm.user = user;
   });
 

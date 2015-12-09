@@ -1,20 +1,15 @@
 var $ = require('jquery');
 
-module.exports = function SettingsController(store, jwtHelper,
-                      toastr, $state, $http, $uibModal,
-                      config, Upload, UserResource, countries) {
+module.exports = function SettingsController(toastr, $state, $http, $uibModal,
+                      config, Upload, UserResource, countries, myself) {
 
   var vm = this;
-  var jwt = store.get('jwt');
-  var decodedJwt = jwt && jwtHelper.decodeToken(jwt);
 
   // Fetch countries for dropdown
   vm.countries = countries.data;
 
-  UserResource.oneUser(decodedJwt._id).then(function(user) {
-    vm.user = user;
-    vm.user.social = vm.user.social || {};
-  });
+  vm.user = myself;
+  vm.user.social = vm.user.social || {};
 
   vm.updateProfile = updateProfile;
   vm.loadTags = loadTags;
