@@ -28,8 +28,10 @@
     <div class="company-card__extra">
       <div class="company-more-btn" ui-sref="app.companyProfile({id:company._id})">More</div>
       <div class="company-owner">
-        <img src="/images/user-default.png" alt="">
-        <span>Username</span>
+        <a ui-sref="app.userProfile({id: company.owner._id})">
+          <img ng-src="{{vm.getUserImageUrl(company.owner)}}" alt="">
+          <span>{{company.owner.username}}</span>
+        </a>
       </div>
     </div>
   </div>
