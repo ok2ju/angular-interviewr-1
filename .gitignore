@@ -1,10 +1,13 @@
-node_modules
+.idea
+.vscode
 
 # vim tmp files
 *.swp
 *.un~
 
+node_modules
+bower_components
+
 app/ngmin
 app/dist
-.idea
-bower_components
+app/css
