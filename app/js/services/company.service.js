@@ -12,8 +12,8 @@ function companyResource(Restangular) {
     removeCompany: removeCompany
   };
 
-  function listCompanies() {
-    return Restangular.all('companies').getList();
+  function listCompanies(query) {
+    return Restangular.all('companies').getList(query);
   }
 
   function oneCompany(id) {

@@ -19,7 +19,7 @@
     <img ng-src="{{vm.getImageUrl(company)}}" alt="company photo">
   </div>
   <div class="company-card__body">
-    <a href="#" class="company-card__header">{{company.name}}</a>
+    <a ui-sref="app.companyProfile({id:company._id})" class="company-card__header">{{company.name}}</a>
     <div class="company-card__meta">
       <a href="#">{{company.creation_date | moment: 'DD.MM.YYYY'}}</a>
       <a href="#">{{company.category}}</a>

@@ -22,7 +22,7 @@ module.exports = function CompanyListController(CompanyResource, config, countri
       res = 'images/companies/default.png';
     }
     return res;
-  };
+  }
 
   function getUserImageUrl(user) {
     var res = '';
@@ -32,6 +32,6 @@ module.exports = function CompanyListController(CompanyResource, config, countri
       res = 'images/user-default.png';
     }
     return res;
-  };
+  }
 
 };
