@@ -19,6 +19,13 @@ module.exports = function($stateProvider) {
       data: {
         requiresLogin: true,
         pageTitle: 'Create Vacancy'
+      },
+      resolve: {
+        companyResource: 'CompanyResource',
+
+        companies: function(myself, companyResource) {
+          return companyResource.listCompanies({owner: myself._id});
+        }
       }
     });
 };
