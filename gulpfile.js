@@ -1,4 +1,4 @@
-var browserify = require('browserify'),
+var browserify = require('gulp-browserify'),
     gulp = require('gulp'),
     ngAnnotate = require('gulp-ng-annotate'),
     source = require('vinyl-source-stream'),
@@ -6,6 +6,7 @@ var browserify = require('browserify'),
     streamify = require('gulp-streamify'),
     del = require('del'),
     vinylPaths = require('vinyl-paths'),
+    sourcemaps = require('gulp-sourcemaps'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync').create(),
@@ -16,11 +17,13 @@ var BROWSER_SYNC_RELOAD_DELAY = 500;
 
 gulp.task('sass', function() {
     return gulp.src(SASS_FILES)
+        .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(autoprefixer({
             browsers: ['last 3 versions', 'ie 8', 'ie 9'],
             cascade: false
         }))
+        .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest('app/css'));
 });
 
@@ -30,9 +33,8 @@ gulp.task('clean', function() {
 });
 
 gulp.task('browserify', function() {
-  return browserify('app/js/app.js')
-  .bundle()
-  .pipe(source('app.js'))
+  gulp.src('app/js/app.js')
+  .pipe(browserify({debug: true}))
   .pipe(gulp.dest('app/dist'));
 });
 

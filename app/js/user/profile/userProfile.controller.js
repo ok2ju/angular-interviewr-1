@@ -1,10 +1,20 @@
-module.exports = function UserProfileController(UserResource, store, jwtHelper) {
+module.exports = function UserProfileController(UserResource, config, $stateParams) {
+
   var vm = this;
 
-  var jwt = store.get('jwt');
-  var decodedJwt = jwt && jwtHelper.decodeToken(jwt);
+  vm.getImageUrl = getImageUrl;
 
-  UserResource.get({ id: decodedJwt._id }, function(data) {
-    vm.user = data;
+  UserResource.oneUser($stateParams.id).then(function(user) {
+    vm.user = user;
   });
+
+  function getImageUrl() {
+    var res = '';
+    if(vm.user && vm.user.imageId) {
+      res = config.api_url + '/api/v1/images/' + vm.user.imageId;
+    } else {
+      res = 'images/user-default.png';
+    }
+    return res;
+  };
 };

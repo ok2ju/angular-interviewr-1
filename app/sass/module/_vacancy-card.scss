@@ -43,6 +43,10 @@
   position: absolute;
   right: 0;
   top: 0;
+
+  i {
+    cursor: pointer;
+  }
 }
 
 .card-content__meta {
@@ -63,6 +67,11 @@
 
 .n-skills__item {
   display: inline-block;
+  margin-right: 5px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 
   span {
     background: #5cb85c;

@@ -16,10 +16,10 @@
                 <li class="navbar-btns__item"><a ui-sref="app.userSettings" aria-label="Settings" class="navbar-ico img-replace tooltip-v">SETTINGS<i class="ico-controll icon-cog-alt"></i></a></li>
                 <li class="navbar-btns__item"><a href="javascript:void(0)" ng-click="vm.logout()" aria-label="Logout" class="navbar-ico img-replace tooltip-v">LOGOUT<i class="ico-controll icon-logout"></i></a></li>
             </ul>
-            <a ui-sref="app.userProfile" class="acc-photo-link">
+            <a ui-sref="app.userProfile({id: vm.user._id})" class="acc-photo-link">
                 <i class="icon-down-dir"></i>
                 <div class="header-userinfo">
-                    <p class="header-userinfo__name">{{vm.username}}</p>
+                    <p class="header-userinfo__name">{{vm.user.username}}</p>
                 </div>
                 <img ng-src="{{vm.getImageUrl()}}" class="acc-photo__img">
             </a>

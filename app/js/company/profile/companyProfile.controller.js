@@ -1,7 +1,19 @@
-module.exports = function CompanyProfileController(CompanyResource, UserResource, $stateParams) {
+module.exports = function CompanyProfileController(CompanyResource, UserResource, $stateParams, config) {
   var vm = this;
+  vm.getImageUrl = getImageUrl;
 
-  vm.company = CompanyResource.get({ id: $stateParams.id }, function() {
-    vm.owner = UserResource.get({ id: vm.company.owner_id });
+  CompanyResource.oneCompany($stateParams.id).then(function(company) {
+    vm.company = company;
+    vm.owner = company.owner;
   });
+
+  function getImageUrl() {
+    var res = '';
+    if(vm.company && vm.company.imageId) {
+      res = config.api_url + '/api/v1/images/' + vm.company.imageId;
+    } else {
+      res = 'images/companies/default.png';
+    }
+    return res;
+  };
 };

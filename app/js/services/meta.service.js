@@ -1,27 +1,31 @@
 require('angular')
-  .module('app.resource.meta', ['ngResource'])
-    .factory('MetaResource', metaResource);
+  .module('app.resource.meta', ['restangular'])
+    .factory('metaResource', metaResource);
 
-function metaResource($http, config) {
-  var countries_url = config.api_url + '/api/v1/countries';
-  var categories_url = config.api_url + '/api/v1/categories';
+function metaResource(Restangular) {
+
+  var service = {
+    getCountries: getCountries,
+    getCategories: getCategories,
+    getVacancyPosition: getVacancyPosition,
+    getVacancyType: getVacancyType
+  };
 
   function getCountries() {
-    return $http({
-      url: countries_url,
-      method: 'GET'
-    });
+    return Restangular.one('meta', 'countries').get();
   }
 
-   function getCategories() {
-    return $http({
-      url: categories_url,
-      method: 'GET'
-    });
+  function getCategories() {
+    return Restangular.one('meta', 'categories').get();
   }
 
-  return {
-    getCountries: getCountries,
-    getCategories: getCategories
+  function getVacancyPosition() {
+    return Restangular.one('meta', 'position').get();
   }
+
+  function getVacancyType() {
+    return Restangular.one('meta', 'vacancyType').get();
+  }
+
+  return service;
 }

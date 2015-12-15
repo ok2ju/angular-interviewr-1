@@ -1,5 +1,6 @@
 require('angular')
   .module('app.user.signup', [
+      'app.resource.user',
       'toastr',
       'ngMessages'
   ])

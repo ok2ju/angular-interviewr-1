@@ -1,7 +1,5 @@
 require('angular')
   .module('app.user.settings', [
-    'app.resource.user',
-    'app.resource.meta',
     'toastr',
     'ngTagsInput',
     'ui.bootstrap',

@@ -50,6 +50,11 @@ $input-label-color: #59728e;
 ================================================
 */
 
+drop-down {
+  flex: 1;
+  width: 100%;
+}
+
 .ui.dropdown {
   cursor: pointer;
   position: relative;
@@ -306,16 +311,13 @@ $input-label-color: #59728e;
   color: #666;
   cursor: pointer;
   word-wrap: break-word;
-  line-height: 1em;
   white-space: normal;
   outline: 0;
   -webkit-transform: rotateZ(0deg);
           transform: rotateZ(0deg);
-  min-width: 10em;
-  min-height: 2.7142em;
   background: #ffffff;
   display: inline-block;
-  padding: 10px 25px 10px 10px;
+  padding: 9px 10px;
   box-shadow: none;
   border: 1px solid rgba(34, 36, 38, 0.15);
   border-radius: 3px;
@@ -338,7 +340,7 @@ select.ui.dropdown {
   width: auto;
   z-index: 3;
   margin: -0.78571429em;
-  padding: 0.78571429em;
+  padding: 14px 10px;
   right: 1em;
   opacity: 0.8;
   -webkit-transition: opacity 0.1s ease;

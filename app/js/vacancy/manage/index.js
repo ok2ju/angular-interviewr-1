@@ -3,7 +3,6 @@ require('angular')
     'ui.bootstrap',
     'ngMessages',
     'toastr',
-    'app.resource.meta',
     'app.resource.vacancy'
   ])
     .config(require('./manage.config'))

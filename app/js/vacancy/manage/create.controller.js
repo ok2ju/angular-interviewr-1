@@ -1,31 +1,25 @@
-module.exports = function VacancyCreateController(VacancyResource, MetaService, toastr, $scope) {
+module.exports = function VacancyCreateController($state, VacancyResource, 
+  toastr, positions, vacancyTypes, companies) {
+
   var vm = this;
+  vm.vacancy = {};
+  vm.registerVacancy = registerVacancy;
 
-  vm.vacancy = new VacancyResource();
+  // Fetch data for positions dropdown
+  vm.positions = positions.data;
 
-  vm.registerVacancy = function() {
-    vm.vacancy.$save(function() {
+  // Fetch data for vacancy types dropdown
+  vm.vacancyTypes = vacancyTypes.data;
+
+  vm.companies = companies;
+
+  function registerVacancy() {
+    vm.vacancy.company_id = vm.company._id;
+    VacancyResource.postVacancy(vm.vacancy).then(function() {
       toastr.success('Vacancy created.', 'Yay!');
       $state.go('app.vacancy');
+    }, function(err) {
+        toastr.error('Error while creating vacancy.', 'Error!');
     });
   }
-
-  vm.getCountries = function() {
-    MetaService.getCountries().then(function(response) {
-      vm.countries = response.data;
-    }, function(error) {
-      console.log('Error!');
-    });
-  };
-
-  vm.getCategories = function() {
-    MetaService.getCategories().then(function(response) {
-      vm.categories = response.data;
-    }, function(error) {
-      console.log('Error!');
-    });
-  };
-
-  vm.getCountries();
-  vm.getCategories();
-}
+};

@@ -2,6 +2,7 @@
     'use strict';
 
     var $ = require('jquery');
+    global._ = require('lodash');
     var angular = require('angular');
     require('angular-ui-router');
     require('angular-resource');
@@ -14,6 +15,7 @@
     require('cropper');
     require('angular-modal');
     require('ng-file-upload');
+    require('restangular');
 
     angular
       .module('app', [
@@ -21,6 +23,10 @@
         'angular-jwt',
         'angular-storage',
         'angular-loading-bar',
+
+        /* Resources */
+        'app.resource.meta',
+        'app.resource.user',
 
         /* Layout areas */
         'app.header',
@@ -38,6 +44,7 @@
         'app.company.create',
         'app.company.list',
         'app.company.profile',
+        'app.company.edit',
 
         'app.vacancy.manage',
         'app.vacancy.candidates',
@@ -73,6 +80,7 @@
     require('./company/create');
     require('./company/list');
     require('./company/profile');
+    require('./company/edit');
 
     require('./vacancy/manage');
     require('./vacancy/candidates');

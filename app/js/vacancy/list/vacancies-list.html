@@ -1,31 +1,26 @@
 <div class="vacancy-row">
-  <div class="v-card">
+
+  <div class="v-card" ng-repeat="vacancy in vm.vacancies">
     <div class="v-card-inner">
       <div class="card-content">
         <div class="card-content-head">
-          <h2 class="card-content__header">Big Shmata analythic</h2>
+          <h2 class="card-content__header">{{vacancy.title}}</h2>
           <div class="v-edit">
             <i class="sidebar-ico icon-pencil"></i>
             <i class="sidebar-ico icon-cancel"></i>
           </div>
         </div>
         <div class="card-content__meta">
-          <span class="comp">Yambex at New York</span>
-          <span class="time">15 Oct 2015</span>
+          <span class="comp">Yambex at {{vacancy.location}}</span>
+          <span class="time">{{vacancy.creation_date | moment: 'DD.MM.YYYY'}}</span>
         </div>
         <ul class="n-skills">
-          <li class="n-skills__item"><span>Apple</span></li>
-          <li class="n-skills__item"><span>Orange</span></li>
-          <li class="n-skills__item"><span>Potato</span></li>
-          <li class="n-skills__item"><span>Raspberry</span></li>
-          <li class="n-skills__item"><span>Raspberry</span></li>
-          <li class="n-skills__item"><span>Raspberry</span></li>
-          <li class="n-skills__item"><span>Raspberry</span></li>
+          <li class="n-skills__item" ng-repeat="skill in vacancy.required_skills"><span>{{skill.text}}</span></li>
         </ul>
         <div class="content__description"></div>
       </div>
       <div class="extra">
-        <div class="pos">Middle</div>
+        <div class="pos">{{vacancy.position}}</div>
         <div class="owner">
           <img class="ui avatar image" src="http://semantic-ui.com/images/avatar/small/matt.jpg">
           Potato
@@ -36,78 +31,5 @@
       </a>
     </div>
   </div>
-  <div class="v-card">
-    <div class="v-card-inner">
-      <div class="card-content">
-        <div class="card-content-head">
-          <h2 class="card-content__header">Big Shmata analythic</h2>
-          <div class="v-edit">
-            <i class="sidebar-ico icon-pencil"></i>
-            <i class="sidebar-ico icon-cancel"></i>
-          </div>
-        </div>
-        <div class="card-content__meta">
-          <span class="comp">Yambex at New York</span>
-          <span class="time">15 Oct 2015</span>
-        </div>
-        <ul class="n-skills">
-          <li class="n-skills__item"><span>Apple</span></li>
-          <li class="n-skills__item"><span>Orange</span></li>
-          <li class="n-skills__item"><span>Potato</span></li>
-          <li class="n-skills__item"><span>Raspberry</span></li>
-          <li class="n-skills__item"><span>Raspberry</span></li>
-          <li class="n-skills__item"><span>Raspberry</span></li>
-          <li class="n-skills__item"><span>Raspberry</span></li>
-        </ul>
-        <div class="content__description"></div>
-      </div>
-      <div class="extra">
-        <div class="pos">Middle</div>
-        <div class="owner">
-          <img class="ui avatar image" src="images/icons/vacancies/coder.svg">
-          Potato
-        </div>
-      </div>
-      <a href="#" class="follow">
-        <span>Follow</span>
-      </a>
-    </div>
-  </div>
-  <div class="v-card">
-    <div class="v-card-inner">
-      <div class="card-content">
-        <div class="card-content-head">
-          <h2 class="card-content__header">Big Shmata analythic</h2>
-          <div class="v-edit">
-            <i class="sidebar-ico icon-pencil"></i>
-            <i class="sidebar-ico icon-cancel"></i>
-          </div>
-        </div>
-        <div class="card-content__meta">
-          <span class="comp">Yambex at New York</span>
-          <span class="time">15 Oct 2015</span>
-        </div>
-        <ul class="n-skills">
-          <li class="n-skills__item"><span>Apple</span></li>
-          <li class="n-skills__item"><span>Orange</span></li>
-          <li class="n-skills__item"><span>Potato</span></li>
-          <li class="n-skills__item"><span>Raspberry</span></li>
-          <li class="n-skills__item"><span>Raspberry</span></li>
-          <li class="n-skills__item"><span>Raspberry</span></li>
-          <li class="n-skills__item"><span>Raspberry</span></li>
-        </ul>
-        <div class="content__description"></div>
-      </div>
-      <div class="extra">
-        <div class="pos">Middle</div>
-        <div class="owner">
-          <img class="ui avatar image" src="images/icons/vacancies/coder.svg">
-          Potato
-        </div>
-      </div>
-      <a href="#" class="follow">
-        <span>Follow</span>
-      </a>
-    </div>
-  </div>
+
 </div>

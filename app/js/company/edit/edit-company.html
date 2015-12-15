@@ -2,7 +2,7 @@
   <div class="s-content-head">
     <h2 class="s-content-head__header">Fill company profile fields</h2>
   </div>
-  <form class="settings-form" method="post" ng-submit="vm.registerCompany()" name="createCompany">
+  <form class="settings-form" method="post" ng-submit="vm.updateCompany()" name="createCompany">
 
     <div class="settings-form__row">
 
@@ -20,17 +20,17 @@
               <input ng-model="vm.company.name" name="companyName" type="text" id="up-name" class="inputAdd-field" placeholder="Name" ng-minlength="5" ng-maxlength="20" required>
             </div>
             <div class="inputAdd">
-              <span class="inputAdd-item"><i class="sidebar-ico icon-globe-1"></i></span>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
               <drop-down class="form-dd" placeholder="Country" property="name" selected="vm.country" display="vm.company.location" dropdown-attr="vm.countries"></drop-down>
             </div>
           </div>
           <div class="grid-cell">
             <div class="inputAdd">
-              <span class="inputAdd-item"><i class="sidebar-ico icon-tag"></i></span>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
               <drop-down class="form-dd" placeholder="Category" property="name" selected="vm.category" display="vm.company.category" dropdown-attr="vm.categories"></drop-down>
             </div>
             <div class="inputAdd">
-              <span class="inputAdd-item"><i class="sidebar-ico icon-calendar-1"></i></span>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-mail"></i></span>
               <input id="cp-yof" type="text" class="inputAdd-field datepicker-input" uib-datepicker-popup="{{vm.format}}" ng-model="vm.company.yof" is-open="vm.status.opened" max-date="vm.maxDate" datepicker-options="vm.dateOptions" ng-required="true" show-button-bar="false" show-weeks="false" />
               <button type="button" class="inputAdd-item inputAdd-append-item" ng-click="vm.openDatepicker($event)"><i class="icon-calendar"></i></button>
             </div>
@@ -44,7 +44,7 @@
                 <div ng-message="required">You did not enter a email field</div>
                 <div ng-message="email">Your email address is invalid</div>
               </div>
-              <span class="inputAdd-item"><i class="sidebar-ico icon-mail"></i></span>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
               <input name="companyEmail" ng-model="vm.company.email" type="email" placeholder="Email" class="inputAdd-field" id="cp-email" required>
             </div>
             <div class="inputAdd">
@@ -52,7 +52,7 @@
                 <div ng-message="required">You did not enter a phone</div>
                 <div ng-message="pattern">Must be a valid 10 digit phone number</div>
               </div>
-              <span class="inputAdd-item"><i class="sidebar-ico icon-mobile"></i></span>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
               <input name="companyPhone" ng-model="vm.company.phone" type="text" placeholder="Phone" class="inputAdd-field" id="cp-phone" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/" required>
             </div>
           </div>
@@ -62,7 +62,7 @@
                 <div ng-message="required">You did not enter a site url</div>
                 <div ng-message="pattern">Must be a valid url</div>
               </div>
-              <span class="inputAdd-item"><i class="sidebar-ico icon-search"></i></span>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
               <input name="companySite" ng-model="vm.company.site" type="text" placeholder="Company site" class="inputAdd-field" id="cp-site" ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/" required>
             </div>
           </div>
@@ -110,7 +110,7 @@
     </div>
 
     <div class="btn-col">
-      <button type="submit" class="form-row-group__submit-btn">Create</button>
+      <button type="submit" class="form-row-group__submit-btn">Update</button>
     </div>
 
   </form>

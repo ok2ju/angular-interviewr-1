@@ -1,36 +1,37 @@
-module.exports = function CompanyListController(CompanyResource, $http, $scope, config) {
+module.exports = function CompanyListController(CompanyResource, config, countries, categories) {
   var vm = this;
-  var countries_url = config.api_url + '/api/v1/countries';
-  var categories_url = config.api_url + '/api/v1/categories';
+  vm.getImageUrl = getImageUrl;
+  vm.getUserImageUrl = getUserImageUrl;
 
-  vm.companies = CompanyResource.query();
+  CompanyResource.listCompanies().then(function(companies) {
+    vm.companies = companies;
+  });
 
-  vm.getCountries = function() {
-    $http({
-      url: countries_url,
-      method: 'GET'
-    }).then(function(response) {
-      vm.countries = response.data;
-    }, function(error) {
-      console.log('Error!');
-    });
-  };
+  // Fetch data for countries dropdown
+  vm.countries = countries.data;
 
-  vm.getCategories = function() {
-    $http({
-      url: categories_url,
-      method: 'GET'
-    }).then(function(response) {
-      vm.categories = response.data;
-      vm.categories.unshift({id:9999, name: 'All'});
-    }, function(error) {
-      console.log('Error!');
-    });
-  };
+  // Fetch data for categories dropdown
+  vm.categories = categories.data;
+  vm.categories.unshift({id:9999, name: 'All'});
 
-  vm.getCountries();
-  vm.getCategories();
+  function getImageUrl(company) {
+    var res = '';
+    if(company && company.imageId) {
+      res = config.api_url + '/api/v1/images/' + company.imageId;
+    } else {
+      res = 'images/companies/default.png';
+    }
+    return res;
+  }
 
-  vm.country = '';
-  vm.category = '';
+  function getUserImageUrl(user) {
+    var res = '';
+    if(user && user.imageId) {
+      res = config.api_url + '/api/v1/images/' + user.imageId;
+    } else {
+      res = 'images/user-default.png';
+    }
+    return res;
+  }
+
 };

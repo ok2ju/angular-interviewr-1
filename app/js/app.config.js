@@ -1,7 +1,13 @@
 module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
                           $httpProvider, jwtInterceptorProvider, toastrConfig,
-                          cfpLoadingBarProvider) {
-  
+                          cfpLoadingBarProvider, RestangularProvider) {
+
+  RestangularProvider.setBaseUrl('http://localhost:3000/api/v1');
+
+  RestangularProvider.setRestangularFields({
+    id: "_id"
+  });
+
   $httpProvider.defaults.useXDomain = true;
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
@@ -31,19 +37,46 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
 
   $stateProvider
     .state('intro', {
-        abstract: true,
-        views: {
-            'content': {
-                templateUrl: 'templates/intro-layout.html'
-            }
-        }
+      abstract: true,
+      views: {
+          'content': {
+              templateUrl: 'templates/intro-layout.html'
+          }
+      }
     })
     .state('app', {
-        abstract: true,
-        views: {
-            'content': {
-                templateUrl: 'templates/app-layout.html'
-            }
+      abstract: true,
+      views: {
+          'content': {
+              templateUrl: 'templates/app-layout.html'
+          }
+      },
+      resolve: {
+        metaResource: 'metaResource',
+        UserResource: 'UserResource',
+
+        countries: function(metaResource) {
+          return metaResource.getCountries();
+        },
+
+        categories: function(metaResource) {
+          return metaResource.getCategories();
+        },
+
+        positions: function(metaResource) {
+          return metaResource.getVacancyPosition();
+        },
+
+        vacancyTypes: function(metaResource) {
+          return metaResource.getVacancyType();
+        },
+
+        myself: function(UserResource, store, jwtHelper) {
+          var jwt = store.get('jwt');
+          var decodedJwt = jwt && jwtHelper.decodeToken(jwt);
+
+          return UserResource.oneUser(decodedJwt._id);
         }
+      }
     });
 };

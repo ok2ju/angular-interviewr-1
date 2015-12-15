@@ -6,7 +6,6 @@ module.exports = function LayoutHeaderController($state, toastr, store, jwtHelpe
 
   var url = config.api_url + '/api/v1/users/' + decodedJwt._id;
 
-  vm.username = decodedJwt.username;
   vm.getImageUrl = getImageUrl;
   vm.logout = logout;
   getUserInfo();

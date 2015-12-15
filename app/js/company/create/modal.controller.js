@@ -9,7 +9,7 @@ var cropKeys = [
   'scaleY'
 ];
 
-module.exports = function ModalController($modalInstance, $timeout, Upload, config, UserResource, file, user) {
+module.exports = function ModalController($modalInstance, $timeout, Upload, config, CompanyResource, file, company) {
   var vm = this;
 
   vm.file = file;
@@ -21,7 +21,6 @@ module.exports = function ModalController($modalInstance, $timeout, Upload, conf
   vm.cropData = {};
 
   vm.ok = function () {
-    //$modalInstance.close(vm.selected.item);
 
     var data = {
       file: vm.file,
@@ -35,13 +34,15 @@ module.exports = function ModalController($modalInstance, $timeout, Upload, conf
         crop: JSON.stringify(vm.cropData)
       }
     }).then(function(resp) {
-        var data = resp.data;
-        if(data._id) {
-          UserResource.updateUser(user._id, {imageId: data._id}).then(function() {
-            user.imageId = data._id;
-            vm.cancel();
-          });
-        }
+      var data = resp.data;
+      if(data._id) {
+        /*CompanyResource.updateCompany(company._id, {imageId: data._id}).then(function() {
+         company.imageId = data._id;
+         vm.cancel();
+         });*/
+        company.imageId = data._id;
+        vm.cancel();
+      }
     });
   };
 
