@@ -6,7 +6,7 @@ module.exports = function LayoutSidebarController() {
         url: '/videoroom',
         active: false,
         icon: 'icon-videocam',
-        state: 'app.test'
+        state: 'app.videoroom'
     }, {
         name: 'Vacancies',
         url: '/vancancies',

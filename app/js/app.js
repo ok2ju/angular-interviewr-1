@@ -48,7 +48,9 @@
 
         'app.vacancy.manage',
         'app.vacancy.candidates',
-        'app.vacancy.list'
+        'app.vacancy.list',
+
+        'app.videoroom'
       ])
       .config(require('./app.config'))
       .run(run)
@@ -85,6 +87,8 @@
     require('./vacancy/manage');
     require('./vacancy/candidates');
     require('./vacancy/list');
+
+    require('./videoroom');
 
     function run($rootScope, $state, store, jwtHelper) {
       $rootScope.$on('$stateChangeStart', function(e, to) {
