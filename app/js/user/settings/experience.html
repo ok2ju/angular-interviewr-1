@@ -6,48 +6,65 @@
   <form name="fillForm" ng-submit="vm.updateProfile()" class="settings-form" novalidate>
     <div class="settings-form__row">
 
-      <div class="grid">
-        <div class="grid-cell">
-          <div class="inputAdd">
-            <div class="v-form-error" ng-messages="fillForm.name.$error" ng-if="fillForm.name.$dirty">
-              <div ng-message="required">You did not enter a name</div>
-              <div ng-message="minlength">Your name is too short</div>
-              <div ng-message="maxlength">Your name is too long</div>
+      <div class="exp-row" ng-repeat="experience in vm.user.experiences">
+
+        <div class="grid">
+          <div class="grid-cell">
+            <div class="inputAdd">
+              <div class="v-form-error" ng-messages="fillForm.name.$error" ng-if="fillForm.name.$dirty">
+                <div ng-message="required">You did not enter a name</div>
+                <div ng-message="minlength">Your name is too short</div>
+                <div ng-message="maxlength">Your name is too long</div>
+              </div>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
+              <input ng-model="experience.organization" name="name" type="text" id="up-name" class="inputAdd-field" placeholder="Organization" ng-minlength="3" ng-maxlength="25" required>
             </div>
-            <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
-            <input ng-model="vm.user.name" name="name" type="text" id="up-name" class="inputAdd-field" placeholder="Name" ng-minlength="3" ng-maxlength="25" required>
+            <div class="inputAdd">
+              <div class="v-form-error" ng-messages="fillForm.name.$error" ng-if="fillForm.name.$dirty">
+                <div ng-message="required">You did not enter a name</div>
+                <div ng-message="minlength">Your name is too short</div>
+                <div ng-message="maxlength">Your name is too long</div>
+              </div>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
+              <input ng-model="experience.position" name="name" type="text" id="up-name" class="inputAdd-field" placeholder="Position" ng-minlength="3" ng-maxlength="25" required>
+            </div>
           </div>
-          <div class="inputAdd">
-            <div class="v-form-error" ng-messages="fillForm.surname.$error" ng-if="fillForm.surname.$dirty">
-              <div ng-message="required">You did not enter a second name</div>
-              <div ng-message="minlength">Your second name is too short</div>
-              <div ng-message="maxlength">Your second name is too long</div>
+          <div class="grid-cell">
+            <div class="inputAdd">
+              <span class="inputAdd-item"><i class="sidebar-ico icon-calendar-1"></i></span>
+              <input ng-model="experience.startPeriod" type="text" class="inputAdd-field" placeholder="Start year">
             </div>
-            <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
-            <input ng-model="vm.user.surname" name="surname" type="text" class="inputAdd-field" placeholder="Second name" id="up-surname" ng-minlength="3" ng-maxlength="25" required>
+            <div class="inputAdd">
+              <span class="inputAdd-item"><i class="sidebar-ico icon-calendar-1"></i></span>
+              <input ng-model="experience.endPeriod" type="text" class="inputAdd-field" placeholder="End year">
+            </div>
           </div>
         </div>
-        <div class="grid-cell">
-          <div class="inputAdd">
-            <span class="inputAdd-item"><i class="sidebar-ico icon-calendar-1"></i></span>
-            <input type="text" class="inputAdd-field" placeholder="Date of birth">
-          </div>
-          <div class="inputAdd">
-            <div class="v-form-error" ng-messages="fillForm.email.$error" ng-if="fillForm.email.$dirty">
-              <div ng-message="required">You did not enter a email field</div>
-              <div ng-message="email">Your email address is invalid</div>
+
+        <div class="grid">
+          <div class="grid-cell">
+            <div class="inputAdd">
+              <div class="v-form-error" ng-messages="fillForm.about.$error" ng-if="fillForm.about.$dirty">
+                <div ng-message="required">You did not enter about filed</div>
+                <div ng-message="minlength">About field is too short</div>
+              </div>
+              <textarea type="text" class="inputAdd-field" placeholder="About" ng-model="experience.about" name="about" id="up-about" ng-minlength="50" required></textarea>
             </div>
-            <span class="inputAdd-item"><i class="sidebar-ico icon-mail"></i></span>
-            <input ng-model="vm.user.email" type="email" class="inputAdd-field" placeholder="Email" id="up-email" name="email" required>
           </div>
         </div>
+
       </div>
 
     </div>
-  </form>
 
-  <div class="btn-col">
-    <button type="submit" class="form-row-group__submit-btn">Save</button>
-  </div>
+    <div class="btn-col inc-exp-form">
+      <a ng-click="vm.addNewExperience()">Add another job experience</a>
+    </div>
+
+    <div class="btn-col">
+      <button type="submit" class="form-row-group__submit-btn">Save</button>
+    </div>
+
+  </form>
 
 </div>

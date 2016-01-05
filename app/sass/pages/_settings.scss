@@ -93,6 +93,11 @@ $content-header-bg-color: rgba(242, 242, 242, .3);
   color: #666;
 }
 
-.btn-col {
+.btn-col,
+.exp-row {
   padding: 0 15px;
+}
+
+.inc-exp-form {
+  text-align: center;
 }

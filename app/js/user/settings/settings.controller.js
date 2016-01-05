@@ -10,9 +10,11 @@ module.exports = function SettingsController(toastr, $state, $http, $uibModal,
 
   vm.user = myself;
   vm.user.social = vm.user.social || {};
+  vm.user.experiences = [{id: 'exp1'}];
 
   vm.updateProfile = updateProfile;
   vm.loadTags = loadTags;
+  vm.addNewExperience = addNewExperience;
 
   vm.getImageUrl = function() {
     var res = '';
@@ -22,6 +24,11 @@ module.exports = function SettingsController(toastr, $state, $http, $uibModal,
       res = 'images/user-default.png';
     }
     return res;
+  };
+
+  function addNewExperience() {
+    var newItemId = vm.user.experiences.length + 1;
+    vm.user.experiences.push({id: 'exp' + newItemId});
   };
 
   function updateProfile() {
