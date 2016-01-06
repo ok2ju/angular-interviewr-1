@@ -13,10 +13,10 @@ module.exports = function($stateProvider) {
     })
     .state('app.userSettings.general', {
       url: '/general',
-      templateUrl: 'js/user/settings/general.html'
+      templateUrl: 'js/user/settings/tabs/general.html'
     })
     .state('app.userSettings.experience', {
       url: '/experience',
-      templateUrl: 'js/user/settings/experience.html'
+      templateUrl: 'js/user/settings/tabs/experience.html'
     });
 };

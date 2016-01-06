@@ -10,7 +10,7 @@ module.exports = function SettingsController(toastr, $state, $http, $uibModal,
 
   vm.user = myself;
   vm.user.social = vm.user.social || {};
-  vm.user.experiences = [{id: 'exp1'}];
+  vm.user.experiences = vm.user.experiences || [{id: 'exp1'}];
 
   vm.updateProfile = updateProfile;
   vm.loadTags = loadTags;
