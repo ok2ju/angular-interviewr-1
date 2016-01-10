@@ -24,7 +24,8 @@ gulp.task('sass', function() {
             cascade: false
         }))
         .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest('app/css'));
+        .pipe(gulp.dest('app/assets/css'))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('clean', function() {
@@ -33,14 +34,14 @@ gulp.task('clean', function() {
 });
 
 gulp.task('browserify', function() {
-  gulp.src('app/js/app.js')
+  gulp.src('app/src/app.js')
   .pipe(browserify({debug: true}))
   .pipe(gulp.dest('app/dist'));
 });
 
 gulp.task('ngmin', function() {
   return gulp.src([
-    'app/js/**/*.js'
+    'app/src/**/*.js'
   ])
   .pipe(ngAnnotate())
   .pipe(gulp.dest('app/ngmin'));
@@ -94,10 +95,10 @@ gulp.task('sass-watch', ['sass'], browserSync.reload);
 gulp.task('serve', ['nodemon'], function() {
   browserSync.init({
     proxy: "http://localhost:8000",
-    port: 4000,
+    port: 4000
   });
 
-  gulp.watch(['app/js/**/*.js'], ['js-watch']);
+  gulp.watch(['app/src/**/*.js'], ['js-watch']);
   gulp.watch(SASS_FILES, ['sass-watch']);
   gulp.watch(['app/**/*.html']).on('change', browserSync.reload);
 });

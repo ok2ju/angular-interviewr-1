@@ -33,4 +33,5 @@ bower_components
 
 app/ngmin
 app/dist
-app/css/*
+app/assets/css/style.css
+app/assets/css/maps

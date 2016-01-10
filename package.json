@@ -13,13 +13,10 @@
     "angular-messages": "^1.4.3",
     "angular-resource": "^1.4.3",
     "angular-storage": "0.0.13",
-    "angular-ui-bootstrap": "^0.14.2",
     "angular-ui-router": "^0.2.15",
-    "bootstrap": "^3.3.5",
     "cropper": "^1.0.0",
     "express": "^4.13.2",
     "gulp-sourcemaps": "^1.6.0",
-    "install": "^0.1.8",
     "jquery": "^2.1.4",
     "lodash": "^3.10.1",
     "moment": "^2.10.6",
@@ -44,7 +41,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "browser": {
-    "angular-toastr": "./app/js/third-party/angular-toastr.tpls.min.js",
-    "angular-modal": "./app/js/third-party/ui-bootstrap-custom-tpls-0.14.2.min.js"
+    "angular-toastr": "./app/vendor/angular-toastr.tpls.min.js",
+    "angular-modal": "./app/vendor/ui-bootstrap-custom-tpls-0.14.2.min.js"
   }
 }
