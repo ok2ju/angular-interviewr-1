@@ -7,11 +7,13 @@ function vacancyResource(Restangular) {
   var service = {
     listVacancies: listVacancies,
     oneVacancy: oneVacancy,
-    postVacancy: postVacancy
+    postVacancy: postVacancy,
+    update: update,
+    remove: remove
   };
 
-  function listVacancies() {
-    return Restangular.all('vacancies').getList();
+  function listVacancies(query) {
+    return Restangular.all('vacancies').getList(query);
   }
 
   function oneVacancy(id) {
@@ -20,6 +22,14 @@ function vacancyResource(Restangular) {
 
   function postVacancy(vacancy) {
     return Restangular.all('vacancies').post(vacancy);
+  }
+
+  function update(id, data) {
+    return Restangular.one('vacancies', id).customPUT(data);
+  }
+
+  function remove(id) {
+    return Restangular.one('vacancies', id).remove();
   }
 
   return service;

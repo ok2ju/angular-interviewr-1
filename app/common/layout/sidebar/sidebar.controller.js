@@ -41,14 +41,13 @@ module.exports = function LayoutSidebarController() {
         state: 'app.test'
     }, {
         name: 'Vacancy',
-        url: '/vacancies/manage',
+        url: '/vacancies/manage/companies',
         active: false,
         icon: 'icon-newspaper',
-        state: 'app.vacanciesManage'
+        state: 'app.vacanciesManage.companies'
     }];
 
     vm.btnToggler = function(menuItem) {
         menuItem.active = true;
-        console.log(menuItem);
     };
 };

@@ -98,7 +98,7 @@ gulp.task('serve', ['nodemon'], function() {
     port: 4000
   });
 
-  gulp.watch(['app/src/**/*.js'], ['js-watch']);
+  gulp.watch(['app/src/**/*.js', 'app/common/**/*.js'], ['js-watch']);
   gulp.watch(SASS_FILES, ['sass-watch']);
   gulp.watch(['app/**/*.html']).on('change', browserSync.reload);
 });
