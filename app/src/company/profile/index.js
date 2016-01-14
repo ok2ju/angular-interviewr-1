@@ -3,5 +3,4 @@ require('angular')
       'app.resource.company',
       'app.resource.user'
     ])
-    .config(require('./companyProfile.config'))
     .controller('CompanyProfileController', require('./companyProfile.controller'));

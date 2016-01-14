@@ -12,7 +12,7 @@ module.exports = function LayoutSidebarController() {
         url: '/vancancies',
         active: false,
         icon: 'icon-newspaper',
-        state: 'app.vacancies'
+        state: 'app.vacanciesList'
     }, {
         name: 'Calendar',
         url: '/calendar',

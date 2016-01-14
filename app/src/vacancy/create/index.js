@@ -6,5 +6,4 @@ require('angular')
     'app.resource.vacancy',
     'app.resource.company'
   ])
-    .config(require('./create.config'))
     .controller('VacancyCreateController', require('./create.controller'));

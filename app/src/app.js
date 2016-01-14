@@ -35,22 +35,9 @@
         'app.dropdown',
 
         /* Feature areas */
-        'app.user.login',
-        'app.user.signup',
-        'app.user.profile',
-        'app.user.settings',
-
-        'app.company.manage',
-        'app.company.create',
-        'app.company.list',
-        'app.company.profile',
-        'app.company.edit',
-
-        'app.vacancy.create',
-        'app.vacancy.manage',
-        'app.vacancy.candidates',
-        'app.vacancy.list',
-
+        'app.user',
+        'app.company',
+        'app.vacancy',
         'app.videoroom'
       ])
       .config(require('./app.config'))
@@ -75,21 +62,9 @@
     require('../common/layout/dropdown');
 
     // Features
-    require('./user/login');
-    require('./user/signup');
-    require('./user/profile');
-    require('./user/settings');
-
-    require('./company/manage');
-    require('./company/create');
-    require('./company/list');
-    require('./company/profile');
-    require('./company/edit');
-
-    require('./vacancy/create');
-    require('./vacancy/manage');
-    require('./vacancy/candidates');
-    require('./vacancy/list');
+    require('./user');
+    require('./company');
+    require('./vacancy');
 
     require('./videoroom');
 

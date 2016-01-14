@@ -1,7 +1,7 @@
 <ul class="user-cards-list">
   <li class="user-card-item" ng-repeat="company in vm.companies">
     <div class="u-main-info">
-      <a ui-sref="app.vacanciesManage.vacancies({company_id: company._id})" href="#" class="u-main-info-link">
+      <a ui-sref="app.vacanciesManage.vacancies({company_id: company._id})" class="u-main-info-link">
         <img ng-src="{{vm.getImageUrl(company)}}" alt="candidate" class="user-card-item__photo">
         <h1 class="user-card-item__name">{{company.name}}</h1>
       </a>

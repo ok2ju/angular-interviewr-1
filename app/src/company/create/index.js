@@ -7,6 +7,5 @@ require('angular')
     'ngMessages',
     'ngFileUpload'
   ])
-  .config(require('./createCompany.config'))
   .controller('CompanyModalController', require('./modal.controller'))
   .controller('CreateCompanyController', require('./createCompany.controller'));

@@ -7,5 +7,4 @@ require('angular')
     'ngMessages',
     'ngFileUpload'
   ])
-  .config(require('./editCompany.config'))
   .controller('EditCompanyController', require('./editCompany.controller'));

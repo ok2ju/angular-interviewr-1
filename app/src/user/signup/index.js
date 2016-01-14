@@ -4,6 +4,5 @@ require('angular')
       'toastr',
       'ngMessages'
   ])
-  .config(require('./signup.config'))
   .controller('SignupController', require('./signup.controller'))
   .directive('repeatPassword', require('./repeatPass.directive'));
