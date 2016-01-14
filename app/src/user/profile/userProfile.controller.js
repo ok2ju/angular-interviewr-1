@@ -13,7 +13,7 @@ module.exports = function UserProfileController(UserResource, config, $statePara
     if(vm.user && vm.user.imageId) {
       res = config.api_url + '/api/v1/images/' + vm.user.imageId;
     } else {
-      res = 'images/user-default.png';
+      res = 'assets/images/user-default.png';
     }
     return res;
   };

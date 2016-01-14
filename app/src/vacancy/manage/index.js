@@ -8,5 +8,4 @@ require('angular')
   ])
     .config(require('./manage.config'))
     .controller('ManageVacanciesController', require('./manage.controller'))
-    .controller('VacancyCreateController', require('./create.controller'))
     .controller('VacanciesListController', require('./vacancies.controller'));

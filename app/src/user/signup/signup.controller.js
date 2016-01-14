@@ -7,7 +7,7 @@ module.exports = function UserSignupController(UserResource, store, $state, toas
   function register() {
     UserResource.postUser(vm.user).then(function(user) {
       store.set('jwt', user.id_token);
-      $state.go('app.userSettings');
+      $state.go('app.userSettings.general');
       toastr.success('Your account has been created.', 'Congratulations!');
     }, function(err) {
         toastr.error('Something goes wrong.', 'Error!');
