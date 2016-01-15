@@ -16,5 +16,5 @@ module.exports = function UserProfileController(UserResource, config, $statePara
       res = 'assets/images/user-default.png';
     }
     return res;
-  };
+  }
 };

@@ -101,3 +101,13 @@ $content-header-bg-color: rgba(242, 242, 242, .3);
 .inc-exp-form {
   text-align: center;
 }
+
+.row-box {
+  margin-bottom: 15px;
+}
+
+.tab-btn {
+  @extend .btn;
+  @extend .btn-default;
+  padding: .5em .57em;
+}

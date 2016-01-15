@@ -3,7 +3,8 @@ require('angular')
       'app.vacancy.create',
       'app.vacancy.manage',
       'app.vacancy.candidates',
-      'app.vacancy.list'
+      'app.vacancy.list',
+      'app.vacancy.edit'
     ])
     .config(vacancyConfig);
 
@@ -11,6 +12,7 @@ require('./create');
 require('./manage');
 require('./candidates');
 require('./list');
+require('./edit');
 
 function vacancyConfig($stateProvider) {
   $stateProvider
@@ -42,7 +44,7 @@ function vacancyConfig($stateProvider) {
     })
     .state('app.vacanciesCreate', {
       url: '/vacancies/create',
-      templateUrl: 'src/vacancy/create/create.html',
+      templateUrl: 'src/vacancy/create/create.tpl.html',
       controller: 'VacancyCreateController',
       controllerAs: 'vm',
       data: {
@@ -55,6 +57,16 @@ function vacancyConfig($stateProvider) {
         companies: function(myself, companyResource) {
           return companyResource.listCompanies({owner: myself._id});
         }
+      }
+    })
+    .state('app.vacanciesEdit', {
+      url: '/vacancies/:id/edit',
+      templateUrl: 'src/vacancy/edit/edit.tpl.html',
+      controller: 'VacancyEditController',
+      controllerAs: 'vm',
+      data: {
+        requiresLogin: true,
+        pageTitle: 'Edit Vacancy'
       }
     })
     .state('app.vacanciesProfile', {

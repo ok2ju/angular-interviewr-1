@@ -29,7 +29,7 @@ module.exports = function SettingsController(toastr, $state, $http, $uibModal,
   function addNewExperience() {
     var newItemId = vm.user.experiences.length + 1;
     vm.user.experiences.push({id: 'exp' + newItemId});
-  };
+  }
 
   function updateProfile() {
     console.log(vm.user.social);
