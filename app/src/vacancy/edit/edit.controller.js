@@ -1,10 +1,16 @@
 module.exports = function VacancyEditController($state, $stateParams, VacancyResource,
-  toastr, positions, vacancyTypes, companies) {
+  toastr, positions, vacancyTypes) {
 
   var vm = this;
 
   vm.vacancy = {};
   vm.updateVacancy = updateVacancy;
+
+  // Fetch data for positions dropdown
+  vm.positions = positions.data;
+
+  // Fetch data for vacancy types dropdown
+  vm.vacancyTypes = vacancyTypes.data;
 
   VacancyResource.oneVacancy($stateParams.id).then(function(vacancy) {
     vm.vacancy = vacancy;

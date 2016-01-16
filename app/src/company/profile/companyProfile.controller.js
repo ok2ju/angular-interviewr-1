@@ -15,5 +15,5 @@ module.exports = function CompanyProfileController(CompanyResource, UserResource
       res = 'assets/images/companies/default.png';
     }
     return res;
-  };
+  }
 };

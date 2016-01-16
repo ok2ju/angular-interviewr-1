@@ -1,8 +1,8 @@
 <div class="form-content">
   <div class="s-content-head">
-    <h2 class="s-content-head__header">Fill vacancy profile</h2>
+    <h2 class="s-content-head__header">Edit main vacancy info</h2>
   </div>
-  <form class="settings-form" method="post" ng-submit="vm.registerVacancy()" name="createVacancy">
+  <form class="settings-form" method="post" ng-submit="vm.updateVacancy()" name="createVacancy">
     <div class="settings-form__row">
       <div class="form-fields">
 
@@ -35,20 +35,6 @@
         <div class="grid">
           <div class="grid-cell">
             <div class="inputAdd">
-              <span class="inputAdd-item"><i class="sidebar-ico icon-pencil-1"></i></span>
-              <drop-down
-                  class="form-dd"
-                  placeholder="Company"
-                  property="name"
-                  selected="vm.company"
-                  dropdown-attr="vm.companies"/>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid">
-          <div class="grid-cell">
-            <div class="inputAdd">
               <tags-input ng-model="vm.vacancy.required_skills"></tags-input>
             </div>
           </div>
@@ -66,7 +52,7 @@
     </div>
 
     <div class="btn-col">
-      <button type="submit" class="form-row-group__submit-btn">Create</button>
+      <button type="submit" class="form-row-group__submit-btn">Update</button>
     </div>
 
   </form>
