@@ -9,7 +9,9 @@ function vacancyResource(Restangular) {
     oneVacancy: oneVacancy,
     postVacancy: postVacancy,
     update: update,
-    remove: remove
+    remove: remove,
+    subscribe: subscribe,
+    unsubscribe: unsubscribe
   };
 
   function listVacancies(query) {
@@ -30,6 +32,14 @@ function vacancyResource(Restangular) {
 
   function remove(id) {
     return Restangular.one('vacancies', id).remove();
+  }
+
+  function subscribe(vacancy) {
+    return Restangular.all('vacancies/subscribe').post(vacancy);
+  }
+
+  function unsubscribe(vacancy) {
+    return Restangular.all('vacancies/unsubscribe').post(vacancy);
   }
 
   return service;
