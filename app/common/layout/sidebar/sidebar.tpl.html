@@ -8,8 +8,8 @@
   <section class="int-section">
     <h2 class="int-section__header">Basic</h2>
     <ul class="int-section__list">
-      <li ng-repeat="item in vm.items" class="item" ng-class="{'active' : {{item.active}}}">
-        <a ui-sref="{{item.state}}" ng-click="vm.btnToggler(item)">
+      <li ng-repeat="item in vm.items" ui-sref-active="active" class="item">
+        <a ui-sref="{{item.state}}">
           <i class="sidebar-ico {{item.icon}}"></i>
           <span class="sidebar-item-text">{{item.name}}</span>
         </a>
@@ -19,7 +19,7 @@
   <section class="int-section">
     <h2 class="int-section__header">Company</h2>
     <ul class="int-section__list">
-      <li ng-repeat="citem in vm.company" class="item" ng-class="{'active' : {{citem.active}}}">
+      <li ng-repeat="citem in vm.company" ui-sref-active="active" class="item">
         <a ui-sref="{{citem.state}}">
           <i class="sidebar-ico {{citem.icon}}"></i>
           <span class="sidebar-item-text">{{citem.name}}</span>
