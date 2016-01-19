@@ -15,7 +15,7 @@ module.exports = function CompanyCreateController(CompanyResource, $scope,
   vm.registerCompany = registerCompany;
 
   $scope.$watch('vm.company.description', function(current, original) {
-    vm.company.shortDesc = vm.company.description ? current.substring(0, 180) + '...' : '';
+    vm.company.short_description = vm.company.description ? current.substring(0, 180) + '...' : '';
   });
 
   function registerCompany() {

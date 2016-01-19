@@ -12,7 +12,6 @@
   <div class="company-card__body">
     <div class="v-edit">
       <i class="sidebar-ico icon-pencil" ui-sref="app.editCompany({id: company._id})"></i>
-      <i class="sidebar-ico icon-cancel" ng-click="vm.deleteCompany(company)"></i>
     </div>
     <a ui-sref="app.companyProfile({id:company._id})" class="company-card__header">{{company.name}}</a>
     <div class="company-card__meta">

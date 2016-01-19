@@ -6,7 +6,7 @@
     "position": "Front-End",
     "testResult": 82,
     "applicationDate": 1436703772957,
-    "avatar": "images/users/1.png",
+    "avatar": "assets/images/users/1.png",
     "posColor": "label-warning"
   },
   {
@@ -16,7 +16,7 @@
     "position": "iOS Developer",
     "testResult": 82,
     "applicationDate": 1436703772957,
-    "avatar": "images/users/12.png",
+    "avatar": "assets/images/users/12.png",
     "posColor": "label-info"
   },
   {
@@ -26,7 +26,7 @@
     "position": "Designer",
     "testResult": 82,
     "applicationDate": 1436703772957,
-    "avatar": "images/users/1.png",
+    "avatar": "assets/images/users/1.png",
     "posColor": "label-default"
   },
   {
@@ -36,7 +36,7 @@
     "position": "QA Engineer",
     "testResult": 82,
     "applicationDate": 1436703772957,
-    "avatar": "images/users/12.png",
+    "avatar": "assets/images/users/12.png",
     "posColor": "label-danger"
   },
   {
@@ -46,7 +46,7 @@
     "position": "Front-End",
     "testResult": 82,
     "applicationDate": 1436703772957,
-    "avatar": "images/users/1.png",
+    "avatar": "assets/images/users/1.png",
     "posColor": "label-warning"
   },
   {
@@ -56,7 +56,7 @@
     "position": "Front-End",
     "testResult": 82,
     "applicationDate": 1436703772957,
-    "avatar": "images/users/12.png",
+    "avatar": "assets/images/users/12.png",
     "posColor": "label-warning"
   }
 ]

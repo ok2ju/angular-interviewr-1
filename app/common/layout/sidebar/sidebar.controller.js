@@ -20,13 +20,13 @@ module.exports = function LayoutSidebarController() {
     }];
 
     vm.company = [{
-        name: 'My Company',
+        name: 'My Companies',
         icon: 'icon-diamond',
         state: 'app.manageCompany'
     }, {
         name: 'Candidates',
         icon: 'icon-users',
-        state: 'app.test'
+        state: 'app.candidates'
     }, {
         name: 'Vacancy',
         icon: 'icon-newspaper',

@@ -7,6 +7,7 @@ module.exports = function(CompanyResource, $scope,
   vm.company = {};
   vm.updateCompany = updateCompany;
   vm.getImageUrl = getImageUrl;
+  vm.deleteCompany = deleteCompany;
 
   // Fetching data for countries dropdown
   vm.countries = countries.data;
@@ -62,6 +63,15 @@ module.exports = function(CompanyResource, $scope,
       toastr.success('Company settings was successfully updated.', 'Yay!');
     }, function(err) {
         toastr.error('Error while updating.', 'Error!');
+    });
+  }
+
+  function deleteCompany() {
+    CompanyResource.removeCompany(vm.company._id).then(function() {
+      $state.go('app.manageCompany');
+      toastr.success('Company was successfully deleted.', 'Yay!');
+    }, function(err) {
+        console.log('Error while deleting company!');
     });
   }
 };
