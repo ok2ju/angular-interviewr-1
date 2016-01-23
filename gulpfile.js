@@ -9,11 +9,28 @@ var browserify = require('gulp-browserify'),
     sourcemaps = require('gulp-sourcemaps'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
-    browserSync = require('browser-sync').create(),
-    nodemon = require('gulp-nodemon');
+    browserSync = require('browser-sync').create();
 
-var SASS_FILES = 'app/sass/**/*.scss';
-var BROWSER_SYNC_RELOAD_DELAY = 500;
+const babelify = require('babelify');
+const url = require('url');
+const fs = require('fs');
+
+const SASS_FILES = 'app/src/sass/**/*.scss';
+const JS_FILES = 'app/src/**/*.js';
+const HTML_FILES = 'app/**/*.html';
+const ASSETS_TARGET = 'dist/assets';
+const BROWSER_SYNC_RELOAD_DELAY = 500;
+
+gulp.task('html', function() {
+  gulp.src(HTML_FILES)
+    .pipe(gulp.dest('dist'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('copy-static', function() {
+  return gulp.src('./app/assets/**/*')
+    .pipe(gulp.dest(ASSETS_TARGET));
+});
 
 gulp.task('sass', function() {
     return gulp.src(SASS_FILES)
@@ -24,19 +41,23 @@ gulp.task('sass', function() {
             cascade: false
         }))
         .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest('app/assets/css'))
+        .pipe(gulp.dest(`${ASSETS_TARGET}/css`))
         .pipe(browserSync.stream());
 });
 
 gulp.task('clean', function() {
-    return gulp.src(['app/ngmin/!**!/!*.*', 'app/dist/!**!/!*.*'])
+    return gulp.src(['dist/!**!/!*.*'])
     .pipe(vinylPaths(del));
 });
 
 gulp.task('browserify', function() {
   gulp.src('app/src/app.js')
-  .pipe(browserify({debug: true}))
-  .pipe(gulp.dest('app/dist'));
+  .pipe(browserify({
+    debug: true,
+    transform: babelify
+  }))
+  .pipe(gulp.dest('dist'))
+  .pipe(browserSync.stream());
 });
 
 gulp.task('ngmin', function() {
@@ -52,53 +73,29 @@ gulp.task('browserify-min', ['ngmin'], function() {
   .bundle()
   .pipe(source('app.min.js'))
   .pipe(streamify(uglify({ mangle: false })))
-  .pipe(gulp.dest('app/dist'));
+  .pipe(gulp.dest('dist'));
 });
 
-gulp.task('fast', ['clean'], function() {
-  gulp.start('browserify');
-});
-
-gulp.task('default', ['clean'], function() {
-  gulp.start('browserify', 'browserify-min');
-});
-
-gulp.task('nodemon', ['fast', 'sass'], function (cb) {
-  var called = false;
-
-  return nodemon({
-
-    // nodemon expressjs server
-    script: 'client.js',
-
-    // watch core server file(s) that require server restart on change
-    watch: ['app.js']
-  })
-  .on('start', function onStart() {
-    // ensure start only got called once
-    if(!called) { cb(); }
-    called = true;
-  })
-  .on('restart', function onRestart() {
-    // reload connected browsers after a slight delat
-    setTimeout(function reload() {
-      browserSync.reload({
-        stream: false
-      });
-    }, BROWSER_SYNC_RELOAD_DELAY);
-  });
-});
-
-gulp.task('js-watch', ['fast'], browserSync.reload);
-gulp.task('sass-watch', ['sass'], browserSync.reload);
-
-gulp.task('serve', ['nodemon'], function() {
+gulp.task('serve', ['browserify', 'sass', 'copy-static'], function() {
+  const defaultFile = 'dist/index.html';
   browserSync.init({
-    proxy: "http://localhost:8000",
+    server: {
+      baseDir: './',
+      index: './' + defaultFile,
+      middleware: function(req, res, next) {
+        const urlObject = url.parse(req.url);
+        const fileName = urlObject.href.split(urlObject.search).join('');
+        const fileExists = fs.existsSync(__dirname + fileName);
+        if (!fileExists && fileName.indexOf("browser-sync-client") < 0) {
+            req.url = "/" + defaultFile;
+        }
+        return next();
+      }
+    },
     port: 4000
   });
 
-  gulp.watch(['app/src/**/*.js', 'app/common/**/*.js'], ['js-watch']);
-  gulp.watch(SASS_FILES, ['sass-watch']);
-  gulp.watch(['app/**/*.html']).on('change', browserSync.reload);
+  gulp.watch(JS_FILES, ['browserify']);
+  gulp.watch(SASS_FILES, ['sass']);
+  gulp.watch(HTML_FILES, ['html'])
 });

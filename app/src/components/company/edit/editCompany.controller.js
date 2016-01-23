@@ -1,3 +1,4 @@
+import {ROOT_DIR} from '../../../constants';
 var moment = require('moment');
 
 module.exports = function(CompanyResource, $scope,
@@ -52,7 +53,7 @@ module.exports = function(CompanyResource, $scope,
     if(vm.company && vm.company.imageId) {
       res = config.api_url + '/api/v1/images/' + vm.company.imageId;
     } else {
-      res = 'assets/images/companies/default.png';
+      res = `${ROOT_DIR}/assets/images/companies/default.png`;
     }
     return res;
   }

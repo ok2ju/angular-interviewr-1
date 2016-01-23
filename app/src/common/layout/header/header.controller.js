@@ -1,3 +1,5 @@
+import {ROOT_DIR} from '../../../constants';
+
 module.exports = function LayoutHeaderController($state, toastr, store, jwtHelper, $http, config) {
   var vm = this;
 
@@ -26,7 +28,7 @@ module.exports = function LayoutHeaderController($state, toastr, store, jwtHelpe
     if(vm.user && vm.user.imageId) {
       res = config.api_url + '/api/v1/images/' + vm.user.imageId;
     } else {
-      res = 'assets/images/user-default.png';
+      res = `${ROOT_DIR}/assets/images/user-default.png`;
     }
     return res;
   }

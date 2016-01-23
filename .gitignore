@@ -31,7 +31,6 @@ logs
 node_modules
 bower_components
 
-app/ngmin
-app/dist
+dist/*
 app/assets/css/style.css
 app/assets/css/maps

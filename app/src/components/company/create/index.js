@@ -5,7 +5,8 @@ require('angular')
     'ngTagsInput',
     'ui.bootstrap',
     'ngMessages',
-    'ngFileUpload'
+    'ngFileUpload',
+    'app.services'
   ])
   .controller('CompanyModalController', require('./modal.controller'))
   .controller('CreateCompanyController', require('./createCompany.controller'));

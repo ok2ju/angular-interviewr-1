@@ -1,8 +1,10 @@
+import {ROOT_DIR} from '../../../constants';
+
 module.exports = function() {
     var directive = {
         restrict: 'EA',
         scope: true,
-        templateUrl: 'common/layout/header/header.tpl.html',
+        templateUrl: `${ROOT_DIR}/src/common/layout/header/header.tpl.html`,
         controller: 'HeaderController',
         controllerAs: 'vm',
         bindToController: true

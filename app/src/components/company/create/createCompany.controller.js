@@ -1,8 +1,9 @@
+import {ROOT_DIR} from '../../../constants';
 var moment = require('moment');
 var $ = require('jquery');
 
 module.exports = function CompanyCreateController(CompanyResource, $scope,
-                                                  toastr, $state, $uibModal, config, countries, categories) {
+                                                  toastr, $state, $uibModal, config, countries, categories, imageService) {
   var vm = this;
   vm.company = {};
 
@@ -33,7 +34,7 @@ module.exports = function CompanyCreateController(CompanyResource, $scope,
     if(vm.company && vm.company.imageId) {
       res = config.api_url + '/api/v1/images/' + vm.company.imageId;
     } else {
-      res = 'assets/images/companies/default.png';
+      res = `${ROOT_DIR}/assets/images/companies/default.png`;
     }
     return res;
   };
@@ -55,7 +56,7 @@ module.exports = function CompanyCreateController(CompanyResource, $scope,
   vm.open = function (size) {
     var modalInstance = $uibModal.open({
       animation: vm.animationsEnabled,
-      templateUrl: 'src/company/create/modal.tpl.html',
+      templateUrl: `${ROOT_DIR}/src/components/company/create/modal.tpl.html`,
       controller: 'CompanyModalController',
       controllerAs: 'vm',
       size: size,

@@ -1,3 +1,5 @@
+import {ROOT_DIR} from '../../constants';
+
 require('angular')
   .module('app.user', [
       'app.user.login',
@@ -17,7 +19,7 @@ function userConfig($stateProvider) {
     .state('intro.login', {
       url: '/login',
       controller: 'LoginController',
-      templateUrl: 'src/user/login/login.tpl.html',
+      templateUrl: `${ROOT_DIR}/src/components/user/login/login.tpl.html`,
       controllerAs: 'vm',
       data: {
         pageTitle: 'Login'
@@ -25,7 +27,7 @@ function userConfig($stateProvider) {
     })
     .state('app.userProfile', {
       url: '/user/:id/profile',
-      templateUrl: 'src/user/profile/user-profile.tpl.html',
+      templateUrl: `${ROOT_DIR}/src/components/user/profile/user-profile.tpl.html`,
       controller: 'UserProfileController',
       controllerAs: 'vm',
       data: {
@@ -36,7 +38,7 @@ function userConfig($stateProvider) {
     .state('app.userSettings', {
       abstract: true,
       url: '/settings',
-      templateUrl: 'src/user/settings/settings.tpl.html',
+      templateUrl: `${ROOT_DIR}/src/components/user/settings/settings.tpl.html`,
       controller: 'UserSettingsController',
       controllerAs: 'vm',
       data: {
@@ -46,16 +48,16 @@ function userConfig($stateProvider) {
     })
     .state('app.userSettings.general', {
       url: '/general',
-      templateUrl: 'src/user/settings/tabs/general.tpl.html'
+      templateUrl: `${ROOT_DIR}/src/components/user/settings/tabs/general.tpl.html`
     })
     .state('app.userSettings.experience', {
       url: '/experience',
-      templateUrl: 'src/user/settings/tabs/experience.tpl.html'
+      templateUrl: `${ROOT_DIR}/src/components/user/settings/tabs/experience.tpl.html`
     })
     .state('intro.signup', {
       url: '/signup',
       controller: 'SignupController',
-      templateUrl: 'src/user/signup/signup.tpl.html',
+      templateUrl: `${ROOT_DIR}/src/components/user/signup/signup.tpl.html`,
       controllerAs: 'vm',
       data: {
         pageTitle: 'SignUp'

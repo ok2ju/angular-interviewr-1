@@ -18,7 +18,7 @@ function vacancyConfig($stateProvider) {
   $stateProvider
     .state('app.candidates', {
       url: '/candidates',
-      templateUrl: 'src/vacancy/candidates/candidates.tpl.html',
+      templateUrl: 'src/components/vacancy/candidates/candidates.tpl.html',
       controller: 'CandidatesController',
       controllerAs: 'vm',
       data: {
@@ -27,14 +27,14 @@ function vacancyConfig($stateProvider) {
       }
     })
     .state('app.candidates.grid', {
-      templateUrl: 'src/vacancy/candidates/views/grid-view.tpl.html'
+      templateUrl: 'src/components/vacancy/candidates/views/grid-view.tpl.html'
     })
     .state('app.candidates.list', {
-      templateUrl: 'src/vacancy/candidates/views/list-view.tpl.html'
+      templateUrl: 'src/components/vacancy/candidates/views/list-view.tpl.html'
     })
     .state('app.vacanciesList', {
       url: '/vacancies',
-      templateUrl: 'src/vacancy/list/vacancies-list.tpl.html',
+      templateUrl: 'src/components/vacancy/list/vacancies-list.tpl.html',
       controller: 'VacancyListController',
       controllerAs: 'vm',
       data: {
@@ -44,7 +44,7 @@ function vacancyConfig($stateProvider) {
     })
     .state('app.vacanciesCreate', {
       url: '/vacancies/create',
-      templateUrl: 'src/vacancy/create/create.tpl.html',
+      templateUrl: 'src/components/vacancy/create/create.tpl.html',
       controller: 'VacancyCreateController',
       controllerAs: 'vm',
       data: {
@@ -61,7 +61,7 @@ function vacancyConfig($stateProvider) {
     })
     .state('app.vacanciesEdit', {
       url: '/vacancies/:id/edit',
-      templateUrl: 'src/vacancy/edit/edit.tpl.html',
+      templateUrl: 'src/components/vacancy/edit/edit.tpl.html',
       controller: 'VacancyEditController',
       controllerAs: 'vm',
       data: {
@@ -71,7 +71,7 @@ function vacancyConfig($stateProvider) {
     })
     .state('app.vacanciesProfile', {
       url: '/vacancies/:id',
-      templateUrl: 'src/vacancy/profile/vacancy-profile.tpl.html',
+      templateUrl: 'src/components/vacancy/profile/vacancy-profile.tpl.html',
       controller: 'VacancyProfileController',
       controllerAs: 'vm',
       data: {
@@ -82,7 +82,7 @@ function vacancyConfig($stateProvider) {
     .state('app.vacanciesManage', {
       abstract: true,
       url: '/manage/vacancies',
-      templateUrl: 'src/vacancy/manage/manage-vacancies.tpl.html',
+      templateUrl: 'src/components/vacancy/manage/manage-vacancies.tpl.html',
       data: {
         requiresLogin: true,
         pageTitle: 'Manage Vacancies'
@@ -90,13 +90,13 @@ function vacancyConfig($stateProvider) {
     })
     .state('app.vacanciesManage.companies', {
       url: '',
-      templateUrl: 'src/vacancy/manage/companies-list.tpl.html',
+      templateUrl: 'src/components/vacancy/manage/companies-list.tpl.html',
       controller: 'ManageVacanciesController',
       controllerAs: 'vm'
     })
     .state('app.vacanciesManage.vacancies', {
       url: '?company_id',
-      templateUrl: 'src/vacancy/manage/vacancies-list.tpl.html',
+      templateUrl: 'src/components/vacancy/manage/vacancies-list.tpl.html',
       controller: 'VacanciesListController',
       controllerAs: 'vm'
     });

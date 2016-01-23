@@ -1,4 +1,5 @@
-var $ = require('jquery');
+import {ROOT_DIR} from '../../../constants';
+import $ from 'jquery';
 
 module.exports = function($rootScope, $timeout) {
 
@@ -58,7 +59,7 @@ module.exports = function($rootScope, $timeout) {
           display: '=',
           property: '@'
         },
-        templateUrl: 'common/layout/dropdown/dropdown.tpl.html',
+        templateUrl: `${ROOT_DIR}/src/common/layout/dropdown/dropdown.tpl.html`,
         link: link
     };
 

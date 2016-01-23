@@ -1,3 +1,5 @@
+import {ROOT_DIR} from './constants';
+
 module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
                           $httpProvider, jwtInterceptorProvider, toastrConfig,
                           cfpLoadingBarProvider, RestangularProvider) {
@@ -40,7 +42,7 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
       abstract: true,
       views: {
           'content': {
-              templateUrl: 'templates/intro-layout.tpl.html'
+              templateUrl: `${ROOT_DIR}/src/templates/intro-layout.tpl.html`
           }
       }
     })
@@ -48,7 +50,7 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
       abstract: true,
       views: {
           'content': {
-              templateUrl: 'templates/app-layout.tpl.html'
+              templateUrl: `${ROOT_DIR}/src/templates/app-layout.tpl.html`
           }
       },
       resolve: {
