@@ -1,7 +1,9 @@
+import {ROOT_DIR} from '../../../constants';
+
 var $ = require('jquery');
 
 module.exports = function SettingsController(toastr, $state, $http, $uibModal,
-                      config, Upload, UserResource, countries, myself) {
+                      config, Upload, UserResource, countries, myself, imageService) {
 
   var vm = this;
 
@@ -17,13 +19,7 @@ module.exports = function SettingsController(toastr, $state, $http, $uibModal,
   vm.addNewExperience = addNewExperience;
 
   vm.getImageUrl = function() {
-    var res = '';
-    if(vm.user && vm.user.imageId) {
-      res = config.api_url + '/api/v1/images/' + vm.user.imageId;
-    } else {
-      res = 'assets/images/user-default.png';
-    }
-    return res;
+    return imageService.getImageUrl(vm.user, 'assets/images/user-default.png');
   };
 
   function addNewExperience() {
@@ -63,7 +59,7 @@ module.exports = function SettingsController(toastr, $state, $http, $uibModal,
   vm.open = function (size) {
     var modalInstance = $uibModal.open({
       animation: vm.animationsEnabled,
-      templateUrl: 'src/user/settings/modal.tpl.html',
+      templateUrl: `${ROOT_DIR}/src/user/settings/modal.tpl.html`,
       controller: 'ModalInstanceController',
       controllerAs: 'vm',
       size: size,
@@ -81,5 +77,4 @@ module.exports = function SettingsController(toastr, $state, $http, $uibModal,
   vm.toggleAnimation = function () {
     vm.animationsEnabled = !vm.animationsEnabled;
   };
-
 };

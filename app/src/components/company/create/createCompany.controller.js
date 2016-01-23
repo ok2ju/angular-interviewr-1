@@ -30,13 +30,7 @@ module.exports = function CompanyCreateController(CompanyResource, $scope,
   }
 
   vm.getImageUrl = function() {
-    var res = '';
-    if(vm.company && vm.company.imageId) {
-      res = config.api_url + '/api/v1/images/' + vm.company.imageId;
-    } else {
-      res = `${ROOT_DIR}/assets/images/companies/default.png`;
-    }
-    return res;
+    return imageService.getImageUrl(vm.company, '/assets/images/companies/default.png');
   };
 
   //file upload

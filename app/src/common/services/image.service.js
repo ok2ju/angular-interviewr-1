@@ -5,24 +5,13 @@ ng
   .module('app.services', [])
   .factory('imageService', function(config) {
       return {
-        getImageUrl(company) {
+        getImageUrl(entry, defaultUrl) {
           var res = '';
-          if(company && company.imageId) {
-            res = config.api_url + '/api/v1/images/' + company.imageId;
-          } else {
-            res = 'assets/images/companies/default.png';
+          if(entry && entry.imageId) {
+            res = config.api_url + '/api/v1/images/' + entry.imageId;
+          } else if(defaultUrl) {
+            res = `${ROOT_DIR}/${defaultUrl}`;
           }
-          return res;
-        },
-
-        getUserImageUrl(user) {
-          var res = '';
-          if(user && user.imageId) {
-            res = config.api_url + '/api/v1/images/' + user.imageId;
-          } else {
-            res = 'assets/images/user-default.png';
-          }
-          return res;
         }
       }
   });

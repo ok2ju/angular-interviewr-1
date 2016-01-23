@@ -1,3 +1,5 @@
+import {ROOT_DIR} from '../../constants';
+
 require('angular')
   .module('app.vacancy', [
       'app.vacancy.create',
@@ -18,7 +20,7 @@ function vacancyConfig($stateProvider) {
   $stateProvider
     .state('app.candidates', {
       url: '/candidates',
-      templateUrl: 'src/components/vacancy/candidates/candidates.tpl.html',
+      templateUrl: `${ROOT_DIR}/src/components/vacancy/candidates/candidates.tpl.html`,
       controller: 'CandidatesController',
       controllerAs: 'vm',
       data: {
@@ -27,14 +29,14 @@ function vacancyConfig($stateProvider) {
       }
     })
     .state('app.candidates.grid', {
-      templateUrl: 'src/components/vacancy/candidates/views/grid-view.tpl.html'
+      templateUrl: `${ROOT_DIR}/src/components/vacancy/candidates/views/grid-view.tpl.html`
     })
     .state('app.candidates.list', {
-      templateUrl: 'src/components/vacancy/candidates/views/list-view.tpl.html'
+      templateUrl: `${ROOT_DIR}/src/components/vacancy/candidates/views/list-view.tpl.html`
     })
     .state('app.vacanciesList', {
       url: '/vacancies',
-      templateUrl: 'src/components/vacancy/list/vacancies-list.tpl.html',
+      templateUrl: `${ROOT_DIR}/src/components/vacancy/list/vacancies-list.tpl.html`,
       controller: 'VacancyListController',
       controllerAs: 'vm',
       data: {
@@ -44,7 +46,7 @@ function vacancyConfig($stateProvider) {
     })
     .state('app.vacanciesCreate', {
       url: '/vacancies/create',
-      templateUrl: 'src/components/vacancy/create/create.tpl.html',
+      templateUrl: `${ROOT_DIR}/src/components/vacancy/create/create.tpl.html`,
       controller: 'VacancyCreateController',
       controllerAs: 'vm',
       data: {
@@ -61,7 +63,7 @@ function vacancyConfig($stateProvider) {
     })
     .state('app.vacanciesEdit', {
       url: '/vacancies/:id/edit',
-      templateUrl: 'src/components/vacancy/edit/edit.tpl.html',
+      templateUrl: `${ROOT_DIR}/src/components/vacancy/edit/edit.tpl.html`,
       controller: 'VacancyEditController',
       controllerAs: 'vm',
       data: {
@@ -71,7 +73,7 @@ function vacancyConfig($stateProvider) {
     })
     .state('app.vacanciesProfile', {
       url: '/vacancies/:id',
-      templateUrl: 'src/components/vacancy/profile/vacancy-profile.tpl.html',
+      templateUrl: `${ROOT_DIR}/src/components/vacancy/profile/vacancy-profile.tpl.html`,
       controller: 'VacancyProfileController',
       controllerAs: 'vm',
       data: {
@@ -82,21 +84,21 @@ function vacancyConfig($stateProvider) {
     .state('app.vacanciesManage', {
       abstract: true,
       url: '/manage/vacancies',
-      templateUrl: 'src/components/vacancy/manage/manage-vacancies.tpl.html',
+      templateUrl: `${ROOT_DIR}/src/components/vacancy/manage/manage-vacancies.tpl.html`,
       data: {
         requiresLogin: true,
         pageTitle: 'Manage Vacancies'
       }
     })
     .state('app.vacanciesManage.companies', {
-      url: '',
-      templateUrl: 'src/components/vacancy/manage/companies-list.tpl.html',
+      url: '/',
+      templateUrl: `${ROOT_DIR}/src/components/vacancy/manage/companies-list.tpl.html`,
       controller: 'ManageVacanciesController',
       controllerAs: 'vm'
     })
     .state('app.vacanciesManage.vacancies', {
       url: '?company_id',
-      templateUrl: 'src/components/vacancy/manage/vacancies-list.tpl.html',
+      templateUrl: `${ROOT_DIR}/src/components/vacancy/manage/vacancies-list.tpl.html`,
       controller: 'VacanciesListController',
       controllerAs: 'vm'
     });

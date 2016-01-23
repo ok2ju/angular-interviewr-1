@@ -53,7 +53,6 @@ gulp.task('clean', function() {
 gulp.task('browserify', function() {
   gulp.src('app/src/app.js')
   .pipe(browserify({
-    debug: true,
     transform: babelify
   }))
   .pipe(gulp.dest('dist'))

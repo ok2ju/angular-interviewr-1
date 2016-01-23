@@ -1,8 +1,10 @@
+import {ROOT_DIR} from '../../constants';
+
 module.exports = function($stateProvider) {
   $stateProvider
     .state('app.videoroom', {
       url: '/videoroom',
-      templateUrl: 'src/videoroom/videoroom.tpl.html',
+      templateUrl: `${ROOT_DIR}/src/videoroom/videoroom.tpl.html`,
       controller: 'VideoRoomCtrl',
       controllerAs: 'vm',
       data: {

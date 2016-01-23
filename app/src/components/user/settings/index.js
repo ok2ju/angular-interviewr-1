@@ -4,7 +4,8 @@ require('angular')
     'ngTagsInput',
     'ui.bootstrap',
     'ngMessages',
-    'ngFileUpload'
+    'ngFileUpload',
+    'app.services'
   ])
   .controller('UserSettingsController', require('./settings.controller'))
   .controller('ModalInstanceController', require('./modal.controller'));

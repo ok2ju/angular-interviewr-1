@@ -1,3 +1,5 @@
+import {ROOT_DIR} from '../../constants';
+
 require('angular')
   .module('app.company', [
       'app.company.manage',
@@ -18,7 +20,7 @@ function companyConfig($stateProvider) {
   $stateProvider
     .state('app.createCompany', {
       url: '/company/create',
-      templateUrl: 'src/company/create/create-company.tpl.html',
+      templateUrl: `${ROOT_DIR}/src/components/company/create/create-company.tpl.html`,
       controller: 'CreateCompanyController',
       controllerAs: 'vm',
       data: {
@@ -28,7 +30,7 @@ function companyConfig($stateProvider) {
     })
     .state('app.editCompany', {
       url: '/company/:id/edit',
-      templateUrl: 'src/company/edit/edit-company.tpl.html',
+      templateUrl: `${ROOT_DIR}/src/components/company/edit/edit-company.tpl.html`,
       controller: 'EditCompanyController',
       controllerAs: 'vm',
       data: {
@@ -38,7 +40,7 @@ function companyConfig($stateProvider) {
     })
     .state('app.companies', {
       url: '/companies',
-      templateUrl: 'src/company/list/companies-list.tpl.html',
+      templateUrl: `${ROOT_DIR}/src/components/company/list/companies-list.tpl.html`,
       controller: 'CompanyListController',
       controllerAs: 'vm',
       data: {
@@ -48,7 +50,7 @@ function companyConfig($stateProvider) {
     })
     .state('app.manageCompany', {
       url: '/company/manage',
-      templateUrl: 'src/company/manage/manage-company.tpl.html',
+      templateUrl: `${ROOT_DIR}/src/components/company/manage/manage-company.tpl.html`,
       controller: 'ManageCompanyController',
       controllerAs: 'vm',
       data: {
@@ -58,7 +60,7 @@ function companyConfig($stateProvider) {
     })
     .state('app.companyProfile', {
       url: '/companies/:id/view',
-      templateUrl: 'src/company/profile/company-profile.tpl.html',
+      templateUrl: `${ROOT_DIR}/src/components/company/profile/company-profile.tpl.html`,
       controller: 'CompanyProfileController',
       controllerAs: 'vm',
       data: {
