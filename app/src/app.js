@@ -86,3 +86,6 @@ function run($rootScope, $state, store, jwtHelper) {
     $rootScope.$broadcast('documentClicked', angular.element(e.target));
   });
 }
+
+
+
