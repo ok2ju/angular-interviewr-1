@@ -1,4 +1,4 @@
-module.exports = function CompanyListController(CompanyResource, config, countries, categories) {
+module.exports = function CompanyListController(CompanyResource, config, countries, categories, imageService) {
   var vm = this;
   vm.getImageUrl = getImageUrl;
   vm.getUserImageUrl = getUserImageUrl;
@@ -15,23 +15,11 @@ module.exports = function CompanyListController(CompanyResource, config, countri
   vm.categories.unshift({id:9999, name: 'All'});
 
   function getImageUrl(company) {
-    var res = '';
-    if(company && company.imageId) {
-      res = config.api_url + '/api/v1/images/' + company.imageId;
-    } else {
-      res = 'assets/images/companies/default.png';
-    }
-    return res;
+    return imageService.getImageUrl(company, 'assets/images/companies/default.png');
   }
 
   function getUserImageUrl(user) {
-    var res = '';
-    if(user && user.imageId) {
-      res = config.api_url + '/api/v1/images/' + user.imageId;
-    } else {
-      res = 'assets/images/user-default.png';
-    }
-    return res;
+    return imageService.getImageUrl(user, 'assets/images/user-default.png');
   }
 
 };

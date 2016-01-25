@@ -75,7 +75,7 @@ gulp.task('browserify-min', ['ngmin'], function() {
   .pipe(gulp.dest('dist'));
 });
 
-gulp.task('serve', ['browserify', 'sass', 'copy-static'], function() {
+gulp.task('serve', ['browserify', 'sass', 'copy-static', 'html'], function() {
   const defaultFile = 'dist/index.html';
   browserSync.init({
     server: {
@@ -96,5 +96,5 @@ gulp.task('serve', ['browserify', 'sass', 'copy-static'], function() {
 
   gulp.watch(JS_FILES, ['browserify']);
   gulp.watch(SASS_FILES, ['sass']);
-  gulp.watch(HTML_FILES, ['html'])
+  gulp.watch(HTML_FILES, ['html']);
 });

@@ -12,6 +12,8 @@ ng
           } else if(defaultUrl) {
             res = `${ROOT_DIR}/${defaultUrl}`;
           }
+
+          return res;
         }
-      }
+      };
   });

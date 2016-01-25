@@ -59,7 +59,7 @@ module.exports = function SettingsController(toastr, $state, $http, $uibModal,
   vm.open = function (size) {
     var modalInstance = $uibModal.open({
       animation: vm.animationsEnabled,
-      templateUrl: `${ROOT_DIR}/src/user/settings/modal.tpl.html`,
+      templateUrl: `${ROOT_DIR}/src/components/user/settings/modal.tpl.html`,
       controller: 'ModalInstanceController',
       controllerAs: 'vm',
       size: size,

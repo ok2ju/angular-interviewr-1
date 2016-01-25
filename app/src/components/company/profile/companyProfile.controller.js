@@ -1,4 +1,4 @@
-module.exports = function CompanyProfileController(CompanyResource, UserResource, $stateParams, config) {
+module.exports = function CompanyProfileController(CompanyResource, UserResource, $stateParams, config, imageService) {
   var vm = this;
   vm.getImageUrl = getImageUrl;
 
@@ -8,12 +8,6 @@ module.exports = function CompanyProfileController(CompanyResource, UserResource
   });
 
   function getImageUrl() {
-    var res = '';
-    if(vm.company && vm.company.imageId) {
-      res = config.api_url + '/api/v1/images/' + vm.company.imageId;
-    } else {
-      res = 'assets/images/companies/default.png';
-    }
-    return res;
+    return imageService.getImageUrl(vm.company, 'assets/images/companies/default.png');
   }
 };
