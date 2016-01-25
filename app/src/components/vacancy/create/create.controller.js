@@ -1,4 +1,4 @@
-module.exports = function VacancyCreateController($state, VacancyResource, 
+module.exports = function VacancyCreateController($state, VacancyResource,
   toastr, positions, vacancyTypes, companies) {
 
   var vm = this;
@@ -11,7 +11,22 @@ module.exports = function VacancyCreateController($state, VacancyResource,
   // Fetch data for vacancy types dropdown
   vm.vacancyTypes = vacancyTypes.data;
 
+  vm.company = {};
   vm.companies = companies;
+
+  vm.disabled = undefined;
+
+  vm.enable = function() {
+    vm.disabled = false;
+  };
+
+  vm.disable = function() {
+    vm.disabled = true;
+  };
+
+  vm.clear = function() {
+    vm.company.selected = undefined;
+  };
 
   function registerVacancy() {
     vm.vacancy.company_id = vm.company._id;

@@ -4,6 +4,8 @@ require('angular')
     'ngMessages',
     'toastr',
     'app.resource.vacancy',
-    'app.resource.company'
+    'app.resource.company',
+    'ngSanitize',
+    'ui.select'
   ])
     .controller('VacancyCreateController', require('./create.controller'));

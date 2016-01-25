@@ -13,6 +13,8 @@ require('cropper');
 require('angular-modal');
 require('ng-file-upload');
 require('restangular');
+require('angular-sanitize');
+require('ui-select');
 
 angular
   .module('app', [

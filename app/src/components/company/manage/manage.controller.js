@@ -1,4 +1,4 @@
-module.exports = function CompanyManageController(myself, CompanyResource, toastr, $state, config) {
+module.exports = function CompanyManageController(myself, CompanyResource, toastr, $state, config, imageService) {
   var vm = this;
 
   vm.getImageUrl = getImageUrl;
@@ -9,23 +9,18 @@ module.exports = function CompanyManageController(myself, CompanyResource, toast
   });
 
   function getImageUrl(company) {
-    var res = '';
+    /*var res = '';
     if(company && company.imageId) {
       res = config.api_url + '/api/v1/images/' + company.imageId;
     } else {
       res = 'assets/images/companies/default.png';
     }
-    return res;
+    return res;*/
+    return imageService.getImageUrl(company, 'assets/images/companies/default.png');
   }
 
   function getUserImageUrl(user) {
-    var res = '';
-    if(user && user.imageId) {
-      res = config.api_url + '/api/v1/images/' + user.imageId;
-    } else {
-      res = 'assets/images/user-default.png';
-    }
-    return res;
+    return imageService.getImageUrl(user, 'assets/images/user-default.png');
   }
 
 };
