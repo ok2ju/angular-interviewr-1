@@ -1,6 +1,33 @@
+<div class="filter">
+  <div class="filter-group">
+    <ui-select ng-model="vm.position.name" theme="selectize" ng-disabled="disabled">
+      <ui-select-match placeholder="Position">{{$select.selected.name}}</ui-select-match>
+      <ui-select-choices repeat="position.name as position in vm.positions | filter: $select.search">
+        <span ng-bind-html="position.name | highlight: $select.search"></span>
+      </ui-select-choices>
+    </ui-select>
+  </div>
+  <div class="filter-group">
+    <div class="filter-group-input">
+      <input ng-model="vm.vacancy.name" type="text" class="ui selection dropdown" placeholder="Title">
+    </div>
+  </div>
+  <div class="filter-group">
+    <ui-select ng-model="vm.country.name" theme="selectize" ng-disabled="disabled">
+      <ui-select-match placeholder="Country">{{$select.selected.name}}</ui-select-match>
+      <ui-select-choices repeat="country.name as country in vm.countries | filter: $select.search">
+        <span ng-bind-html="country.name | highlight: $select.search"></span>
+      </ui-select-choices>
+    </ui-select>
+  </div>
+  <div class="filter-group">
+    <a ng-click="vm.resetFilter()" class="btn btn-sm btn-default">Reset</a>
+  </div>
+</div>
+
 <div class="vacancy-row">
 
-  <div class="v-card" ng-repeat="vacancy in vm.vacancies">
+  <div class="v-card" ng-repeat="vacancy in vm.vacancies | filter:{title: vm.vacancy.name, location: vm.country.name, position: vm.position.name}">
     <div class="v-card-inner">
       <div class="card-content">
         <div class="card-content-head">

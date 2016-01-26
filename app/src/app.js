@@ -55,7 +55,6 @@ require('./common/services/image.service');
 
 // Filters
 require('./common/filters/date.filter');
-require('./common/filters/category.filter');
 
 require('./common/layout/landing');
 require('./common/layout/sidebar');

@@ -1,4 +1,4 @@
-module.exports = function UserProfileController(UserResource, config, $stateParams) {
+module.exports = function UserProfileController(UserResource, config, $stateParams, imageService) {
 
   var vm = this;
 
@@ -9,12 +9,6 @@ module.exports = function UserProfileController(UserResource, config, $statePara
   });
 
   function getImageUrl() {
-    var res = '';
-    if(vm.user && vm.user.imageId) {
-      res = config.api_url + '/api/v1/images/' + vm.user.imageId;
-    } else {
-      res = 'assets/images/user-default.png';
-    }
-    return res;
+    return imageService.getImageUrl(vm.user, 'assets/images/user-default.png');
   }
 };

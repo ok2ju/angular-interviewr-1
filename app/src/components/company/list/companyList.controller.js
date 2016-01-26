@@ -2,6 +2,7 @@ module.exports = function CompanyListController(CompanyResource, config, countri
   var vm = this;
   vm.getImageUrl = getImageUrl;
   vm.getUserImageUrl = getUserImageUrl;
+  vm.resetFilter = resetFilter;
 
   CompanyResource.listCompanies().then(function(companies) {
     vm.companies = companies;
@@ -12,7 +13,6 @@ module.exports = function CompanyListController(CompanyResource, config, countri
 
   // Fetch data for categories dropdown
   vm.categories = categories.data;
-  vm.categories.unshift({id:9999, name: 'All'});
 
   function getImageUrl(company) {
     return imageService.getImageUrl(company, 'assets/images/companies/default.png');
@@ -20,6 +20,13 @@ module.exports = function CompanyListController(CompanyResource, config, countri
 
   function getUserImageUrl(user) {
     return imageService.getImageUrl(user, 'assets/images/user-default.png');
+  }
+
+  // Reset filters query
+  function resetFilter() {
+    vm.category = {};
+    vm.company = {};
+    vm.country = {};
   }
 
 };
