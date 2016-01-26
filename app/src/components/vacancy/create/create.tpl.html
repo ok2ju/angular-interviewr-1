@@ -22,17 +22,29 @@
           <div class="grid-cell">
             <div class="inputAdd">
               <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
-              <drop-down class="form-dd" placeholder="Type" property="name" display="vm.vacancy.type" selected="vm.vacancyType" dropdown-attr="vm.vacancyTypes"></drop-down>
+              <ui-select ng-model="vm.vacancyType.selected" theme="selectize" ng-disabled="disabled">
+                <ui-select-match placeholder="Type">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices repeat="vacancy in vm.vacancyTypes | filter: $select.search">
+                  <span ng-bind-html="vacancy.name | highlight: $select.search"></span>
+                </ui-select-choices>
+              </ui-select>
+              <!-- <drop-down class="form-dd" placeholder="Type" property="name" display="vm.vacancy.type" selected="vm.vacancyType" dropdown-attr="vm.vacancyTypes"></drop-down> -->
             </div>
             <div class="inputAdd">
               <span class="inputAdd-item"><i class="sidebar-ico icon-pencil-1"></i></span>
-              <drop-down class="form-dd" placeholder="Position" property="name" display="vm.vacancy.position" selected="vm.position" dropdown-attr="vm.positions"></drop-down>
+              <ui-select ng-model="vm.position.selected" theme="selectize" ng-disabled="disabled">
+                <ui-select-match placeholder="Position">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices repeat="position in vm.positions | filter: $select.search">
+                  <span ng-bind-html="position.name | highlight: $select.search"></span>
+                </ui-select-choices>
+              </ui-select>
+              <!-- <drop-down class="form-dd" placeholder="Position" property="name" display="vm.vacancy.position" selected="vm.position" dropdown-attr="vm.positions"></drop-down> -->
             </div>
           </div>
 
         </div>
 
-        <div class="grid">
+        <!-- <div class="grid">
           <div class="grid-cell">
             <div class="inputAdd">
               <span class="inputAdd-item"><i class="sidebar-ico icon-pencil-1"></i></span>
@@ -44,20 +56,18 @@
                   dropdown-attr="vm.companies"/>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <div class="grid">
           <div class="grid-cell">
             <div class="inputAdd">
               <span class="inputAdd-item"><i class="sidebar-ico icon-pencil-1"></i></span>
-
               <ui-select ng-model="vm.company.selected" theme="selectize" ng-disabled="disabled">
-                <ui-select-match placeholder="Select or search a country in the list...">{{$select.selected.name}}</ui-select-match>
+                <ui-select-match placeholder="Select or search a company in the list...">{{$select.selected.name}}</ui-select-match>
                 <ui-select-choices repeat="company in vm.companies | filter: $select.search">
                   <span ng-bind-html="company.name | highlight: $select.search"></span>
                 </ui-select-choices>
               </ui-select>
-
             </div>
           </div>
         </div>
