@@ -47,7 +47,12 @@
           <div class="grid-cell">
             <div class="inputAdd">
               <span class="inputAdd-item"><i class="sidebar-ico icon-globe-1"></i></span>
-              <drop-down class="form-dd" placeholder="Country" property="name" selected="vm.country" display="vm.user.country" dropdown-attr="vm.countries"></drop-down>
+              <ui-select ng-model="vm.user.country" theme="selectize" ng-disabled="disabled">
+                <ui-select-match placeholder="Country">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices repeat="country.name as country in vm.countries | filter: $select.search">
+                  <span ng-bind-html="country.name | highlight: $select.search"></span>
+                </ui-select-choices>
+              </ui-select>
             </div>
             <div class="inputAdd">
               <span class="inputAdd-item"><i class="sidebar-ico icon-globe"></i></span>

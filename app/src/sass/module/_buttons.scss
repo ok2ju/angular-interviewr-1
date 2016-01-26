@@ -13,6 +13,7 @@ $btn-font-color: #fff;
 .btn {
   @include font-size(14px);
   border-radius: 2px;
+  cursor: pointer;
   display: inline-block;
   margin: 0 .29em;
   min-width: 5.14em;
@@ -23,6 +24,10 @@ $btn-font-color: #fff;
 
 .btn-lg {
   padding: 1.2em 1.5em;
+}
+
+.btn-sm {
+  padding: 5px 10px;
 }
 
 .btn-link {

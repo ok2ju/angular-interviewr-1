@@ -22,11 +22,21 @@
           <div class="grid-cell">
             <div class="inputAdd">
               <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
-              <drop-down class="form-dd" placeholder="Type" property="name" display="vm.vacancy.type" selected="vm.vacancyType" dropdown-attr="vm.vacancyTypes"></drop-down>
+              <ui-select ng-model="vm.vacancy.type" theme="selectize" ng-disabled="disabled">
+                <ui-select-match placeholder="Type">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices repeat="vacancy.name as vacancy in vm.vacancyTypes | filter: $select.search">
+                  <span ng-bind-html="vacancy.name | highlight: $select.search"></span>
+                </ui-select-choices>
+              </ui-select>
             </div>
             <div class="inputAdd">
               <span class="inputAdd-item"><i class="sidebar-ico icon-pencil-1"></i></span>
-              <drop-down class="form-dd" placeholder="Position" property="name" display="vm.vacancy.position" selected="vm.position" dropdown-attr="vm.positions"></drop-down>
+              <ui-select ng-model="vm.vacancy.position" theme="selectize" ng-disabled="disabled">
+                <ui-select-match placeholder="Position">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices repeat="position.name as position in vm.positions | filter: $select.search">
+                  <span ng-bind-html="position.name | highlight: $select.search"></span>
+                </ui-select-choices>
+              </ui-select>
             </div>
           </div>
 
@@ -53,7 +63,7 @@
 
     <div class="btn-col">
       <button type="submit" class="form-row-group__submit-btn">Update</button>
-      <a ng-click="vm.deleteVacancy()">Delete</a>
+      <a ng-click="vm.deleteVacancy()" class="btn btn-sm btn-danger">Delete</a>
     </div>
 
   </form>

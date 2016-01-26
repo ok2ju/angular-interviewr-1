@@ -22,4 +22,5 @@ module.exports = function VacancyCreateController($state, VacancyResource,
         toastr.error('Error while creating vacancy.', 'Error!');
     });
   }
+
 };
