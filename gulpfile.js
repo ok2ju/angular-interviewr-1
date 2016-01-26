@@ -32,7 +32,7 @@ gulp.task('copy-static', function() {
     .pipe(gulp.dest(ASSETS_TARGET));
 });
 
-gulp.task('sass', function() {
+gulp.task('sass', ['copy-static'], function() {
     return gulp.src(SASS_FILES)
         .pipe(sourcemaps.init())
         .pipe(sass())
@@ -75,7 +75,7 @@ gulp.task('browserify-min', ['ngmin'], function() {
   .pipe(gulp.dest('dist'));
 });
 
-gulp.task('serve', ['browserify', 'sass', 'copy-static', 'html'], function() {
+gulp.task('serve', ['browserify', 'sass', 'html'], function() {
   const defaultFile = 'dist/index.html';
   browserSync.init({
     server: {
