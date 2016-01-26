@@ -14,7 +14,7 @@ require('angular-modal');
 require('ng-file-upload');
 require('restangular');
 require('angular-sanitize');
-require('ui-select');
+require('ui-select/dist/select.js');
 
 angular
   .module('app', [
