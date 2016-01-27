@@ -1,4 +1,4 @@
-var $ = require('jquery');
+import $ from 'jquery';
 
 var cropKeys = [
   'width',
@@ -36,10 +36,6 @@ module.exports = function ModalController($modalInstance, $timeout, Upload, conf
     }).then(function(resp) {
       var data = resp.data;
       if(data._id) {
-        /*companyResource.updateCompany(company._id, {imageId: data._id}).then(function() {
-         company.imageId = data._id;
-         vm.cancel();
-         });*/
         company.imageId = data._id;
         vm.cancel();
       }

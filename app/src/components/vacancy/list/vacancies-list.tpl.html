@@ -39,10 +39,14 @@
         <div class="content__description"></div>
       </div>
       <div class="extra">
-        <div class="pos">{{vacancy.position}}</div>
-        <div class="owner">
-          <img class="ui avatar image" src="http://semantic-ui.com/images/avatar/small/matt.jpg">
-          Potato
+        <div ng-class="{Junior: 'junior', Middle: 'middle', Senior: 'senior'}[vacancy.position]" class="pos">{{vacancy.position}}</div>
+        <div ng-switch on="vacancy.type" class="owner">
+          <img ng-switch-when="Developer" class="ui avatar image" src="dist/assets/images/icons/vacancies/coder.png">
+          <img ng-switch-when="Analythyc" class="ui avatar image" src="dist/assets/images/icons/vacancies/analythic.png">
+          <img ng-switch-when="Human Resource" class="ui avatar image" src="dist/assets/images/icons/vacancies/hr.png">
+          <img ng-switch-when="Sales Manager" class="ui avatar image" src="dist/assets/images/icons/vacancies/sales.png">
+          <img ng-switch-when="Project Manager" class="ui avatar image" src="dist/assets/images/icons/vacancies/pm.png">
+          {{vacancy.type}}
         </div>
       </div>
       <a href="#" class="follow" ng-click="vm.subscribe(vacancy)">

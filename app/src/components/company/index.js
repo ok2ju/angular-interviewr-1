@@ -1,14 +1,15 @@
+import angular from 'angular';
 import {ROOT_DIR} from '../../constants';
 
-require('angular')
+angular
   .module('app.company', [
-      'app.company.manage',
-      'app.company.create',
-      'app.company.list',
-      'app.company.profile',
-      'app.company.edit'
-    ])
-    .config(companyConfig);
+    'app.company.manage',
+    'app.company.create',
+    'app.company.list',
+    'app.company.profile',
+    'app.company.edit'
+  ])
+  .config(companyConfig);
 
 require('./manage');
 require('./create');

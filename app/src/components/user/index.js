@@ -1,6 +1,7 @@
+import angular from 'angular';
 import {ROOT_DIR} from '../../constants';
 
-require('angular')
+angular
   .module('app.user', [
       'app.user.login',
       'app.user.signup',

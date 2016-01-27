@@ -1,5 +1,7 @@
-require('angular')
+import angular from 'angular';
+
+angular
   .module('app.vacancy.list', [
-    'app.filters'
-  ])
+      'app.filters'
+    ])
     .controller('VacancyListController', require('./vacancyList.controller'));

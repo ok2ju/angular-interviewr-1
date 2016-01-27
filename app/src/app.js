@@ -1,6 +1,6 @@
-var $ = require('jquery');
+import $ from 'jquery';
 global._ = require('lodash');
-var angular = require('angular');
+import angular from 'angular';
 require('angular-ui-router');
 require('angular-resource');
 require('angular-messages');

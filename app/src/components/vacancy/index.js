@@ -1,6 +1,7 @@
+import angular from 'angular';
 import {ROOT_DIR} from '../../constants';
 
-require('angular')
+angular
   .module('app.vacancy', [
       'app.vacancy.create',
       'app.vacancy.manage',

@@ -1,9 +1,9 @@
 import {ROOT_DIR} from '../../../constants';
-var moment = require('moment');
-var $ = require('jquery');
+import moment from 'moment';
+import $ from 'jquery';
 
 module.exports = function CompanyCreateController(companyResource, $scope,
-                                                  toastr, $state, $uibModal, config, countries, categories, imageService) {
+                            toastr, $state, $uibModal, config, countries, categories, imageService) {
   var vm = this;
   vm.company = {};
 

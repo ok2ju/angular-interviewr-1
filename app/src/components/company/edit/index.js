@@ -1,4 +1,6 @@
-require('angular')
+import angular from 'angular';
+
+angular
   .module('app.company.edit', [
     'toastr',
     'ngTagsInput',

@@ -22,4 +22,5 @@ module.exports = function VacancyListController(vacancyResource, positions) {
     vm.position = {};
     vm.vacancy = {};
   }
+
 };

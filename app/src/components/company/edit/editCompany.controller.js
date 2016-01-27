@@ -1,5 +1,5 @@
 import {ROOT_DIR} from '../../../constants';
-var moment = require('moment');
+import moment from 'moment';
 
 module.exports = function(companyResource, $scope,
                           toastr, $state, $uibModal, config, $stateParams, countries, categories) {

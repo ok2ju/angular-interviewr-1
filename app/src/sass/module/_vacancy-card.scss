@@ -107,6 +107,24 @@
       top: 6px;
       left: 0;
     }
+
+    &.junior {
+      &:before {
+        background: #5bc0de;
+      }
+    }
+
+    &.middle {
+      &:before {
+        background: #f0ad4e;
+      }
+    }
+
+    &.senior {
+      &:before {
+        background: #d9534f;
+      }
+    }
   }
 
   .owner {

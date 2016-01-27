@@ -59,17 +59,12 @@ const candidates = [
     "avatar": "dist/assets/images/users/12.png",
     "posColor": "label-warning"
   }
-]
+];
 
 module.exports = function($http) {
-    return {
-      success(fn) {
-        fn(candidates);
-      }
+  return {
+    success(fn) {
+      fn(candidates);
     }
-    /*return $http.get('./api/candidates.json').success(function(data) {
-        return data;
-    }).error(function() {
-        return err;
-    });*/
+  };
 };
