@@ -54,7 +54,7 @@ function vacancyConfig($stateProvider) {
         pageTitle: 'Create Vacancy'
       },
       resolve: {
-        companyResource: 'CompanyResource',
+        companyResource: 'companyResource',
 
         companies: function(myself, companyResource) {
           return companyResource.listCompanies({owner: myself._id});

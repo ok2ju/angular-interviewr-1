@@ -3,7 +3,7 @@ import {ROOT_DIR} from '../../../constants';
 var $ = require('jquery');
 
 module.exports = function SettingsController(toastr, $state, $http, $uibModal,
-                      config, Upload, UserResource, countries, myself, imageService) {
+                      config, Upload, userResource, countries, myself, imageService) {
 
   var vm = this;
 

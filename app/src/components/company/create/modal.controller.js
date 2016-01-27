@@ -9,7 +9,7 @@ var cropKeys = [
   'scaleY'
 ];
 
-module.exports = function ModalController($modalInstance, $timeout, Upload, config, CompanyResource, file, company) {
+module.exports = function ModalController($modalInstance, $timeout, Upload, config, companyResource, file, company) {
   var vm = this;
 
   vm.file = file;
@@ -36,7 +36,7 @@ module.exports = function ModalController($modalInstance, $timeout, Upload, conf
     }).then(function(resp) {
       var data = resp.data;
       if(data._id) {
-        /*CompanyResource.updateCompany(company._id, {imageId: data._id}).then(function() {
+        /*companyResource.updateCompany(company._id, {imageId: data._id}).then(function() {
          company.imageId = data._id;
          vm.cancel();
          });*/

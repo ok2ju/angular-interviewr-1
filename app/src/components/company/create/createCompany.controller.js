@@ -2,7 +2,7 @@ import {ROOT_DIR} from '../../../constants';
 var moment = require('moment');
 var $ = require('jquery');
 
-module.exports = function CompanyCreateController(CompanyResource, $scope,
+module.exports = function CompanyCreateController(companyResource, $scope,
                                                   toastr, $state, $uibModal, config, countries, categories, imageService) {
   var vm = this;
   vm.company = {};
@@ -20,7 +20,7 @@ module.exports = function CompanyCreateController(CompanyResource, $scope,
   });
 
   function registerCompany() {
-    CompanyResource.postCompany(vm.company).then(function() {
+    companyResource.postCompany(vm.company).then(function() {
       toastr.success('Company created.', 'Yay!');
       $state.go('app.companies');
       console.log('Company Saved');

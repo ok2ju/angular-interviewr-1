@@ -1,10 +1,10 @@
-module.exports = function UserProfileController(UserResource, config, $stateParams, imageService) {
+module.exports = function UserProfileController(userResource, config, $stateParams, imageService) {
 
   var vm = this;
 
   vm.getImageUrl = getImageUrl;
 
-  UserResource.oneUser($stateParams.id).then(function(user) {
+  userResource.oneUser($stateParams.id).then(function(user) {
     vm.user = user;
   });
 

@@ -1,7 +1,7 @@
 import {ROOT_DIR} from '../../../constants';
 var moment = require('moment');
 
-module.exports = function(CompanyResource, $scope,
+module.exports = function(companyResource, $scope,
                           toastr, $state, $uibModal, config, $stateParams, countries, categories) {
   var vm = this;
 
@@ -16,7 +16,7 @@ module.exports = function(CompanyResource, $scope,
   // Fetching data for categories dropdown
   vm.categories = categories.data;
 
-  CompanyResource.oneCompany($stateParams.id).then(function(company) {
+  companyResource.oneCompany($stateParams.id).then(function(company) {
     vm.company = company;
   });
 
@@ -68,7 +68,7 @@ module.exports = function(CompanyResource, $scope,
   }
 
   function deleteCompany() {
-    CompanyResource.removeCompany(vm.company._id).then(function() {
+    companyResource.removeCompany(vm.company._id).then(function() {
       $state.go('app.manageCompany');
       toastr.success('Company was successfully deleted.', 'Yay!');
     }, function(err) {

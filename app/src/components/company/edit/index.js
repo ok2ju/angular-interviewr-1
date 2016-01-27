@@ -1,6 +1,5 @@
 require('angular')
   .module('app.company.edit', [
-    'app.resource.company',
     'toastr',
     'ngTagsInput',
     'ui.bootstrap',

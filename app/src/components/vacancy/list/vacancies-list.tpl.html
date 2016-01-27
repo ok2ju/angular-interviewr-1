@@ -13,21 +13,13 @@
     </div>
   </div>
   <div class="filter-group">
-    <ui-select ng-model="vm.country.name" theme="selectize" ng-disabled="disabled">
-      <ui-select-match placeholder="Country">{{$select.selected.name}}</ui-select-match>
-      <ui-select-choices repeat="country.name as country in vm.countries | filter: $select.search">
-        <span ng-bind-html="country.name | highlight: $select.search"></span>
-      </ui-select-choices>
-    </ui-select>
-  </div>
-  <div class="filter-group">
     <a ng-click="vm.resetFilter()" class="btn btn-sm btn-default">Reset</a>
   </div>
 </div>
 
 <div class="vacancy-row">
 
-  <div class="v-card" ng-repeat="vacancy in vm.vacancies | filter:{title: vm.vacancy.name, location: vm.country.name, position: vm.position.name}">
+  <div class="v-card" ng-repeat="vacancy in vm.vacancies | filter:{title: vm.vacancy.name, position: vm.position.name}">
     <div class="v-card-inner">
       <div class="card-content">
         <div class="card-content-head">

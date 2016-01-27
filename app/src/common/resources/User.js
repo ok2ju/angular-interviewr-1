@@ -1,8 +1,4 @@
-require('angular')
-  .module('app.resource.user', ['restangular'])
-    .factory('UserResource', userResource);
-
-function userResource(Restangular) {
+module.exports = function UserResource(Restangular) {
 
   var service = {
     login: login,
@@ -38,4 +34,4 @@ function userResource(Restangular) {
   }
 
   return service;
-}
+};

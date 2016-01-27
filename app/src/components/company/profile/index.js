@@ -1,6 +1,3 @@
 require('angular')
-  .module('app.company.profile', [
-      'app.resource.company',
-      'app.resource.user'
-    ])
+  .module('app.company.profile', [])
     .controller('CompanyProfileController', require('./companyProfile.controller'));

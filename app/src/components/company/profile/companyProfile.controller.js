@@ -1,8 +1,8 @@
-module.exports = function CompanyProfileController(CompanyResource, UserResource, $stateParams, config, imageService) {
+module.exports = function CompanyProfileController(companyResource, $stateParams, config, imageService) {
   var vm = this;
   vm.getImageUrl = getImageUrl;
 
-  CompanyResource.oneCompany($stateParams.id).then(function(company) {
+  companyResource.oneCompany($stateParams.id).then(function(company) {
     vm.company = company;
     vm.owner = company.owner;
   });

@@ -1,8 +1,4 @@
-require('angular')
-  .module('app.resource.company', ['restangular'])
-    .factory('CompanyResource', companyResource);
-
-function companyResource(Restangular) {
+module.exports = function CompanyResource(Restangular) {
 
   var service = {
     listCompanies: listCompanies,
@@ -33,4 +29,4 @@ function companyResource(Restangular) {
   }
 
   return service;
-}
+};

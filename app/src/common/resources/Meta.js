@@ -1,8 +1,4 @@
-require('angular')
-  .module('app.resource.meta', ['restangular'])
-    .factory('metaResource', metaResource);
-
-function metaResource(Restangular) {
+module.exports = function MetaResource(Restangular) {
 
   var service = {
     getCountries: getCountries,
@@ -28,4 +24,4 @@ function metaResource(Restangular) {
   }
 
   return service;
-}
+};

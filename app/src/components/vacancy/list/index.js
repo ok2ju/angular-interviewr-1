@@ -1,6 +1,5 @@
 require('angular')
   .module('app.vacancy.list', [
-    'app.resource.vacancy',
-    'app.filter.date'
+    'app.filters'
   ])
     .controller('VacancyListController', require('./vacancyList.controller'));

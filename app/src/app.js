@@ -22,17 +22,19 @@ angular
     'angular-jwt',
     'angular-storage',
     'angular-loading-bar',
+    'ngSanitize',
+    'ui.select',
 
     /* Resources */
-    'app.resource.meta',
-    'app.resource.user',
+    'app.resources',
+
+    /* Services */
     'app.services',
 
     /* Layout areas */
     'app.header',
     'app.sidebar',
     'app.landing',
-    'app.dropdown',
 
     /* Feature areas */
     'app.user',
@@ -47,19 +49,18 @@ angular
   });
 
 // Resources
-require('./common/services/user.service');
-require('./common/services/company.service');
-require('./common/services/vacancy.service');
-require('./common/services/meta.service');
-require('./common/services/image.service');
+require('./common/resources');
+
+// Services
+require('./common/services');
 
 // Filters
-require('./common/filters/date.filter');
+require('./common/filters');
 
 require('./common/layout/landing');
 require('./common/layout/sidebar');
 require('./common/layout/header');
-require('./common/layout/dropdown');
+
 // Features
 require('./components/user');
 require('./components/company');

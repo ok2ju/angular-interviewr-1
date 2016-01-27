@@ -1,3 +1,3 @@
-module.exports = function VideoRoomCtrl(VacancyResource) {
+module.exports = function VideoRoomCtrl(vacancyResource) {
   var vm = this;
 };

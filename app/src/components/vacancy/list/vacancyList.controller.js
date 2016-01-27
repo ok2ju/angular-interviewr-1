@@ -1,21 +1,18 @@
-module.exports = function VacancyListController(VacancyResource, countries, positions) {
+module.exports = function VacancyListController(vacancyResource, positions) {
   var vm = this;
 
   vm.subscribe = subscribe;
   vm.resetFilter = resetFilter;
 
-  // Fetch data for countries dropdown
-  vm.countries = countries.data;
-
   // Fetch data for positions dropdown
   vm.positions = positions.data;
 
-  VacancyResource.listVacancies().then(function(vacancies) {
+  vacancyResource.listVacancies().then(function(vacancies) {
     vm.vacancies = vacancies;
   });
 
   function subscribe(vacancy) {
-    VacancyResource.subscribe(vacancy).then(function() {
+    vacancyResource.subscribe(vacancy).then(function() {
       console.log('success subscruption!');
     });
   }
@@ -24,6 +21,5 @@ module.exports = function VacancyListController(VacancyResource, countries, posi
   function resetFilter() {
     vm.position = {};
     vm.vacancy = {};
-    vm.country = {};
   }
 };

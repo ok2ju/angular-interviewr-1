@@ -1,10 +1,10 @@
-module.exports = function CompanyListController(CompanyResource, config, countries, categories, imageService) {
+module.exports = function CompanyListController(companyResource, config, countries, categories, imageService) {
   var vm = this;
   vm.getImageUrl = getImageUrl;
   vm.getUserImageUrl = getUserImageUrl;
   vm.resetFilter = resetFilter;
 
-  CompanyResource.listCompanies().then(function(companies) {
+  companyResource.listCompanies().then(function(companies) {
     vm.companies = companies;
   });
 
