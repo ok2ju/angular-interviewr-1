@@ -1,0 +1,9 @@
+<h2>{{vm.vacancy.title}}</h2>
+<p>{{vm.vacancy.type}}</p>
+<p>{{vm.vacancy.position}}</p>
+<p>{{vm.vacancy.location}}</p>
+<p>{{vm.vacancy.description}}</p>
+<p>{{vm.vacancy.creation_date}}</p>
+<ul>
+  <li ng-repeat="skill in vm.vacancy.required_skills">{{skill.text}}</li>
+</ul>

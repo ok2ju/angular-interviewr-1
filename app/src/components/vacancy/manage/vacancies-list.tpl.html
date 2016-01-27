@@ -4,7 +4,7 @@
     <div class="v-card-inner">
       <div class="card-content">
         <div class="card-content-head">
-          <h2 class="card-content__header">{{vacancy.title}}</h2>
+          <a ui-sref="app.vacanciesProfile({ id: vacancy._id })" class="card-content__header">{{vacancy.title}}</a>
           <div class="v-edit">
             <i class="sidebar-ico icon-pencil" ui-sref="app.vacanciesEdit({id: vacancy._id})"></i>
           </div>

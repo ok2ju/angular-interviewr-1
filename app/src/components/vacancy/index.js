@@ -6,7 +6,8 @@ require('angular')
       'app.vacancy.manage',
       'app.vacancy.candidates',
       'app.vacancy.list',
-      'app.vacancy.edit'
+      'app.vacancy.edit',
+      'app.vacancy.profile'
     ])
     .config(vacancyConfig);
 
@@ -15,6 +16,7 @@ require('./manage');
 require('./candidates');
 require('./list');
 require('./edit');
+require('./profile');
 
 function vacancyConfig($stateProvider) {
   $stateProvider
