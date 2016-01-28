@@ -1,0 +1,58 @@
+<div class="filter">
+  <div class="filter-group">
+    <ui-select ng-model="vm.position.name" theme="selectize" ng-disabled="disabled">
+      <ui-select-match placeholder="Position">{{$select.selected.name}}</ui-select-match>
+      <ui-select-choices repeat="position.name as position in vm.positions | filter: $select.search">
+        <span ng-bind-html="position.name | highlight: $select.search"></span>
+      </ui-select-choices>
+    </ui-select>
+  </div>
+  <div class="filter-group">
+    <div class="filter-group-input">
+      <input ng-model="vm.vacancy.name" type="text" class="ui selection dropdown" placeholder="Title">
+    </div>
+  </div>
+  <div class="filter-group">
+    <a ng-click="vm.resetFilter()" class="btn btn-sm btn-default">Reset</a>
+  </div>
+</div>
+
+<div class="vacancy-row">
+
+  <div class="v-card" ng-repeat="vacancy in vm.vacancies | filter:{title: vm.vacancy.name, position: vm.position.name}">
+    <div class="v-card-inner">
+      <div class="card-content">
+        <div class="card-content-head">
+          <a ui-sref="app.candidates({id: vacancy._id})" class="card-content__header">{{vacancy.title}}</a>
+          <!-- <div class="v-edit">
+            <i class="sidebar-ico icon-pencil"></i>
+            <i class="sidebar-ico icon-cancel"></i>
+          </div> -->
+        </div>
+        <div class="card-content__meta">
+          <span class="comp">{{vacancy.company_id.name}} at {{vacancy.location}}</span>
+          <span class="time">{{vacancy.creation_date | moment: 'DD.MM.YYYY'}}</span>
+        </div>
+        <ul class="n-skills">
+          <li class="n-skills__item" ng-repeat="skill in vacancy.required_skills"><span>{{skill.text}}</span></li>
+        </ul>
+        <div class="content__description"></div>
+      </div>
+      <div class="extra">
+        <div ng-class="{Junior: 'junior', Middle: 'middle', Senior: 'senior'}[vacancy.position]" class="pos">{{vacancy.position}}</div>
+        <div ng-switch on="vacancy.type" class="owner">
+          <img ng-switch-when="Developer" class="ui avatar image" src="dist/assets/images/icons/vacancies/coder.png">
+          <img ng-switch-when="Analythyc" class="ui avatar image" src="dist/assets/images/icons/vacancies/analythic.png">
+          <img ng-switch-when="Human Resource" class="ui avatar image" src="dist/assets/images/icons/vacancies/hr.png">
+          <img ng-switch-when="Sales Manager" class="ui avatar image" src="dist/assets/images/icons/vacancies/sales.png">
+          <img ng-switch-when="Project Manager" class="ui avatar image" src="dist/assets/images/icons/vacancies/pm.png">
+          {{vacancy.type}}
+        </div>
+      </div>
+      <a href="#" class="follow" ng-click="vm.subscribe(vacancy)">
+        <span>Follow</span>
+      </a>
+    </div>
+  </div>
+
+</div>

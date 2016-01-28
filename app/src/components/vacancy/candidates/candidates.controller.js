@@ -1,9 +1,17 @@
-module.exports = function VacancyCandidatesController(CandidatesService, $state) {
-    var vm = this;
+module.exports = function VacancyCandidatesController(vacancyResource, CandidatesService, imageService, $state, $stateParams) {
+  var vm = this;
 
-    $state.go('app.candidates.grid');
+  vm.getUserImageUrl = getUserImageUrl;
 
-    CandidatesService.success(function(data) {
-        vm.candidates = data;
-    });
+  $state.go('app.candidates.grid');
+
+  vacancyResource.oneVacancy($stateParams.id).then(vacancy => vm.vacancy = vacancy);
+
+  /*CandidatesService.success(function(data) {
+      vm.candidates = data;
+  });*/
+
+  function getUserImageUrl(user) {
+    return imageService.getImageUrl(user, 'assets/images/user-default.png');
+  }
 };

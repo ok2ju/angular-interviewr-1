@@ -30,7 +30,7 @@ module.exports = function LayoutSidebarController() {
   {
     name: 'Candidates',
     icon: 'icon-users',
-    state: 'app.candidates'
+    state: 'app.candidatesDashboard'
   },
   {
     name: 'Vacancy',

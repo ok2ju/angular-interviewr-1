@@ -21,8 +21,18 @@ require('./profile');
 
 function vacancyConfig($stateProvider) {
   $stateProvider
+    .state('app.candidatesDashboard', {
+      url: '/vacancies',
+      templateUrl: `${ROOT_DIR}/src/components/vacancy/candidates/dashboard.tpl.html`,
+      controller: 'CandidatesDashboardController',
+      controllerAs: 'vm',
+      data: {
+        requiresLogin: true,
+        pageTitle: 'Choose vacancy'
+      }
+    })
     .state('app.candidates', {
-      url: '/candidates',
+      url: '/vacancies/:id/candidates',
       templateUrl: `${ROOT_DIR}/src/components/vacancy/candidates/candidates.tpl.html`,
       controller: 'CandidatesController',
       controllerAs: 'vm',

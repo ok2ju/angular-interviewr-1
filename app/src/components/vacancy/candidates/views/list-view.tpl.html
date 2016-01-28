@@ -1,8 +1,8 @@
 <ul class="user-cards-list">
-    <li class="user-card-item" ng-repeat="candidate in vm.candidates">
+    <li class="user-card-item" ng-repeat="candidate in vm.vacancy.subscribers">
         <div class="u-main-info">
             <a href="#" class="u-main-info-link">
-                <img ng-src="{{candidate.avatar}}" alt="candidate" class="user-card-item__photo">
+                <img ng-src="{{vm.getUserImageUrl(candidate)}}" alt="candidate" class="user-card-item__photo">
                 <h1 class="user-card-item__name">{{candidate.name}} {{candidate.surname}}</h1>
             </a>
             <div class="u-main-info-pos">
