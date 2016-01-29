@@ -58,8 +58,6 @@ $grid-controls-hover-color: #59728e;
 
 .c-main-info__inner {
   background-color: #fff;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
-  border-radius: 4px;
   padding: 20px;
 }
 
@@ -67,7 +65,7 @@ $grid-controls-hover-color: #59728e;
   @include clearfix;
 }
 
-.c-profile-photo {
+/* .c-profile-photo {
   @include make-col(2);
   box-shadow: 0 1px 1px rgba(0,0,0,0.15),-1px 0 0 rgba(0,0,0,0.03),1px 0 0 rgba(0,0,0,0.03),0 1px 0 rgba(0,0,0,0.12);
   border-radius: 4px;
@@ -76,11 +74,11 @@ $grid-controls-hover-color: #59728e;
   img {
     border-radius: 4px;
   }
-}
+} */
 
-.c-profile-info {
+/* .c-profile-info {
   @include make-col(10);
-}
+} */
 
 .c-profile-info__header-inner {
   @include clearfix;
@@ -96,12 +94,7 @@ $grid-controls-hover-color: #59728e;
   float: left;
 }
 
-.c-profile-info__sm {
-  @include font-size(12px);
-  color: $secondary-font-color;
-}
-
-.c-profile-info__spec {
+/* .c-profile-info__spec {
   @include font-size(13px);
   margin-top: 15px;
 
@@ -116,7 +109,7 @@ $grid-controls-hover-color: #59728e;
       }
     }
   }
-}
+} */
 
 .c-profile-body {
   margin-top: 25px;
@@ -155,8 +148,6 @@ $grid-controls-hover-color: #59728e;
 .c-sidebar-info__inner {
   @include clearfix;
   background: darken($body-color, 3%);
-  padding: 20px;
-  border-radius: 4px;
 }
 
 .c-sidebar-info__head {
@@ -218,4 +209,114 @@ $grid-controls-hover-color: #59728e;
   position: absolute;
   top: -16px;
   color: #d9534f;
+}
+
+
+// New Company Profile Styles
+
+.c-profile-header {
+  position: relative;
+  margin-left: -30px;
+  margin-right: -30px;
+  margin-top: -30px;
+  background: url("../images/companies/google-office.jpg") no-repeat;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  padding-top: 250px;
+}
+
+.c-profile-header__inner {
+  @include clearfix;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.c-profile-photo {
+  width: 150px;
+  float: left;
+  margin-right: 20px;
+
+  img {
+    border-radius: 50%;;
+  }
+}
+
+.c-profile-main-info {
+  overflow: hidden;
+}
+
+.c-profile-main-info__header {
+  @include font-size(26px);
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.c-profile-info__sm {
+  @include font-size(14px);
+  color: $secondary-font-color;
+  font-weight: 600;
+}
+
+.c-profile-add-info {
+  position: relative;
+  margin-left: -30px;
+  margin-right: -30px;
+  background: #fff;
+  padding: 20px 0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+}
+
+.c-profile-add-info__inner {
+  width: 80%;
+  margin: 0 auto;
+
+}
+
+.c-profile-about {
+  @include make-col(8);
+
+  p {
+    @include font-size(14px);
+    color: #999;
+  }
+}
+
+.c-profile-addition {
+  @include make-col(4);
+}
+
+.c-profile-addition__list {
+  li {
+    @include font-size(14px);
+    color: #999;
+
+    strong {
+      color: #000;
+    }
+  }
+}
+
+.c-profile-info__spec {
+  @include font-size(14px);
+  color: #fff;
+  margin-top: 15px;
+
+  strong {
+    font-weight: 600;
+  }
+
+  span {
+
+    &:after {
+      content: ', ';
+    }
+
+    &:last-child {
+      &:after {
+        content: '';
+      }
+    }
+  }
 }

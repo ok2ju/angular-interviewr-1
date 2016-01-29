@@ -9,7 +9,19 @@
 
 .filter-group {
   float: left;
+  width: 180px;
   margin-right: 20px;
+
+  .selectize-input,
+  .ui.selection.dropdown {
+    padding: 5px 10px !important;
+  }
+
+  .selectize-input {
+    border-left: 1px solid rgba(34, 36, 38, 0.15) !important;
+    border-top-left-radius: 3px !important;
+    border-bottom-left-radius: 3px !important;
+  }
 }
 
 .filter-group__label {
@@ -23,9 +35,9 @@
   display: inline-block;
 
   input {
-    height: 35px;
+    height: 30px;
     cursor: text !important;
-    line-height: 35px !important;
+    line-height: 30px !important;
     padding: 0 10px;
     color: #666;
   }
