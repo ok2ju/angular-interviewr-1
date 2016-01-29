@@ -300,6 +300,7 @@ $grid-controls-hover-color: #59728e;
 
 .c-profile-info__spec {
   @include font-size(14px);
+  display: inline-block;
   color: #fff;
   margin-top: 15px;
 
