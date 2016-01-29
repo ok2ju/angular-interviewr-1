@@ -22,7 +22,7 @@ require('./profile');
 function vacancyConfig($stateProvider) {
   $stateProvider
     .state('app.candidatesDashboard', {
-      url: '/vacancies',
+      url: '/dashboard/vacancies',
       templateUrl: `${ROOT_DIR}/src/components/vacancy/candidates/dashboard.tpl.html`,
       controller: 'CandidatesDashboardController',
       controllerAs: 'vm',
