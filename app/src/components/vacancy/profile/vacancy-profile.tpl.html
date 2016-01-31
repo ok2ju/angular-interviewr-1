@@ -2,12 +2,38 @@
   <h1 class="content-header__name c-header">Vacancy Details</h1>
 </header>
 
-<h2>{{vm.vacancy.title}}</h2>
-<p>{{vm.vacancy.type}}</p>
-<p>{{vm.vacancy.position}}</p>
-<p>{{vm.vacancy.location}}</p>
-<p>{{vm.vacancy.description}}</p>
-<p>{{vm.vacancy.creation_date}}</p>
-<ul>
-  <li ng-repeat="skill in vm.vacancy.required_skills">{{skill.text}}</li>
-</ul>
+<div class="vacancyBox">
+
+  <div class="vacancyBox__header">
+    <h2>{{vm.vacancy.title}}</h2>
+  </div>
+
+  <div class="vacancyBox__body">
+    <div class="vacancyInfo-group">
+      <label>About</label>
+      <p>{{vm.vacancy.description}}</p>
+    </div>
+
+    <div class="vacancyInfo-secondary">
+      <span class="v-si-text">{{vm.vacancy.type}}</span>
+      <span ng-class="{Junior: 'junior', Middle: 'middle', Senior: 'senior'}[vm.vacancy.position]" class="v-si-text v-p-pos">{{vm.vacancy.position}}</span>
+      <span class="v-si-text">{{vm.vacancy.location}}</span>
+      <span class="v-si-text pull-right">{{vm.vacancy.creation_date | moment: 'DD MMM, YY'}}</span>
+    </div>
+
+    <div class="vacancyInfo-group v-skills-group">
+      <label>Required skills</label>
+      <ul class="n-skills">
+        <li class="n-skills__item" ng-repeat="skill in vm.vacancy.required_skills">
+          <span>{{skill.text}}</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="vacancyInfo-btns">
+      <a ng-click="vm.subscribe(vm.vacancy)" class="btn btn-sm btn-info">Follow vacancy</a>
+    </div>
+
+  </div>
+
+</div>
