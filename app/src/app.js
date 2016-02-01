@@ -40,7 +40,8 @@ angular
     'app.user',
     'app.company',
     'app.vacancy',
-    'app.videoroom'
+    'app.videoroom',
+    'app.calendar'
   ])
   .config(require('./app.config'))
   .run(run)
@@ -66,6 +67,7 @@ require('./components/user');
 require('./components/company');
 require('./components/vacancy');
 require('./components/videoroom');
+require('./components/calendar');
 
 function run($rootScope, $state, store, jwtHelper) {
   $rootScope.$on('$stateChangeStart', function(e, to) {

@@ -14,7 +14,7 @@ module.exports = function LayoutSidebarController() {
   {
     name: 'Calendar',
     icon: 'icon-calendar',
-    state: 'app.test'
+    state: 'app.calendar'
   },
   {
     name: 'Companies',
