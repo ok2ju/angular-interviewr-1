@@ -7,7 +7,8 @@ module.exports = function VacancyResource(Restangular) {
     update: update,
     remove: remove,
     subscribe: subscribe,
-    unsubscribe: unsubscribe
+    unsubscribe: unsubscribe,
+    subscriptions: subscriptions
   };
 
   function listVacancies(query) {
@@ -28,6 +29,10 @@ module.exports = function VacancyResource(Restangular) {
 
   function remove(id) {
     return Restangular.one('vacancies', id).remove();
+  }
+
+  function subscriptions(id) {
+    return Restangular.one('vacancies', id).all('subscriptions').getList();
   }
 
   function subscribe(vacancy) {

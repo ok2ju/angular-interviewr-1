@@ -1,24 +1,24 @@
 <ul class="user-cards">
-    <li class="ui-card" ng-repeat="candidate in vm.vacancy.subscribers">
+    <li class="ui-card" ng-repeat="subscriber in vm.subscriptions">
         <div class="ui-card-inner">
             <div class="card-image">
                 <a href="#" class="check-profile-link">
-                    <img ng-src="{{vm.getUserImageUrl(candidate)}}">
+                    <img ng-src="{{vm.getUserImageUrl(subscriber.candidate)}}">
                 </a>
                 <div class="card-overlay">
                     <div class="btns-wrap">
                       <a href="#" class="card-overlay-link">Set Date</a>
-                      <a ui-sref="app.userProfile({id: candidate._id})" class="card-overlay-link">More</a>
+                      <a ui-sref="app.userProfile({id: subscriber.candidate._id})" class="card-overlay-link">More</a>
                     </div>
                 </div>
             </div>
             <div class="card-content">
-                <h1>{{candidate.name}} {{candidate.surname}}</h1>
-                <div class="meta"><span class="indicate {{candidate.posColor}}"></span><a href="#" class="group">{{candidate.position}}</a></div>
+                <h1>{{subscriber.candidate.name}} {{subscriber.candidate.surname}}</h1>
+                <div class="meta"><span class="indicate {{subscriber.candidate.posColor}}"></span><a href="#" class="group">{{candidate.position}}</a></div>
             </div>
             <div class="test-result">
-                <span class="card-footer"><i class="i-card icon-doc-text"></i><span class="test-score">{{candidate.testResult}}%</span></span>
-                <span class="card-footer"><i class="i-card icon-clock"></i><span class="test-score">{{candidate.applicationDate | date:'dd.MM.yyyy'}}</span></span>
+                <span class="card-footer"><i class="i-card icon-doc-text"></i><span class="test-score">{{subscriber.candidate.testResult}}%</span></span>
+                <span class="card-footer"><i class="i-card icon-clock"></i><span class="test-score">{{subscriber.created_at | date:'dd.MM.yyyy'}}</span></span>
             </div>
         </div>
     </li>

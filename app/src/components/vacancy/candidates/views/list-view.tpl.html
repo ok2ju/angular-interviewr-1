@@ -1,13 +1,13 @@
 <ul class="user-cards-list">
-    <li class="user-card-item" ng-repeat="candidate in vm.vacancy.subscribers">
+    <li class="user-card-item" ng-repeat="subscriber in vm.subscriptions">
         <div class="u-main-info">
             <a href="#" class="u-main-info-link">
-                <img ng-src="{{vm.getUserImageUrl(candidate)}}" alt="candidate" class="user-card-item__photo">
-                <h1 class="user-card-item__name">{{candidate.name}} {{candidate.surname}}</h1>
+                <img ng-src="{{vm.getUserImageUrl(subscriber.candidate)}}" alt="candidate" class="user-card-item__photo">
+                <h1 class="user-card-item__name">{{subscriber.candidate.name}} {{subscriber.candidate.surname}}</h1>
             </a>
             <div class="u-main-info-pos">
-                <span class="card-list-indicate {{candidate.posColor}}"></span>
-                <a href="#" class="card-list-group">{{candidate.position}}</a>
+                <span class="card-list-indicate {{subscriber.candidate.posColor}}"></span>
+                <a href="#" class="card-list-group">{{subscriber.candidate.position}}</a>
             </div>
         </div>
         <div class="u-second-info">
@@ -15,11 +15,11 @@
                 <span class="progress-bg">
                     <span style="width: 82%;" class="progress-fg"></span>
                 </span>
-                <span class="card-list__test-score">{{candidate.testResult}}%</span>
+                <span class="card-list__test-score">{{subscriber.candidate.testResult}}%</span>
             </span>
             <span class="card-list__ico-wrapper">
                 <i class="fa i-card fa-clock-o"></i>
-                <span class="card-list__test-score">{{candidate.applicationDate | date:'dd.MM.yyyy'}}</span>
+                <span class="card-list__test-score">{{subscriber.created_at | date:'dd.MM.yyyy'}}</span>
             </span>
         </div>
     </li>

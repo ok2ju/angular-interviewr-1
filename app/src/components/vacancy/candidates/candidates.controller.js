@@ -5,7 +5,7 @@ module.exports = function VacancyCandidatesController(vacancyResource, Candidate
 
   $state.go('app.candidates.grid');
 
-  vacancyResource.oneVacancy($stateParams.id).then(vacancy => vm.vacancy = vacancy);
+  vacancyResource.subscriptions($stateParams.id).then(subscriptions => vm.subscriptions = subscriptions);
 
   /*CandidatesService.success(function(data) {
       vm.candidates = data;
