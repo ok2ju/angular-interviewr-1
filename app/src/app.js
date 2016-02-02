@@ -15,6 +15,7 @@ require('ng-file-upload');
 require('restangular');
 require('angular-sanitize');
 require('ui-select/dist/select.js');
+require('angular-ui-calendar');
 
 angular
   .module('app', [

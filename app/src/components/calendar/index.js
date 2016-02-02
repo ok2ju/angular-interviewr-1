@@ -1,8 +1,9 @@
 import angular from 'angular';
 import {ROOT_DIR} from '../../constants';
+import fullcalendar from 'fullcalendar';
 
 angular
-  .module('app.calendar', [])
+  .module('app.calendar', ['ui.calendar'])
     .controller('CalendarController', require('./calendar.controller'))
     .config(calendarConfig);
 
