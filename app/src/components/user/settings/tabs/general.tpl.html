@@ -46,8 +46,11 @@
         <div class="grid">
           <div class="grid-cell">
             <div class="inputAdd">
+              <div class="v-form-error" ng-messages="fillForm.country.$error">
+                <div ng-message="required">You did not choose country</div>
+              </div>
               <span class="inputAdd-item"><i class="sidebar-ico icon-globe-1"></i></span>
-              <ui-select ng-model="vm.user.country" theme="selectize" ng-disabled="disabled">
+              <ui-select ng-model="vm.user.country" theme="selectize" ng-disabled="disabled" name="country" required>
                 <ui-select-match placeholder="Country">{{$select.selected.name}}</ui-select-match>
                 <ui-select-choices repeat="country.name as country in vm.countries | filter: $select.search">
                   <span ng-bind-html="country.name | highlight: $select.search"></span>

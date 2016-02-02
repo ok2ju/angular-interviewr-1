@@ -17,7 +17,7 @@ module.exports = function VacancyCreateController($state, vacancyResource,
   function registerVacancy() {
     vacancyResource.postVacancy(vm.vacancy).then(function() {
       toastr.success('Vacancy created.', 'Yay!');
-      $state.go('app.vacancy');
+      $state.go('app.vacanciesList');
     }, function(err) {
         toastr.error('Error while creating vacancy.', 'Error!');
     });

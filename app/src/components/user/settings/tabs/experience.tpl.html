@@ -11,32 +11,40 @@
         <div class="grid">
           <div class="grid-cell">
             <div class="inputAdd">
-              <div class="v-form-error" ng-messages="fillForm.name.$error" ng-if="fillForm.name.$dirty">
-                <div ng-message="required">You did not enter a name</div>
-                <div ng-message="minlength">Your name is too short</div>
-                <div ng-message="maxlength">Your name is too long</div>
+              <div class="v-form-error" ng-messages="fillForm.expOrganization.$error" ng-if="fillForm.expOrganization.$dirty">
+                <div ng-message="required">You did not enter a organization</div>
+                <div ng-message="minlength">Your organization title is too short</div>
+                <div ng-message="maxlength">Your organization title is too long</div>
               </div>
               <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
-              <input ng-model="experience.organization" name="name" type="text" id="up-name" class="inputAdd-field" placeholder="Organization" ng-minlength="3" ng-maxlength="25" required>
+              <input ng-model="experience.organization" name="expOrganization" type="text" id="up-name" class="inputAdd-field" placeholder="Organization" ng-minlength="3" ng-maxlength="25" required>
             </div>
             <div class="inputAdd">
-              <div class="v-form-error" ng-messages="fillForm.name.$error" ng-if="fillForm.name.$dirty">
-                <div ng-message="required">You did not enter a name</div>
-                <div ng-message="minlength">Your name is too short</div>
-                <div ng-message="maxlength">Your name is too long</div>
+              <div class="v-form-error" ng-messages="fillForm.expPosition.$error" ng-if="fillForm.expPosition.$dirty">
+                <div ng-message="required">You did not enter a position</div>
+                <div ng-message="minlength">Your position title is too short</div>
+                <div ng-message="maxlength">Your position title is too long</div>
               </div>
               <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
-              <input ng-model="experience.position" name="name" type="text" id="up-name" class="inputAdd-field" placeholder="Position" ng-minlength="3" ng-maxlength="25" required>
+              <input ng-model="experience.position" name="expPosition" type="text" id="up-name" class="inputAdd-field" placeholder="Position" ng-minlength="3" ng-maxlength="25" required>
             </div>
           </div>
           <div class="grid-cell">
             <div class="inputAdd">
+              <div class="v-form-error" ng-messages="fillForm.expStart.$error" ng-if="fillForm.expStart.$dirty">
+                <div ng-message="required">You did not enter a start year</div>
+                <div ng-message="pattern">Must be a valid year</div>
+              </div>
               <span class="inputAdd-item"><i class="sidebar-ico icon-calendar-1"></i></span>
-              <input ng-model="experience.startPeriod" type="text" class="inputAdd-field" placeholder="Start year">
+              <input ng-model="experience.startPeriod" type="text" name="expStart" class="inputAdd-field" placeholder="Start year" ng-pattern="/^(199[2-9]|200[0-9]|201[0-6])$/" required>
             </div>
             <div class="inputAdd">
+              <div class="v-form-error" ng-messages="fillForm.expEnd.$error" ng-if="fillForm.expEnd.$dirty">
+                <div ng-message="required">You did not enter a end year</div>
+                <div ng-message="pattern">Must be a valid year</div>
+              </div>
               <span class="inputAdd-item"><i class="sidebar-ico icon-calendar-1"></i></span>
-              <input ng-model="experience.endPeriod" type="text" class="inputAdd-field" placeholder="End year">
+              <input ng-model="experience.endPeriod" type="text" name="expEnd" class="inputAdd-field" placeholder="End year" ng-pattern="/^(199[2-9]|200[0-9]|201[0-6])$/" required>
             </div>
           </div>
         </div>
@@ -44,11 +52,11 @@
         <div class="grid">
           <div class="grid-cell">
             <div class="inputAdd">
-              <div class="v-form-error" ng-messages="fillForm.about.$error" ng-if="fillForm.about.$dirty">
+              <div class="v-form-error" ng-messages="fillForm.expAbout.$error" ng-if="fillForm.expAbout.$dirty">
                 <div ng-message="required">You did not enter about filed</div>
                 <div ng-message="minlength">About field is too short</div>
               </div>
-              <textarea type="text" class="inputAdd-field" placeholder="About" ng-model="experience.about" name="about" id="up-about" ng-minlength="50" required></textarea>
+              <textarea type="text" class="inputAdd-field" placeholder="About" ng-model="experience.about" name="expAbout" id="up-about" ng-minlength="50" required></textarea>
             </div>
           </div>
         </div>
