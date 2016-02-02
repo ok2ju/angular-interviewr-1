@@ -1,4 +1,7 @@
 import $ from 'jquery';
+window.$ = $;
+window.jQuery = $;
+window.moment = require('moment');
 global._ = require('lodash');
 import angular from 'angular';
 require('angular-ui-router');
@@ -15,6 +18,7 @@ require('ng-file-upload');
 require('restangular');
 require('angular-sanitize');
 require('ui-select/dist/select.js');
+require('fullcalendar');
 require('angular-ui-calendar');
 
 angular
@@ -47,7 +51,7 @@ angular
   .config(require('./app.config'))
   .run(run)
   .constant('config', {
-    'api_url': 'http://localhost:3000'
+    'api_url': 'https://localhost:8123'
   });
 
 // Resources

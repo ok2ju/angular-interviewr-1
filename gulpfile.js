@@ -53,6 +53,13 @@ gulp.task('clean', function() {
 gulp.task('browserify', function() {
   gulp.src('app/src/app.js')
   .pipe(browserify({
+    shim: {
+      angular: {
+        path: './node_modules/angular/angular.js',
+        depends: {jquery: 'jQuery'},
+        exports: 'angular'
+      }
+    },
     transform: babelify
   }))
   .pipe(gulp.dest('dist'))
