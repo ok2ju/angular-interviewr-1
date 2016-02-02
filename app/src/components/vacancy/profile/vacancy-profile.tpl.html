@@ -30,6 +30,17 @@
       </ul>
     </div>
 
+    <div class="vacancyInfo-group v-followers-group">
+      <label>Followers</label>
+      <ul class="v-followers-list">
+        <li ng-repeat="subscriber in vm.subscriptions" class="v-followers-list__item">
+          <a ui-sref="app.userProfile({id: subscriber.candidate._id})">
+            <img ng-src="{{vm.getUserImageUrl(subscriber.candidate)}}">
+          </a>
+        </li>
+      </ul>
+    </div>
+
     <div class="vacancyInfo-btns">
       <a ng-click="vm.subscribe(vm.vacancy)" class="btn btn-sm btn-info">Follow vacancy</a>
     </div>

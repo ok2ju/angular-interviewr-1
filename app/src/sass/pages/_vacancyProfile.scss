@@ -100,3 +100,17 @@
   margin-top: 30px;
   text-align: right;
 }
+
+.v-followers-group {
+  margin-top: 30px;
+}
+
+.v-followers-list__item {
+  display: inline-block;
+  margin-right: 5px;
+
+  img {
+    vertical-align: middle;
+    width: 30px;
+  }
+}
