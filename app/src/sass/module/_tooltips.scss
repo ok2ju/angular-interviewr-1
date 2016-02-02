@@ -3,7 +3,7 @@
 
 .tooltip {
   position: relative;
-  
+
   &:hover {
     &:after {
       background: #333;
@@ -17,7 +17,7 @@
       z-index: 98;
       white-space: nowrap;
     }
-    
+
     &:before {
       border: solid;
       border-color: #333 transparent;
@@ -40,8 +40,8 @@
     }
 
     &:before {
+      @include center(x);
       bottom: -15px;
-      left: 0;
       opacity: 1;
     }
   }

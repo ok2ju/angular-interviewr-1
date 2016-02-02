@@ -1,4 +1,5 @@
 import {ROOT_DIR} from '../../../constants';
+import $ from 'jquery';
 
 module.exports = function LayoutHeaderController($state, toastr, store, jwtHelper, $http, config) {
   var vm = this;
@@ -10,6 +11,8 @@ module.exports = function LayoutHeaderController($state, toastr, store, jwtHelpe
 
   vm.getImageUrl = getImageUrl;
   vm.logout = logout;
+  vm.isActivity = false;
+  vm.toggleActivity = toggleActivity;
   getUserInfo();
 
   function getUserInfo() {
@@ -38,4 +41,9 @@ module.exports = function LayoutHeaderController($state, toastr, store, jwtHelpe
     $state.go('intro.login');
     toastr.info('You have been logged out.', 'Info!');
   }
+
+  function toggleActivity() {
+    vm.isActivity = !vm.isActivity;
+  }
+
 };

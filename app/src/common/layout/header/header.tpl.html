@@ -11,10 +11,53 @@
                 <li class="navbar-btns__item">
                     <a ui-sref="app.userProfile" class="navbar-ico img-replace drop-profile">PROFILE</a>
                 </li>
-                <li class="navbar-btns__item"><a href="#" aria-label="Messages" class="navbar-ico img-replace tooltip-v">MESSAGES<i class="ico-controll icon-chat"></i></a></li>
-                <li class="navbar-btns__item"><a ui-sref="app.regCompany" aria-label="Actions" class="navbar-ico img-replace tooltip-v">ACTIONS<i class="ico-controll icon-bell-alt"></i></a></li>
-                <li class="navbar-btns__item"><a ui-sref="app.userSettings.general" aria-label="Settings" class="navbar-ico img-replace tooltip-v">SETTINGS<i class="ico-controll icon-cog-alt"></i></a></li>
-                <li class="navbar-btns__item"><a href="javascript:void(0)" ng-click="vm.logout()" aria-label="Logout" class="navbar-ico img-replace tooltip-v">LOGOUT<i class="ico-controll icon-logout"></i></a></li>
+                <li class="navbar-btns__item">
+                  <a href="#" aria-label="Messages" class="navbar-ico img-replace tooltip-v">
+                    MESSAGES
+                    <i class="ico-controll icon-chat"></i>
+                  </a>
+                </li>
+                <li class="navbar-btns__item">
+                  <a ng-click="vm.toggleActivity()" aria-label="Actions" class="navbar-ico img-replace tooltip-v">
+                    ACTIONS
+                    <i class="ico-controll icon-bell-alt actions-indicator"></i>
+                  </a>
+                  <ul class="activity-dropdown" ng-class="{'active': vm.isActivity}">
+                    <li class="activity-dropdown__item">
+                      <a href="">
+                        <h1 class="activity-header">Meeting with Interviewr</h1>
+                        <p class="activity-info">test@gmail.com</p>
+                        <span class="activity-time">2 hours from now</span>
+                      </a>
+                    </li>
+                    <li class="activity-dropdown__item">
+                      <a href="">
+                        <h1 class="activity-header">Meeting with Interviewr</h1>
+                        <p class="activity-info">test@gmail.com</p>
+                        <span class="activity-time">2 hours from now</span>
+                      </a>
+                    </li>
+                    <li class="activity-dropdown__item">
+                      <a href="">
+                        <h1 class="activity-header">Meeting with Interviewr</h1>
+                        <p class="activity-info">test@gmail.com</p>
+                        <span class="activity-time">2 hours from now</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="navbar-btns__item">
+                  <a ui-sref="app.userSettings.general" aria-label="Settings" class="navbar-ico img-replace tooltip-v">
+                    SETTINGS
+                    <i class="ico-controll icon-cog-alt"></i>
+                  </a>
+                </li>
+                <li class="navbar-btns__item">
+                  <a href="javascript:void(0)" ng-click="vm.logout()" aria-label="Logout" class="navbar-ico img-replace tooltip-v">
+                    LOGOUT
+                    <i class="ico-controll icon-logout"></i>
+                  </a>
+                </li>
             </ul>
             <a ui-sref="app.userProfile({id: vm.user._id})" class="acc-photo-link">
                 <i class="icon-down-dir"></i>
