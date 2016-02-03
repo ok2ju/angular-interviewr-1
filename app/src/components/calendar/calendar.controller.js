@@ -18,13 +18,15 @@ module.exports = function CalendarController() {
 
   vm.uiConfig = {
     calendar:{
-      height: 450,
+      height: 'auto',
       editable: true,
       header:{
-        left: 'month basicWeek basicDay agendaWeek agendaDay',
-        center: 'title',
+        left: 'title',
+        center: 'month basicWeek basicDay agendaWeek agendaDay',
         right: 'today prev,next'
       },
+      fixedWeekCount: false,
+      columnFormat: 'dddd',
       dayClick: vm.alertEventOnClick,
       eventDrop: vm.alertOnDrop,
       eventResize: vm.alertOnResize

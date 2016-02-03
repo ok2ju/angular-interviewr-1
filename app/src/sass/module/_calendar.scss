@@ -93,3 +93,85 @@ $secondary-color: #9987B5;
     }
   }
 }
+
+// New Styles
+
+.fc-unthemed th,
+.fc-unthemed td,
+.fc-unthemed thead,
+.fc-unthemed tbody,
+.fc-unthemed .fc-divider,
+.fc-unthemed .fc-row,
+.fc-unthemed .fc-popover {
+  border-color: #eee;
+}
+
+.fc th,
+.fc td {
+  border-left: 0;
+  border-right: 0;
+  text-align: left;
+}
+
+.fc-basic-view .fc-body .fc-row {
+  min-height: 8em;
+}
+
+.fc-head .fc-head-container,
+.fc-head .fc-widget-header {
+  border: 0;
+}
+
+.fc-head .fc-day-header {
+  padding: 10px 0;
+  color: #999;
+}
+
+.fc th {
+  @include font-size(14px);
+  font-weight: 500;
+}
+
+.fc-ltr .fc-basic-view .fc-day-number {
+  @include font-size(14px);
+  color: #999;
+  text-align: left;
+}
+
+.fc-left {
+  h2 {
+    @include font-size(24px);
+    color: #6EB590;
+    font-weight: 100;
+  }
+}
+
+.fc-state-default {
+
+}
+
+.fc-event {
+  background: #6EB590;
+  border: 0;
+  line-height: 20px;
+  border-radius: 8px;
+
+  span {
+    @include font-size(11px);
+  }
+}
+
+.fc-ltr .fc-axis {
+  @include font-size(14px);
+  color: #999;
+}
+
+.fc-toolbar .fc-center button {
+  outline: none;
+  background-image: none;
+  color: #666;
+}
+
+.fc-day-grid-event {
+  padding: 0 5px;
+}
