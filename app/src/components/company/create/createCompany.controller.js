@@ -44,12 +44,9 @@ module.exports = function CompanyCreateController(companyResource, $scope,
     $('#up-photo').click();
   };
 
-  // modal window
-  vm.animationsEnabled = true;
-
   vm.open = function (size) {
-    var modalInstance = $uibModal.open({
-      animation: vm.animationsEnabled,
+    $uibModal.open({
+      animation: true,
       templateUrl: `${ROOT_DIR}/src/components/company/create/modal.tpl.html`,
       controller: 'CompanyModalController',
       controllerAs: 'vm',
@@ -63,10 +60,6 @@ module.exports = function CompanyCreateController(companyResource, $scope,
         }
       }
     });
-  };
-
-  vm.toggleAnimation = function () {
-    vm.animationsEnabled = !vm.animationsEnabled;
   };
 
   // Datepicker options

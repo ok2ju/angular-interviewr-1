@@ -4,4 +4,5 @@ angular
   .module('app.vacancy.candidates', [])
     .factory('CandidatesService', require('./candidates.service'))
     .controller('CandidatesController', require('./candidates.controller'))
-    .controller('CandidatesDashboardController', require('./dashboard.controller'));
+    .controller('CandidatesDashboardController', require('./dashboard.controller'))
+    .controller('InterviewSetupModalCtrl', require('./interview-setup.controller'));

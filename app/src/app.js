@@ -51,7 +51,8 @@ angular
   .config(require('./app.config'))
   .run(run)
   .constant('config', {
-    'api_url': 'https://localhost:8123'
+    'api_url': 'https://localhost:8123',
+    'root_dir': 'dist'
   });
 
 // Resources
@@ -95,6 +96,3 @@ function run($rootScope, $state, store, jwtHelper) {
     $rootScope.$broadcast('documentClicked', angular.element(e.target));
   });
 }
-
-
-
