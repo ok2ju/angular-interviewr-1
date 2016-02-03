@@ -51,7 +51,7 @@ angular
   .config(require('./app.config'))
   .run(run)
   .constant('config', {
-    'api_url': 'https://localhost:8123',
+    'api_url': 'http://localhost:3000',
     'root_dir': 'dist'
   });
 
