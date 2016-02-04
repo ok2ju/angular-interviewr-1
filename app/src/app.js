@@ -2,6 +2,7 @@ import $ from 'jquery';
 import moment from 'moment';
 import _ from 'lodash';
 import angular from 'angular';
+
 import './sass/style.scss';
 
 window.$ = $;
@@ -9,7 +10,7 @@ window.jQuery = $;
 window.moment = moment;
 global._ = _;
 
-
+import 'angular-ui-bootstrap';
 require('angular-ui-router');
 require('angular-resource');
 require('angular-messages');
@@ -19,7 +20,7 @@ require('angular-storage');
 require('ng-tags-input');
 require('angular-loading-bar');
 require('cropper');
-require('angular-modal');
+//require('angular-modal');
 require('ng-file-upload');
 require('restangular');
 require('angular-sanitize');
@@ -29,6 +30,7 @@ require('angular-ui-calendar');
 
 angular
   .module('app', [
+    'ui.bootstrap',
     'ui.router',
     'angular-jwt',
     'angular-storage',

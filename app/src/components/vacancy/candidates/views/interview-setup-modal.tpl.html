@@ -8,6 +8,9 @@
     <input id="cp-yof" type="text" class="inputAdd-field datepicker-input" uib-datepicker-popup="{{vm.format}}" ng-model="vm.interview.date" is-open="vm.status.opened" max-date="vm.maxDate" datepicker-options="vm.dateOptions" ng-required="true" show-button-bar="false" show-weeks="false" />
     <button type="button" class="inputAdd-item inputAdd-append-item" ng-click="vm.openDatepicker($event)"><i class="icon-calendar"></i></button>
   </div>
+  <div class="inputAdd">
+    <uib-timepicker ng-model="vm.time" ng-change="vm.onTimeChanged()" hour-step="10" minute-step="10" show-meridian="ismeridian"></uib-timepicker>
+  </div>
 </div>
 
 <div class="modal-footer">

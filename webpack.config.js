@@ -67,7 +67,7 @@ module.exports = {
       },
 
       { test: /\.scss$/,  loader: ExtractTextPlugin.extract(["css?sourceMap", "resolve-url", "sass?sourceMap"])},
-
+      
       // Support for CSS as raw text
       { test: /\.css$/,   loader: 'raw-loader' },
 
@@ -84,7 +84,7 @@ module.exports = {
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(true),
 
-     new ExtractTextPlugin("assets/css/styles.css"),
+    new ExtractTextPlugin("assets/css/styles.css"),
     //new webpack.optimize.CommonsChunkPlugin({}),
     // static assets
     new CopyWebpackPlugin([ { from: 'app/assets', to: 'assets' }, { from: 'app/src/**/*.html', to: 'assets' } ]),
@@ -106,19 +106,21 @@ module.exports = {
       server: { 
         baseDir: ['dist'],
         middleware: function(req, res, next) {
-          console.log('TEST')
           var urlObject = url.parse(req.url);
-          console.log(urlObject)
           var fileName = urlObject.href.split(urlObject.search).join('');
-          console.log(fileName)
           var fileExists = fs.existsSync(__dirname + '/dist' + fileName);
           if (!fileExists && fileName.indexOf("browser-sync-client") < 0) {
               req.url = '/';
           }
           return next();
         }
-      }
+      }   
+    }),
 
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
     })
   ]
 };

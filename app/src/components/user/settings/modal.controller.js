@@ -9,7 +9,7 @@ var cropKeys = [
   'scaleY'
 ];
 
-module.exports = function ModalController($modalInstance, $timeout, Upload, config, userResource, file, user) {
+module.exports = function ModalController($uibModalInstance, $timeout, Upload, config, userResource, file, user) {
   var vm = this;
 
   vm.file = file;
@@ -21,7 +21,7 @@ module.exports = function ModalController($modalInstance, $timeout, Upload, conf
   vm.cropData = {};
 
   vm.ok = function () {
-    //$modalInstance.close(vm.selected.item);
+    //$uibModalInstance.close(vm.selected.item);
 
     var data = {
       file: vm.file,
@@ -46,7 +46,7 @@ module.exports = function ModalController($modalInstance, $timeout, Upload, conf
   };
 
   vm.cancel = function () {
-    $modalInstance.dismiss('cancel');
+    $uibModalInstance.dismiss('cancel');
   };
 
   function init() {

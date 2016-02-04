@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-module.exports = function InterviewSetupModalCtrl($scope, $modalInstance) {
+module.exports = function InterviewSetupModalCtrl($scope, $uibModalInstance, cb) {
   var vm = this;
 
   vm.interview = {};
@@ -29,15 +29,17 @@ module.exports = function InterviewSetupModalCtrl($scope, $modalInstance) {
     opened: false
   };
 
-  $scope.$watch('vm.interview.date', function(current, original) {
-    vm.interview.date = moment.utc(current).format();
-  });
+  vm.time = new Date();
+
+  vm.onTimeChanged = function() {
+    console.log('Time changed');
+  }  
 
   vm.ok = function () {
-
+    cb({date: vm.interview.date, time: vm.time});
   };
 
   vm.cancel = function () {
-    $modalInstance.dismiss('cancel');
+    $uibModalInstance.dismiss('cancel');
   };
 }

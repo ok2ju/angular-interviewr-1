@@ -9,7 +9,7 @@ var cropKeys = [
   'scaleY'
 ];
 
-module.exports = function ModalController($modalInstance, $timeout, Upload, config, companyResource, file, company) {
+module.exports = function ModalController($uibModalInstance, $timeout, Upload, config, companyResource, file, company) {
   var vm = this;
 
   vm.file = file;
@@ -21,7 +21,6 @@ module.exports = function ModalController($modalInstance, $timeout, Upload, conf
   vm.cropData = {};
 
   vm.ok = function () {
-
     var data = {
       file: vm.file,
       "Content-Type": vm.file.type !== '' ? vm.file.type : 'application/octet-stream'
@@ -43,7 +42,7 @@ module.exports = function ModalController($modalInstance, $timeout, Upload, conf
   };
 
   vm.cancel = function () {
-    $modalInstance.dismiss('cancel');
+    $uibModalInstance.dismiss('cancel');
   };
 
   function init() {
