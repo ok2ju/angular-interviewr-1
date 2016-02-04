@@ -4,7 +4,7 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
                           $httpProvider, jwtInterceptorProvider, toastrConfig,
                           cfpLoadingBarProvider, RestangularProvider) {
 
-  RestangularProvider.setBaseUrl('http://localhost:3000/api/v1');
+  RestangularProvider.setBaseUrl('https://localhost:8123/api/v1');
 
   RestangularProvider.setRestangularFields({
     id: "_id"

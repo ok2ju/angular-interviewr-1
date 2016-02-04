@@ -9,6 +9,8 @@ var CopyWebpackPlugin  = require('copy-webpack-plugin');
 var HtmlWebpackPlugin  = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+var url = require('url');
+var fs = require('fs');
 var ENV = process.env.ENV = process.env.NODE_ENV = 'development';
 
 var metadata = {
@@ -42,8 +44,7 @@ module.exports = {
 
 
   resolve: {
-    // ensure loader extensions match
-    extensions: prepend(['.js','.json','.css','.html'], '.async') // ensure .async.ts etc also works
+    extensions: prepend(['.js','.json','.css','.html'], '.async')
   },
 
   module: {
@@ -55,10 +56,7 @@ module.exports = {
       {
         test: /\.js?$/,
         exclude: /(node_modules|bower_components)/,
-        loaders: ['ng-annotate', 'babel'], // 'babel-loader' is also a legal name to reference
-        /*query: {
-          presets: ['es2015']
-        }*/
+        loaders: ['ng-annotate', 'babel']
       },
       // Support for *.json files.
       { test: /\.json$/,  loader: 'json-loader' },
@@ -78,10 +76,8 @@ module.exports = {
 
       {
         test: /\.(png|jpg|gif)$/,
-        loader: "file-loader?name=img/img-[hash:6].[ext]"
+        loader: "file-loader?name=/assets/images/img-[hash:6].[ext]"
       }
-
-      // if you add a loader include the resolve file extension above
     ]
   },
 
@@ -106,24 +102,25 @@ module.exports = {
       // browse to http://localhost:3000/ during development,
       // ./public directory is being served
       host: 'localhost',
-      port: 3000,
-      server: { baseDir: ['dist'] }
-    })
-  ],
+      port: 4000,
+      server: { 
+        baseDir: ['dist'],
+        middleware: function(req, res, next) {
+          console.log('TEST')
+          var urlObject = url.parse(req.url);
+          console.log(urlObject)
+          var fileName = urlObject.href.split(urlObject.search).join('');
+          console.log(fileName)
+          var fileExists = fs.existsSync(__dirname + '/dist' + fileName);
+          if (!fileExists && fileName.indexOf("browser-sync-client") < 0) {
+              req.url = '/';
+          }
+          return next();
+        }
+      }
 
-  // our Webpack Development Server config
-  devServer: {
-    port: metadata.port,
-    host: metadata.host,
-    // contentBase: 'src/',
-    historyApiFallback: true,
-    watchOptions: { aggregateTimeout: 300, poll: 1000 },
-    https: true,
-    contentBase: './dist',
-    publicPath: '/dist',
-  },
-  // we need this due to problems with es6-shim
-  //node: {global: 'window', progress: false, crypto: 'empty', module: false, clearImmediate: false, setImmediate: false}
+    })
+  ]
 };
 
 // Helper functions
