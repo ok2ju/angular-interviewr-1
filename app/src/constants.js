@@ -1,1 +1,1 @@
-export const ROOT_DIR = 'app';
+export const ROOT_DIR = '';
