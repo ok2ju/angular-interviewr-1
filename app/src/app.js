@@ -1,9 +1,15 @@
 import $ from 'jquery';
+import moment from 'moment';
+import _ from 'lodash';
+import angular from 'angular';
+import './sass/style.scss';
+
 window.$ = $;
 window.jQuery = $;
-window.moment = require('moment');
-global._ = require('lodash');
-import angular from 'angular';
+window.moment = moment;
+global._ = _;
+
+
 require('angular-ui-router');
 require('angular-resource');
 require('angular-messages');
@@ -52,7 +58,7 @@ angular
   .run(run)
   .constant('config', {
     'api_url': 'http://localhost:3000',
-    'root_dir': 'dist'
+    'root_dir': 'app'
   });
 
 // Resources

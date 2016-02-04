@@ -787,7 +787,7 @@ Version: 3.4.5 Timestamp: Mon Nov  4 08:22:42 PST 2013
     text-decoration: none;
 
     border: 0;
-    background: url('select2.png') right top no-repeat;
+    //background: url('select2.png') right top no-repeat;
     cursor: pointer;
     outline: 0;
 }
@@ -887,7 +887,7 @@ Version: 3.4.5 Timestamp: Mon Nov  4 08:22:42 PST 2013
     display: block;
     width: 100%;
     height: 100%;
-    background: url('select2.png') no-repeat 0 1px;
+    //background: url('select2.png') no-repeat 0 1px;
 }
 
 .select2-search {
@@ -921,8 +921,8 @@ Version: 3.4.5 Timestamp: Mon Nov  4 08:22:42 PST 2013
     -webkit-box-shadow: none;
             box-shadow: none;
 
-    background: #fff url('select2.png') no-repeat 100% -22px;
-    background: url('select2.png') no-repeat 100% -22px, linear-gradient(to bottom, #fff 85%, #eee 99%);
+    //background: #fff url('select2.png') no-repeat 100% -22px;
+    //background: url('select2.png') no-repeat 100% -22px, linear-gradient(to bottom, #fff 85%, #eee 99%);
 }
 
 .select2-drop.select2-drop-above .select2-search input {
@@ -930,8 +930,8 @@ Version: 3.4.5 Timestamp: Mon Nov  4 08:22:42 PST 2013
 }
 
 .select2-search input.select2-active {
-    background: #fff url('select2-spinner.gif') no-repeat 100%;
-    background: url('select2-spinner.gif') no-repeat 100%, linear-gradient(to bottom, #fff 85%, #eee 99%);
+    //background: #fff url('select2-spinner.gif') no-repeat 100%;
+    //background: url('select2-spinner.gif') no-repeat 100%, linear-gradient(to bottom, #fff 85%, #eee 99%);
 }
 
 .select2-container-active .select2-choice,
@@ -1066,7 +1066,7 @@ disabled look for disabled choices in the results dropdown
 }
 
 .select2-more-results.select2-active {
-    background: #f4f4f4 url('select2-spinner.gif') no-repeat 100%;
+    //background: #f4f4f4 url('select2-spinner.gif') no-repeat 100%;
 }
 
 .select2-more-results {
@@ -1151,7 +1151,7 @@ disabled look for disabled choices in the results dropdown
 }
 
 .select2-container-multi .select2-choices .select2-search-field input.select2-active {
-    background: #fff url('select2-spinner.gif') no-repeat 100% !important;
+    //background: #fff url('select2-spinner.gif') no-repeat 100% !important;
 }
 
 .select2-default {
@@ -1201,7 +1201,7 @@ disabled look for disabled choices in the results dropdown
 
     font-size: 1px;
     outline: none;
-    background: url('select2.png') right top no-repeat;
+    //background: url('select2.png') right top no-repeat;
 }
 
 .select2-container-multi .select2-search-choice-close {
@@ -1271,7 +1271,7 @@ disabled look for disabled choices in the results dropdown
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi)  {
   .select2-search input, .select2-search-choice-close, .select2-container .select2-choice abbr, .select2-container .select2-choice .select2-arrow b {
-      background-image: url('select2x2.png') !important;
+      //background-image: url('select2x2.png') !important;
       background-repeat: no-repeat !important;
       background-size: 60px 40px !important;
   }

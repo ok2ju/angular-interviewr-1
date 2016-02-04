@@ -1,1 +1,1 @@
-export const ROOT_DIR = 'dist';
+export const ROOT_DIR = 'app';
