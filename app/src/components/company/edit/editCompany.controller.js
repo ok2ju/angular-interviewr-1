@@ -8,7 +8,6 @@ module.exports = function(companyResource, $scope,
   vm.company = {};
   vm.updateCompany = updateCompany;
   vm.getImageUrl = getImageUrl;
-  vm.deleteCompany = deleteCompany;
 
   // Fetching data for countries dropdown
   vm.countries = countries.data;
@@ -21,10 +20,10 @@ module.exports = function(companyResource, $scope,
   });
 
   // Datepicker options
-  vm.today = function() {
+  /*vm.today = function() {
     vm.company.yof = new Date();
   };
-  vm.today();
+  vm.today();*/
 
   vm.maxDate = new Date(2020, 5, 22);
 
@@ -43,10 +42,6 @@ module.exports = function(companyResource, $scope,
   vm.status = {
     opened: false
   };
-
-  $scope.$watch('vm.company.yof', function(current, original) {
-    vm.company.yof = moment.utc(current).format();
-  });
 
   function getImageUrl() {
     var res = '';
@@ -67,12 +62,19 @@ module.exports = function(companyResource, $scope,
     });
   }
 
-  function deleteCompany() {
-    companyResource.removeCompany(vm.company._id).then(function() {
-      $state.go('app.manageCompany');
-      toastr.success('Company was successfully deleted.', 'Yay!');
-    }, function(err) {
-        console.log('Error while deleting company!');
+  // Open modal when delete company
+  vm.openModal = () => {
+    $uibModal.open({
+      animation: true,
+      templateUrl: `${config.root_dir}/src/components/company/edit/modal.tpl.html`,
+      controller: 'EditModalController',
+      controllerAs: 'vm',
+      resolve: {
+        companyId: function() {
+          return vm.company._id;
+        }
+      }
     });
   }
+
 };
