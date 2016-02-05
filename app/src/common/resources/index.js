@@ -5,4 +5,5 @@ angular
     .factory('userResource', require('./User'))
     .factory('companyResource', require('./Company'))
     .factory('vacancyResource', require('./Vacancy'))
-    .factory('metaResource', require('./Meta'));
+    .factory('metaResource', require('./Meta'))
+    .factory('interviewResource', require('./Interview').InterviewResource);

@@ -1,5 +1,8 @@
 module.exports = function CompanyManageController(myself, companyResource, toastr, $state, config, imageService) {
+
   var vm = this;
+
+  const {USER_DEFAULT_IMAGE} = imageService.getConstants();
 
   vm.getImageUrl = getImageUrl;
   vm.getUserImageUrl = getUserImageUrl;
@@ -9,11 +12,11 @@ module.exports = function CompanyManageController(myself, companyResource, toast
   });
 
   function getImageUrl(company) {
-    return imageService.getImageUrl(company, 'assets/images/companies/default.png');
+    return imageService.getImageUrl(company, USER_DEFAULT_IMAGE);
   }
 
   function getUserImageUrl(user) {
-    return imageService.getImageUrl(user, 'assets/images/user-default.png');
+    return imageService.getImageUrl(user, USER_DEFAULT_IMAGE);
   }
 
 };

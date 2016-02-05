@@ -1,5 +1,8 @@
+import moment from 'moment';
+
 module.exports = function VacancyCandidatesController(
-  vacancyResource, CandidatesService, imageService, $state, $stateParams, $uibModal, config) {
+  vacancyResource, interviewResource, CandidatesService, imageService, $state,
+  $stateParams, $uibModal, config) {
 
   const vacancyId = $stateParams.id;
 
@@ -22,18 +25,30 @@ module.exports = function VacancyCandidatesController(
       }
     });
 
+    function mergeDateAndTime(_date, _time) {
+      const date = moment(_date);
+      const time = moment(_time);
+
+      date.second(time.second());
+      date.minutes(time.minutes());
+      date.hours(time.hours());
+
+      return date;
+    }
+
+
     function onInterviewSetupModalOk(data) {
+      const date = mergeDateAndTime(data.date, data.time);
       const interview = {
-        date: data.date,
-        time: data.time,
+        date: date.toDate(),
         candidate: subscription.candidate._id,
         vacancyId: vacancyId
       }
+
+      interviewResource.postInterview(interview);
       console.log(interview);
     }
   }
-
-  
 
   /*CandidatesService.success(function(data) {
       vm.candidates = data;
