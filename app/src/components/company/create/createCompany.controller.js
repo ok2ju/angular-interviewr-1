@@ -85,9 +85,4 @@ module.exports = function CompanyCreateController(companyResource, $scope,
   vm.status = {
     opened: false
   };
-
-  $scope.$watch('vm.company.yof', function(current, original) {
-    vm.company.yof = moment.utc(current).format();
-  });
-
 };

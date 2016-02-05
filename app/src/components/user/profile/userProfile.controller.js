@@ -1,5 +1,4 @@
 module.exports = function UserProfileController(userResource, config, $stateParams, imageService) {
-
   var vm = this;
 
   vm.getImageUrl = getImageUrl;

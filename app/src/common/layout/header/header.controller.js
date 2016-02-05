@@ -1,13 +1,12 @@
 import {ROOT_DIR} from '../../../constants';
-import $ from 'jquery';
 
-module.exports = function LayoutHeaderController($state, toastr, store, jwtHelper, $http, config) {
-  var vm = this;
+export function LayoutHeaderController($state, toastr, store, jwtHelper, $http, config) {
+  const vm = this;
 
-  var jwt = store.get('jwt');
-  var decodedJwt = jwt && jwtHelper.decodeToken(jwt);
+  const jwt = store.get('jwt');
+  const decodedJwt = jwt && jwtHelper.decodeToken(jwt);
 
-  var url = config.api_url + '/api/v1/users/' + decodedJwt._id;
+  const url = config.api_url + '/api/v1/users/' + decodedJwt._id;
 
   vm.getImageUrl = getImageUrl;
   vm.logout = logout;
@@ -22,12 +21,12 @@ module.exports = function LayoutHeaderController($state, toastr, store, jwtHelpe
     }).then(function(response) {
       vm.user = response.data;
     }, function(error) {
-        console.log('Header info error!');
+        console.log('Header info error!', error);
     });
   }
 
   function getImageUrl() {
-    var res = '';
+    let res = '';
     if(vm.user && vm.user.imageId) {
       res = config.api_url + '/api/v1/images/' + vm.user.imageId;
     } else {
@@ -45,5 +44,4 @@ module.exports = function LayoutHeaderController($state, toastr, store, jwtHelpe
   function toggleActivity() {
     vm.isActivity = !vm.isActivity;
   }
-
-};
+}

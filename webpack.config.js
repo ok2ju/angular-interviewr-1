@@ -3,23 +3,24 @@
 /*
  * Helper: root(), and rootDir() are defined at the bottom
  */
-var path = require('path');
-var webpack = require('webpack');
-var CopyWebpackPlugin  = require('copy-webpack-plugin');
-var HtmlWebpackPlugin  = require('html-webpack-plugin');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-var url = require('url');
-var fs = require('fs');
-var ENV = process.env.ENV = process.env.NODE_ENV = 'development';
+const path = require('path');
+const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const url = require('url');
+const fs = require('fs');
+const ENV = process.env.ENV = process.env.NODE_ENV = 'development';
 
-var metadata = {
+const metadata = {
   title: 'Angular2 Webpack Starter by @gdi2990 from @AngularClass',
   baseUrl: '/',
   host: 'localhost',
   port: 3007,
   ENV: ENV
 };
+
 /*
  * Config
  */
@@ -44,12 +45,12 @@ module.exports = {
 
 
   resolve: {
-    extensions: prepend(['.js','.json','.css','.html'], '.async')
+    extensions: prepend(['.js', '.json', '.css', '.html'], '.async')
   },
 
   module: {
     preLoaders: [
-      //{ test: /\.js$/, loader: "source-map-loader"},
+      //{ test: /\.js$/, loader: 'source-map-loader'},
 
     ],
     loaders: [
@@ -59,24 +60,27 @@ module.exports = {
         loaders: ['ng-annotate', 'babel']
       },
       // Support for *.json files.
-      { test: /\.json$/,  loader: 'json-loader' },
+      { test: /\.json$/, loader: 'json-loader' },
 
       {
         test: /\.(eot|ttf|svg|woff|woff2)$/,
         loader: 'file?name=/assets/fonts/[name].[ext]?[hash]'
       },
 
-      { test: /\.scss$/,  loader: ExtractTextPlugin.extract(["css?sourceMap", "resolve-url", "sass?sourceMap"])},
-      
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract(['css', 'resolve-url', 'sass?sourceMap'])
+      },
+
       // Support for CSS as raw text
-      { test: /\.css$/,   loader: 'raw-loader' },
+      { test: /\.css$/, loader: 'raw-loader' },
 
       // support for .html as raw text
-      { test: /\.html$/,  loader: 'raw-loader' },
+      { test: /\.html$/, loader: 'raw-loader' },
 
       {
         test: /\.(png|jpg|gif)$/,
-        loader: "file-loader?name=/assets/images/img-[hash:6].[ext]"
+        loader: 'file-loader?name=/assets/images/img-[hash:6].[ext]'
       }
     ]
   },
@@ -84,7 +88,7 @@ module.exports = {
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(true),
 
-    new ExtractTextPlugin("assets/css/styles.css"),
+    new ExtractTextPlugin('assets/css/styles.css'),
     //new webpack.optimize.CommonsChunkPlugin({}),
     // static assets
     new CopyWebpackPlugin([ { from: 'app/assets', to: 'assets' }, { from: 'app/src/**/*.html', to: 'assets' } ]),
@@ -103,24 +107,31 @@ module.exports = {
       // ./public directory is being served
       host: 'localhost',
       port: 4000,
-      server: { 
+      ghostMode: false,
+      notify: false,
+      online: false,
+      injectChanges: false,
+
+      server: {
         baseDir: ['dist'],
-        middleware: function(req, res, next) {
-          var urlObject = url.parse(req.url);
-          var fileName = urlObject.href.split(urlObject.search).join('');
-          var fileExists = fs.existsSync(__dirname + '/dist' + fileName);
-          if (!fileExists && fileName.indexOf("browser-sync-client") < 0) {
-              req.url = '/';
+        middleware(req, res, next) {
+          const urlObject = url.parse(req.url);
+          const d = __dirname.split('\\').join('/');
+          const fileName = d + '/dist' + urlObject.href.split(urlObject.search).join('');
+          console.log(fileName);
+          const fileExists = fs.existsSync(fileName);
+          if(!fileExists && fileName.indexOf('browser-sync-client') < 0) {
+            req.url = '/';
           }
           return next();
         }
-      }   
+      }
     }),
 
     new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-      "window.jQuery": "jquery"
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
     })
   ]
 };

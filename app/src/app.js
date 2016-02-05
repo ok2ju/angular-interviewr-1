@@ -60,7 +60,7 @@ angular
   .run(run)
   .constant('config', {
     'api_url': 'http://localhost:3000',
-    'root_dir': ''
+    'root_dir': 'app'
   });
 
 // Resources
