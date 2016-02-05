@@ -1,6 +1,10 @@
 import {ROOT_DIR} from '../../../constants';
 
-export function LayoutHeaderController($state, toastr, store, jwtHelper, $http, config) {
+export function LayoutHeaderController($state, toastr, store,
+  jwtHelper, $http, config, imageService) {
+
+  const {USER_DEFAULT_IMAGE} = imageService.getContants();
+
   const vm = this;
 
   const jwt = store.get('jwt');
@@ -26,13 +30,7 @@ export function LayoutHeaderController($state, toastr, store, jwtHelper, $http, 
   }
 
   function getImageUrl() {
-    let res = '';
-    if(vm.user && vm.user.imageId) {
-      res = config.api_url + '/api/v1/images/' + vm.user.imageId;
-    } else {
-      res = `${ROOT_DIR}/assets/images/user-default.png`;
-    }
-    return res;
+    return imageService.getImageUrl(vm.user, USER_DEFAULT_IMAGE);
   }
 
   function logout() {

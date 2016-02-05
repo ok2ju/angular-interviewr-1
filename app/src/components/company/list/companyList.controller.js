@@ -1,4 +1,7 @@
 module.exports = function CompanyListController(companyResource, config, countries, categories, imageService) {
+
+  const {USER_DEFAULT_IMAGE, COMPANY_DEFAULT_IMAGE} = imageService.getContants();
+
   var vm = this;
   vm.getImageUrl = getImageUrl;
   vm.getUserImageUrl = getUserImageUrl;
@@ -15,11 +18,11 @@ module.exports = function CompanyListController(companyResource, config, countri
   vm.categories = categories.data;
 
   function getImageUrl(company) {
-    return imageService.getImageUrl(company, 'assets/images/companies/default.png');
+    return imageService.getImageUrl(company, USER_DEFAULT_IMAGE);
   }
 
   function getUserImageUrl(user) {
-    return imageService.getImageUrl(user, 'assets/images/user-default.png');
+    return imageService.getImageUrl(user, COMPANY_DEFAULT_IMAGE);
   }
 
   // Reset filters query
