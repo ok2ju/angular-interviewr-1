@@ -1,10 +1,10 @@
 module.exports = function VacancyProfileController(vacancyResource, $stateParams, imageService) {
-  var vm = this;
+  const vm = this;
 
   vm.subscribe = subscribe;
-  vm.getUserImageUrl = getUserImageUrl;
+  vm.getUserImageUrl = imageService.getUserImageUrl;
 
-  vacancyResource.oneVacancy($stateParams.id).then(function(vacancy) {
+  vacancyResource.one($stateParams.id).then(function(vacancy) {
     vm.vacancy = vacancy;
   });
 
@@ -15,9 +15,4 @@ module.exports = function VacancyProfileController(vacancyResource, $stateParams
       console.log('success subscruption!');
     });
   }
-
-  function getUserImageUrl(user) {
-    return imageService.getImageUrl(user, 'assets/images/user-default.png');
-  }
-
 };

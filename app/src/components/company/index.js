@@ -1,5 +1,4 @@
 import angular from 'angular';
-import {ROOT_DIR} from '../../constants';
 
 angular
   .module('app.company', [
@@ -17,11 +16,11 @@ require('./list');
 require('./profile');
 require('./edit');
 
-function companyConfig($stateProvider) {
+function companyConfig($stateProvider, config) {
   $stateProvider
     .state('app.createCompany', {
       url: '/company/create',
-      templateUrl: `${ROOT_DIR}/src/components/company/create/create-company.tpl.html`,
+      templateUrl: `${config.ROOT_DIR}/src/components/company/create/create-company.tpl.html`,
       controller: 'CreateCompanyController',
       controllerAs: 'vm',
       data: {
@@ -31,7 +30,7 @@ function companyConfig($stateProvider) {
     })
     .state('app.editCompany', {
       url: '/company/:id/edit',
-      templateUrl: `${ROOT_DIR}/src/components/company/edit/edit-company.tpl.html`,
+      templateUrl: `${config.ROOT_DIR}/src/components/company/edit/edit-company.tpl.html`,
       controller: 'EditCompanyController',
       controllerAs: 'vm',
       data: {
@@ -41,7 +40,7 @@ function companyConfig($stateProvider) {
     })
     .state('app.companies', {
       url: '/companies',
-      templateUrl: `${ROOT_DIR}/src/components/company/list/companies-list.tpl.html`,
+      templateUrl: `${config.ROOT_DIR}/src/components/company/list/companies-list.tpl.html`,
       controller: 'CompanyListController',
       controllerAs: 'vm',
       data: {
@@ -51,7 +50,7 @@ function companyConfig($stateProvider) {
     })
     .state('app.manageCompany', {
       url: '/company/manage',
-      templateUrl: `${ROOT_DIR}/src/components/company/manage/manage-company.tpl.html`,
+      templateUrl: `${config.ROOT_DIR}/src/components/company/manage/manage-company.tpl.html`,
       controller: 'ManageCompanyController',
       controllerAs: 'vm',
       data: {
@@ -61,7 +60,7 @@ function companyConfig($stateProvider) {
     })
     .state('app.companyProfile', {
       url: '/companies/:id/view',
-      templateUrl: `${ROOT_DIR}/src/components/company/profile/company-profile.tpl.html`,
+      templateUrl: `${config.ROOT_DIR}/src/components/company/profile/company-profile.tpl.html`,
       controller: 'CompanyProfileController',
       controllerAs: 'vm',
       data: {

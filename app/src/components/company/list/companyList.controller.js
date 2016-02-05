@@ -1,29 +1,17 @@
-module.exports = function CompanyListController(companyResource, config, countries, categories, imageService) {
+module.exports = function CompanyListController(companyResource, imageService, countries, categories) {
+  const vm = this;
 
-  const {USER_DEFAULT_IMAGE, COMPANY_DEFAULT_IMAGE} = imageService.getContants();
-
-  var vm = this;
-  vm.getImageUrl = getImageUrl;
-  vm.getUserImageUrl = getUserImageUrl;
+  vm.getImageUrl = imageService.getCompanyImageUrl;
+  vm.getUserImageUrl = imageService.getUserImageUrl;
   vm.resetFilter = resetFilter;
 
-  companyResource.listCompanies().then(function(companies) {
+  companyResource.list().then(function(companies) {
     vm.companies = companies;
   });
 
-  // Fetch data for countries dropdown
   vm.countries = countries.data;
 
-  // Fetch data for categories dropdown
   vm.categories = categories.data;
-
-  function getImageUrl(company) {
-    return imageService.getImageUrl(company, USER_DEFAULT_IMAGE);
-  }
-
-  function getUserImageUrl(user) {
-    return imageService.getImageUrl(user, COMPANY_DEFAULT_IMAGE);
-  }
 
   // Reset filters query
   function resetFilter() {
@@ -31,5 +19,4 @@ module.exports = function CompanyListController(companyResource, config, countri
     vm.company = {};
     vm.country = {};
   }
-
 };

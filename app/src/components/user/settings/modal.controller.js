@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-var cropKeys = [
+const cropKeys = [
   'width',
   'height',
   'x',
@@ -10,7 +10,7 @@ var cropKeys = [
 ];
 
 module.exports = function ModalController($uibModalInstance, $timeout, Upload, config, userResource, file, user) {
-  var vm = this;
+  const vm = this;
 
   vm.file = file;
   Upload.dataUrl(file).then(function(url) {
@@ -23,7 +23,7 @@ module.exports = function ModalController($uibModalInstance, $timeout, Upload, c
   vm.ok = function () {
     //$uibModalInstance.close(vm.selected.item);
 
-    var data = {
+    const data = {
       file: vm.file,
       "Content-Type": vm.file.type !== '' ? vm.file.type : 'application/octet-stream'
     };
@@ -35,7 +35,7 @@ module.exports = function ModalController($uibModalInstance, $timeout, Upload, c
         crop: JSON.stringify(vm.cropData)
       }
     }).then(function(resp) {
-        var data = resp.data;
+        const data = resp.data;
         if(data._id) {
           userResource.updateUser(user._id, {imageId: data._id}).then(function() {
             user.imageId = data._id;
@@ -52,7 +52,7 @@ module.exports = function ModalController($uibModalInstance, $timeout, Upload, c
   function init() {
     vm.cropper = $('.modal-body > img').cropper({
       aspectRatio: 1 / 1,
-      crop: function(e) {
+      crop(e) {
         cropKeys.forEach(function(key) {
           vm.cropData[key] = e[key];
         });

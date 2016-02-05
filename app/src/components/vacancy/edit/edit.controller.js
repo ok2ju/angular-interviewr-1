@@ -1,7 +1,7 @@
 module.exports = function VacancyEditController($state, $stateParams, vacancyResource,
   toastr, positions, vacancyTypes) {
 
-  var vm = this;
+  const vm = this;
 
   vm.vacancy = {};
   vm.updateVacancy = updateVacancy;
@@ -13,7 +13,7 @@ module.exports = function VacancyEditController($state, $stateParams, vacancyRes
   // Fetch data for vacancy types dropdown
   vm.vacancyTypes = vacancyTypes.data;
 
-  vacancyResource.oneVacancy($stateParams.id).then(function(vacancy) {
+  vacancyResource.one($stateParams.id).then(function(vacancy) {
     vm.vacancy = vacancy;
   });
 
@@ -29,7 +29,7 @@ module.exports = function VacancyEditController($state, $stateParams, vacancyRes
       $state.go('app.vacanciesManage.companies');
       toastr.success('Vacancy was successfully deleted.', 'Yay!');
     }, function(err) {
-      console.log('Error while deleting vacancy!');
+      console.log('Error while deleting vacancy!', err);
     });
   }
 

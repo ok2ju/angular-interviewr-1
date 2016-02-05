@@ -1,0 +1,1151 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Prin",
+				"Fprintf	n int, err error ƒ"
+			],
+			[
+				"im",
+				"import	import (...) ʂ"
+			],
+			[
+				"vaca",
+				"vacancyId"
+			],
+			[
+				"state",
+				"stateParams"
+			],
+			[
+				"s",
+				"subscription"
+			],
+			[
+				"sub",
+				"subscription"
+			],
+			[
+				"for",
+				"formats"
+			],
+			[
+				"url",
+				"urlObject"
+			],
+			[
+				"file",
+				"filename"
+			],
+			[
+				"json",
+				"jsonOk	alias"
+			],
+			[
+				"va",
+				"vacancyService	alias"
+			],
+			[
+				"Compa",
+				"Company	alias"
+			],
+			[
+				"c",
+				"conf"
+			],
+			[
+				"Object",
+				"Object	interface"
+			],
+			[
+				"is",
+				"isMatch	parameter"
+			],
+			[
+				"pa",
+				"password	parameter"
+			],
+			[
+				"user",
+				"userModel	parameter"
+			],
+			[
+				"User",
+				"UserModel	alias"
+			],
+			[
+				"stat",
+				"status	parameter"
+			],
+			[
+				"find",
+				"findByIdAndUpdate	method"
+			],
+			[
+				"com",
+				"companyService	alias"
+			],
+			[
+				"j",
+				"join-room"
+			],
+			[
+				"on",
+				"on-component-did-mount"
+			],
+			[
+				"rtc",
+				"rtcviewr"
+			],
+			[
+				"compo",
+				"component-did-mount"
+			],
+			[
+				"a",
+				"app-state"
+			],
+			[
+				"main",
+				"main-component"
+			],
+			[
+				"room",
+				"roomNumber"
+			],
+			[
+				"pc",
+				"pc_constr"
+			],
+			[
+				"js",
+				"js-obj"
+			],
+			[
+				"loca",
+				"localStream"
+			],
+			[
+				"onUser",
+				"onUserMediaFail"
+			],
+			[
+				"se",
+				"sendToAll"
+			],
+			[
+				"roo",
+				"room"
+			],
+			[
+				"r",
+				"rooms"
+			],
+			[
+				"GET",
+				"GET_ROOM"
+			],
+			[
+				"send",
+				"send-json"
+			],
+			[
+				"get",
+				"getRandomId"
+			],
+			[
+				"msg",
+				"msgtype"
+			],
+			[
+				"re",
+				"refer"
+			],
+			[
+				"up",
+				"update-controls-active-state"
+			],
+			[
+				"to",
+				"toolbar"
+			],
+			[
+				"tool",
+				"toolbarManager"
+			],
+			[
+				"q",
+				"querySelector"
+			],
+			[
+				"ha",
+				"handleMouseMove"
+			],
+			[
+				"t",
+				"toolbar"
+			],
+			[
+				"ca",
+				"callHideTimeout"
+			],
+			[
+				"hi",
+				"hideToolbarsIfAllowed"
+			],
+			[
+				"tol",
+				"toolbarTimeout"
+			],
+			[
+				"timer",
+				"timerId"
+			],
+			[
+				"ma",
+				"makeElementUnActive"
+			],
+			[
+				"d",
+				"document"
+			],
+			[
+				"i",
+				"innerState"
+			],
+			[
+				"inner",
+				"innerState"
+			],
+			[
+				"co",
+				"control-list"
+			],
+			[
+				"ce",
+				"create-links"
+			],
+			[
+				"lin",
+				"link-data"
+			],
+			[
+				"li",
+				"links-data"
+			],
+			[
+				"header-nav",
+				"header-nav__item"
+			],
+			[
+				"para",
+				"params	property"
+			],
+			[
+				"rep",
+				"reply_markup"
+			],
+			[
+				"reply",
+				"reply_to_message_id"
+			],
+			[
+				"p",
+				"parse_mode"
+			],
+			[
+				"st",
+				"state"
+			],
+			[
+				"findB",
+				"findByIdAndUpdate	method"
+			],
+			[
+				"image",
+				"imageId"
+			],
+			[
+				"in",
+				"interval"
+			],
+			[
+				"modal",
+				"modal-body"
+			],
+			[
+				"crop",
+				"cropKeys"
+			],
+			[
+				"f",
+				"findOne	method"
+			],
+			[
+				"ins",
+				"insertMany	method"
+			],
+			[
+				"ex",
+				"extends	keyword"
+			],
+			[
+				"mo",
+				"mongoose	alias"
+			],
+			[
+				"D",
+				"Document	interface"
+			],
+			[
+				"cons",
+				"constructor	keyword"
+			],
+			[
+				"then",
+				"thenHandlers"
+			],
+			[
+				"th",
+				"thenHandlers"
+			],
+			[
+				"pi",
+				"printAll"
+			],
+			[
+				"pr",
+				"println"
+			],
+			[
+				"pri",
+				"printAll"
+			],
+			[
+				"cate",
+				"category"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"flex",
+				"flex-grow"
+			],
+			[
+				"tra",
+				"translate"
+			],
+			[
+				"trans",
+				"transition"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"err",
+				"error"
+			],
+			[
+				"sess",
+				"session"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"op",
+				"options"
+			],
+			[
+				"str",
+				"strArray"
+			],
+			[
+				"requi",
+				"requiredSelect"
+			],
+			[
+				"end",
+				"endforeach"
+			],
+			[
+				"isN",
+				"isNotEmpty"
+			],
+			[
+				"arr",
+				"array	$… = array (…)"
+			],
+			[
+				"ren",
+				"rent_id"
+			],
+			[
+				"field",
+				"fieldsFilename"
+			],
+			[
+				"fie",
+				"filename"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"type",
+				"typeCheck"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"fi",
+				"fieldprops"
+			],
+			[
+				"html",
+				"htmlspecialchars"
+			],
+			[
+				"el",
+				"else"
+			],
+			[
+				"arra",
+				"array"
+			],
+			[
+				"show",
+				"showResults"
+			],
+			[
+				"tr",
+				"trap"
+			],
+			[
+				"ra",
+				"radius"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"strp",
+				"strpos"
+			],
+			[
+				"findMax",
+				"findMaxInColumn"
+			],
+			[
+				"findMi",
+				"findMinInColumn"
+			],
+			[
+				"col",
+				"columnNumber"
+			],
+			[
+				"ar",
+				"arrlength2"
+			],
+			[
+				"cr",
+				"createElement"
+			],
+			[
+				"res",
+				"resArr"
+			],
+			[
+				"do",
+				"doIt"
+			],
+			[
+				"ec",
+				"echo	echo \"…\""
+			],
+			[
+				"conve",
+				"convertParamsToArray"
+			],
+			[
+				"po",
+				"pointsInCircle"
+			],
+			[
+				"ras",
+				"reason"
+			],
+			[
+				"ac",
+				"action	Attr"
+			],
+			[
+				"req",
+				"require"
+			],
+			[
+				"o",
+				"omain	object with main method"
+			],
+			[
+				"inva",
+				"invalidStyle"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/src/common/layout/header/header.directive.js",
+			"settings":
+			{
+				"buffer_size": 328,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 369.0,
+		"last_filter": "Pa",
+		"selected_items":
+		[
+			[
+				"Pa",
+				"Package Control: List Packages"
+			],
+			[
+				"Insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: list",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control",
+				"Preferences: Package Control Settings – Default"
+			],
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: <?php … ?>"
+			],
+			[
+				"Package Control: i",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/src",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/src/common",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/src/common/layout",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/src/common/layout/header"
+	],
+	"file_history":
+	[
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/sproj.sublime-project",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/src/common/layout/header/header.controller.js",
+		"/Users/alehatsman/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/alehatsman/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/src/app.js",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/src/app.config.js",
+		"/Users/alehatsman/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/Users/alehatsman/Projects/atsman/dotfiles/sublime_text/Package Control.sublime-settings",
+		"/Users/alehatsman/Projects/atsman/dotfiles/sublime_text/Preferences.sublime-settings",
+		"/Users/alehatsman/Library/Application Support/Sublime Text 3/Packages/GoSublime/USAGE.md",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/src/constants.js",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/src/common/layout/sidebar/sidebar.tpl.html",
+		"/Users/alehatsman/Library/Application Support/Sublime Text 3/Packages/GoSublime/CHANGELOG.md",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/src/components/vacancy/candidates/views/grid-view.tpl.html",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/src/components/vacancy/candidates/candidates.controller.js",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/src/components/vacancy/candidates/interview-setup.controller.js",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/webpack.config.js",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/src/components/vacancy/candidates/views/interview-setup-modal.tpl.html",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/src/sass/style.scss",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/src/components/user/settings/modal.controller.js",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/src/components/company/create/modal.controller.js",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/src/components/calendar/calendar.controller.js",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/src/templates/intro-layout.tpl.html",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/dist/assets/css/styles.css",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/package.json",
+		"/usr/local/etc/nginx/nginx.conf",
+		"/usr/local/var/run/nginx.pid",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/.babelrc",
+		"/Users/alehatsman/Projects/js/angular2-tutorial/app/app.component.ts",
+		"/Users/alehatsman/Projects/js/angular2-tutorial/index.html",
+		"/Users/alehatsman/Projects/js/angular2-tutorial/app/boot.ts",
+		"/Users/alehatsman/Projects/js/angular2-tutorial/tsconfig.json",
+		"/Users/alehatsman/Projects/js/angular2-tutorial/package.json",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/typings/tsd.d.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/routes/answer.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/routes/CompanyMiddleware.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/routes/VacanciesMiddleware.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/routes/UserMiddleware.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/config/initialdata/index.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/server.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/routes/auth.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/api.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/Gulpfile.js",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/services/VacancyService.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/deploy/src/services/VacancyService.js",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/tsconfig.json",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/.gitignore",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/models/UserModel.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/models/CompanyModel.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/services/CompanyService.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/node_modules/http-status-codes/index.js",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/services/UserService.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/typings/http-status-codes/http-status-codes.d.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/typings/busboy/busboy.d.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/typings/http-status-code/http-status-code.d.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/modules/images/FileWriteResult.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/test/routes/smock.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/services/MetaService.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/routes/MetaMiddleware.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/models/MetaModel.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/routes/Constants.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/routes/types.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/modules/core/utils/Constants.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/modules/core/types/middleware.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/package.json",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/modules/images/index.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/models/VacancyModel.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/modules/companies/routes/bodyparser.ts",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/routes",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/.gitignore",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/src/cljs/rtcviewr/actions/rtc.cljs",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/src/cljs/rtcviewr/components/rtc.cljs",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/src/cljs/rtcviewr/stores/state.cljs",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/src/cljs/rtcviewr/actions/control.cljs",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/src/cljs/rtcviewr/components/main.cljs",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/src/cljs/rtcviewr/core.cljs",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/src/cljs/rtcviewr/utils/dom.cljs",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/src/clj/rtcviewr/core.clj",
+		"/Users/alehatsman/.vimrc",
+		"/Users/alehatsman/Projects/js/interview-notes/vim/_vimrc",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/js/user/settings/settings.controller.js",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/.editorconfig",
+		"/Users/alehatsman/Desktop/tor.sh",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/resources/index.html",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/project.clj",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/src/clj/rtcviewr/api/signaling.clj",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/src/cljs/rtcviewr/api/ws.cljs",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/src/cljs/rtcviewr/components/controls.cljs",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/resources/public/scripts/main.js",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/src/cljs/rtcviewr/components/common.cljs",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/src/cljs/rtcviewr/components/header.cljs",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/src/cljs/rtcviewr/components/toolbarmanager.cljs",
+		"/Users/alehatsman/Projects/js/interviewr/conf-interviewr-ui/app/scripts/main.js",
+		"/Users/alehatsman/Projects/js/interviewr/conf-interviewr-ui/app/index.html",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/src/cljs/rtcviewr/components/control.cljs",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/README.md",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/.gitignore",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/modules/companies/CompanyMiddleware.ts",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/.gitignore",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/src/cljs/rtc-viewr/core.cljs",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/resources/public/js/app.js",
+		"/Users/alehatsman/Projects/js/interviewr/rtc-viewr/src/clj/rtc_viewr/core.clj",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/typings/mongoose/mongoose.d.ts",
+		"/Users/alehatsman/Projects/python/TraokBot/test.py",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/routes/vacancies.ts",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/js/vacancy/manage/create.controller.js",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/js/user/settings/modal.controller.js",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/js/services/user.service.js",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/js/vacancy/manage/index.js",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/js/layout/dropdown/dropdown.directive.js",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/gulpfile.js",
+		"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src/service/companies.ts",
+		"/Users/alehatsman/Projects/js/interviewr/vodo/src/app.js",
+		"/Users/alehatsman/Projects/js/interviewr/vodo/src/routes.js",
+		"/Users/alehatsman/Projects/js/interviewr/vodo/src/stores/ApplicationStore.js",
+		"/Users/alehatsman/Projects/js/interviewr/vodo/src/client.js",
+		"/Users/alehatsman/Projects/js/interviewr/vodo/src/actions/navigate.js",
+		"/Users/alehatsman/Projects/js/interviewr/vodo/package.json",
+		"/Users/alehatsman/Projects/js/interviewr/vodo/gulpfile.js",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/js/shared/meta/index.js",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/js/company/create/index.js",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/js/company/profile/index.js",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/js/vacancy/manage/create.html",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/js/app.js",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/js/shared/meta/meta.js",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/js/shared/filters/index.js",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/js/company/create/createCompany.controller.js",
+		"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/js/vacancy/resource/index.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/alehatsman/Projects/js/interviewr/angular-interviewr/app/src",
+			"",
+			"/Users/alehatsman/Projects/js/interviewr/node-interviewr/src",
+			"",
+			"./Maslow-Admin/scripts",
+			"/Maslow-Admin/scripts"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"exclude",
+			"myself",
+			"cons",
+			"dist/assets/",
+			"dateOptions",
+			"$modalInstance",
+			"modalInstance",
+			"$modalInstance",
+			"getFullYear",
+			"activeDate",
+			"getFull",
+			"Provi",
+			"mai",
+			"interviewr",
+			"img-bd",
+			"img-bd3b23.jpg",
+			"meta",
+			"Company",
+			"moment",
+			"_",
+			"400",
+			"500",
+			"200",
+			"companyService",
+			"userService",
+			"CompanyModel",
+			"Company",
+			"User",
+			"UserModel",
+			"Vacancy",
+			"Company",
+			"CompanyModel",
+			"VacancyModel",
+			"console.log",
+			"200",
+			"User",
+			"Promise",
+			"CompanyModel",
+			"findbyIdAndUpdate",
+			"experience",
+			"constraints",
+			"ENTER_ROOM",
+			"myroom",
+			"SHOW_VELOCITY",
+			"isElementDocumentActive",
+			"isElement",
+			"isDocumentActiveElement",
+			"events",
+			"classList",
+			"Vlad 222",
+			"rtc_core",
+			"app.vacancy",
+			"name",
+			"config",
+			"vacancyName",
+			"companyName",
+			"vm.company",
+			"companyEmail",
+			"createCompany",
+			"config",
+			"ngfSrc",
+			"ngf-src",
+			"directive",
+			"show ",
+			"collection",
+			"catch",
+			"Promise",
+			"cropImage",
+			"replace",
+			"nub",
+			"р",
+			"с",
+			")]\n",
+			"last",
+			"/admin",
+			"/admin/",
+			"/admin",
+			"admin",
+			"@",
+			"\")",
+			"@routes.Assets.at(\"",
+			")\"",
+			")",
+			"@routes.Assets.at(\"",
+			"@routes.Assets.at(",
+			"@routes.Assets.at",
+			"session",
+			"margin-top: ",
+			"-2",
+			"primary-nav",
+			"ignore",
+			"ignoreM",
+			"im",
+			"require",
+			"requ",
+			"request",
+			"get",
+			"request",
+			"primary-nav",
+			"z-index",
+			"‘",
+			"”",
+			"validate",
+			"string",
+			"}",
+			"{",
+			"2",
+			"secret",
+			"sec",
+			"secre",
+			"echo",
+			"'"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"$uibModalInstance",
+			"HttpStatus.INTERNAL_SERVER_ERROR",
+			"HttpStatus.OK",
+			"media-constr",
+			"isElementDocumentActive?",
+			"title",
+			"vm.vacancy",
+			"vacancyEmail",
+			"createVacancy",
+			"error",
+			"duplicates",
+			"replace",
+			"p",
+			"c",
+			"",
+			"sessionUuid",
+			"'",
+			"\"",
+			"escape",
+			"text",
+			"",
+			"\""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/src/common/layout/header/header.directive.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 328,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								328,
+								328
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				2,
+				0,
+				3,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.33,
+			0.823404655808,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.9o:///Users/alehatsman/Projects/go/src/github.com/atsman/rembrandt":
+	{
+		"height": 376.0
+	},
+	"output.MarGo-output":
+	{
+		"height": 112.0
+	},
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/GoSublime/GoSublime.sublime-build",
+	"project": "sproj.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"header",
+				"app/src/common/layout/header/header.controller.js"
+			],
+			[
+				"",
+				".editorconfig"
+			],
+			[
+				"create.c",
+				"angular-interviewr/app/js/vacancy/manage/create.controller.js"
+			],
+			[
+				"modal.con",
+				"angular-interviewr/app/js/user/settings/modal.controller.js"
+			],
+			[
+				"dropdown.",
+				"angular-interviewr/app/js/layout/dropdown/dropdown.directive.js"
+			],
+			[
+				"modal.controller.js",
+				"angular-interviewr/app/js/user/settings/modal.controller.js"
+			],
+			[
+				"use",
+				"node-interviewr/src/models/user.ts"
+			],
+			[
+				"user",
+				"node-interviewr/src/routes/users.ts"
+			],
+			[
+				"modalcon",
+				"angular-interviewr/app/js/user/settings/modal.controller.js"
+			],
+			[
+				"usersetting",
+				"angular-interviewr/app/js/user/settings/settings.controller.js"
+			],
+			[
+				"alice",
+				"Maslow-API/app/business_logic/actors/wonderland/AliceActor.scala"
+			],
+			[
+				"homecontro",
+				"Maslow-API/app/controllers/me/feed/HomeController.scala"
+			],
+			[
+				"choose",
+				"Maslow-Backend/modules/api/app/controllers/me/actions/ChooseController.scala"
+			],
+			[
+				"package",
+				"Maslow-Web/package.json"
+			],
+			[
+				"routes",
+				"Maslow-Backend/modules/api/conf/api.routes"
+			],
+			[
+				"ques",
+				"scripts/components/Question.jsx"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 176.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

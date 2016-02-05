@@ -1,10 +1,9 @@
-import {ROOT_DIR} from '../../../constants';
-import $ from 'jquery';
-
 module.exports = function SettingsController(toastr, $state, $http, $uibModal,
-                      config, Upload, userResource, countries, myself, imageService) {
+                      config, Upload, countries, myself, imageService, Vendor) {
 
-  var vm = this;
+  const {$} = Vendor;
+
+  const vm = this;
 
   // Fetch countries for dropdown
   vm.countries = countries.data;
@@ -18,11 +17,11 @@ module.exports = function SettingsController(toastr, $state, $http, $uibModal,
   vm.addNewExperience = addNewExperience;
 
   vm.getImageUrl = function() {
-    return imageService.getImageUrl(vm.user, 'assets/images/user-default.png');
+    return imageService.getUserImageUrl(vm.user);
   };
 
   function addNewExperience() {
-    var newItemId = vm.user.experiences.length + 1;
+    const newItemId = vm.user.experiences.length + 1;
     vm.user.experiences.push({id: 'exp' + newItemId});
   }
 
@@ -56,17 +55,17 @@ module.exports = function SettingsController(toastr, $state, $http, $uibModal,
   vm.animationsEnabled = true;
 
   vm.open = function (size) {
-    var modalInstance = $uibModal.open({
+    $uibModal.open({
       animation: vm.animationsEnabled,
-      templateUrl: `${ROOT_DIR}/src/components/user/settings/modal.tpl.html`,
+      templateUrl: `${config.ROOT_DIR}/src/components/user/settings/modal.tpl.html`,
       controller: 'ModalInstanceController',
       controllerAs: 'vm',
       size: size,
       resolve: {
-        file: function () {
+        file() {
           return vm.file;
         },
-        user: function() {
+        user() {
           return vm.user;
         }
       }

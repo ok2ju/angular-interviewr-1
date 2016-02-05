@@ -1,32 +1,21 @@
-import $ from 'jquery';
-import moment from 'moment';
-import _ from 'lodash';
-import angular from 'angular';
-
 import './sass/style.scss';
-
-window.$ = $;
-window.jQuery = $;
-window.moment = moment;
-global._ = _;
-
+import angular from 'angular';
 import 'angular-ui-bootstrap';
-require('angular-ui-router');
-require('angular-resource');
-require('angular-messages');
-require('angular-toastr');
-require('angular-jwt');
-require('angular-storage');
-require('ng-tags-input');
-require('angular-loading-bar');
-require('cropper');
-//require('angular-modal');
-require('ng-file-upload');
-require('restangular');
-require('angular-sanitize');
-require('ui-select/dist/select.js');
-require('fullcalendar');
-require('angular-ui-calendar');
+import 'angular-ui-router';
+import 'angular-resource';
+import 'angular-messages';
+import 'angular-toastr';
+import 'angular-jwt';
+import 'angular-storage';
+import 'ng-tags-input';
+import 'angular-loading-bar';
+import 'cropper';
+import 'ng-file-upload';
+import 'restangular';
+import 'angular-sanitize';
+import 'ui-select/dist/select.js';
+import 'fullcalendar';
+import 'angular-ui-calendar';
 
 angular
   .module('app', [
@@ -37,6 +26,8 @@ angular
     'angular-loading-bar',
     'ngSanitize',
     'ui.select',
+
+    'app.config',
 
     /* Resources */
     'app.resources',
@@ -53,35 +44,20 @@ angular
     'app.user',
     'app.company',
     'app.vacancy',
-    'app.videoroom',
     'app.calendar'
   ])
   .config(require('./app.config'))
   .run(run)
   .constant('config', {
-    'api_url': 'http://localhost:3000',
-    'root_dir': 'app'
+    'API_URL': 'https://localhost:8123',
+    'ROOT_DIR': 'app'
   });
 
-// Resources
-require('./common/resources');
-
-// Services
-require('./common/services');
-
-// Filters
-require('./common/filters');
-
-require('./common/layout/landing');
-require('./common/layout/sidebar');
-require('./common/layout/header');
-
-// Features
-require('./components/user');
-require('./components/company');
-require('./components/vacancy');
-require('./components/videoroom');
-require('./components/calendar');
+import './config';
+import './resources';
+import './services';
+import './filters';
+import './components';
 
 function run($rootScope, $state, store, jwtHelper) {
   $rootScope.$on('$stateChangeStart', function(e, to) {
@@ -102,5 +78,27 @@ function run($rootScope, $state, store, jwtHelper) {
 
   angular.element(document).on('click', function(e) {
     $rootScope.$broadcast('documentClicked', angular.element(e.target));
+  });
+
+  $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
+    console.log('$stateChangeStart to '+toState.to+'- fired when the transition begins. toState,toParams : \n',toState, toParams);
+  });
+
+  $rootScope.$on('$stateChangeError',function(event, toState, toParams, fromState, fromParams){
+    console.log('$stateChangeError - fired when an error occurs during transition.');
+    console.log(arguments);
+  });
+
+  $rootScope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams){
+    console.log('$stateChangeSuccess to '+toState.name+'- fired once the state transition is complete.');
+  });
+
+  $rootScope.$on('$viewContentLoaded',function(event){
+    console.log('$viewContentLoaded - fired after dom rendered',event);
+  });
+
+  $rootScope.$on('$stateNotFound',function(event, unfoundState, fromState, fromParams){
+    console.log('$stateNotFound '+unfoundState.to+'  - fired when a state cannot be found by its name.');
+    console.log(unfoundState, fromState, fromParams);
   });
 }

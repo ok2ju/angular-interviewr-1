@@ -3,7 +3,7 @@ module.exports = function UserProfileController(userResource, config, $statePara
 
   vm.getImageUrl = getImageUrl;
 
-  userResource.oneUser($stateParams.id).then(function(user) {
+  userResource.one($stateParams.id).then(function(user) {
     vm.user = user;
   });
 

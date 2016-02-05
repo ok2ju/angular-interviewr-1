@@ -1,10 +1,11 @@
+import angular from 'angular';
 import {ROOT_DIR} from './constants';
 
 module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
                           $httpProvider, jwtInterceptorProvider, toastrConfig,
                           cfpLoadingBarProvider, RestangularProvider) {
 
-  RestangularProvider.setBaseUrl('http://localhost:3000/api/v1');
+  RestangularProvider.setBaseUrl('https://localhost:8123/api/v1');
 
   RestangularProvider.setRestangularFields({
     id: "_id"
@@ -41,43 +42,42 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
     .state('intro', {
       abstract: true,
       views: {
-          'content': {
-              templateUrl: `${ROOT_DIR}/src/templates/intro-layout.tpl.html`
-          }
+        'content': {
+          templateUrl: `${ROOT_DIR}/src/templates/intro-layout.tpl.html`
+        }
       }
     })
     .state('app', {
       abstract: true,
       views: {
-          'content': {
-              templateUrl: `${ROOT_DIR}/src/templates/app-layout.tpl.html`
-          }
+        'content': {
+          templateUrl: `${ROOT_DIR}/src/templates/app-layout.tpl.html`
+        }
       },
       resolve: {
         metaResource: 'metaResource',
         userResource: 'userResource',
 
-        countries: function(metaResource) {
+        countries(metaResource) {
           return metaResource.getCountries();
         },
 
-        categories: function(metaResource) {
+        categories(metaResource) {
           return metaResource.getCategories();
         },
 
-        positions: function(metaResource) {
+        positions(metaResource) {
           return metaResource.getVacancyPosition();
         },
 
-        vacancyTypes: function(metaResource) {
+        vacancyTypes(metaResource) {
           return metaResource.getVacancyType();
         },
 
-        myself: function(userResource, store, jwtHelper) {
-          var jwt = store.get('jwt');
-          var decodedJwt = jwt && jwtHelper.decodeToken(jwt);
-
-          return userResource.oneUser(decodedJwt._id);
+        myself(userResource, store, jwtHelper) {
+          const jwt = store.get('jwt');
+          const decodedJwt = jwt && jwtHelper.decodeToken(jwt);
+          return userResource.one(decodedJwt._id);
         }
       }
     });

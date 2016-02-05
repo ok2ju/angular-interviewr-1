@@ -1,5 +1,5 @@
 module.exports = function VacancyListController(vacancyResource, positions) {
-  var vm = this;
+  const vm = this;
 
   vm.subscribe = subscribe;
   vm.resetFilter = resetFilter;
@@ -7,7 +7,7 @@ module.exports = function VacancyListController(vacancyResource, positions) {
   // Fetch data for positions dropdown
   vm.positions = positions.data;
 
-  vacancyResource.listVacancies().then(function(vacancies) {
+  vacancyResource.list().then(function(vacancies) {
     vm.vacancies = vacancies;
   });
 
@@ -22,5 +22,4 @@ module.exports = function VacancyListController(vacancyResource, positions) {
     vm.position = {};
     vm.vacancy = {};
   }
-
 };

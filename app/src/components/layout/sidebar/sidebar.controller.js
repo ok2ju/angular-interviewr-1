@@ -1,5 +1,5 @@
-module.exports = function LayoutSidebarController() {
-  var vm = this;
+export function LayoutSidebarController() {
+  const vm = this;
 
   vm.items = [{
     name: 'Video Room',
@@ -37,5 +37,4 @@ module.exports = function LayoutSidebarController() {
     icon: 'icon-newspaper',
     state: 'app.vacanciesManage.companies'
   }];
-
-};
+}

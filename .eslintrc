@@ -1,7 +1,7 @@
 {
   "parser": "babel-eslint",
   "ecmaFeatures": {
-    "modules": true,
+    "modules": true
   },
   "env": {
     "browser": true,
@@ -35,7 +35,7 @@
     "no-negated-in-lhs": 2,
     "no-obj-calls": 2,
     "no-regex-spaces": 2,
-    "quote-props": 2,
+    "quote-props": 0,
     "no-sparse-arrays": 2,
     "no-unreachable": 2,
     "use-isnan": 2,
@@ -155,7 +155,6 @@
     "no-unneeded-ternary": 2,
     "object-curly-spacing": [1, "never"],
     "operator-assignment": [2, "always"],
-    "quote-props": [1, "as-needed"],
     "quotes": [1, "single", "avoid-escape"],
     "semi-spacing": [1, {"before": false, "after": false}],
     "semi": 2,
@@ -191,6 +190,6 @@
     "max-params": [2, 5], // limits the number of parameters that can be used in the function declaration. (off by default)
     "max-statements": 0, // specify the maximum number of statement allowed in a function (off by default)
     "no-bitwise": 0, // disallow use of bitwise operators (off by default)
-    "no-plusplus": 2, // disallow use of unary operators, ++ and -- (off by default)
+    "no-plusplus": 2 // disallow use of unary operators, ++ and -- (off by default)
   }
 }

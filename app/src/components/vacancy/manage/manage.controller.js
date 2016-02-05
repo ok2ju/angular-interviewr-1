@@ -1,9 +1,9 @@
 module.exports = function VacancyManageController(myself, vacancyResource, companyResource, $stateParams, config, imageService) {
-  var vm = this;
+  const vm = this;
 
   vm.getImageUrl = getImageUrl;
 
-  companyResource.listCompanies({owner: myself._id}).then(function(companies) {
+  companyResource.list({owner: myself._id}).then(function(companies) {
     vm.companies = companies;
   });
 

@@ -1,22 +1,11 @@
-module.exports = function CompanyManageController(myself, companyResource, toastr, $state, config, imageService) {
+module.exports = function CompanyManageController(myself, companyResource, imageService) {
 
-  var vm = this;
+  const vm = this;
 
-  const {USER_DEFAULT_IMAGE} = imageService.getConstants();
+  vm.getImageUrl = imageService.getCompanyImageUrl;
+  vm.getUserImageUrl = imageService.getUserImageUrl;
 
-  vm.getImageUrl = getImageUrl;
-  vm.getUserImageUrl = getUserImageUrl;
-
-  companyResource.listCompanies({owner: myself._id}).then(function(companies) {
+  companyResource.list({owner: myself._id}).then(function(companies) {
     vm.companies = companies;
   });
-
-  function getImageUrl(company) {
-    return imageService.getImageUrl(company, USER_DEFAULT_IMAGE);
-  }
-
-  function getUserImageUrl(user) {
-    return imageService.getImageUrl(user, USER_DEFAULT_IMAGE);
-  }
-
 };

@@ -1,7 +1,7 @@
 module.exports = function CandidatesDashboardController(vacancyResource, myself) {
-  var vm = this;
+  const vm = this;
 
-  vacancyResource.listVacancies({owner: myself._id}).then(function(vacancies) {
+  vacancyResource.list({owner: myself._id}).then(function(vacancies) {
     vm.vacancies = vacancies;
   });
 };

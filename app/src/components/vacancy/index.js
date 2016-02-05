@@ -68,9 +68,8 @@ function vacancyConfig($stateProvider) {
       },
       resolve: {
         companyResource: 'companyResource',
-
-        companies: function(myself, companyResource) {
-          return companyResource.listCompanies({owner: myself._id});
+        companies(myself, companyResource) {
+          return companyResource.list({owner: myself._id});
         }
       }
     })
