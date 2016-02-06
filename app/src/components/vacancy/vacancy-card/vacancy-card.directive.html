@@ -1,0 +1,31 @@
+<div class="v-card">
+  <div class="v-card-inner">
+    <div class="card-content">
+      <div class="card-content-head">
+        <a ui-sref="app.vacanciesProfile({id: vacancy._id})" class="card-content__header">{{vacancy.title}}</a>
+        <!-- <div class="v-edit">
+          <i class="sidebar-ico icon-pencil"></i>
+          <i class="sidebar-ico icon-cancel"></i>
+        </div> -->
+      </div>
+      <div class="card-content__meta">
+        <span class="comp">{{vacancy.company_id.name}} at {{vacancy.location}}</span>
+        <span class="time">{{vacancy.creation_date | moment: 'DD.MM.YYYY'}}</span>
+      </div>
+      <ul class="n-skills">
+        <li class="n-skills__item" ng-repeat="skill in vacancy.required_skills"><span>{{skill.text}}</span></li>
+      </ul>
+      <div class="content__description"></div>
+    </div>
+    <div class="extra">
+      <div ng-class="{Junior: 'junior', Middle: 'middle', Senior: 'senior'}[vacancy.position]" class="pos">{{vacancy.position}}</div>
+      <div ng-switch on="vacancy.type" class="owner">
+        <img ng-switch-when="Developer" class="ui avatar image" src="{{getImage(vacancy.type)}}">
+        {{vacancy.type}}
+      </div>
+    </div>
+    <a href="#" class="follow" ng-click="subscribe(vacancy)">
+      <span>Follow</span>
+    </a>
+  </div>
+</div>

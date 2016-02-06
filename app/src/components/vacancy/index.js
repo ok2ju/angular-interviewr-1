@@ -1,4 +1,5 @@
 import angular from 'angular';
+import {VacancyCard} from './vacancy-card/index.js';
 import {ROOT_DIR} from '../../constants';
 
 angular
@@ -10,6 +11,7 @@ angular
       'app.vacancy.edit',
       'app.vacancy.profile'
     ])
+    .directive('vacancyCard', VacancyCard)
     .config(vacancyConfig);
 
 require('./create');
