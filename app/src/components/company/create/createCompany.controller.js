@@ -1,10 +1,9 @@
 import {ROOT_DIR} from '../../../constants';
-import moment from 'moment';
 import $ from 'jquery';
 
 module.exports = function CompanyCreateController(companyResource, $scope,
                             toastr, $state, $uibModal, config, countries, categories, imageService) {
-  var vm = this;
+  const vm = this;
   vm.company = {};
 
   // Fetching data for countries dropdown
@@ -30,7 +29,7 @@ module.exports = function CompanyCreateController(companyResource, $scope,
   }
 
   vm.getImageUrl = function() {
-    return imageService.getImageUrl(vm.company, '/assets/images/companies/default.png');
+    return imageService.getCompanyImageUrl(vm.company);
   };
 
   //file upload
@@ -44,7 +43,7 @@ module.exports = function CompanyCreateController(companyResource, $scope,
     $('#up-photo').click();
   };
 
-  vm.open = function (size) {
+  vm.open = function(size) {
     $uibModal.open({
       animation: true,
       templateUrl: `${ROOT_DIR}/src/components/company/create/modal.tpl.html`,
@@ -52,10 +51,10 @@ module.exports = function CompanyCreateController(companyResource, $scope,
       controllerAs: 'vm',
       size: size,
       resolve: {
-        file: function () {
+        file() {
           return vm.file;
         },
-        company: function() {
+        company() {
           return vm.company;
         }
       }

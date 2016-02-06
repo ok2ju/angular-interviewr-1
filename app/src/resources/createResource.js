@@ -20,12 +20,16 @@ export function createResource(name, Restangular, extension) {
       return R.one(name, id).customPUT(data);
     },
 
-    list() {
-      return R.all(name).getList();
+    list(query) {
+      return R.all(name).getList(query || {});
     },
 
     one(id) {
       return R.one(name, id).get();
+    },
+
+    delete(id) {
+      return R.one(name, id).remove();
     }
   };
 

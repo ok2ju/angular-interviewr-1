@@ -4,9 +4,9 @@ module.exports = function VacancyCandidatesController(
   vacancyResource, interviewResource, CandidatesService, imageService, $state,
   $stateParams, $uibModal, config) {
 
-  const vacancyId = $stateParams.id;
+  const vm = this;
 
-  var vm = this;
+  const vacancyId = $stateParams.id;
 
   vm.getUserImageUrl = getUserImageUrl;
 
@@ -43,18 +43,17 @@ module.exports = function VacancyCandidatesController(
         date: date.toDate(),
         candidate: subscription.candidate._id,
         vacancyId: vacancyId
-      }
-
+      };
       interviewResource.postInterview(interview);
       console.log(interview);
     }
-  }
+  };
 
   /*CandidatesService.success(function(data) {
       vm.candidates = data;
   });*/
 
   function getUserImageUrl(user) {
-    return imageService.getImageUrl(user, 'assets/images/user-default.png');
+    return imageService.getUserImageUrl(user);
   }
 };

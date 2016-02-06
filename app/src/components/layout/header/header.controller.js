@@ -1,5 +1,9 @@
-export function LayoutHeaderController($state, $scope, toastr, store, imageService) {
+export function LayoutHeaderController($state, $scope, toastr, store, imageService, $rootScope) {
   const vm = this;
+
+  $rootScope.$watch('pageName', (v) => {
+    vm.pageName = v;
+  });
 
   /*vm.user = $scope.user;
   console.log('USER DATA - ' + $scope.user);*/

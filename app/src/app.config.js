@@ -52,8 +52,7 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
       views: {
         'content': {
           templateUrl: `${ROOT_DIR}/src/templates/app-layout.tpl.html`,
-          controller: function($scope, myself) {
-            console.log('APP LAYOUT CTRL DATA - ' + myself);
+          controller($scope, myself, $rootScope) {
             $scope.user = myself;
           }
         }

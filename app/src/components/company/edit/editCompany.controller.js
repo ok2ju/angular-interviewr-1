@@ -1,9 +1,6 @@
-import {ROOT_DIR} from '../../../constants';
-import moment from 'moment';
-
 module.exports = function(companyResource, $scope,
-                          toastr, $state, $uibModal, config, $stateParams, countries, categories) {
-  var vm = this;
+                          toastr, $state, $uibModal, config, $stateParams, countries, categories, imageService) {
+  const vm = this;
 
   vm.company = {};
   vm.updateCompany = updateCompany;
@@ -44,13 +41,7 @@ module.exports = function(companyResource, $scope,
   };
 
   function getImageUrl() {
-    var res = '';
-    if(vm.company && vm.company.imageId) {
-      res = config.api_url + '/api/v1/images/' + vm.company.imageId;
-    } else {
-      res = `${ROOT_DIR}/assets/images/companies/default.png`;
-    }
-    return res;
+    return imageService.getCompanyImageUrl(vm.company);
   }
 
   function updateCompany() {
@@ -70,7 +61,7 @@ module.exports = function(companyResource, $scope,
       controller: 'EditModalController',
       controllerAs: 'vm',
       resolve: {
-        companyId: function() {
+        companyId() {
           return vm.company._id;
         }
       }

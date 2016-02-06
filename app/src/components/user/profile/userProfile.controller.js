@@ -1,5 +1,5 @@
 module.exports = function UserProfileController(userResource, config, $stateParams, imageService) {
-  var vm = this;
+  const vm = this;
 
   vm.getImageUrl = getImageUrl;
 
@@ -8,6 +8,6 @@ module.exports = function UserProfileController(userResource, config, $statePara
   });
 
   function getImageUrl() {
-    return imageService.getImageUrl(vm.user, 'assets/images/user-default.png');
+    return imageService.getUserImageUrl(vm.user);
   }
 };

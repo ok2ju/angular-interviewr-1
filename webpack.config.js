@@ -88,10 +88,10 @@ module.exports = {
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(true),
 
-    new ExtractTextPlugin('assets/css/styles.css'),
+    new ExtractTextPlugin('app/assets/css/styles.css'),
     //new webpack.optimize.CommonsChunkPlugin({}),
     // static assets
-    new CopyWebpackPlugin([ { from: 'app/assets', to: 'assets' }, { from: 'app/src/**/*.html', to: 'assets' } ]),
+    new CopyWebpackPlugin([ { from: 'app/assets', to: 'app/assets' }, { from: 'app/src/**/*.html', to: 'assets' } ]),
     // generating html
     new HtmlWebpackPlugin({ template: 'app/index.html', inject: false }),
     // replace

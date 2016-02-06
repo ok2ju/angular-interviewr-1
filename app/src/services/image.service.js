@@ -9,7 +9,7 @@ export function ImageService(config, Vendor) {
   function getImageUrl(entry, defaultUrl) {
     let res = '';
     if(entry && entry.imageId) {
-      res = config.API_URL + '/api/v1/images/' + entry.imageId;
+      res = `${config.API_URL}/api/v1/images/${entry.imageId}`;
     } else if(defaultUrl) {
       res = `${config.ROOT_DIR}/${defaultUrl}`;
     }
@@ -17,7 +17,7 @@ export function ImageService(config, Vendor) {
   }
 
   function getCompanyImageUrl(company) {
-    return getImageUrl(company, CONSTANTS.USER_DEFAULT_IMAGE);
+    return getImageUrl(company, CONSTANTS.COMPANY_DEFAULT_IMAGE);
   }
 
   function getUserImageUrl(user) {
@@ -33,5 +33,5 @@ export function ImageService(config, Vendor) {
     getUserImageUrl,
     getCompanyImageUrl,
     getConstants
-  }
+  };
 }
