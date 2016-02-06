@@ -17,7 +17,7 @@ module.exports = function VacancyCandidatesController(
   vm.openInterviewModal = (subscription) => {
     $uibModal.open({
       animation: true,
-      templateUrl: `${config.root_dir}/src/components/vacancy/candidates/views/interview-setup-modal.tpl.html`,
+      templateUrl: `${config.ROOT_DIR}/src/components/vacancy/candidates/views/interview-setup-modal.tpl.html`,
       controller: 'InterviewSetupModalCtrl',
       controllerAs: 'vm',
       resolve: {

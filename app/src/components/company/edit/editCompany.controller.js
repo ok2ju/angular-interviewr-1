@@ -66,7 +66,7 @@ module.exports = function(companyResource, $scope,
   vm.openModal = () => {
     $uibModal.open({
       animation: true,
-      templateUrl: `${config.root_dir}/src/components/company/edit/modal.tpl.html`,
+      templateUrl: `${config.ROOT_DIR}/src/components/company/edit/modal.tpl.html`,
       controller: 'EditModalController',
       controllerAs: 'vm',
       resolve: {
