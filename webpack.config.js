@@ -121,7 +121,7 @@ module.exports = {
           console.log('BROWSERSYNC MIDDLEWARE - ' + fileName);
           const fileExists = fs.existsSync(fileName);
           if(!fileExists && fileName.indexOf('browser-sync-client') < 0) {
-            req.url = '/';
+            req.url = '/index.html';
           }
           return next();
         }
