@@ -1,7 +1,8 @@
-export function LayoutHeaderController($state, toastr, store, imageService, myself) {
+export function LayoutHeaderController($state, $scope, toastr, store, imageService) {
   const vm = this;
 
-  vm.user = myself;
+  /*vm.user = $scope.user;
+  console.log('USER DATA - ' + $scope.user);*/
   vm.getImageUrl = function() {
     return imageService.getUserImageUrl(vm.user);
   };

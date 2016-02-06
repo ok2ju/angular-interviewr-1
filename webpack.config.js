@@ -118,7 +118,7 @@ module.exports = {
           const urlObject = url.parse(req.url);
           const d = __dirname.split('\\').join('/');
           const fileName = d + '/dist' + urlObject.href.split(urlObject.search).join('');
-          console.log(fileName);
+          console.log('BROWSERSYNC MIDDLEWARE - ' + fileName);
           const fileExists = fs.existsSync(fileName);
           if(!fileExists && fileName.indexOf('browser-sync-client') < 0) {
             req.url = '/';

@@ -12,7 +12,7 @@ module.exports = function EditModalController($uibModalInstance, $state, toastr,
   };
 
   function deleteCompany(id) {
-    companyResource.removeCompany(id).then(function() {
+    companyResource.delete(id).then(function() {
       vm.cancel();
       $state.go('app.manageCompany');
       toastr.success('Company was successfully deleted.', 'Yay!');

@@ -5,7 +5,7 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
                           $httpProvider, jwtInterceptorProvider, toastrConfig,
                           cfpLoadingBarProvider, RestangularProvider) {
 
-  RestangularProvider.setBaseUrl('https://localhost:8123/api/v1');
+  RestangularProvider.setBaseUrl('http://localhost:3000/api/v1');
 
   RestangularProvider.setRestangularFields({
     id: "_id"
@@ -51,7 +51,11 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
       abstract: true,
       views: {
         'content': {
-          templateUrl: `${ROOT_DIR}/src/templates/app-layout.tpl.html`
+          templateUrl: `${ROOT_DIR}/src/templates/app-layout.tpl.html`,
+          controller: function($scope, myself) {
+            console.log('APP LAYOUT CTRL DATA - ' + myself);
+            $scope.user = myself;
+          }
         }
       },
       resolve: {

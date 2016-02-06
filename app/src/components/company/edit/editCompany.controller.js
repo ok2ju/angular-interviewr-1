@@ -15,7 +15,7 @@ module.exports = function(companyResource, $scope,
   // Fetching data for categories dropdown
   vm.categories = categories.data;
 
-  companyResource.oneCompany($stateParams.id).then(function(company) {
+  companyResource.one($stateParams.id).then(function(company) {
     vm.company = company;
   });
 
