@@ -1,11 +1,10 @@
 module.exports = function VacancyEditController($state, $stateParams, vacancyResource,
-  toastr, positions, vacancyTypes) {
+  toastr, positions, vacancyTypes, $uibModal, config) {
 
   const vm = this;
 
   vm.vacancy = {};
   vm.updateVacancy = updateVacancy;
-  vm.deleteVacancy = deleteVacancy;
 
   // Fetch data for positions dropdown
   vm.positions = positions.data;
@@ -24,12 +23,18 @@ module.exports = function VacancyEditController($state, $stateParams, vacancyRes
     });
   }
 
-  function deleteVacancy() {
-    vacancyResource.remove(vm.vacancy._id).then(function() {
-      $state.go('app.vacanciesManage.companies');
-      toastr.success('Vacancy was successfully deleted.', 'Yay!');
-    }, function(err) {
-      console.log('Error while deleting vacancy!', err);
+  // Open modal when delete company
+  vm.openModal = () => {
+    $uibModal.open({
+      animation: true,
+      templateUrl: `${config.ROOT_DIR}/src/components/vacancy/edit/modal.tpl.html`,
+      controller: 'EditModalController',
+      controllerAs: 'vm',
+      resolve: {
+        vacancyId() {
+          return vm.vacancy._id;
+        }
+      }
     });
   }
 
