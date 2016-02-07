@@ -1,45 +1,36 @@
-import moment from 'moment';
+module.exports = function InterviewSetupModalCtrl($uibModalInstance) {
+  const vm = this;
 
-module.exports = function InterviewSetupModalCtrl($scope, $uibModalInstance, cb) {
-  var vm = this;
-
-  vm.interview = {};
-
-  // Datepicker options
-  vm.today = function() {
-    vm.interview.date = new Date();
-  };
-  vm.today();
-
-  vm.maxDate = new Date(2020, 5, 22);
-
-  vm.openDatepicker = function($event) {
-    vm.status.opened = true;
-  };
-
-  vm.dateOptions = {
-    formatYear: 'yy',
-    startingDay: 1
-  };
-
-  vm.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-  vm.format = vm.formats[0];
-
-  vm.status = {
+  vm.dateModel = {
+    date: new Date(),
+    maxDate: new Date(2020, 5, 22),
+    dateOptions: {
+      formatYear: 'yy',
+      startingDay: 1
+    },
+    format: 'dd-MMMM-yyyy',
     opened: false
   };
 
-  vm.time = new Date();
-
-  vm.onTimeChanged = function() {
-    console.log('Time changed');
-  }  
-
-  vm.ok = function () {
-    cb({date: vm.interview.date, time: vm.time});
+  vm.openDatepicker = function() {
+    vm.dateModel.opened = !vm.dateModel.opened;
   };
 
-  vm.cancel = function () {
+  vm.timeModel = {
+    time: new Date(),
+    hourStep: 10,
+    minuteStep: 10,
+    showMeridian: false
+  };
+
+  vm.ok = function() {
+    $uibModalInstance.close({
+      date: vm.dateModel.date,
+      time: vm.timeModel.time
+    });
+  };
+
+  vm.cancel = function() {
     $uibModalInstance.dismiss('cancel');
   };
-}
+};

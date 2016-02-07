@@ -5,11 +5,26 @@
 <div class="modal-body">
   <div class="inputAdd">
     <span class="inputAdd-item"><i class="sidebar-ico icon-calendar-1"></i></span>
-    <input id="cp-yof" type="text" class="inputAdd-field datepicker-input" uib-datepicker-popup="{{vm.format}}" ng-model="vm.interview.date" is-open="vm.status.opened" max-date="vm.maxDate" datepicker-options="vm.dateOptions" ng-required="true" show-button-bar="false" show-weeks="false" />
+    <input id="cp-yof" type="text" class="inputAdd-field datepicker-input"
+      uib-datepicker-popup="{{vm.format}}"
+      ng-model="vm.dateModel.date"
+      is-open="vm.dateModel.opened"
+      max-date="vm.dateModel.maxDate"
+      datepicker-options="vm.dateModel.dateOptions"
+      ng-required="true"
+      show-button-bar="false"
+      show-weeks="false"
+    />
     <button type="button" class="inputAdd-item inputAdd-append-item" ng-click="vm.openDatepicker($event)"><i class="icon-calendar"></i></button>
   </div>
   <div class="inputAdd">
-    <uib-timepicker ng-model="vm.time" ng-change="vm.onTimeChanged()" hour-step="10" minute-step="10" show-meridian="ismeridian"></uib-timepicker>
+    <uib-timepicker
+      ng-model="vm.timeModel.time"
+      ng-change="vm.onTimeChanged()"
+      hour-step="vm.timeModel.hourStep"
+      minute-step="vm.timeModel.minuteStep"
+      show-meridian="vm.timeModel.showMeridian">
+    </uib-timepicker>
   </div>
 </div>
 
