@@ -48,11 +48,7 @@ angular
     'app.calendar'
   ])
   .config(require('./app.config'))
-  .run(run)
-  .constant('config', {
-    'API_URL': 'http://localhost:3000',
-    'ROOT_DIR': 'app'
-  });
+  .run(run);
 
 import './config';
 import './resources';
