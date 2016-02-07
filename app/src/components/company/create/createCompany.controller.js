@@ -19,7 +19,7 @@ module.exports = function CompanyCreateController(companyResource, $scope,
   });
 
   function registerCompany() {
-    companyResource.postCompany(vm.company).then(function() {
+    companyResource.create(vm.company).then(function() {
       toastr.success('Company created.', 'Yay!');
       $state.go('app.companies');
       console.log('Company Saved');

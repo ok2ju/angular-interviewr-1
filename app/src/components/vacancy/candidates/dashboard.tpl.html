@@ -21,7 +21,7 @@
 
   <vacancy-card
     ng-repeat="vacancy in vm.vacancies | filter:{title: vm.vacancy.name, position: vm.position.name}"
-    vacancy="vacancy" with-follow="false" editable="false">
+    vacancy="vacancy" with-follow="false" editable="false" with-candidates="true">
   </vacancy-card>
 
 </div>

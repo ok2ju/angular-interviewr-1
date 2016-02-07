@@ -4,7 +4,8 @@ export function VacancyCard(config) {
     scope: {
       vacancy: '=',
       withFollow: '=',
-      editable: '='
+      editable: '=',
+      withCandidates: '='
     },
     transclude: true,
     templateUrl: `${config.ROOT_DIR}/src/components/vacancy/vacancy-card/vacancy-card.directive.html`,
@@ -13,7 +14,8 @@ export function VacancyCard(config) {
 
       $scope.settings = {
         withFollowButton: $scope.withFollow || false,
-        withEditButton: $scope.editable || false
+        withEditButton: $scope.editable || false,
+        withCandidates: $scope.withCandidates || false
       };
 
       const urlTransformer = (url) => {

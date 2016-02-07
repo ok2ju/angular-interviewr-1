@@ -2,7 +2,8 @@
   <div class="v-card-inner">
     <div class="card-content">
       <div class="card-content-head">
-        <a ui-sref="app.vacanciesProfile({id: vacancy._id})" class="card-content__header">{{vacancy.title}}</a>
+        <a ng-if="!settings.withCandidates" ui-sref="app.vacanciesProfile({id: vacancy._id})" class="card-content__header">{{vacancy.title}}</a>
+        <a ng-if="settings.withCandidates" ui-sref="app.candidates({id: vacancy._id})" class="card-content__header">{{vacancy.title}}</a>
         <div ng-if="settings.withEditButton" class="v-edit">
           <i ui-sref="app.vacanciesEdit({id: vacancy._id})" class="sidebar-ico icon-pencil"></i>
         </div>
@@ -18,8 +19,8 @@
     </div>
     <div class="extra">
       <div ng-class="{Junior: 'junior', Middle: 'middle', Senior: 'senior'}[vacancy.position]" class="pos">{{vacancy.position}}</div>
-      <div ng-switch on="vacancy.type" class="owner">
-        <img ng-switch-when="Developer" class="ui avatar image" src="{{getImage(vacancy.type)}}">
+      <div class="owner">
+        <img class="ui avatar image" src="{{getImage(vacancy.type)}}">
         {{vacancy.type}}
       </div>
     </div>
