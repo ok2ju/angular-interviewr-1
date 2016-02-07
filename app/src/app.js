@@ -39,6 +39,7 @@ angular
     'app.header',
     'app.sidebar',
     'app.landing',
+    'app.timepicker',
 
     /* Feature areas */
     'app.user',
