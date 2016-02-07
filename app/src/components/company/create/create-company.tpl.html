@@ -23,7 +23,7 @@
               <div class="v-form-error" ng-messages="createCompany.location.$error">
                 <div ng-message="required">You did not enter a location</div>
               </div>
-              <span class="inputAdd-item"><i class="sidebar-ico icon-globe-1"></i></span>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-globe"></i></span>
               <ui-select ng-model="vm.company.location" theme="selectize" ng-disabled="disabled" name="location" required>
                 <ui-select-match placeholder="Country">{{$select.selected.name}}</ui-select-match>
                 <ui-select-choices repeat="country.name as country in vm.countries | filter: $select.search">
@@ -37,7 +37,7 @@
               <div class="v-form-error" ng-messages="createCompany.category.$error">
                 <div ng-message="required">You did not enter a category</div>
               </div>
-              <span class="inputAdd-item"><i class="sidebar-ico icon-tag"></i></span>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-qrcode"></i></span>
               <ui-select ng-model="vm.company.category" theme="selectize" ng-disabled="disabled" name="category" required>
                 <ui-select-match placeholder="Category">{{$select.selected.name}}</ui-select-match>
                 <ui-select-choices repeat="category.name as category in vm.categories | filter: $select.search">
@@ -46,7 +46,7 @@
               </ui-select>
             </div>
             <div class="inputAdd">
-              <span class="inputAdd-item"><i class="sidebar-ico icon-calendar-1"></i></span>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-calendar-empty"></i></span>
               <input id="cp-yof" type="text" class="inputAdd-field datepicker-input" uib-datepicker-popup="{{vm.format}}" ng-model="vm.company.yof" is-open="vm.status.opened" max-date="vm.maxDate" datepicker-options="vm.dateOptions" ng-required="true" show-button-bar="false" show-weeks="false" />
               <button type="button" class="inputAdd-item inputAdd-append-item" ng-click="vm.openDatepicker($event)"><i class="icon-calendar"></i></button>
             </div>
@@ -78,7 +78,7 @@
                 <div ng-message="required">You did not enter a site url</div>
                 <div ng-message="pattern">Must be a valid url</div>
               </div>
-              <span class="inputAdd-item"><i class="sidebar-ico icon-search"></i></span>
+              <span class="inputAdd-item"><i class="sidebar-ico icon-link"></i></span>
               <input name="companySite" ng-model="vm.company.site" type="text" placeholder="Company site" class="inputAdd-field" id="cp-site" ng-pattern="/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/" required>
             </div>
           </div>

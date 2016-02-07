@@ -24,7 +24,7 @@ export function LayoutSidebarController() {
 
   vm.company = [{
     name: 'My Companies',
-    icon: 'icon-diamond',
+    icon: 'icon-hospital',
     state: 'app.manageCompany'
   },
   {

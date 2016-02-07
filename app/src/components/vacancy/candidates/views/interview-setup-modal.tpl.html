@@ -4,7 +4,7 @@
 
 <div class="modal-body">
   <div class="inputAdd">
-    <span class="inputAdd-item"><i class="sidebar-ico icon-calendar-1"></i></span>
+    <span class="inputAdd-item"><i class="sidebar-ico icon-calendar-empty"></i></span>
     <input id="cp-yof" type="text" class="inputAdd-field datepicker-input" uib-datepicker-popup="{{vm.format}}" ng-model="vm.interview.date" is-open="vm.status.opened" max-date="vm.maxDate" datepicker-options="vm.dateOptions" ng-required="true" show-button-bar="false" show-weeks="false" />
     <button type="button" class="inputAdd-item inputAdd-append-item" ng-click="vm.openDatepicker($event)"><i class="icon-calendar"></i></button>
   </div>
