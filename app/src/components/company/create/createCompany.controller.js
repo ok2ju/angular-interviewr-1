@@ -63,7 +63,7 @@ module.exports = function CompanyCreateController(companyResource, $scope,
 
   // Datepicker options
   vm.today = function() {
-    vm.company.yof = new Date();
+    vm.company.creation_date = new Date();
   };
   vm.today();
 
