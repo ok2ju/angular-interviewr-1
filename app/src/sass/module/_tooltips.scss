@@ -1,7 +1,7 @@
 // imports
 @import '../utils/index';
 
-.tooltip {
+.tooltip-h {
   position: relative;
 
   &:hover {
@@ -30,7 +30,7 @@
 }
 
 .tooltip-v {
-  @extend .tooltip;
+  @extend .tooltip-h;
 
   &:hover {
     &:after {
