@@ -1,5 +1,7 @@
 module.exports = function(companyResource, $scope,
-                          toastr, $state, $uibModal, config, $stateParams, countries, categories, imageService) {
+                          toastr, $state, $uibModal, config,
+                          $stateParams, countries, categories, imageService, Vendor) {
+  const {moment} = Vendor;
   const vm = this;
 
   vm.company = {};
@@ -13,6 +15,7 @@ module.exports = function(companyResource, $scope,
   vm.categories = categories.data;
 
   companyResource.one($stateParams.id).then(function(company) {
+    company.creation_date = moment(company.creation_date).toDate();
     vm.company = company;
   });
 
