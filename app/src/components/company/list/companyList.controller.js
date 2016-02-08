@@ -1,8 +1,6 @@
-module.exports = function CompanyListController(companyResource, imageService, countries, categories) {
+module.exports = function CompanyListController(companyResource, countries, categories) {
   const vm = this;
 
-  vm.getImageUrl = imageService.getCompanyImageUrl;
-  vm.getUserImageUrl = imageService.getUserImageUrl;
   vm.resetFilter = resetFilter;
 
   companyResource.list().then(function(companies) {

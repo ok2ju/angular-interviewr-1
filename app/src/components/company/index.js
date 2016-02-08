@@ -1,4 +1,5 @@
 import angular from 'angular';
+import {CompanyCard} from './company-card/index.js';
 
 angular
   .module('app.company', [
@@ -8,6 +9,7 @@ angular
     'app.company.profile',
     'app.company.edit'
   ])
+  .directive('companyCard', CompanyCard)
   .config(companyConfig);
 
 require('./manage');
