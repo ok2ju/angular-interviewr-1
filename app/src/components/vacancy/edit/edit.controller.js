@@ -28,7 +28,7 @@ module.exports = function VacancyEditController($state, $stateParams, vacancyRes
     $uibModal.open({
       animation: true,
       templateUrl: `${config.ROOT_DIR}/src/components/vacancy/edit/modal.tpl.html`,
-      controller: 'EditModalController',
+      controller: 'VacancyEditModalController',
       controllerAs: 'vm',
       resolve: {
         vacancyId() {

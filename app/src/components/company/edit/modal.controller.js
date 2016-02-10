@@ -1,4 +1,4 @@
-module.exports = function EditModalController($uibModalInstance, $state, toastr, companyResource, companyId) {
+module.exports = function CompanyEditModalController($uibModalInstance, $state, toastr, companyResource, companyId) {
   var vm = this;
 
   vm.deleteCompany = deleteCompany;

@@ -43,17 +43,9 @@
 
 <div class="switcher-panel">
   <div class="switcher-panel-inner">
-    <a class="switcher-panel__control active" href="#">Vacancies</a>
-    <a class="switcher-panel__control" href="#">Feedback</a>
+    <a ui-sref="app.companyProfile.vacancies" class="switcher-panel__control" ui-sref-active="active">Vacancies</a>
+    <a ui-sref="app.companyProfile.comments" class="switcher-panel__control" ui-sref-active="active">Feedback</a>
   </div>
 </div>
 
-<div class="c-vacancies">
-  <div class="c-vacancies__inner">
-    <div class="vacancy-row">
-      <vacancy-card
-        ng-repeat="vacancy in vm.vacancies"
-        vacancy="vacancy" with-follow="false" editable="false">
-      </vacancy-card>
-  </div>
-</div>
+<div ui-view></div>

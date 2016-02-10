@@ -7,4 +7,4 @@ angular
       'toastr'
     ])
     .controller('VacancyEditController', require('./edit.controller'))
-    .controller('EditModalController', require('./modal.controller'));
+    .controller('VacancyEditModalController', require('./modal.controller'));

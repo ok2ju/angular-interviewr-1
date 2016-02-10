@@ -69,5 +69,12 @@ function companyConfig($stateProvider, config) {
         requiresLogin: true,
         pageTitle: 'Company'
       }
+    })
+    .state('app.companyProfile.vacancies', {
+      url: '',
+      templateUrl: `${config.ROOT_DIR}/src/components/company/profile/vacancies.tpl.html`,
+    })
+    .state('app.companyProfile.comments', {
+      templateUrl: `${config.ROOT_DIR}/src/components/company/profile/comments.tpl.html`,
     });
 }
