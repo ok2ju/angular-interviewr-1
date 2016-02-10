@@ -17,8 +17,14 @@
     <div class="vacancyInfo-secondary">
       <span class="v-si-text">{{vm.vacancy.type}}</span>
       <span ng-class="{Junior: 'junior', Middle: 'middle', Senior: 'senior'}[vm.vacancy.position]" class="v-si-text v-p-pos">{{vm.vacancy.position}}</span>
-      <span class="v-si-text">{{vm.vacancy.location}}</span>
-      <span class="v-si-text pull-right">{{vm.vacancy.creation_date | moment: 'DD MMM, YY'}}</span>
+      <span class="v-si-text">
+        <i class="icon-location"></i>
+        {{vm.vacancy.location}}
+      </span>
+      <span class="v-si-text pull-right">
+        <i class="icon-calendar"></i>
+        {{vm.vacancy.creation_date | moment: 'DD MMM, YY'}}
+      </span>
     </div>
 
     <div class="vacancyInfo-group v-skills-group">
