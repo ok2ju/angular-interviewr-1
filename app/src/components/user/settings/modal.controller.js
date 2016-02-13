@@ -29,7 +29,7 @@ module.exports = function ModalController($uibModalInstance, $timeout, Upload, c
     };
 
     Upload.upload({
-      url: config.api_url + '/api/v1/images',
+      url: config.API_URL + '/api/v1/images',
       data: data,
       headers: {
         crop: JSON.stringify(vm.cropData)
@@ -37,7 +37,7 @@ module.exports = function ModalController($uibModalInstance, $timeout, Upload, c
     }).then(function(resp) {
         const data = resp.data;
         if(data._id) {
-          userResource.updateUser(user._id, {imageId: data._id}).then(function() {
+          userResource.update(user._id, {imageId: data._id}).then(function() {
             user.imageId = data._id;
             vm.cancel();
           });
