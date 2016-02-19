@@ -2,7 +2,7 @@
   <div class="s-content-head">
     <h2 class="s-content-head__header">Fill company profile fields</h2>
   </div>
-  <form class="settings-form" method="post" novalidate ng-submit="vm.registerCompany()" name="createCompany">
+  <form class="settings-form" name="createCompany" ng-submit="vm.registerCompany(createCompany.$valid)" novalidate>
 
     <div class="settings-form__row">
 
@@ -11,7 +11,7 @@
         <div class="grid">
           <div class="grid-cell">
             <div class="inputAdd">
-              <div class="v-form-error" ng-messages="createCompany.companyName.$error" ng-if="createCompany.companyName.$dirty">
+              <div class="v-form-error" ng-messages="createCompany.companyName.$error" ng-if="createCompany.companyName.$dirty || createCompany.$submitted">
                 <div ng-message="required">You did not enter a company name</div>
                 <div ng-message="minlength">Your company name is too short</div>
                 <div ng-message="maxlength">Your company name is too long</div>
@@ -20,8 +20,8 @@
               <input ng-model="vm.company.name" name="companyName" type="text" id="up-name" class="inputAdd-field" placeholder="Name" ng-minlength="5" ng-maxlength="20" required>
             </div>
             <div class="inputAdd">
-              <div class="v-form-error" ng-messages="createCompany.location.$error">
-                <div ng-message="required">You did not enter a location</div>
+              <div ng-show="createCompany.$submitted || createCompany.location.$touched" class="v-form-error">
+                <div ng-show="createCompany.location.$error.required">You did not enter a location</div>
               </div>
               <span class="inputAdd-item"><i class="sidebar-ico icon-globe"></i></span>
               <ui-select ng-model="vm.company.location" theme="selectize" ng-disabled="disabled" name="location" required>
@@ -34,8 +34,8 @@
           </div>
           <div class="grid-cell">
             <div class="inputAdd">
-              <div class="v-form-error" ng-messages="createCompany.category.$error">
-                <div ng-message="required">You did not enter a category</div>
+              <div ng-show="createCompany.$submitted || createCompany.category.$touched" class="v-form-error">
+                <div ng-show="createCompany.category.$error.required">You did not enter a category</div>
               </div>
               <span class="inputAdd-item"><i class="sidebar-ico icon-qrcode"></i></span>
               <ui-select ng-model="vm.company.category" theme="selectize" ng-disabled="disabled" name="category" required>
@@ -56,7 +56,7 @@
         <div class="grid">
           <div class="grid-cell">
             <div class="inputAdd">
-              <div class="v-form-error" ng-messages="createCompany.companyEmail.$error" ng-if="createCompany.companyEmail.$dirty">
+              <div class="v-form-error" ng-messages="createCompany.companyEmail.$error" ng-if="createCompany.companyEmail.$dirty || createCompany.$submitted">
                 <div ng-message="required">You did not enter a email field</div>
                 <div ng-message="email">Your email address is invalid</div>
               </div>
@@ -64,7 +64,7 @@
               <input name="companyEmail" ng-model="vm.company.email" type="email" placeholder="Email" class="inputAdd-field" id="cp-email" required>
             </div>
             <div class="inputAdd">
-              <div class="v-form-error" ng-messages="createCompany.companyPhone.$error" ng-if="createCompany.companyPhone.$dirty">
+              <div class="v-form-error" ng-messages="createCompany.companyPhone.$error" ng-if="createCompany.companyPhone.$dirty || createCompany.$submitted">
                 <div ng-message="required">You did not enter a phone</div>
                 <div ng-message="pattern">Must be a valid 10 digit phone number</div>
               </div>
@@ -74,7 +74,7 @@
           </div>
           <div class="grid-cell">
             <div class="inputAdd">
-              <div class="v-form-error" ng-messages="createCompany.companySite.$error" ng-if="createCompany.companySite.$dirty">
+              <div class="v-form-error" ng-messages="createCompany.companySite.$error" ng-if="createCompany.companySite.$dirty || createCompany.$submitted">
                 <div ng-message="required">You did not enter a site url</div>
                 <div ng-message="pattern">Must be a valid url</div>
               </div>
@@ -87,7 +87,10 @@
         <div class="grid">
           <div class="grid-cell">
             <div class="inputAdd">
-              <tags-input ng-model="vm.company.specialization"></tags-input>
+              <div class="v-form-error" ng-messages="createCompany.tags.$error" ng-if="createCompany.tags.$touched || createCompany.$submitted">
+                <div ng-message="required">You did not enter at least one tag</div>
+              </div>
+              <tags-input name="tags" ng-model="vm.company.specialization" min-tags="1" max-tags="3" required></tags-input>
             </div>
           </div>
         </div>
@@ -95,7 +98,7 @@
         <div class="grid">
           <div class="grid-cell">
             <div class="inputAdd">
-              <div class="v-form-error" ng-messages="createCompany.description.$error" ng-if="createCompany.description.$dirty">
+              <div class="v-form-error" ng-messages="createCompany.description.$error" ng-if="createCompany.description.$dirty || createCompany.$submitted">
                 <div ng-message="required">You did not enter a description</div>
                 <div ng-message="minlength">Description field is too short</div>
               </div>
@@ -126,7 +129,7 @@
     </div>
 
     <div class="btn-col">
-      <button ng-disabled="createCompany.$invalid" type="submit" class="form-row-group__submit-btn">Create</button>
+      <button type="submit" class="form-row-group__submit-btn">Create</button>
     </div>
 
   </form>

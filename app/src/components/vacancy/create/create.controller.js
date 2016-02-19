@@ -14,13 +14,15 @@ module.exports = function VacancyCreateController($state, vacancyResource,
   vm.company = {};
   vm.companies = companies;
 
-  function registerVacancy() {
-    vacancyResource.create(vm.vacancy).then(function() {
-      toastr.success('Vacancy created.', 'Yay!');
-      $state.go('app.vacanciesList');
-    }, function(err) {
-        toastr.error('Error while creating vacancy.', 'Error!');
-    });
+  function registerVacancy(isValid) {
+    if(isValid) {
+      vacancyResource.create(vm.vacancy).then(function() {
+        toastr.success('Vacancy created.', 'Yay!');
+        $state.go('app.vacanciesList');
+      }, function(err) {
+          toastr.error('Error while creating vacancy.', 'Error!');
+      });
+    }
   }
 
 };

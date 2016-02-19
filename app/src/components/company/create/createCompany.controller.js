@@ -18,14 +18,16 @@ module.exports = function CompanyCreateController(companyResource, $scope,
     vm.company.short_description = vm.company.description ? current.substring(0, 180) + '...' : '';
   });
 
-  function registerCompany() {
-    companyResource.create(vm.company).then(function() {
-      toastr.success('Company created.', 'Yay!');
-      $state.go('app.companies');
-      console.log('Company Saved');
-    }, function(err) {
-        toastr.error('Error while creating company.', 'Error!');
-    });
+  function registerCompany(isValid) {
+    if(isValid) {
+      companyResource.create(vm.company).then(function() {
+        toastr.success('Company created.', 'Yay!');
+        $state.go('app.companies');
+        console.log('Company Saved');
+      }, function(err) {
+          toastr.error('Error while creating company.', 'Error!');
+      });
+    }
   }
 
   vm.getImageUrl = function() {
