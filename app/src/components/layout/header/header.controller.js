@@ -1,5 +1,7 @@
-export function LayoutHeaderController($state, $scope, toastr, store, imageService, $rootScope) {
+export function LayoutHeaderController($state, $scope, toastr, store, imageService, authService, $rootScope) {
   const vm = this;
+
+  authService.me().then(myself => vm.user = myself);
 
   $rootScope.$watch('pageName', (v) => {
     vm.pageName = v;
@@ -13,7 +15,7 @@ export function LayoutHeaderController($state, $scope, toastr, store, imageServi
   vm.isActivity = false;
 
   vm.logout = function() {
-    store.remove('jwt');
+    authService.logout();
     $state.go('intro.login');
     toastr.info('You have been logged out.', 'Info!');
   };

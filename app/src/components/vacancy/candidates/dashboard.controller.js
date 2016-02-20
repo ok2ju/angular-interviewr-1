@@ -1,7 +1,9 @@
-module.exports = function CandidatesDashboardController(vacancyResource, myself) {
+module.exports = function CandidatesDashboardController(vacancyResource, authService) {
   const vm = this;
 
-  vacancyResource.list({owner: myself._id}).then(function(vacancies) {
-    vm.vacancies = vacancies;
+  authService.me().then((myself) => {
+    vacancyResource
+      .list({owner: myself._id})
+      .then((vacancies) => vm.vacancies = vacancies);
   });
 };

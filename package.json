@@ -4,7 +4,7 @@
   "description": "AngularJS interviewr UI",
   "repository": "https://github.com/ok2ju/angular-interviewr-ui.git",
   "scripts": {
-    "start": "gulp serve"
+    "start": "webpack --watch"
   },
   "dependencies": {
     "angular": "^1.4.9",
@@ -19,6 +19,7 @@
     "cropper": "^1.0.0",
     "fullcalendar": "^2.6.0",
     "jquery": "^2.1.4",
+    "js-logger": "^1.2.0",
     "lodash": "^3.10.1",
     "moment": "^2.10.6",
     "ng-file-upload": "^9.0.13",

@@ -1,16 +1,19 @@
 module.exports = function SettingsController(toastr, $state, $http, $uibModal,
-                      config, Upload, countries, myself, imageService, Vendor) {
+                      config, Upload, countries, authService, imageService, Vendor) {
 
   const {$} = Vendor;
+  const logger = Vendor.logger.get('SettingsController');
 
   const vm = this;
 
   // Fetch countries for dropdown
   vm.countries = countries.data;
 
-  vm.user = myself;
-  vm.user.social = vm.user.social || {};
-  vm.user.experiences = vm.user.experiences || [{id: 'exp1'}];
+  authService.me().then((myself) => {
+    vm.user = myself;
+    vm.user.social = vm.user.social || {};
+    vm.user.experiences = vm.user.experiences || [{id: 'exp1'}];
+  });
 
   vm.updateProfile = updateProfile;
   vm.loadTags = loadTags;
@@ -26,8 +29,6 @@ module.exports = function SettingsController(toastr, $state, $http, $uibModal,
   }
 
   function updateProfile() {
-    console.log(vm.user.social);
-
     vm.user.put().then(function() {
       $state.go($state.current, {}, { reload: true });
       toastr.success('Your settings was successfully updated.', 'Yay!');

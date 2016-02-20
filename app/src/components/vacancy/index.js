@@ -70,8 +70,15 @@ function vacancyConfig($stateProvider) {
       },
       resolve: {
         companyResource: 'companyResource',
-        companies(myself, companyResource) {
-          return companyResource.list({owner: myself._id});
+        companies(authService, companyResource) {
+          return new Promise((resolve, reject) => {
+            authService.me().then((myself) => {
+              companyResource
+                .list({owner: myself._id})
+                .then(resolve)
+                .catch(reject);
+            }).catch(reject);
+          });
         }
       }
     })

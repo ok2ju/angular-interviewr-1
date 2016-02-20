@@ -52,8 +52,7 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
       views: {
         'content': {
           templateUrl: `${ROOT_DIR}/src/templates/app-layout.tpl.html`,
-          controller($scope, myself, $rootScope) {
-            $scope.user = myself;
+          controller($scope, $rootScope) {
           }
         }
       },
@@ -75,12 +74,6 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider,
 
         vacancyTypes(metaResource) {
           return metaResource.getVacancyType();
-        },
-
-        myself(userResource, store, jwtHelper) {
-          const jwt = store.get('jwt');
-          const decodedJwt = jwt && jwtHelper.decodeToken(jwt);
-          return userResource.one(decodedJwt._id);
         }
       }
     });
