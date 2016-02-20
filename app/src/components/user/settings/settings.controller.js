@@ -25,15 +25,15 @@ module.exports = function SettingsController(toastr, $state, $http, $uibModal,
     vm.user.experiences.push({id: 'exp' + newItemId});
   }
 
-  function updateProfile() {
-    console.log(vm.user.social);
-
-    vm.user.put().then(function() {
-      $state.go($state.current, {}, { reload: true });
-      toastr.success('Your settings was successfully updated.', 'Yay!');
-    }, function(err) {
-      toastr.error('Error while updating.', 'Error!');
-    });
+  function updateProfile(isValid) {
+    if(isValid) {
+      vm.user.put().then(function() {
+        $state.go($state.current, {}, { reload: true });
+        toastr.success('Your settings was successfully updated.', 'Yay!');
+      }, function(err) {
+        toastr.error('Error while updating.', 'Error!');
+      });
+    }
   }
 
   function loadTags(query) {
