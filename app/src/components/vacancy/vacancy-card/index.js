@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export function VacancyCard(config) {
   return {
     restrict: 'E',
@@ -9,7 +11,7 @@ export function VacancyCard(config) {
     },
     transclude: true,
     templateUrl: `${config.ROOT_DIR}/src/components/vacancy/vacancy-card/vacancy-card.directive.html`,
-    controller(Vendor, $scope, vacancyResource) {
+    controller(Vendor, $scope, vacancyResource, authService, toastr) {
       const {_} = Vendor;
 
       $scope.settings = {
@@ -32,9 +34,33 @@ export function VacancyCard(config) {
 
       $scope.getImage = function(vacancyType) {
         return images[vacancyType];
-      };
+      }
 
-      $scope.subscribe = vacancyResource.subscribe;
+      authService.me().then((myself) => {
+        $scope.isSubscribed = function(vacancy) {
+          var index = _.find(vacancy.subscriptions, function(o) {
+            return o.candidate == myself._id;
+          });
+
+          return index ? true : false;
+        }
+
+        $scope.subscribe = function(vacancy) {
+          vacancyResource.subscribe(vacancy).then(function() {
+            vacancy.subscriptions.push({ candidate: myself._id });
+            toastr.success('You are successful subscribed', 'Yay!');
+          });
+        }
+
+        $scope.unsubscribe = function(vacancy) {
+          vacancyResource.unsubscribe(vacancy).then(function() {
+            var index = vacancy.subscriptions.indexOf(myself._id);
+            vacancy.subscriptions.splice(index, 1);
+            toastr.error('You are unsubscribed', 'Yay!');
+          });
+        }
+      });
+
     }
   };
 }
