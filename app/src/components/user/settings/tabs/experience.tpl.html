@@ -3,7 +3,7 @@
     <h2 class="s-content-head__header">Add your work experience.</h2>
   </div>
 
-  <form name="fillForm" ng-submit="vm.updateProfile()" class="settings-form" novalidate>
+  <form name="fillFormExp" ng-submit="vm.updateProfile(fillFormExp.$valid)" class="settings-form" novalidate>
     <div class="settings-form__row">
 
       <div class="exp-row" ng-repeat="experience in vm.user.experiences">
@@ -11,7 +11,7 @@
         <div class="grid">
           <div class="grid-cell">
             <div class="inputAdd">
-              <div class="v-form-error" ng-messages="fillForm.expOrganization.$error" ng-if="fillForm.expOrganization.$dirty">
+              <div class="v-form-error" ng-messages="fillFormExp.expOrganization.$error" ng-if="fillFormExp.expOrganization.$dirty || fillFormExp.$submitted">
                 <div ng-message="required">You did not enter a organization</div>
                 <div ng-message="minlength">Your organization title is too short</div>
                 <div ng-message="maxlength">Your organization title is too long</div>
@@ -20,7 +20,7 @@
               <input ng-model="experience.organization" name="expOrganization" type="text" id="up-name" class="inputAdd-field" placeholder="Organization" ng-minlength="3" ng-maxlength="25" required>
             </div>
             <div class="inputAdd">
-              <div class="v-form-error" ng-messages="fillForm.expPosition.$error" ng-if="fillForm.expPosition.$dirty">
+              <div class="v-form-error" ng-messages="fillFormExp.expPosition.$error" ng-if="fillFormExp.expPosition.$dirty || fillFormExp.$submitted">
                 <div ng-message="required">You did not enter a position</div>
                 <div ng-message="minlength">Your position title is too short</div>
                 <div ng-message="maxlength">Your position title is too long</div>
@@ -31,7 +31,7 @@
           </div>
           <div class="grid-cell">
             <div class="inputAdd">
-              <div class="v-form-error" ng-messages="fillForm.expStart.$error" ng-if="fillForm.expStart.$dirty">
+              <div class="v-form-error" ng-messages="fillFormExp.expStart.$error" ng-if="fillFormExp.expStart.$dirty || fillFormExp.$submitted">
                 <div ng-message="required">You did not enter a start year</div>
                 <div ng-message="pattern">Must be a valid year</div>
               </div>
@@ -39,7 +39,7 @@
               <input ng-model="experience.startPeriod" type="text" name="expStart" class="inputAdd-field" placeholder="Start year" ng-pattern="/^(199[2-9]|200[0-9]|201[0-6])$/" required>
             </div>
             <div class="inputAdd">
-              <div class="v-form-error" ng-messages="fillForm.expEnd.$error" ng-if="fillForm.expEnd.$dirty">
+              <div class="v-form-error" ng-messages="fillFormExp.expEnd.$error" ng-if="fillFormExp.expEnd.$dirty || fillFormExp.$submitted">
                 <div ng-message="required">You did not enter a end year</div>
                 <div ng-message="pattern">Must be a valid year</div>
               </div>
@@ -52,7 +52,7 @@
         <div class="grid">
           <div class="grid-cell">
             <div class="inputAdd">
-              <div class="v-form-error" ng-messages="fillForm.expAbout.$error" ng-if="fillForm.expAbout.$dirty">
+              <div class="v-form-error" ng-messages="fillFormExp.expAbout.$error" ng-if="fillFormExp.expAbout.$dirty || fillFormExp.$submitted">
                 <div ng-message="required">You did not enter about filed</div>
                 <div ng-message="minlength">About field is too short</div>
               </div>
@@ -70,7 +70,7 @@
     </div>
 
     <div class="btn-col">
-      <button ng-disabled="fillForm.$invalid" type="submit" class="form-row-group__submit-btn">Save</button>
+      <button type="submit" class="form-row-group__submit-btn">Save</button>
     </div>
 
   </form>
