@@ -23,7 +23,7 @@
                     <i class="ico-controll icon-bell-alt actions-indicator"></i>
                   </a>
                   <ul class="activity-dropdown" ng-class="{'active': vm.isActivity}">
-                    <li ng-repeat="interview in vm.upcomingInterviews" class="activity-dropdown__item">
+                    <li ng-repeat="interview in vm.upcomingInterviews | limitTo:3" class="activity-dropdown__item">
                       <a href="">
                         <h1 ui-sref="app.userProfile({id: interview.candidate._id})" class="activity-header">{{interview.title}}</h1>
                         <p class="activity-info">{{interview.owner.email}}</p>
