@@ -18,7 +18,7 @@ module.exports = function CompanyProfileController(companyResource, vacancyResou
   }
 
   function leaveComment(comment) {
-    companyResource.comment($stateParams.id, comment).then(function() {
+    companyResource.comment($stateParams.id, {text: comment}).then(function() {
       console.log('Comment was successfully added!');
     });
   }
