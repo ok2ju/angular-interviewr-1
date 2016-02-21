@@ -30,6 +30,9 @@
                         <span class="activity-time">{{interview.date | fromNow}}</span>
                       </a>
                     </li>
+                    <li ng-show="!vm.upcomingInterviews.length" class="activity-dropdown__item">
+                      <h1 class="activity-header">No upcoming interviews</h1>
+                    </li>
                   </ul>
                 </li>
                 <li class="navbar-btns__item">
