@@ -2,4 +2,5 @@ import angular from 'angular';
 
 angular
   .module('app.filters', [])
-    .filter('moment', require('./date.filter').MomentFilter);
+    .filter('moment', require('./date.filter').MomentFilter)
+    .filter('fromNow', require('./fromNow.filter').FromNowFilter);

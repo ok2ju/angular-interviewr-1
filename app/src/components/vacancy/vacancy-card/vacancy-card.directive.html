@@ -24,8 +24,19 @@
         {{vacancy.type}}
       </div>
     </div>
-    <a ng-if="settings.withFollowButton" href="#" class="follow" ng-click="subscribe(vacancy)">
-      <span>Follow</span>
-    </a>
+
+    <div ng-if="settings.withFollowButton">
+      <div ng-show="!isSubscribed(vacancy)">
+        <a href="#" class="follow" ng-click="subscribe(vacancy)">
+          <span>Follow</span>
+        </a>
+      </div>
+      <div ng-show="isSubscribed(vacancy)">
+        <a href="#" class="follow" ng-click="unsubscribe(vacancy)">
+          <span>Unsubscribe</span>
+        </a>
+      </div>
+    </div>
+
   </div>
 </div>

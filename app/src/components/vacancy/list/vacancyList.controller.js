@@ -1,7 +1,7 @@
 module.exports = function VacancyListController(vacancyResource, positions) {
   const vm = this;
 
-  vm.subscribe = subscribe;
+  /*vm.subscribe = subscribe;*/
   vm.resetFilter = resetFilter;
 
   // Fetch data for positions dropdown
@@ -11,11 +11,11 @@ module.exports = function VacancyListController(vacancyResource, positions) {
     vm.vacancies = vacancies;
   });
 
-  function subscribe(vacancy) {
+  /*function subscribe(vacancy) {
     vacancyResource.subscribe(vacancy).then(function() {
       console.log('success subscruption!');
     });
-  }
+  }*/
 
   // Reset filters query
   function resetFilter() {
