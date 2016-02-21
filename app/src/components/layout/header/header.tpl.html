@@ -23,25 +23,11 @@
                     <i class="ico-controll icon-bell-alt actions-indicator"></i>
                   </a>
                   <ul class="activity-dropdown" ng-class="{'active': vm.isActivity}">
-                    <li class="activity-dropdown__item">
+                    <li ng-repeat="interview in vm.upcomingInterviews" class="activity-dropdown__item">
                       <a href="">
-                        <h1 class="activity-header">Meeting with Interviewr</h1>
-                        <p class="activity-info">test@gmail.com</p>
-                        <span class="activity-time">2 hours from now</span>
-                      </a>
-                    </li>
-                    <li class="activity-dropdown__item">
-                      <a href="">
-                        <h1 class="activity-header">Meeting with Interviewr</h1>
-                        <p class="activity-info">test@gmail.com</p>
-                        <span class="activity-time">2 hours from now</span>
-                      </a>
-                    </li>
-                    <li class="activity-dropdown__item">
-                      <a href="">
-                        <h1 class="activity-header">Meeting with Interviewr</h1>
-                        <p class="activity-info">test@gmail.com</p>
-                        <span class="activity-time">2 hours from now</span>
+                        <h1 ui-sref="app.userProfile({id: interview.candidate._id})" class="activity-header">{{interview.title}}</h1>
+                        <p class="activity-info">{{interview.owner.email}}</p>
+                        <span class="activity-time">{{interview.date | fromNow}}</span>
                       </a>
                     </li>
                   </ul>
