@@ -7,6 +7,10 @@ export function CompanyResource(Vendor) {
   return createResource(RESOURCE_NAME, R, {
     comment(id, commentObj) {
       return R.one(RESOURCE_NAME, id).all('comments').post(commentObj);
+    },
+
+    comments(companyId) {
+      return R.one(RESOURCE_NAME, companyId).all('comments').getList();
     }
   });
 }

@@ -26,7 +26,7 @@
                     <li ng-repeat="interview in vm.upcomingInterviews | limitTo:3" class="activity-dropdown__item">
                       <a href="">
                         <h1 ui-sref="app.userProfile({id: interview.candidate._id})" class="activity-header">{{interview.title}}</h1>
-                        <p class="activity-info">{{interview.owner.email}}</p>
+                        <p class="activity-info">{{interview.vacancy.title}}</p>
                         <span class="activity-time">{{interview.date | fromNow}}</span>
                       </a>
                     </li>

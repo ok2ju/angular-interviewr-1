@@ -3,34 +3,14 @@
 
     <div class="comments">
       <h3 class="comments__header">Comments</h3>
-      <div class="comment">
-        <a href="#" class="comment__avatar">
-          <img src="http://semantic-ui.com/images/avatar/small/matt.jpg">
+      <div ng-repeat="comment in vm.comments" class="comment">
+        <a ui-sref="app.userProfile({id: comment.user._id})" href="#" class="comment__avatar">
+          <img ng-src="{{vm.getUserImageUrl(comment.user)}}" src="http://semantic-ui.com/images/avatar/small/jenny.jpg">
         </a>
         <div class="comment__content">
-          <a href="#" class="author">Matt</a>
-          <div class="metadata">Today at 5:42PM</div>
-          <div class="text">This has been very useful for my research. Thanks as well!</div>
-        </div>
-      </div>
-      <div class="comment">
-        <a href="#" class="comment__avatar">
-          <img src="http://semantic-ui.com/images/avatar/small/jenny.jpg">
-        </a>
-        <div class="comment__content">
-          <a href="#" class="author">Jenny Hess</a>
-          <div class="metadata">Today at 7:35PM</div>
-          <div class="text">Elliot you are always so right :)</div>
-        </div>
-      </div>
-      <div class="comment">
-        <a href="#" class="comment__avatar">
-          <img src="http://semantic-ui.com//images/avatar/small/joe.jpg">
-        </a>
-        <div class="comment__content">
-          <a href="#" class="author">Joe Henderson</a>
-          <div class="metadata">5 days ago</div>
-          <div class="text">Dude, this is awesome. Thanks so much</div>
+          <a ui-sref="app.userProfile({id: comment.user._id})" href="#" class="author">{{comment.user.name}} {{comment.user.surname}}</a>
+          <div class="metadata">{{comment.createdAt | fromNow}}</div>
+          <div class="text">{{comment.text}}</div>
         </div>
       </div>
       <form class="comment-reply">
