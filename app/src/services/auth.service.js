@@ -17,12 +17,8 @@ export function AuthService(Vendor, userResource, store) {
   let currentUser;
   function me() {
     logger.debug('me called.');
-    if(currentUser) {
-      logger.debug('currentUser returns from cache');
-    } else {
-      logger.debug('me returns from backend');
-      currentUser = userResource.me();
-    }
+    logger.debug('me returns from backend');
+    currentUser = userResource.me();
     return currentUser;
   }
 
