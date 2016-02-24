@@ -1,17 +1,22 @@
-export function LayoutHeaderController($state, $scope, toastr, store, imageService, authService, $rootScope, interviewResource) {
+export function LayoutHeaderController($state, $scope, toastr, store, imageService, authService, $rootScope, interviewResource, Vendor) {
   const vm = this;
+  const {moment} = Vendor;
 
   authService.me().then((myself) => {
     vm.user = myself;
 
     interviewResource
-    .list({candidate: vm.user._id})
+    .list({candidate: vm.user._id, owner: vm.user._id})
     .then((interviews) => {
-      vm.upcomingInterviews = interviews.filter(interview => {
+
+       let unsortedInterviews = interviews.filter(interview => {
         const message = ['Interview with', interview.candidate.name, interview.candidate.namesurname];
         interview.title = message.join(' ');
-        return new Date(interview.date) > new Date();
+        return moment(interview.date).isAfter(moment());
       });
+
+      vm.upcomingInterviews = _.sortBy(unsortedInterviews, ['date']);
+
     });
 
   });
