@@ -68,7 +68,8 @@ function companyConfig($stateProvider, config) {
       data: {
         requiresLogin: true,
         pageTitle: 'Company'
-      }
+      },
+      redirectTo: 'app.companyProfile.vacancies'
     })
     .state('app.companyProfile.vacancies', {
       url: '',

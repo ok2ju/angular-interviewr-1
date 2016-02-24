@@ -9,4 +9,5 @@ module.exports = function CompanyManageController(Vendor, authService, companyRe
       vm.companies = companies;
     });
   });
+
 };
