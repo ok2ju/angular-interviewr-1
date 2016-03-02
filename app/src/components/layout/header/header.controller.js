@@ -10,7 +10,7 @@ export function LayoutHeaderController($state, $scope, toastr, store, imageServi
     .then((interviews) => {
 
       let unsortedInterviews = interviews.filter(interview => {
-        const message = ['Interview with', interview.candidate.name, interview.candidate.namesurname];
+        const message = ['Interview with', interview.candidate.name, interview.candidate.surname];
         interview.title = message.join(' ');
         return moment(interview.date).isAfter(moment());
       });
