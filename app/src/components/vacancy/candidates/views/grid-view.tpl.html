@@ -6,9 +6,13 @@
                     <img ng-src="{{vm.getUserImageUrl(subscriber.candidate)}}">
                 </a>
                 <div class="card-overlay">
-                    <div class="btns-wrap">
+                    <div ng-if="!subscriber.interview" class="btns-wrap">
                       <a href="#" class="card-overlay-link" ng-click="vm.openInterviewModal(subscriber)">Set Date</a>
                       <a ui-sref="app.userProfile({id: subscriber.candidate._id})" class="card-overlay-link">More</a>
+                    </div>
+                    <div ng-if="subscriber.interview" class="btns-wrap">
+                      <h1></h1>
+                      <a href="#" class="card-overlay-link" ng-click="vm.cancelInterview(subscriber.interview)">Cancel</a>
                     </div>
                 </div>
             </div>

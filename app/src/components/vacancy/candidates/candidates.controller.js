@@ -21,6 +21,8 @@ module.exports = function VacancyCandidatesController(
   const vacancyId = $stateParams.id;
 
   vm.getUserImageUrl = imageService.getUserImageUrl;
+  vm.getInfoAboutInterview = getInfoAboutInterview;
+  vm.cancelInterview = cancelInterview;
 
   $state.go(CANDIDATES_GRID);
 
@@ -48,4 +50,23 @@ module.exports = function VacancyCandidatesController(
       });
     }
   };
+
+  function getInfoAboutInterview(id) {
+    let interviewDate;
+    if(id) {
+      interviewResource.one(id).then((interview) => {
+        interviewDate = interview.date;
+      });
+    }
+
+    return interviewDate;
+  }
+
+  function cancelInterview(id) {
+    if(id) {
+      interviewResource.delete(id).then(() => {
+        $state.go($state.current, {}, { reload: true });
+      });
+    }
+  }
 };
