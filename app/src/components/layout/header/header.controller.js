@@ -39,4 +39,8 @@ export function LayoutHeaderController($state, $scope, toastr, store, imageServi
   vm.toggleActivity = function() {
     vm.isActivity = !vm.isActivity;
   };
+
+  vm.clickedSomewhereElse = function() {
+    vm.isActivity = false;
+  };
 }

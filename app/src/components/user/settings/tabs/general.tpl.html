@@ -122,7 +122,7 @@
               <div class="v-form-error" ng-messages="fillForm.tags.$error" ng-if="fillForm.tags.$touched || fillForm.$submitted">
                 <div ng-message="required">You did not enter at least one tag</div>
               </div>
-              <tags-input name="tags" ng-model="vm.user.skills" add-on-paste="true" placeholder="add skill" min-tags="1" max-tags="3" required>
+              <tags-input name="tags" ng-model="vm.user.skills" add-on-paste="true" placeholder="add skill" min-tags="1" required>
                 <auto-complete source="vm.loadTags($query)"></auto-complete>
               </tags-input>
             </div>
