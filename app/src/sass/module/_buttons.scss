@@ -20,6 +20,14 @@ $btn-font-color: #fff;
   padding: .7em .57em;
   text-align: center;
   transition: border .25s linear,color .25s linear,background-color .25s linear;
+
+  &.btn--left {
+    margin-left: 0;
+  }
+
+  &.btn--right {
+    margin-right: 0;
+  }
 }
 
 .btn-lg {
@@ -90,6 +98,7 @@ $btn-font-color: #fff;
 
   &:hover {
     background-color: lighten($default-btn-color, 10%);
+    color: #666;
   }
 }
 

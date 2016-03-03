@@ -47,8 +47,6 @@ $grid-controls-hover-color: #59728e;
 .switcher-panel {
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: -30px;
-  margin-right: -30px;
 }
 
 .switcher-panel-inner {
@@ -99,9 +97,6 @@ $grid-controls-hover-color: #59728e;
 
 .c-profile-header {
   position: relative;
-  margin-left: -30px;
-  margin-right: -30px;
-  margin-top: -30px;
   background: url("../images/companies/google-office.jpg") no-repeat;
   height: 400px;
   background-size: cover;
@@ -144,8 +139,6 @@ $grid-controls-hover-color: #59728e;
 
 .c-profile-add-info {
   position: relative;
-  margin-left: -30px;
-  margin-right: -30px;
   background: #fff;
   padding: 20px 0;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
@@ -206,11 +199,6 @@ $grid-controls-hover-color: #59728e;
       }
     }
   }
-}
-
-.c-vacancies {
-  margin-left: -30px;
-  margin-right: -30px;
 }
 
 .c-vacancies__inner {

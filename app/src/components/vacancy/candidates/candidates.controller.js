@@ -23,6 +23,11 @@ module.exports = function VacancyCandidatesController(
   vm.getUserImageUrl = imageService.getUserImageUrl;
   vm.getInfoAboutInterview = getInfoAboutInterview;
   vm.cancelInterview = cancelInterview;
+  vm.checkAll = checkAll;
+  vm.checkAssigned = checkAssigned;
+  vm.checkNotAssigned = checkNotAssigned;
+
+  vm.candidateFilter = '';
 
   $state.go(CANDIDATES_GRID);
 
@@ -49,7 +54,7 @@ module.exports = function VacancyCandidatesController(
         $state.go(CALENDAR);
       });
     }
-  };
+  }
 
   function getInfoAboutInterview(id) {
     let interviewDate;
@@ -68,5 +73,17 @@ module.exports = function VacancyCandidatesController(
         $state.go($state.current, {}, { reload: true });
       });
     }
+  }
+
+  function checkAll() {
+    vm.candidateFilter = '';
+  }
+
+  function checkAssigned() {
+    vm.candidateFilter = true;
+  }
+
+  function checkNotAssigned() {
+    vm.candidateFilter = false;
   }
 };

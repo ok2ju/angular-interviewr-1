@@ -1,109 +1,111 @@
-<div class="form-content">
-  <div class="s-content-head">
-    <h2 class="s-content-head__header">Fill vacancy profile</h2>
-  </div>
-  <form class="settings-form" name="createVacancy" ng-submit="vm.registerVacancy(createVacancy.$valid)" novalidate>
-    <div class="settings-form__row">
-      <div class="form-fields">
+<div class="full-col">
+  <div class="form-content">
+    <div class="s-content-head">
+      <h2 class="s-content-head__header">Fill vacancy profile</h2>
+    </div>
+    <form class="settings-form" name="createVacancy" ng-submit="vm.registerVacancy(createVacancy.$valid)" novalidate>
+      <div class="settings-form__row">
+        <div class="form-fields">
 
-        <div class="grid">
+          <div class="grid">
 
-          <div class="grid-cell">
-            <div class="inputAdd">
-              <div class="v-form-error" ng-messages="createVacancy.title.$error" ng-if="createVacancy.title.$dirty || createVacancy.$submitted">
-                <div ng-message="required">You did not enter a vacancy title</div>
-                <div ng-message="minlength">Your vacancy title is too short</div>
-                <div ng-message="maxlength">Your vacancy title is too long</div>
+            <div class="grid-cell">
+              <div class="inputAdd">
+                <div class="v-form-error" ng-messages="createVacancy.title.$error" ng-if="createVacancy.title.$dirty || createVacancy.$submitted">
+                  <div ng-message="required">You did not enter a vacancy title</div>
+                  <div ng-message="minlength">Your vacancy title is too short</div>
+                  <div ng-message="maxlength">Your vacancy title is too long</div>
+                </div>
+                <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
+                <input class="inputAdd-field" ng-model="vm.vacancy.title" type="text" placeholder="Title" name="title" ng-minlength="5" ng-maxlength="30" required>
               </div>
-              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
-              <input class="inputAdd-field" ng-model="vm.vacancy.title" type="text" placeholder="Title" name="title" ng-minlength="5" ng-maxlength="30" required>
+              <div class="inputAdd">
+                <div class="v-form-error" ng-messages="createVacancy.location.$error" ng-if="createVacancy.location.$dirty || createVacancy.$submitted">
+                  <div ng-message="required">You did not enter a location</div>
+                  <div ng-message="minlength">Your location is too short</div>
+                  <div ng-message="maxlength">Your location is too long</div>
+                </div>
+                <span class="inputAdd-item"><i class="sidebar-ico icon-location"></i></span>
+                <input class="inputAdd-field" ng-model="vm.vacancy.location" type="text" placeholder="Location" name="location" ng-minlength="5" ng-maxlength="20" required>
+              </div>
             </div>
-            <div class="inputAdd">
-              <div class="v-form-error" ng-messages="createVacancy.location.$error" ng-if="createVacancy.location.$dirty || createVacancy.$submitted">
-                <div ng-message="required">You did not enter a location</div>
-                <div ng-message="minlength">Your location is too short</div>
-                <div ng-message="maxlength">Your location is too long</div>
+
+            <div class="grid-cell">
+              <div class="inputAdd">
+                <div ng-show="createVacancy.$submitted || createVacancy.vacancyType.$touched" class="v-form-error">
+                  <div ng-show="createVacancy.vacancyType.$error.required">You did not enter a vacancy type</div>
+                </div>
+                <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
+                <ui-select ng-model="vm.vacancy.type" theme="selectize" ng-disabled="disabled" name="vacancyType" required>
+                  <ui-select-match placeholder="Type">{{$select.selected.name}}</ui-select-match>
+                  <ui-select-choices repeat="vacancy.name as vacancy in vm.vacancyTypes | filter: $select.search">
+                    <span ng-bind-html="vacancy.name | highlight: $select.search"></span>
+                  </ui-select-choices>
+                </ui-select>
               </div>
-              <span class="inputAdd-item"><i class="sidebar-ico icon-location"></i></span>
-              <input class="inputAdd-field" ng-model="vm.vacancy.location" type="text" placeholder="Location" name="location" ng-minlength="5" ng-maxlength="20" required>
+              <div class="inputAdd">
+                <div ng-show="createVacancy.$submitted || createVacancy.vacancyPosition.$touched" class="v-form-error">
+                  <div ng-show="createVacancy.vacancyPosition.$error.required">You did not enter a vacancy position</div>
+                </div>
+                <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
+                <ui-select ng-model="vm.vacancy.position" theme="selectize" ng-disabled="disabled" name="vacancyPosition" required>
+                  <ui-select-match placeholder="Position">{{$select.selected.name}}</ui-select-match>
+                  <ui-select-choices repeat="position.name as position in vm.positions | filter: $select.search">
+                    <span ng-bind-html="position.name | highlight: $select.search"></span>
+                  </ui-select-choices>
+                </ui-select>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="grid">
+            <div class="grid-cell">
+              <div class="inputAdd">
+                <div ng-show="createVacancy.$submitted || createVacancy.vacancyCompany.$touched" class="v-form-error">
+                  <div ng-show="createVacancy.vacancyCompany.$error.required">You did not choose company</div>
+                </div>
+                <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
+                <ui-select ng-model="vm.vacancy.company_id" theme="selectize" ng-disabled="disabled" name="vacancyCompany" required>
+                  <ui-select-match placeholder="Select or search a company in the list...">{{$select.selected.name}}</ui-select-match>
+                  <ui-select-choices repeat="company._id as company in vm.companies | filter: $select.search">
+                    <span ng-bind-html="company.name | highlight: $select.search"></span>
+                  </ui-select-choices>
+                </ui-select>
+              </div>
             </div>
           </div>
 
-          <div class="grid-cell">
-            <div class="inputAdd">
-              <div ng-show="createVacancy.$submitted || createVacancy.vacancyType.$touched" class="v-form-error">
-                <div ng-show="createVacancy.vacancyType.$error.required">You did not enter a vacancy type</div>
+          <div class="grid">
+            <div class="grid-cell">
+              <div class="inputAdd">
+                <div class="v-form-error" ng-messages="createVacancy.tags.$error" ng-if="createVacancy.tags.$touched || createVacancy.$submitted">
+                  <div ng-message="required">You did not enter at least one tag</div>
+                </div>
+                <tags-input name="tags" ng-model="vm.vacancy.required_skills" min-tags="1" max-tags="3" required></tags-input>
               </div>
-              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
-              <ui-select ng-model="vm.vacancy.type" theme="selectize" ng-disabled="disabled" name="vacancyType" required>
-                <ui-select-match placeholder="Type">{{$select.selected.name}}</ui-select-match>
-                <ui-select-choices repeat="vacancy.name as vacancy in vm.vacancyTypes | filter: $select.search">
-                  <span ng-bind-html="vacancy.name | highlight: $select.search"></span>
-                </ui-select-choices>
-              </ui-select>
             </div>
-            <div class="inputAdd">
-              <div ng-show="createVacancy.$submitted || createVacancy.vacancyPosition.$touched" class="v-form-error">
-                <div ng-show="createVacancy.vacancyPosition.$error.required">You did not enter a vacancy position</div>
+          </div>
+
+          <div class="grid">
+            <div class="grid-cell">
+              <div class="inputAdd">
+                <div class="v-form-error" ng-messages="createVacancy.description.$error" ng-if="createVacancy.description.$dirty || createVacancy.$submitted">
+                  <div ng-message="required">You did not enter a description</div>
+                  <div ng-message="minlength">Description field is too short</div>
+                </div>
+                <textarea ng-model="vm.vacancy.description" class="inputAdd-field" name="description" placeholder="Description" id="cp-about" ng-minlength="50" required></textarea>
               </div>
-              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
-              <ui-select ng-model="vm.vacancy.position" theme="selectize" ng-disabled="disabled" name="vacancyPosition" required>
-                <ui-select-match placeholder="Position">{{$select.selected.name}}</ui-select-match>
-                <ui-select-choices repeat="position.name as position in vm.positions | filter: $select.search">
-                  <span ng-bind-html="position.name | highlight: $select.search"></span>
-                </ui-select-choices>
-              </ui-select>
             </div>
           </div>
 
         </div>
-
-        <div class="grid">
-          <div class="grid-cell">
-            <div class="inputAdd">
-              <div ng-show="createVacancy.$submitted || createVacancy.vacancyCompany.$touched" class="v-form-error">
-                <div ng-show="createVacancy.vacancyCompany.$error.required">You did not choose company</div>
-              </div>
-              <span class="inputAdd-item"><i class="sidebar-ico icon-user"></i></span>
-              <ui-select ng-model="vm.vacancy.company_id" theme="selectize" ng-disabled="disabled" name="vacancyCompany" required>
-                <ui-select-match placeholder="Select or search a company in the list...">{{$select.selected.name}}</ui-select-match>
-                <ui-select-choices repeat="company._id as company in vm.companies | filter: $select.search">
-                  <span ng-bind-html="company.name | highlight: $select.search"></span>
-                </ui-select-choices>
-              </ui-select>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid">
-          <div class="grid-cell">
-            <div class="inputAdd">
-              <div class="v-form-error" ng-messages="createVacancy.tags.$error" ng-if="createVacancy.tags.$touched || createVacancy.$submitted">
-                <div ng-message="required">You did not enter at least one tag</div>
-              </div>
-              <tags-input name="tags" ng-model="vm.vacancy.required_skills" min-tags="1" max-tags="3" required></tags-input>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid">
-          <div class="grid-cell">
-            <div class="inputAdd">
-              <div class="v-form-error" ng-messages="createVacancy.description.$error" ng-if="createVacancy.description.$dirty || createVacancy.$submitted">
-                <div ng-message="required">You did not enter a description</div>
-                <div ng-message="minlength">Description field is too short</div>
-              </div>
-              <textarea ng-model="vm.vacancy.description" class="inputAdd-field" name="description" placeholder="Description" id="cp-about" ng-minlength="50" required></textarea>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
 
-    <div class="btn-col">
-      <button type="submit" class="form-row-group__submit-btn">Create</button>
-    </div>
+      <div class="btn-col">
+        <button type="submit" class="form-row-group__submit-btn">Create</button>
+      </div>
 
-  </form>
+    </form>
+  </div>
 </div>

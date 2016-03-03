@@ -38,7 +38,8 @@ module.exports = function CalendarController(Vendor, interviewResource, $compile
 
   vm.uiConfig = {
     calendar: {
-      height: 'auto',
+      height: '100vh',
+      contentHeight: '100vh',
       editable: true,
       header: {
         left: 'title',
