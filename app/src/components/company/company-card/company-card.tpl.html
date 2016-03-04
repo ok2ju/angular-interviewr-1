@@ -13,7 +13,7 @@
     </div>
     <div class="company-card__description">{{company.short_description}}</div>
     <div class="company-card__extra">
-      <div class="company-more-btn" ui-sref="app.companyProfile({id:company._id})">More</div>
+      <div class="company-more-btn btn-info" ui-sref="app.companyProfile({id:company._id})">More</div>
       <div class="company-owner">
         <a ui-sref="app.userProfile({id: company.owner._id})">
           <img ng-src="{{getUserImageUrl(company.owner)}}" alt="">

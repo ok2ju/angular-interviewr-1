@@ -67,6 +67,7 @@ module.exports = function CompanyCreateController(companyResource, $scope,
   vm.today = function() {
     vm.company.creation_date = new Date();
   };
+
   vm.today();
 
   vm.maxDate = new Date(2020, 5, 22);

@@ -7,7 +7,7 @@ $header-border-bottom-color: rgba(137,137,137,0.3);
 
 .c-header-wrapper {
   background-color: $company-page-header-bg-color;
-  box-shadow: rgba(0, 0, 0, 0.04) 0 1px;
+  border-bottom: 1px solid #e5e5e5;
   height: 60px;
   left: 0;
   position: fixed;

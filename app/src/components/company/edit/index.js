@@ -9,4 +9,5 @@ angular
     'ngFileUpload'
   ])
   .controller('EditCompanyController', require('./editCompany.controller'))
-  .controller('CompanyEditModalController', require('./modal.controller'));
+  .controller('CompanyEditModalController', require('./modal.controller'))
+  .controller('CompanyPhotoModalController', require('./photoModal.controller'));

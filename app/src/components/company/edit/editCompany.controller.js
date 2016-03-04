@@ -15,8 +15,8 @@ module.exports = function(companyResource, $scope,
   vm.categories = categories.data;
 
   companyResource.one($stateParams.id).then(function(company) {
-    company.creation_date = moment(company.creation_date).toDate();
-    vm.company = company;
+    company[0].creation_date = moment(company[0].creation_date).toDate();
+    vm.company = company[0];
   });
 
   // Datepicker options
@@ -69,6 +69,35 @@ module.exports = function(companyResource, $scope,
         }
       }
     });
-  }
+  };
+
+  // Open modal with company logo
+  vm.onFileSelected = function() {
+    if(vm.file) {
+      vm.opePhotonModal();
+    }
+  };
+
+  vm.openFileDialog = function() {
+    $('#up-photo').click();
+  };
+
+  vm.opePhotonModal = (size) => {
+    $uibModal.open({
+      animation: true,
+      templateUrl: `${config.ROOT_DIR}/src/components/company/edit/photo-modal.tpl.html`,
+      controller: 'CompanyPhotoModalController',
+      controllerAs: 'vm',
+      size: size,
+      resolve: {
+        file() {
+          return vm.file;
+        },
+        company() {
+          return vm.company;
+        }
+      }
+    });
+  };
 
 };
