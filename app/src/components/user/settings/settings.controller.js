@@ -18,6 +18,7 @@ module.exports = function SettingsController(toastr, $state, $http, $uibModal,
   vm.updateProfile = updateProfile;
   vm.loadTags = loadTags;
   vm.addNewExperience = addNewExperience;
+  vm.deleteExperience = deleteExperience;
 
   vm.getImageUrl = function() {
     return imageService.getUserImageUrl(vm.user);
@@ -26,6 +27,11 @@ module.exports = function SettingsController(toastr, $state, $http, $uibModal,
   function addNewExperience() {
     const newItemId = vm.user.experiences.length + 1;
     vm.user.experiences.push({id: 'exp' + newItemId});
+  }
+
+  function deleteExperience(id) {
+    var index = vm.user.experiences.indexOf(id);
+    vm.user.experiences.splice(index, 1);
   }
 
   function updateProfile(isValid) {
