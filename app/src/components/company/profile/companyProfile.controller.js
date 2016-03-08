@@ -6,8 +6,8 @@ module.exports = function CompanyProfileController(companyResource, vacancyResou
   vm.leaveComment = leaveComment;
 
   companyResource.one($stateParams.id).then(function(company) {
-    vm.company = company[0];
-    vm.owner = company[0].owner;
+    vm.company = company;
+    vm.owner = company.owner;
   });
 
   vacancyResource.list({company_id: $stateParams.id}).then(function(vacancies) {

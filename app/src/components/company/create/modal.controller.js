@@ -23,11 +23,15 @@ module.exports = function ModalController($uibModalInstance, $timeout, Upload, c
   vm.ok = function () {
     var data = {
       file: vm.file,
+      x: vm.cropData.x,
+      y: vm.cropData.y,
+      h: vm.cropData.height,
+      w: vm.cropData.width,
       "Content-Type": vm.file.type !== '' ? vm.file.type : 'application/octet-stream'
     };
 
     Upload.upload({
-      url: config.api_url + '/api/v1/images',
+      url: config.API_URL + '/api/v1/images',
       data: data,
       headers: {
         crop: JSON.stringify(vm.cropData)

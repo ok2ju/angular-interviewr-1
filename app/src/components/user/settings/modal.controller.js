@@ -25,6 +25,10 @@ module.exports = function ModalController($uibModalInstance, $timeout, Upload, c
 
     const data = {
       file: vm.file,
+      x: vm.cropData.x,
+      y: vm.cropData.y,
+      h: vm.cropData.height,
+      w: vm.cropData.width,
       "Content-Type": vm.file.type !== '' ? vm.file.type : 'application/octet-stream'
     };
 
