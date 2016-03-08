@@ -9,9 +9,8 @@ var cropKeys = [
   'scaleY'
 ];
 
-module.exports = function CompanyPhotoModalController($uibModalInstance, $timeout, Upload, config, file, company,
-                                                      $state, toastr, companyResource, companyId) {
-  var vm = this;
+module.exports = function CompanyPhotoModalController($uibModalInstance, $timeout, Upload, config, file, company) {
+  const vm = this;
 
   vm.file = file;
   Upload.dataUrl(file).then(function(url) {
@@ -22,19 +21,19 @@ module.exports = function CompanyPhotoModalController($uibModalInstance, $timeou
   vm.cropData = {};
 
   vm.ok = function () {
-    var data = {
+    const data = {
       file: vm.file,
       "Content-Type": vm.file.type !== '' ? vm.file.type : 'application/octet-stream'
     };
 
     Upload.upload({
-      url: config.api_url + '/api/v1/images',
+      url: config.API_URL + '/api/v1/images',
       data: data,
       headers: {
         crop: JSON.stringify(vm.cropData)
       }
     }).then(function(resp) {
-      var data = resp.data;
+      const data = resp.data;
       if(data._id) {
         company.imageId = data._id;
         vm.cancel();
@@ -49,7 +48,7 @@ module.exports = function CompanyPhotoModalController($uibModalInstance, $timeou
   function init() {
     vm.cropper = $('.modal-body > img').cropper({
       aspectRatio: 1 / 1,
-      crop: function(e) {
+      crop(e) {
         cropKeys.forEach(function(key) {
           vm.cropData[key] = e[key];
         });
