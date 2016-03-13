@@ -15,8 +15,8 @@ module.exports = function(companyResource, $scope,
   vm.categories = categories.data;
 
   companyResource.one($stateParams.id).then(function(company) {
-    company[0].creation_date = moment(company[0].creation_date).toDate();
-    vm.company = company[0];
+    company.creation_date = moment(company.creation_date).toDate();
+    vm.company = company;
   });
 
   // Datepicker options
