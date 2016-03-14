@@ -26,8 +26,8 @@ module.exports = function CompanyPhotoModalController($uibModalInstance, $timeou
       "Content-Type": vm.file.type !== '' ? vm.file.type : 'application/octet-stream',
       x: vm.cropData.x,
       y: vm.cropData.y,
-      h: vm.cropData.h,
-      w: vm.cropData.w
+      h: vm.cropData.height,
+      w: vm.cropData.width
     };
 
     Upload.upload({
