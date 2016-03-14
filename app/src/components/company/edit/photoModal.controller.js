@@ -32,10 +32,7 @@ module.exports = function CompanyPhotoModalController($uibModalInstance, $timeou
 
     Upload.upload({
       url: config.API_URL + '/api/v1/images',
-      data: data,
-      headers: {
-        crop: JSON.stringify(vm.cropData)
-      }
+      data: data
     }).then(function(resp) {
       const data = resp.data;
       if(data._id) {
