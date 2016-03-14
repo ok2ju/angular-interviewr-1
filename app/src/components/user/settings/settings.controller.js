@@ -2,9 +2,11 @@ module.exports = function SettingsController(toastr, $state, $http, $uibModal,
                       config, Upload, countries, authService, imageService, Vendor) {
 
   const {$} = Vendor;
+  const {moment} = Vendor;
   const logger = Vendor.logger.get('SettingsController');
 
   const vm = this;
+  vm.user = {};
 
   // Fetch countries for dropdown
   vm.countries = countries.data;
@@ -13,6 +15,7 @@ module.exports = function SettingsController(toastr, $state, $http, $uibModal,
     vm.user = myself;
     vm.user.social = vm.user.social || {};
     vm.user.experiences = vm.user.experiences || [{id: 'exp1'}];
+    vm.user.dob = moment(myself.dob).toDate();
   });
 
   vm.updateProfile = updateProfile;
@@ -83,5 +86,25 @@ module.exports = function SettingsController(toastr, $state, $http, $uibModal,
 
   vm.toggleAnimation = function () {
     vm.animationsEnabled = !vm.animationsEnabled;
+  };
+
+  // Datepicker options
+
+  vm.maxDate = new Date(2020, 5, 22);
+
+  vm.openDatepicker = function($event) {
+    vm.status.opened = true;
+  };
+
+  vm.dateOptions = {
+    formatYear: 'yy',
+    startingDay: 1
+  };
+
+  vm.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+  vm.format = vm.formats[0];
+
+  vm.status = {
+    opened: false
   };
 };

@@ -43,14 +43,14 @@ export function VacancyCard(config) {
           });
 
           return index ? true : false;
-        }
+        };
 
         $scope.subscribe = function(vacancy) {
           vacancyResource.subscribe(vacancy).then(function() {
             vacancy.subscriptions.push({ candidate: myself._id });
             toastr.success('You are successful subscribed', 'Yay!');
           });
-        }
+        };
 
         $scope.unsubscribe = function(vacancy) {
           vacancyResource.unsubscribe(vacancy).then(function() {
@@ -58,7 +58,8 @@ export function VacancyCard(config) {
             vacancy.subscriptions.splice(index, 1);
             toastr.error('You are unsubscribed', 'Yay!');
           });
-        }
+        };
+
       });
 
     }

@@ -10,7 +10,7 @@ export function VacancyResource(Vendor) {
     },
 
     subscribe(vacancy) {
-      return R.all(`${RESOURCE_NAME}/subscribe`).post(vacancy);
+      return R.all(`subscriptions`).post(vacancy);
     },
 
     unsubscribe(vacancy) {
