@@ -11,7 +11,7 @@ export function VacancyCard(config) {
     },
     transclude: true,
     templateUrl: `${config.ROOT_DIR}/src/components/vacancy/vacancy-card/vacancy-card.directive.html`,
-    controller(Vendor, $scope, vacancyResource, authService, toastr) {
+    controller(Vendor, $scope, $state, vacancyResource, authService, toastr) {
       const {_} = Vendor;
 
       $scope.settings = {
@@ -37,16 +37,24 @@ export function VacancyCard(config) {
       }
 
       authService.me().then((myself) => {
-        $scope.isSubscribed = function(vacancy) {
-          var index = _.find(vacancy.subscriptions, function(o) {
-            return o.candidate == myself._id;
-          });
+        var subs;
 
-          return index ? true : false;
-        };
+        vacancyResource.subscriptions({candidate: myself._id}).then(function(subscriptions) {
+          subs = subscriptions;
+
+          $scope.isSubscribed = function(vacancy) {
+            var index = _.find(subs, function(o) {
+              return o.vacancy._id == vacancy._id;
+            });
+
+            return index ? true : false;
+          };
+        });
+
+
 
         $scope.subscribe = function(vacancy) {
-          vacancyResource.subscribe(vacancy._id).then(function() {
+          vacancyResource.subscribe({vacancy: vacancy._id}).then(function() {
             /*vacancy.subscriptions.push({ candidate: myself._id });*/
             $state.go($state.current, {}, { reload: true });
             toastr.success('You are successful subscribed', 'Yay!');
@@ -54,9 +62,10 @@ export function VacancyCard(config) {
         };
 
         $scope.unsubscribe = function(vacancy) {
-          vacancyResource.unsubscribe(vacancy).then(function() {
-            var index = vacancy.subscriptions.indexOf(myself._id);
-            vacancy.subscriptions.splice(index, 1);
+          vacancyResource.unsubscribe(vacancy._id).then(function() {
+            /*var index = vacancy.subscriptions.indexOf(myself._id);
+            vacancy.subscriptions.splice(index, 1);*/
+            $state.go($state.current, {}, { reload: true });
             toastr.error('You are unsubscribed', 'Yay!');
           });
         };
