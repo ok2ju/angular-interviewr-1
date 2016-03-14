@@ -9,8 +9,8 @@ export function VacancyResource(Vendor) {
       return R.one(RESOURCE_NAME, id).all('subscriptions').getList();
     },
 
-    subscribe(vacancy) {
-      return R.all(`subscriptions`).post(vacancy);
+    subscribe(id) {
+      return R.all(`subscriptions`).post(id);
     },
 
     unsubscribe(vacancy) {

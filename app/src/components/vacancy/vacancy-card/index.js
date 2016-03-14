@@ -46,8 +46,9 @@ export function VacancyCard(config) {
         };
 
         $scope.subscribe = function(vacancy) {
-          vacancyResource.subscribe(vacancy).then(function() {
-            vacancy.subscriptions.push({ candidate: myself._id });
+          vacancyResource.subscribe(vacancy._id).then(function() {
+            /*vacancy.subscriptions.push({ candidate: myself._id });*/
+            $state.go($state.current, {}, { reload: true });
             toastr.success('You are successful subscribed', 'Yay!');
           });
         };
