@@ -14,8 +14,16 @@ module.exports = function SettingsController(toastr, $state, $http, $uibModal,
   authService.me().then((myself) => {
     vm.user = myself;
     vm.user.social = vm.user.social || {};
-    vm.user.experiences = vm.user.experiences || [{id: 'exp1'}];
-    vm.user.dob = moment(myself.dob).toDate();
+    /*vm.user.experiences = vm.user.experiences || [{id: 'exp1'}];*/
+
+    if(myself.dob) {
+      vm.user.dob = moment(myself.dob).toDate();
+    }
+    vm.user.dob = moment().toDate();
+
+    if(!vm.user.experiences) {
+      vm.user.experiences = [{}];
+    }
   });
 
   vm.updateProfile = updateProfile;
