@@ -57,6 +57,7 @@ import './filters';
 import './components';
 
 function run($rootScope, $state, store, jwtHelper) {
+
   $rootScope.$on('$stateChangeStart', function(e, to, params) {
     if(to.data && to.data.requiresLogin) {
       if(!store.get('jwt') || jwtHelper.isTokenExpired(store.get('jwt'))) {
@@ -67,7 +68,7 @@ function run($rootScope, $state, store, jwtHelper) {
 
     if(to.redirectTo) {
       e.preventDefault();
-      $state.go(to.redirectTo, params)
+      $state.go(to.redirectTo, params);
     }
   });
 

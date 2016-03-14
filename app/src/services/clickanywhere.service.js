@@ -1,4 +1,4 @@
-export function ClickanywhereService($document) {
+export function ClickanywhereService($document, $timeout) {
   var tracker = [];
 
   return function($scope, expr) {
@@ -10,7 +10,9 @@ export function ClickanywhereService($document) {
       }
     }
     var handler = function() {
-      $scope.$apply(expr);
+      $timeout(function() {
+        $scope.$apply(expr);
+      }, 0, false);
     };
 
     $document.on('click', handler);
