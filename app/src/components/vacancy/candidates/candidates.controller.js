@@ -31,7 +31,7 @@ module.exports = function VacancyCandidatesController(
 
   $state.go(CANDIDATES_GRID);
 
-  vacancyResource.subscriptions(vacancyId).then(subscriptions => vm.subscriptions = subscriptions);
+  vacancyResource.subscriptions({vacancy: vacancyId}).then(subscriptions => vm.subscriptions = subscriptions);
 
   vm.openInterviewModal = function(subscription) {
     const modalInstance = $uibModal.open({
@@ -48,7 +48,8 @@ module.exports = function VacancyCandidatesController(
       const interview = {
         date: date.toDate(),
         candidate: subscription.candidate._id,
-        vacancy: vacancyId
+        vacancy: vacancyId,
+        company: subscription.vacancy.company_id
       };
       interviewResource.create(interview).then(() => {
         $state.go(CALENDAR);
