@@ -20,7 +20,7 @@
                 <li class="navbar-btns__item">
                   <a click-anywhere-but-here="vm.clickedSomewhereElse()" ng-click="vm.toggleActivity()" aria-label="Actions" class="navbar-ico img-replace tooltip-v">
                     ACTIONS
-                    <i class="ico-controll icon-bell-alt actions-indicator"></i>
+                    <i class="ico-controll icon-bell-alt" ng-class="{'actions-indicator': vm.upcomingInterviews.length}"></i>
                   </a>
                   <ul class="activity-dropdown" ng-class="{'active': vm.isActivity}">
                     <li ng-repeat="interview in vm.upcomingInterviews | limitTo:3" class="activity-dropdown__item">

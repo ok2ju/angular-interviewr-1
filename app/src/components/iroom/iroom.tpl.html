@@ -1,0 +1,12 @@
+<div class="iroom">
+
+  <table class="iroom__table">
+    <tr ng-repeat="interview in vm.interviews">
+      <td>{{interview.title}}</td>
+      <td>{{interview.date | moment: 'DD.MM.YYYY - hh:mm a'}}</td>
+      <td>{{interview.date | fromNow}}</td>
+      <td><a href="https://localhost:3000/interivew/{{interview._id}}">Link To Conference Room</a></td>
+    </tr>
+  </table>
+
+</div>

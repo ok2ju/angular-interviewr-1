@@ -49,7 +49,8 @@ module.exports = function VacancyCandidatesController(
         date: date.toDate(),
         candidate: subscription.candidate._id,
         vacancy: vacancyId,
-        company: subscription.vacancy.company_id
+        company: subscription.vacancy.company_id,
+        title: `Interview with ${subscription.candidate.name} ${subscription.candidate.surname}`
       };
       interviewResource.create(interview).then(() => {
         $state.go(CALENDAR);

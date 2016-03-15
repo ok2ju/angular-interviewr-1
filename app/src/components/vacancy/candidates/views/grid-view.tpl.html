@@ -11,7 +11,8 @@
                       <a ui-sref="app.userProfile({id: subscriber.candidate._id})" class="card-overlay-link">More</a>
                     </div>
                     <div ng-if="subscriber.interview" class="btns-wrap">
-                      <h1></h1>
+                      <h1 class="interview-appointed-time">{{subscriber.interview.date | moment: 'h:mm a'}}</h1>
+                      <h1 class="interview-appointed-date">{{subscriber.interview.date | moment: 'DD.MM.YYYY'}}</h1>
                       <a href="#" class="card-overlay-link" ng-click="vm.cancelInterview(subscriber.interview._id)">Cancel</a>
                     </div>
                 </div>
@@ -22,7 +23,7 @@
             </div>
             <div class="test-result">
                 <span class="card-footer"><i class="i-card icon-doc-text"></i><span class="test-score">{{subscriber.candidate.testResult}}%</span></span>
-                <span class="card-footer"><i class="i-card icon-clock"></i><span class="test-score">{{subscriber.created_at | date:'dd.MM.yyyy'}}</span></span>
+                <span class="card-footer"><i class="i-card icon-clock"></i><span class="test-score">{{subscriber.createdAt | date:'dd.MM.yyyy'}}</span></span>
             </div>
         </div>
     </li>

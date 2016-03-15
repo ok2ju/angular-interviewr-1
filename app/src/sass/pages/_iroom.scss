@@ -1,0 +1,15 @@
+.iroom {
+  padding: 30px;
+}
+
+.iroom__table {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .22);
+  width: 100%;
+
+  td {
+    @include font-size(14px);
+    padding: 10px;
+  }
+}

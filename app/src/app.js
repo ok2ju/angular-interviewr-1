@@ -45,7 +45,8 @@ angular
     'app.user',
     'app.company',
     'app.vacancy',
-    'app.calendar'
+    'app.calendar',
+    'app.iroom'
   ])
   .config(require('./app.config'))
   .run(run);

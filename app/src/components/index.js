@@ -3,3 +3,4 @@ import './user';
 import './company';
 import './vacancy';
 import './calendar';
+import './iroom';

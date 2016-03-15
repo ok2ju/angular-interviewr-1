@@ -1,16 +1,18 @@
-module.exports = function CalendarController(Vendor, interviewResource, $compile, $scope) {
+module.exports = function CalendarController(Vendor, authService, interviewResource, $compile, $scope) {
   const {moment} = Vendor;
 
   const vm = this;
 
   vm.eventSources = [[]];
 
-  interviewResource.list().then((interviews) => {
-    vm.eventSources[0] = interviews.map((interview) => {
-      interview.start = moment(interview.date);
-      const message = ['Interview with', interview.candidate.name, interview.candidate.namesurname];
-      interview.title = message.join(' ');
-      return interview;
+  authService.me().then((myself) => {
+    vm.user = myself;
+
+    interviewResource.list({candidate: vm.user._id, owner: vm.user._id}).then((interviews) => {
+      vm.eventSources[0] = interviews.map((interview) => {
+        interview.start = moment(interview.date);
+        return interview;
+      });
     });
   });
 

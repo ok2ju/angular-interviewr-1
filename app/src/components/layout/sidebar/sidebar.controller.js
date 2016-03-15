@@ -2,9 +2,9 @@ export function LayoutSidebarController() {
   const vm = this;
 
   vm.items = [{
-    name: 'Video Room',
+    name: 'Interview Room',
     icon: 'icon-videocam',
-    state: 'app.videoroom'
+    state: 'app.iroom'
   },
   {
     name: 'Vacancies',
