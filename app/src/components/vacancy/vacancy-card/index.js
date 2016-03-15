@@ -49,26 +49,29 @@ export function VacancyCard(config) {
 
             return index ? true : false;
           };
+
+          $scope.subscribe = function(vacancy) {
+            vacancyResource.subscribe({vacancy: vacancy._id}).then(function() {
+              /*vacancy.subscriptions.push({ candidate: myself._id });*/
+              $state.go($state.current, {}, { reload: true });
+              toastr.success('You are successful subscribed', 'Yay!');
+            });
+          };
+
+          $scope.unsubscribe = function(vacancy) {
+            var subscription = _.find(subs, function(o) {
+              return o.vacancy._id == vacancy._id;
+            });
+
+            vacancyResource.unsubscribe(subscription._id).then(function() {
+              /*var index = vacancy.subscriptions.indexOf(myself._id);
+              vacancy.subscriptions.splice(index, 1);*/
+              $state.go($state.current, {}, { reload: true });
+              toastr.error('You are unsubscribed', 'Yay!');
+            });
+          };
+
         });
-
-
-
-        $scope.subscribe = function(vacancy) {
-          vacancyResource.subscribe({vacancy: vacancy._id}).then(function() {
-            /*vacancy.subscriptions.push({ candidate: myself._id });*/
-            $state.go($state.current, {}, { reload: true });
-            toastr.success('You are successful subscribed', 'Yay!');
-          });
-        };
-
-        $scope.unsubscribe = function(vacancy) {
-          vacancyResource.unsubscribe(vacancy._id).then(function() {
-            /*var index = vacancy.subscriptions.indexOf(myself._id);
-            vacancy.subscriptions.splice(index, 1);*/
-            $state.go($state.current, {}, { reload: true });
-            toastr.error('You are unsubscribed', 'Yay!');
-          });
-        };
 
       });
 
