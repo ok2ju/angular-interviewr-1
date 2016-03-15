@@ -38,6 +38,11 @@
 .activity-info {
   @include font-size(12px);
   color: #999;
+
+  &.activity-info--interivew {
+    color: #0e6f98;
+    text-decoration: underline;
+  }
 }
 
 .activity-time {
