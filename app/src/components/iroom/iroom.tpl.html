@@ -1,8 +1,12 @@
 <div class="iroom">
 
+  <header class="content-header">
+    <h1 class="content-header__name c-header">List of upcoming interview's</h1>
+  </header>
+
   <table class="iroom__table">
     <tr ng-repeat="interview in vm.interviews">
-      <td>{{interview.title}}</td>
+      <td><a ui-sref="app.userProfile({id: interview.candidate._id})">{{interview.title}}</a></td>
       <td>{{interview.date | moment: 'DD.MM.YYYY - hh:mm a'}}</td>
       <td>{{interview.date | fromNow}}</td>
       <td><a href="https://localhost:3000/interivew/{{interview._id}}">Link To Conference Room</a></td>

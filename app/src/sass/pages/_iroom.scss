@@ -8,8 +8,16 @@
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .22);
   width: 100%;
 
+  tr {
+    border-bottom: 1px solid #e5e5e5;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
   td {
     @include font-size(14px);
-    padding: 10px;
+    padding: 15px;
   }
 }
