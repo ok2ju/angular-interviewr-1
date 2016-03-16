@@ -174,3 +174,32 @@ $sideblock-bg-color: #161616;
     display: inline-block;
   }
 }
+
+.aside-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  text-align: center;
+  width: 230px;
+  background-color: #161616;
+  display: none;
+
+  @include respond-to('medium') {
+    display: block;
+  }
+}
+
+.aside-footer-link {
+  @include font-size(12px);
+  color: #fff;
+}
+
+.aside-footer-codeico {
+  color: #ADD8E6;
+}
+
+.aside-footer-heartico {
+  color: red;
+}
