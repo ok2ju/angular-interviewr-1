@@ -21,3 +21,13 @@
     padding: 15px;
   }
 }
+
+.iroom-table-row {
+  margin-bottom: 15px;
+}
+
+.iroom-table-row__title {
+  @include font-size(14px);
+  color: rgba(0, 0, 0, .35);
+  margin-bottom: 10px;
+}

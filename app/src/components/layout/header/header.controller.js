@@ -6,10 +6,14 @@ export function LayoutHeaderController($state, $scope, toastr, store, imageServi
     vm.user = myself;
 
     interviewResource
-    .list({candidate: vm.user._id, owner: vm.user._id})
+    .list({relatedTo: vm.user._id})
     .then((interviews) => {
 
       let unsortedInterviews = interviews.filter(interview => {
+        if(interview.candidate._id === vm.user._id) {
+          const message = ['Interview with', interview.company.name];
+          interview.title = message.join(' ');
+        }
         return moment(interview.date).isAfter(moment());
       });
 

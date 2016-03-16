@@ -8,8 +8,12 @@ module.exports = function CalendarController(Vendor, authService, interviewResou
   authService.me().then((myself) => {
     vm.user = myself;
 
-    interviewResource.list({candidate: vm.user._id, owner: vm.user._id}).then((interviews) => {
+    interviewResource.list({relatedTo: vm.user._id}).then((interviews) => {
       vm.eventSources[0] = interviews.map((interview) => {
+        if(interview.candidate._id === vm.user._id) {
+          const message = ['Interview with', interview.company.name];
+          interview.title = message.join(' ');
+        }
         interview.start = moment(interview.date);
         return interview;
       });
