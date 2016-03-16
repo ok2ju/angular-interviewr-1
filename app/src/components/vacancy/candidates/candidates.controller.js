@@ -27,7 +27,7 @@ module.exports = function VacancyCandidatesController(
   vm.checkAssigned = checkAssigned;
   vm.checkNotAssigned = checkNotAssigned;
 
-  vm.candidateFilter = '';
+  vm.checkAll();
 
   $state.go(CANDIDATES_GRID);
 
@@ -78,14 +78,14 @@ module.exports = function VacancyCandidatesController(
   }
 
   function checkAll() {
-    vm.candidateFilter = '';
+    vm.candidateFilter = 'all';
   }
 
   function checkAssigned() {
-    vm.candidateFilter = true;
+    vm.candidateFilter = 'assigned';
   }
 
   function checkNotAssigned() {
-    vm.candidateFilter = false;
+    vm.candidateFilter = 'notAssigned';
   }
 };
