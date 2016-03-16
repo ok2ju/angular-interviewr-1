@@ -11,6 +11,7 @@
         <td><a ui-sref="app.userProfile({id: interview.candidate._id})">{{interview.title}}</a></td>
         <td>{{interview.date | moment: 'DD.MM.YYYY - hh:mm a'}}</td>
         <td>{{interview.date | fromNow}}</td>
+        <td><a ui-sref="app.vacanciesProfile({id: interview.vacancy._id})">{{interview.vacancy.title}}</a></td>
         <td><a href="https://localhost:3000/interivew/{{interview._id}}">Link To Conference Room</a></td>
       </tr>
     </table>
@@ -23,6 +24,7 @@
         <td><a ui-sref="app.companyProfile({id: interview.company._id})">{{interview.title}}</a></td>
         <td>{{interview.date | moment: 'DD.MM.YYYY - hh:mm a'}}</td>
         <td>{{interview.date | fromNow}}</td>
+        <td><a ui-sref="app.vacanciesProfile({id: interview.vacancy._id})">{{interview.vacancy.title}}</a></td>
         <td><a href="https://localhost:3000/interivew/{{interview._id}}">Link To Conference Room</a></td>
       </tr>
     </table>

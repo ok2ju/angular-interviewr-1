@@ -21,6 +21,7 @@
 }
 
 .vacancyInfo-group {
+  margin-top: 30px;
 
   &.v-skills-group {
     margin-top: 30px;
@@ -42,15 +43,20 @@
 }
 
 .vacancyInfo-secondary {
-  margin-top: 30px;
   padding: 10px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+  .image {
+    width: 24px;
+    vertical-align: middle;
+  }
 }
 
 .v-si-text {
   @include font-size(14px);
   margin: 0 15px;
+  vertical-align: middle;
 
   &:first-child {
     margin-left: 0;

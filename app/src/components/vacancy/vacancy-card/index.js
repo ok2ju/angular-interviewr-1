@@ -34,7 +34,7 @@ export function VacancyCard(config) {
 
       $scope.getImage = function(vacancyType) {
         return images[vacancyType];
-      }
+      };
 
       authService.me().then((myself) => {
         var subs;

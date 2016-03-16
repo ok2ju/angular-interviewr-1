@@ -7,8 +7,10 @@
 }
 
 .filter-group {
-  display: inline-block;
+  display: block;
   padding: 0 15px;
+  float: left;
+  width: 200px;
 
   &.filter-group--left {
     padding-left: 0;

@@ -10,12 +10,9 @@
     </div>
 
     <div class="vacancyBox__body">
-      <div class="vacancyInfo-group">
-        <label>About</label>
-        <p>{{vm.vacancy.description}}</p>
-      </div>
 
       <div class="vacancyInfo-secondary">
+        <img class="ui avatar image" src="{{vm.getImage(vm.vacancy.type)}}">
         <span class="v-si-text">{{vm.vacancy.type}}</span>
         <span ng-class="{Junior: 'junior', Middle: 'middle', Senior: 'senior'}[vm.vacancy.position]" class="v-si-text v-p-pos">{{vm.vacancy.position}}</span>
         <span class="v-si-text">
@@ -26,6 +23,11 @@
           <i class="icon-calendar"></i>
           {{vm.vacancy.creation_date | moment: 'DD MMM, YY'}}
         </span>
+      </div>
+
+      <div class="vacancyInfo-group">
+        <label>About</label>
+        <p>{{vm.vacancy.description}}</p>
       </div>
 
       <div class="vacancyInfo-group v-skills-group">

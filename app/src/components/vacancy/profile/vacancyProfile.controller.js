@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 module.exports = function VacancyProfileController(vacancyResource, $stateParams, imageService,
-                                                    authService, toastr) {
+                                                    authService, toastr, config) {
   const vm = this;
 
   vm.getUserImageUrl = imageService.getUserImageUrl;
@@ -11,7 +11,7 @@ module.exports = function VacancyProfileController(vacancyResource, $stateParams
       vm.vacancy = vacancy;
     });
 
-  vacancyResource.subscriptions($stateParams.id)
+  vacancyResource.subscriptions({vacancy: $stateParams.id})
     .then(subscriptions => vm.subscriptions = subscriptions);
 
   authService.me().then((myself) => {
@@ -39,5 +39,21 @@ module.exports = function VacancyProfileController(vacancyResource, $stateParams
     };
 
   });
+
+  const urlTransformer = (url) => {
+    return (!_.isEmpty(url)) ? `${config.ROOT_DIR}/${url}`: url;
+  };
+
+  const images = _.mapValues({
+    'Developer': 'assets/images/icons/vacancies/coder.png',
+    'Analythyc': 'assets/images/icons/vacancies/analythic.png',
+    'Human Resource': 'assets/images/icons/vacancies/hr.png',
+    'Sales Manager': 'assets/images/icons/vacancies/sales.png',
+    'Project Manager': 'assets/images/icons/vacancies/pm.png'
+  }, urlTransformer);
+
+  vm.getImage = function(vacancyType) {
+    return images[vacancyType];
+  };
 
 };
