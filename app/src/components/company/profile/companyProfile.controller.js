@@ -1,9 +1,11 @@
-module.exports = function CompanyProfileController(companyResource, vacancyResource, $state, $stateParams, config, imageService) {
+module.exports = function CompanyProfileController(companyResource, vacancyResource, commentResource, $state, $stateParams, config, imageService, toastr) {
   const vm = this;
 
+  vm.comment = {};
   vm.getImageUrl = getImageUrl;
   vm.getUserImageUrl = getUserImageUrl;
   vm.leaveComment = leaveComment;
+  vm.removeComment = removeComment;
 
   companyResource.one($stateParams.id).then(function(company) {
     vm.company = company;
@@ -14,7 +16,7 @@ module.exports = function CompanyProfileController(companyResource, vacancyResou
     vm.vacancies = vacancies;
   });
 
-  companyResource.comments($stateParams.id).then((comments) => {
+  commentResource.list({company: $stateParams.id}).then((comments) => {
     vm.comments = comments;
   });
 
@@ -27,9 +29,21 @@ module.exports = function CompanyProfileController(companyResource, vacancyResou
   }
 
   function leaveComment(comment) {
-    companyResource.comment($stateParams.id, {text: comment}).then(function() {
+    vm.comment.company = $stateParams.id;
+
+    if(angular.isDefined(vm.comment.text)) {
+      console.log(vm.comment);
+      commentResource.create(vm.comment).then(function() {
+        $state.go($state.current, {}, { reload: true });
+      });
+    } else {
+      toastr.error('You must fill in comment field.', 'Error!');
+    }
+  }
+
+  function removeComment(id) {
+    commentResource.remove(id).then(function() {
       $state.go($state.current, {}, { reload: true });
     });
   }
-
 };

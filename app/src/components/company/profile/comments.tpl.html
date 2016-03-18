@@ -15,10 +15,10 @@
       </div>
       <form class="comment-reply">
         <div class="comment-reply__field">
-          <textarea ng-model="vm.comment"></textarea>
+          <textarea ng-model="vm.comment.text"></textarea>
         </div>
         <div class="comment-reply__submit-btn">
-          <a ng-click="vm.leaveComment(vm.comment)" class="btn">Leave a comment</a>
+          <a ng-click="vm.leaveComment()" class="btn">Leave a comment</a>
         </div>
       </form>
     </div>
