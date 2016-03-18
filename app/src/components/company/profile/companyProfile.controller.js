@@ -22,6 +22,7 @@ module.exports = function CompanyProfileController(authService, companyResource,
     vm.leaveComment = function(comment) {
       let companyID = $stateParams.id;
       vm.comment.author = {
+        id: myself._id,
         name: myself.name,
         surname: myself.surname,
         imageId: myself.imageId
