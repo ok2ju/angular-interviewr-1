@@ -1,6 +1,8 @@
-export function LayoutHeaderController($state, $scope, toastr, store, imageService, authService, $rootScope, interviewResource, Vendor) {
+export function LayoutHeaderController($state, $scope, toastr, store, imageService, authService, $rootScope, interviewResource, Vendor, openRequestedPopupService) {
   const vm = this;
   const {moment} = Vendor;
+
+  vm.openConferenceRoom = openRequestedPopupService.openRequestedPopup;
 
   authService.me().then((myself) => {
     vm.user = myself;

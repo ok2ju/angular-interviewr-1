@@ -27,7 +27,7 @@
                       <a href="">
                         <h1 ui-sref="app.userProfile({id: interview.candidate._id})" class="activity-header">{{interview.title}}</h1>
                         <a ui-sref="app.vacanciesProfile({id: interview.vacancy._id})" class="activity-info">{{interview.vacancy.title}}</a>
-                        <a href="https://localhost:8080/interivew/{{interview._id}}" class="activity-info activity-info--interivew">Start</a>
+                        <a ng-click="vm.openConferenceRoom(interview._id)" class="activity-info activity-info--interivew">Start</a>
                         <span class="activity-time">{{interview.date | fromNow}}</span>
                       </a>
                     </li>
