@@ -12,7 +12,7 @@
         <td>{{interview.date | moment: 'DD.MM.YYYY - hh:mm a'}}</td>
         <td>{{interview.date | fromNow}}</td>
         <td><a ui-sref="app.vacanciesProfile({id: interview.vacancy._id})">{{interview.vacancy.title}}</a></td>
-        <td><a href="https://localhost:3000/interivew/{{interview._id}}">Link To Conference Room</a></td>
+        <td><a ng-click="vm.openConferenceRoom(interview._id)">Link To Conference Room</a></td>
       </tr>
     </table>
   </div>

@@ -1,6 +1,8 @@
-module.exports = function IroomController(Vendor, authService, interviewResource) {
+module.exports = function IroomController(Vendor, authService, interviewResource, openRequestedPopupService) {
   const {moment} = Vendor;
   const vm = this;
+
+  vm.openConferenceRoom = openRequestedPopupService.openRequestedPopup;
 
   authService.me().then((myself) => {
     vm.user = myself;
