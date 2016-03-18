@@ -11,6 +11,10 @@ export function CompanyResource(Vendor) {
 
     comments(companyId) {
       return R.one(RESOURCE_NAME, companyId).all('comments').getList();
+    },
+
+    removeComment(companyId, commentId) {
+      return R.one(RESOURCE_NAME, companyId).one('comments', commentId).remove();
     }
   });
 }

@@ -38,7 +38,8 @@ module.exports = function CompanyProfileController(authService, companyResource,
     };
 
     vm.removeComment = function(id) {
-      companyResource.removeComment(id).then(function() {
+      let companyID = $stateParams.id;
+      companyResource.removeComment(companyID, id).then(function() {
         $state.go($state.current, {}, { reload: true });
       });
     };
