@@ -20,6 +20,20 @@
   border: none;
   border-top: none;
   line-height: 1.2;
+
+  &:hover {
+    .remove-comment-btn {
+      display: inline-block;
+
+      i {
+        color: red;
+      }
+    }
+  }
+}
+
+.remove-comment-btn {
+  display: none;
 }
 
 .comment__avatar {

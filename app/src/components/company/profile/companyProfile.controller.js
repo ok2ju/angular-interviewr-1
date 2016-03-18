@@ -1,4 +1,4 @@
-module.exports = function CompanyProfileController(companyResource, vacancyResource, commentResource, $state, $stateParams, config, imageService, toastr) {
+module.exports = function CompanyProfileController(companyResource, vacancyResource, $state, $stateParams, config, imageService, toastr) {
   const vm = this;
 
   vm.comment = {};
@@ -16,7 +16,7 @@ module.exports = function CompanyProfileController(companyResource, vacancyResou
     vm.vacancies = vacancies;
   });
 
-  commentResource.list({company: $stateParams.id}).then((comments) => {
+  companyResource.comments($stateParams.id).then((comments) => {
     vm.comments = comments;
   });
 
@@ -29,11 +29,10 @@ module.exports = function CompanyProfileController(companyResource, vacancyResou
   }
 
   function leaveComment(comment) {
-    vm.comment.company = $stateParams.id;
+    let companyID = $stateParams.id;
 
     if(angular.isDefined(vm.comment.text)) {
-      console.log(vm.comment);
-      commentResource.create(vm.comment).then(function() {
+      companyResource.comment(companyID, vm.comment).then(function() {
         $state.go($state.current, {}, { reload: true });
       });
     } else {
@@ -42,7 +41,7 @@ module.exports = function CompanyProfileController(companyResource, vacancyResou
   }
 
   function removeComment(id) {
-    commentResource.remove(id).then(function() {
+    companyResource.removeComment(id).then(function() {
       $state.go($state.current, {}, { reload: true });
     });
   }

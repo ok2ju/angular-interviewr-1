@@ -7,5 +7,4 @@ angular
     .factory('vacancyResource', require('./Vacancy').VacancyResource)
     .factory('metaResource', require('./Meta').MetaResource)
     .factory('interviewResource', require('./Interview').InterviewResource)
-    .factory('subscriptionResource', require('./Subscription').SubscriptionResource)
-    .factory('commentResource', require('./Comment').CommentResource);
+    .factory('subscriptionResource', require('./Subscription').SubscriptionResource);
