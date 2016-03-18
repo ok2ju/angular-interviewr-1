@@ -1,11 +1,9 @@
-module.exports = function CompanyProfileController(companyResource, vacancyResource, $state, $stateParams, config, imageService, toastr) {
+module.exports = function CompanyProfileController(authService, companyResource, vacancyResource, $state, $stateParams, config, imageService, toastr) {
   const vm = this;
 
   vm.comment = {};
   vm.getImageUrl = getImageUrl;
   vm.getUserImageUrl = getUserImageUrl;
-  vm.leaveComment = leaveComment;
-  vm.removeComment = removeComment;
 
   companyResource.one($stateParams.id).then(function(company) {
     vm.company = company;
@@ -20,29 +18,36 @@ module.exports = function CompanyProfileController(companyResource, vacancyResou
     vm.comments = comments;
   });
 
+  authService.me().then((myself) => {
+    vm.leaveComment = function(comment) {
+      let companyID = $stateParams.id;
+      vm.comment.author = {
+        name: myself.name,
+        surname: myself.surname,
+        imageId: myself.imageId
+      };
+
+      if(angular.isDefined(vm.comment.text)) {
+        companyResource.comment(companyID, vm.comment).then(function() {
+          $state.go($state.current, {}, { reload: true });
+        });
+      } else {
+        toastr.error('You must fill in comment field.', 'Error!');
+      }
+    };
+
+    vm.removeComment = function(id) {
+      companyResource.removeComment(id).then(function() {
+        $state.go($state.current, {}, { reload: true });
+      });
+    };
+  });
+
   function getImageUrl() {
     return imageService.getCompanyImageUrl(vm.company);
   }
 
   function getUserImageUrl(user) {
     return imageService.getUserImageUrl(user);
-  }
-
-  function leaveComment(comment) {
-    let companyID = $stateParams.id;
-
-    if(angular.isDefined(vm.comment.text)) {
-      companyResource.comment(companyID, vm.comment).then(function() {
-        $state.go($state.current, {}, { reload: true });
-      });
-    } else {
-      toastr.error('You must fill in comment field.', 'Error!');
-    }
-  }
-
-  function removeComment(id) {
-    companyResource.removeComment(id).then(function() {
-      $state.go($state.current, {}, { reload: true });
-    });
   }
 };
