@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
-module.exports = function VacancyProfileController(vacancyResource, $stateParams, imageService,
-                                                    authService, toastr, config) {
+module.exports = function VacancyProfileController(vacancyResource, subscriptionResource, $stateParams, imageService,
+                                                    authService, toastr, config, $state) {
   const vm = this;
 
   vm.getUserImageUrl = imageService.getUserImageUrl;
@@ -11,33 +11,39 @@ module.exports = function VacancyProfileController(vacancyResource, $stateParams
       vm.vacancy = vacancy;
     });
 
-  vacancyResource.subscriptions({vacancy: $stateParams.id})
-    .then(subscriptions => vm.subscriptions = subscriptions);
-
   authService.me().then((myself) => {
-    vm.isSubscribed = function(vacancy) {
-      var index = _.find(vacancy.subscriptions, function(o) {
-        return o.candidate == myself._id;
-      });
 
-      return index ? true : false;
-    };
+    subscriptionResource.list({vacancy: $stateParams.id})
+    .then(subscriptions => {
+      vm.subscriptions = subscriptions;
 
-    vm.subscribe = function(vacancy) {
-      vacancyResource.subscribe(vacancy).then(function() {
-        vacancy.subscriptions.push({ candidate: myself._id });
-        toastr.success('You are successful subscribed', 'Yay!');
-      });
-    };
+      vm.isSubscribed = function(vacancy) {
+        var index = _.find(subscriptions, function(o) {
+          return o.candidate._id == myself._id;
+        });
 
-    vm.unsubscribe = function(vacancy) {
-      vacancyResource.unsubscribe(vacancy).then(function() {
-        var index = vacancy.subscriptions.indexOf(myself._id);
-        vacancy.subscriptions.splice(index, 1);
-        toastr.error('You are unsubscribed', 'Yay!');
-      });
-    };
+        return index ? true : false;
+      };
 
+      vm.subscribe = function(vacancy) {
+        subscriptionResource.create({vacancy: vacancy._id}).then(function() {
+          $state.go($state.current, {}, { reload: true });
+          toastr.success('You are successful subscribed', 'Yay!');
+        });
+      };
+
+      vm.unsubscribe = function() {
+        var subscription = _.find(subscriptions, function(o) {
+          return o.candidate._id == myself._id;
+        });
+
+        subscriptionResource.delete(subscription._id).then(function() {
+          $state.go($state.current, {}, { reload: true });
+          toastr.error('You are unsubscribed', 'Yay!');
+        });
+      };
+
+    });
   });
 
   const urlTransformer = (url) => {

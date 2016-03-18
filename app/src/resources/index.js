@@ -6,4 +6,5 @@ angular
     .factory('companyResource', require('./Company').CompanyResource)
     .factory('vacancyResource', require('./Vacancy').VacancyResource)
     .factory('metaResource', require('./Meta').MetaResource)
-    .factory('interviewResource', require('./Interview').InterviewResource);
+    .factory('interviewResource', require('./Interview').InterviewResource)
+    .factory('subscriptionResource', require('./Subscription').SubscriptionResource);

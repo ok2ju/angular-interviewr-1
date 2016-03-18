@@ -41,13 +41,16 @@
 
       <div class="vacancyInfo-group v-followers-group">
         <label>Followers</label>
-        <ul class="v-followers-list">
+        <ul ng-if="vm.subscriptions.length" class="v-followers-list">
           <li ng-repeat="subscriber in vm.subscriptions" class="v-followers-list__item">
             <a ui-sref="app.userProfile({id: subscriber.candidate._id})">
               <img ng-src="{{vm.getUserImageUrl(subscriber.candidate)}}">
             </a>
           </li>
         </ul>
+        <div ng-if="!vm.subscriptions.length">
+          <h2>There are no subscribers</h2>
+        </div>
       </div>
 
       <div class="vacancyInfo-btns">

@@ -12,7 +12,7 @@ function mergeDateAndTime(_date, _time) {
 }
 
 module.exports = function VacancyCandidatesController(
-  vacancyResource, interviewResource, CandidatesService, imageService, $state,
+  subscriptionResource, interviewResource, CandidatesService, imageService, $state,
   $stateParams, $uibModal, config) {
 
   const vm = this;
@@ -31,7 +31,7 @@ module.exports = function VacancyCandidatesController(
 
   $state.go(CANDIDATES_GRID);
 
-  vacancyResource.subscriptions({vacancy: vacancyId}).then(subscriptions => vm.subscriptions = subscriptions);
+  subscriptionResource.list({vacancy: vacancyId}).then(subscriptions => vm.subscriptions = subscriptions);
 
   vm.openInterviewModal = function(subscription) {
     const modalInstance = $uibModal.open({

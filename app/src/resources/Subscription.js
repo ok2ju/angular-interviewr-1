@@ -1,8 +1,7 @@
 import {createResource} from './createResource';
 
-export function VacancyResource(Vendor) {
+export function SubscriptionResource(Vendor) {
   const {R} = Vendor;
-  const RESOURCE_NAME = 'vacancies';
-
+  const RESOURCE_NAME = 'subscriptions';
   return createResource(RESOURCE_NAME, R);
 }

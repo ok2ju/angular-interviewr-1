@@ -11,7 +11,7 @@ export function VacancyCard(config) {
     },
     transclude: true,
     templateUrl: `${config.ROOT_DIR}/src/components/vacancy/vacancy-card/vacancy-card.directive.html`,
-    controller(Vendor, $scope, $state, vacancyResource, authService, toastr) {
+    controller(Vendor, $scope, $state, subscriptionResource, authService, toastr) {
       const {_} = Vendor;
 
       $scope.settings = {
@@ -39,7 +39,7 @@ export function VacancyCard(config) {
       authService.me().then((myself) => {
         var subs;
 
-        vacancyResource.subscriptions({candidate: myself._id}).then(function(subscriptions) {
+        subscriptionResource.list({candidate: myself._id}).then(function(subscriptions) {
           subs = subscriptions;
 
           $scope.isSubscribed = function(vacancy) {
@@ -51,8 +51,7 @@ export function VacancyCard(config) {
           };
 
           $scope.subscribe = function(vacancy) {
-            vacancyResource.subscribe({vacancy: vacancy._id}).then(function() {
-              /*vacancy.subscriptions.push({ candidate: myself._id });*/
+            subscriptionResource.create({vacancy: vacancy._id}).then(function() {
               $state.go($state.current, {}, { reload: true });
               toastr.success('You are successful subscribed', 'Yay!');
             });
@@ -63,9 +62,7 @@ export function VacancyCard(config) {
               return o.vacancy._id == vacancy._id;
             });
 
-            vacancyResource.unsubscribe(subscription._id).then(function() {
-              /*var index = vacancy.subscriptions.indexOf(myself._id);
-              vacancy.subscriptions.splice(index, 1);*/
+            subscriptionResource.delete(subscription._id).then(function() {
               $state.go($state.current, {}, { reload: true });
               toastr.error('You are unsubscribed', 'Yay!');
             });
