@@ -16,9 +16,11 @@ export function AuthService(Vendor, userResource, store) {
 
   let currentUser;
   function me() {
-    logger.debug('me called.');
-    logger.debug('me returns from backend');
-    currentUser = userResource.me();
+    if(!currentUser) {
+      currentUser = new Promise((resolve, reject) => {
+        userResource.me().then(resolve).catch(reject);
+      });
+    }
     return currentUser;
   }
 
