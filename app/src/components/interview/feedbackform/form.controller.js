@@ -1,9 +1,10 @@
-module.exports = function FeedbackFormController($state, $stateParams, toastr, config) {
+module.exports = function FeedbackFormController($state, $stateParams, toastr, config, interviewResource) {
   const vm = this;
   vm.addPersonalSkill = addPersonalSkill;
   vm.removePersonalSkill = removePersonalSkill;
   vm.addTechnicalSkill = addTechnicalSkill;
   vm.removeTechnicalSkill = removeTechnicalSkill;
+  vm.submitFeedback = submitFeedback;
 
   vm.feedback = {};
 
@@ -40,5 +41,11 @@ module.exports = function FeedbackFormController($state, $stateParams, toastr, c
   function removeTechnicalSkill(id) {
     var index = vm.feedback.technical.indexOf(id);
     vm.feedback.technical.splice(index, 1);
+  }
+
+  function submitFeedback() {
+    interviewResource.feedback($stateParams.id, vm.feedback).then(() => {
+      console.log('Post feedback successfully!');
+    });
   }
 };

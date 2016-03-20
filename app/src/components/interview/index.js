@@ -14,7 +14,7 @@ require('./feedbackform');
 function interviewConfig($stateProvider) {
   $stateProvider
     .state('app.interviewfeedback', {
-      url: '/interview',
+      url: '/interview/:id/feedback',
       templateUrl: `${ROOT_DIR}/src/components/interview/feedback/feedback.tpl.html`,
       controller: 'InterviewFeedbackController',
       controllerAs: 'vm',
@@ -24,7 +24,7 @@ function interviewConfig($stateProvider) {
       }
     })
     .state('app.interviewfeedbackform', {
-      url: '/feedbackform',
+      url: '/interview/:id/feedbackform',
       templateUrl: `${ROOT_DIR}/src/components/interview/feedbackform/feedback-form.tpl.html`,
       controller: 'FeedbackFormController',
       controllerAs: 'vm',
