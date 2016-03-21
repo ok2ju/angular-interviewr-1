@@ -5,7 +5,7 @@ export function OpenRequestedPopupService($window, config) {
   function openRequestedPopup(id) {
     if(windowObjectReference == null || windowObjectReference.closed) {
       let windowName = `interview_page_${id}`;
-      windowObjectReference = $window.open(`${config.CONF_URL}/${id}`, windowName, strWindowFeatures);
+      windowObjectReference = $window.open(`${config.CONF_URL}/?interviewId=${id}`, windowName, strWindowFeatures);
     } else {
       windowObjectReference.focus();
     }
