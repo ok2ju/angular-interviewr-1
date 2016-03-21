@@ -19,6 +19,10 @@ module.exports = function FeedbackFormController($state, $stateParams, toastr, c
     }
   ];
 
+  interviewResource.one($stateParams.id).then((interview) => {
+    vm.interview = interview;
+  });
+
   // Manage personal skills
   function addPersonalSkill() {
     var index = vm.feedback.personal.length + 1;
