@@ -21,9 +21,8 @@ module.exports = function FeedbackFormController($state, $stateParams, toastr, c
 
   // Manage personal skills
   function addPersonalSkill() {
-    vm.feedback.personal.push({
-      id: vm.feedback.personal.length + 1
-    });
+    var index = vm.feedback.personal.length + 1;
+    vm.feedback.personal.push({id: 'skill' + index});
   }
 
   function removePersonalSkill(id) {
@@ -33,9 +32,8 @@ module.exports = function FeedbackFormController($state, $stateParams, toastr, c
 
   // Manage technical skills
   function addTechnicalSkill() {
-    vm.feedback.technical.push({
-      id: vm.feedback.personal.length + 1
-    });
+    var index = vm.feedback.personal.length + 1;
+    vm.feedback.technical.push({id: 'skill' + index});
   }
 
   function removeTechnicalSkill(id) {
@@ -44,6 +42,7 @@ module.exports = function FeedbackFormController($state, $stateParams, toastr, c
   }
 
   function submitFeedback() {
+    console.log(vm.feedback);
     interviewResource.feedback($stateParams.id, vm.feedback).then(() => {
       console.log('Post feedback successfully!');
     });

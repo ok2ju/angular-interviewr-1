@@ -9,7 +9,7 @@ export function InterviewResource(Vendor) {
     },
 
     getFeedback(id) {
-      return R.one(RESOURCE_NAME, id).all('feedback').get();
+      return R.one(RESOURCE_NAME, id).customGET('feedback');
     }
   });
 }

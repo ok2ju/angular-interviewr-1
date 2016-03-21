@@ -30,11 +30,11 @@
             <div class="grid-cell">
               <div class="inputAdd">
                 <span class="inputAdd-item">Skill</span>
-                <input ng-model="vm.feedback.personal.skill" type="text" id="up-name" class="inputAdd-field" ng-minlength="3" ng-maxlength="25" required>
+                <input ng-model="personal.skill" type="text" id="up-name" class="inputAdd-field" ng-minlength="3" ng-maxlength="25" required>
               </div>
               <div class="inputAdd">
                 <span class="inputAdd-item">Score</span>
-                <input ng-model="vm.feedback.personal.score" type="text" class="inputAdd-field" id="up-surname" ng-minlength="3" ng-maxlength="25" required>
+                <input ng-model="personal.score" type="number" class="inputAdd-field" id="up-surname" required>
               </div>
               <a ng-click="vm.removePersonalSkill(personal.id)" class="feedback-form__remove-btn">Remove</a>
             </div>
@@ -48,11 +48,11 @@
             <div class="grid-cell">
               <div class="inputAdd">
                 <span class="inputAdd-item">Skill</span>
-                <input ng-model="vm.feedback.technical.skill" type="text" id="up-name" class="inputAdd-field" ng-minlength="3" ng-maxlength="25" required>
+                <input ng-model="technical.skill" type="text" id="up-name" class="inputAdd-field" ng-minlength="3" ng-maxlength="25" required>
               </div>
               <div class="inputAdd">
                 <span class="inputAdd-item">Score</span>
-                <input ng-model="vm.feedback.technical.score" type="text" class="inputAdd-field" id="up-surname" ng-minlength="3" ng-maxlength="25" required>
+                <input ng-model="technical.score" type="number" class="inputAdd-field" id="up-surname" required>
               </div>
               <a ng-click="vm.removeTechnicalSkill(technical.id)" class="feedback-form__remove-btn">Remove</a>
             </div>
