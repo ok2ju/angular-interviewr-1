@@ -2,6 +2,8 @@
 export function AuthService(Vendor, userResource, store) {
   const logger = Vendor.logger.get('AuthService');
 
+  let currentUser;
+
   function login(user) {
     logger.debug('login, user: ', user);
     return userResource.login(user).then((token) => {
@@ -12,9 +14,9 @@ export function AuthService(Vendor, userResource, store) {
 
   function logout() {
     store.remove('jwt');
+    currentUser = null;
   }
 
-  let currentUser;
   function me() {
     if(!currentUser) {
       currentUser = new Promise((resolve, reject) => {
